@@ -10,7 +10,7 @@
 
 ## What is FastyBird modules metadata library?
 
-This is a [Nette framework](https://nette.org) extension which is implementing [{} JSON Schema](https://json-schema.org/) validation helpers & modules json schemas for [FastyBird](https://fastybird.com) IoT microservices
+This is a [Nette framework](https://nette.org) extension which is implementing [{} JSON Schema](https://json-schema.org/) validation helpers & modules json schemas for [FastyBird](https://www.fastybird.com) IoT microservices
 
 ## Installation
 
@@ -25,4 +25,4 @@ $ composer require fastybird/modules-metadata
 If you want to place your module here, feel free to create pull request with your updates.
 
 ***
-Homepage [http://fastybird.com](http://fastybird.com) and repository [https://github.com/FastyBird/modules-metadata](https://github.com/FastyBird/modules-metadata).
+Homepage [https://www.fastybird.com](https://www.fastybird.com) and repository [https://github.com/FastyBird/modules-metadata](https://github.com/FastyBird/modules-metadata).

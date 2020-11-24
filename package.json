@@ -10,13 +10,13 @@
     "metadata",
     "modules"
   ],
-  "homepage": "https://fastybird.com",
+  "homepage": "https://www.fastybird.com",
   "bugs": "https://github.com/FastyBird/modules-metadata/issues",
   "license": "Apache-2.0",
   "author": {
     "name": "FastyBird s.r.o.",
     "email": "info@fastybird.com",
-    "url": "https://fastybird.com/"
+    "url": "https://www.fastybird.com/"
   },
   "repository": {
     "type": "git",
