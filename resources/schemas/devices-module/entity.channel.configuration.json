@@ -1,0 +1,179 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      },
+      "nullable_number" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "number"
+          }
+        ]
+      },
+      "nullable_string_number" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "number"
+          }
+        ]
+      }
+    },
+    "configuration_type" : {
+      "type" : "string",
+      "enum" : [
+        "boolean",
+        "number",
+        "select",
+        "text"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/configuration_type"
+    },
+    "configuration" : {
+      "type" : "string"
+    },
+    "name" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "comment" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "default" : {
+      "$ref" : "#/definitions/types/nullable_string_number",
+      "default" : null
+    },
+    "value" : {
+      "$ref" : "#/definitions/types/nullable_string_number",
+      "default" : null
+    },
+    "device" : {
+      "type" : "string",
+      "description" : "Device identifier used across services. Could be used as identifier & is unique."
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
+    },
+    "parent" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null,
+      "description" : "Parent device identifier used across services."
+    },
+    "channel" : {
+      "type" : "string",
+      "description" : "Channel identifier used across services."
+    }
+  },
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "select"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "values" : {
+        "type" : "array"
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "configuration",
+      "name",
+      "comment",
+      "default",
+      "value",
+      "values",
+      "device",
+      "owner",
+      "parent",
+      "channel"
+    ]
+  },
+  "else" : {
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "number"
+        }
+      }
+    },
+    "then" : {
+      "properties" : {
+        "min" : {
+          "$ref" : "#/definitions/types/nullable_number",
+          "default" : null
+        },
+        "max" : {
+          "$ref" : "#/definitions/types/nullable_number",
+          "default" : null
+        },
+        "step" : {
+          "$ref" : "#/definitions/types/nullable_number",
+          "default" : null
+        }
+      },
+      "required" : [
+        "id",
+        "type",
+        "configuration",
+        "name",
+        "comment",
+        "default",
+        "value",
+        "min",
+        "max",
+        "step",
+        "device",
+        "owner",
+        "parent",
+        "channel"
+      ]
+    },
+    "else" : {
+      "required" : [
+        "id",
+        "type",
+        "configuration",
+        "name",
+        "comment",
+        "default",
+        "value",
+        "device",
+        "owner",
+        "parent",
+        "channel"
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "channel-property"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
+    },
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "trigger" : {
+      "type" : "string",
+      "description" : "Trigger identifier used across services. Could be used as identifier & is unique."
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Trigger action owner uuid v4 identifier."
+    }
+  },
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "channel-property"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "device" : {
+        "type" : "string"
+      },
+      "channel" : {
+        "type" : "string"
+      },
+      "property" : {
+        "type" : "string"
+      },
+      "value" : {
+        "type" : "string",
+        "description" : "Value to be sent to the device"
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "enabled",
+      "trigger",
+      "owner",
+      "email"
+    ]
+  },
+  "else" : {
+    "required" : [
+      "id",
+      "type",
+      "enabled",
+      "trigger",
+      "owner"
+    ]
+  }
+}

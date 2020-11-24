@@ -1,0 +1,97 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      }
+    },
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "network",
+        "local"
+      ]
+    },
+    "state" : {
+      "type" : "string",
+      "enum" : [
+        "connected",
+        "disconnected",
+        "init",
+        "ready",
+        "sleeping",
+        "lost",
+        "alert",
+        "unknown"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "identifier" : {
+      "type" : "string"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
+    },
+    "name" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "comment" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "state" : {
+      "$ref" : "#/definitions/state"
+    },
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "control" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "device" : {
+      "type" : "string",
+      "description" : "Device identifier used across services. Could be used as identifier & is unique."
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
+    },
+    "parent" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null,
+      "description" : "Parent device identifier used across services."
+    }
+  },
+  "required" : [
+    "id",
+    "identifier",
+    "type",
+    "name",
+    "comment",
+    "state",
+    "enabled",
+    "control",
+    "device",
+    "owner",
+    "parent"
+  ]
+}

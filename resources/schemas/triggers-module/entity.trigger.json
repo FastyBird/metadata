@@ -1,0 +1,107 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      }
+    },
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "manual",
+        "automatic",
+        "channel-property"
+      ]
+    },
+    "operator" : {
+      "type" : "string",
+      "enum" : [
+        "eq",
+        "above",
+        "below"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "comment" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Trigger owner uuid v4 identifier."
+    }
+  },
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "channel-property"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "device" : {
+        "type" : "string"
+      },
+      "channel" : {
+        "type" : "string"
+      },
+      "property" : {
+        "type" : "string"
+      },
+      "operand" : {
+        "type" : "string"
+      },
+      "operator" : {
+        "$ref" : "#/definitions/operator"
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "name",
+      "comment",
+      "enabled",
+      "owner",
+      "device",
+      "channel",
+      "property",
+      "operand",
+      "operator"
+    ]
+  },
+  "else" : {
+    "required" : [
+      "id",
+      "type",
+      "name",
+      "comment",
+      "enabled",
+      "owner"
+    ]
+  }
+}

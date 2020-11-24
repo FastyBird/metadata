@@ -1,0 +1,64 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "method" : {
+      "type" : "string",
+      "enum" : [
+        "get",
+        "post",
+        "patch",
+        "delete"
+      ]
+    }
+  },
+  "type" : "object",
+  "additionalProperties" : {
+    "type" : "array",
+    "uniqueItems" : true,
+    "items" : {
+      "type" : "object",
+      "properties" : {
+        "version" : {
+          "type" : "string",
+          "description" : "Module version definition"
+        },
+        "metadata" : {
+          "type" : "object",
+          "properties" : {
+            "routes" : {
+              "type" : "array",
+              "description" : "Module api routes",
+              "uniqueItems" : true,
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "path" : {
+                    "type" : "string"
+                  },
+                  "method" : {
+                    "$ref" : "#/definitions/method"
+                  },
+                  "headers": {
+                    "type" : "array",
+                    "description" : "API call required headers",
+                    "uniqueItems" : true,
+                    "items" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required" : [
+        "version",
+        "metadata"
+      ]
+    }
+  }
+}

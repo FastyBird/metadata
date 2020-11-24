@@ -1,0 +1,150 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      },
+      "string_number" : {
+        "oneOf" : [
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "number"
+          }
+        ]
+      },
+      "nullable_datatype" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "$ref" : "#/definitions/datatype"
+          }
+        ]
+      },
+      "nullable_format" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          },
+          {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "$ref" : "#/definitions/types/string_number"
+            }
+          }
+        ]
+      },
+      "string_number_boolean_null" : {
+        "oneOf" : [
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "number"
+          },
+          {
+            "type" : "boolean"
+          },
+          {
+            "type" : "null"
+          }
+        ]
+      }
+    },
+    "datatype" : {
+      "type" : "string",
+      "enum" : [
+        "string",
+        "integer",
+        "float",
+        "boolean",
+        "enum",
+        "color"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "property" : {
+      "type" : "string"
+    },
+    "name" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "settable" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "queryable" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "datatype" : {
+      "$ref" : "#/definitions/types/nullable_datatype",
+      "default" : null
+    },
+    "unit" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "format" : {
+      "$ref" : "#/definitions/types/nullable_format",
+      "default" : null
+    },
+    "value" : {
+      "$ref" : "#/definitions/types/string_number_boolean_null"
+    },
+    "expected" : {
+      "$ref" : "#/definitions/types/string_number_boolean_null"
+    },
+    "previous_value" : {
+      "$ref" : "#/definitions/types/string_number_boolean_null"
+    },
+    "device" : {
+      "type" : "string",
+      "description" : "Device identifier used across services. Could be used as identifier & is unique."
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
+    },
+    "parent" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null,
+      "description" : "Parent device identifier used across services."
+    }
+  },
+  "required" : [
+    "id",
+    "property",
+    "name",
+    "settable",
+    "queryable",
+    "datatype",
+    "unit",
+    "format",
+    "device",
+    "owner",
+    "parent"
+  ]
+}

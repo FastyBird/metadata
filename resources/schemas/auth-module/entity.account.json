@@ -1,0 +1,125 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      }
+    },
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "user",
+        "machine"
+      ]
+    },
+    "state" : {
+      "type" : "string",
+      "enum" : [
+        "active",
+        "blocked",
+        "deleted",
+        "notActivated",
+        "approvalWaiting"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
+    },
+    "state" : {
+      "$ref" : "#/definitions/state"
+    },
+    "registered" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "last_visit" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "roles" : {
+      "type" : "array",
+      "minItems" : 1,
+      "uniqueItems" : true,
+      "items" : {
+        "type" : "string"
+      }
+    }
+  },
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "user"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "first_name" : {
+        "type" : "string"
+      },
+      "last_name" : {
+        "type" : "string"
+      },
+      "middle_name" : {
+        "$ref" : "#/definitions/types/nullable_string",
+        "default" : null
+      },
+      "email" : {
+        "$ref" : "#/definitions/types/nullable_string",
+        "default" : null
+      },
+      "language" : {
+        "type" : "string"
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "state",
+      "registered",
+      "last_visit",
+      "first_name",
+      "last_name",
+      "middle_name",
+      "email",
+      "language"
+    ]
+  },
+  "else" : {
+    "properties" : {
+      "device" : {
+        "type" : "string",
+        "description" : "Devices module device entity identifier. This identifier is unique"
+      },
+      "owner" : {
+        "type" : "string",
+        "description" : "Owner entity uuid v4 identifier. This identifier is unique",
+        "default" : null
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "state",
+      "registered",
+      "last_visit",
+      "device",
+      "owner"
+    ]
+  }
+}

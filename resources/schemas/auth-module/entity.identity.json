@@ -1,0 +1,84 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      }
+    },
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "user",
+        "machine"
+      ]
+    },
+    "state" : {
+      "type" : "string",
+      "enum" : [
+        "active",
+        "blocked",
+        "deleted",
+        "invalid"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "account" : {
+      "type" : "string",
+      "description" : "Account entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
+    },
+    "state" : {
+      "$ref" : "#/definitions/state"
+    },
+    "uid" : {
+      "type" : "string"
+    }
+  },
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "machine"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "password" : {
+        "type" : "string"
+      }
+    },
+    "required" : [
+      "id",
+      "account",
+      "type",
+      "state",
+      "uid",
+      "password"
+    ]
+  },
+  "else" : {
+    "required" : [
+      "id",
+      "account",
+      "type",
+      "state",
+      "uid"
+    ]
+  }
+}

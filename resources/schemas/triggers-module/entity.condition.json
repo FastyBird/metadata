@@ -1,0 +1,187 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "channel-property",
+        "device-property",
+        "time",
+        "date"
+      ]
+    },
+    "operator" : {
+      "type" : "string",
+      "enum" : [
+        "eq",
+        "above",
+        "below"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
+    },
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "trigger" : {
+      "type" : "string",
+      "description" : "Trigger identifier used across services. Could be used as identifier & is unique."
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Trigger notification owner uuid v4 identifier."
+    }
+  },
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "channel-property"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "device" : {
+        "type" : "string"
+      },
+      "channel" : {
+        "type" : "string"
+      },
+      "property" : {
+        "type" : "string"
+      },
+      "operand" : {
+        "type" : "string"
+      },
+      "operator" : {
+        "$ref" : "#/definitions/operator"
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "enabled",
+      "trigger",
+      "owner",
+      "device",
+      "channel",
+      "property",
+      "operand",
+      "operator"
+    ]
+  },
+  "else" : {
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "device-property"
+        }
+      }
+    },
+    "then" : {
+      "properties" : {
+        "device" : {
+          "type" : "string"
+        },
+        "property" : {
+          "type" : "string"
+        },
+        "operand" : {
+          "type" : "string"
+        },
+        "operator" : {
+          "$ref" : "#/definitions/operator"
+        }
+      },
+      "required" : [
+        "id",
+        "type",
+        "enabled",
+        "trigger",
+        "owner",
+        "device",
+        "property",
+        "operand",
+        "operator"
+      ]
+    },
+    "else" : {
+      "if" : {
+        "properties" : {
+          "type" : {
+            "const" : "time"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "time" : {
+            "type" : "string",
+            "description" : "Ful time representation formatted in ATOM."
+          },
+          "days" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number",
+              "uniqueItems" : true,
+              "minItems" : 1
+            },
+            "description" : "Days numbers 1 - 7 where 1 is mon and 7 is sun."
+          }
+        },
+        "required" : [
+          "id",
+          "type",
+          "enabled",
+          "trigger",
+          "owner",
+          "time",
+          "days"
+        ]
+      },
+      "else" : {
+        "if" : {
+          "properties" : {
+            "type" : {
+              "const" : "date"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "date" : {
+              "type" : "string",
+              "description" : "Ful date representation formatted in ATOM."
+            }
+          },
+          "required" : [
+            "id",
+            "type",
+            "enabled",
+            "trigger",
+            "owner",
+            "date"
+          ]
+        },
+        "else" : {
+          "required" : [
+            "id",
+            "type",
+            "enabled",
+            "trigger",
+            "owner"
+          ]
+        }
+      }
+    }
+  }
+}
