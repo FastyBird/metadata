@@ -1,6 +1,6 @@
 # FastyBird modules metadata library
 
-[![Build Status](https://img.shields.io/travis/FastyBird/modules-metadata.svg?style=flat-square)](https://travis-ci.org/FastyBird/modules-metadata)
+[![Build Status](https://img.shields.io/travis/FastyBird/modules-metadata.svg?style=flat-square)](https://travis-ci.com/FastyBird/modules-metadata)
 [![Code coverage](https://img.shields.io/coveralls/FastyBird/modules-metadata.svg?style=flat-square)](https://coveralls.io/r/FastyBird/modules-metadata)
 ![PHP from Travis config](https://img.shields.io/travis/php-v/fastybird/json-schemas?style=flat-square)
 [![Licence](https://img.shields.io/packagist/l/FastyBird/modules-metadata.svg?style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
@@ -10,7 +10,7 @@
 
 ## What is FastyBird modules metadata library?
 
-This is a [Nette framework](https://nette.org) extension which is implementing [{} JSON Schema](https://json-schema.org/) validation helpers & modules json schemas for [FastyBird](https://www.fastybird.com) IoT microservices
+This is a [Nette framework](https://nette.org) extension which is implementing validation helpers & modules json schemas for [FastyBird](https://www.fastybird.com) modules
 
 ## Installation
 
