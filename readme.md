@@ -1,8 +1,8 @@
 # FastyBird modules metadata library
 
-[![Build Status](https://img.shields.io/travis/FastyBird/modules-metadata.svg?style=flat-square)](https://travis-ci.com/FastyBird/modules-metadata)
+[![Build Status](https://img.shields.io/travis/com/FastyBird/modules-metadata.svg?style=flat-square)](https://travis-ci.com/FastyBird/modules-metadata)
 [![Code coverage](https://img.shields.io/coveralls/FastyBird/modules-metadata.svg?style=flat-square)](https://coveralls.io/r/FastyBird/modules-metadata)
-![PHP from Travis config](https://img.shields.io/travis/php-v/fastybird/json-schemas?style=flat-square)
+![PHP](https://img.shields.io/packagist/php-v/fastybird/json-schemas?style=flat-square)
 [![Licence](https://img.shields.io/packagist/l/FastyBird/modules-metadata.svg?style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
 [![Downloads total](https://img.shields.io/packagist/dt/FastyBird/modules-metadata.svg?style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
 [![Latest stable](https://img.shields.io/packagist/v/FastyBird/modules-metadata.svg?style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
