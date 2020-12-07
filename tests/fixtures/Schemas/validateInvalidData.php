@@ -3,7 +3,7 @@
 use Nette\Utils;
 
 return [
-	'one' => [
+	'one'   => [
 		Utils\Json::encode([
 			'attributeOne'   => 13,
 			'attributeTwo'   => 20,
@@ -12,10 +12,10 @@ return [
 		]),
 		file_get_contents(__DIR__ . '/validator.schema.json'),
 	],
-	'two' => [
+	'two'   => [
 		Utils\Json::encode([
-			'attributeOne'   => 'String value',
-			'attributeTwo'   => 'String value',
+			'attributeOne' => 'String value',
+			'attributeTwo' => 'String value',
 		]),
 		file_get_contents(__DIR__ . '/validator.schema.json'),
 	],

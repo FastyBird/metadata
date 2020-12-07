@@ -10,7 +10,7 @@
 
 ## What is FastyBird modules metadata library?
 
-This is a [Nette framework](https://nette.org) extension which is implementing validation helpers & modules json schemas for [FastyBird](https://www.fastybird.com) modules
+This is a [Nette framework](https://nette.org) extension which is implementing validation helpers & modules json schemas for [FastyBird](https://www.fastybird.com) IoT services
 
 ## Installation
 

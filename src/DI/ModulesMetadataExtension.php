@@ -32,23 +32,6 @@ class ModulesMetadataExtension extends DI\CompilerExtension
 {
 
 	/**
-	 * {@inheritdoc}
-	 */
-	public function loadConfiguration(): void
-	{
-		$builder = $this->getContainerBuilder();
-
-		$builder->addDefinition(null)
-			->setType(Schemas\Validator::class);
-
-		$builder->addDefinition(null)
-			->setType(Loaders\MetadataLoader::class);
-
-		$builder->addDefinition(null)
-			->setType(Loaders\SchemaLoader::class);
-	}
-
-	/**
 	 * @param Nette\Configurator $config
 	 * @param string $extensionName
 	 *
@@ -64,6 +47,23 @@ class ModulesMetadataExtension extends DI\CompilerExtension
 		) use ($extensionName): void {
 			$compiler->addExtension($extensionName, new ModulesMetadataExtension());
 		};
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function loadConfiguration(): void
+	{
+		$builder = $this->getContainerBuilder();
+
+		$builder->addDefinition(null)
+			->setType(Schemas\Validator::class);
+
+		$builder->addDefinition(null)
+			->setType(Loaders\MetadataLoader::class);
+
+		$builder->addDefinition(null)
+			->setType(Loaders\SchemaLoader::class);
 	}
 
 }
