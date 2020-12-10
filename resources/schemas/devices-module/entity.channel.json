@@ -32,7 +32,9 @@
       "type" : "array",
       "items" : {
         "type" : "string"
-      }
+      },
+      "required" : [],
+      "default" : []
     },
     "device" : {
       "type" : "string",
