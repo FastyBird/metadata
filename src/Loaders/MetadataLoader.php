@@ -33,7 +33,7 @@ final class MetadataLoader implements IMetadataLoader
 	private const RESOURCES_FOLDER = __DIR__ . '/../../resources';
 
 	/** @var Schemas\IValidator */
-	private $jsonValidator;
+	private Schemas\IValidator $jsonValidator;
 
 	public function __construct(
 		Schemas\IValidator $jsonValidator
