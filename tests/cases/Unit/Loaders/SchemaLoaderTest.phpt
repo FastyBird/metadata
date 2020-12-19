@@ -19,19 +19,19 @@ final class SchemaLoaderTest extends BaseTestCase
 	{
 		$loader = new Loaders\SchemaLoader();
 
-		$result = $loader->load(ModulesMetadata\Constants::RESOURCES_FOLDER . '/schemas/devices-module/entity.channel.configuration.json');
+		$result = $loader->load(ModulesMetadata\Constants::MODULE_DEVICES_ORIGIN, ModulesMetadata\Constants::MESSAGE_BUS_DEVICES_CREATED_ENTITY_ROUTING_KEY);
 
 		Assert::true($result !== null);
 	}
 
 	/**
-	 * @throws FastyBird\ModulesMetadata\Exceptions\FileNotFoundException
+	 * @throws FastyBird\ModulesMetadata\Exceptions\InvalidArgumentException
 	 */
 	public function testValidateDevicePropertyInvalid(): void
 	{
 		$loader = new Loaders\SchemaLoader();
 
-		$loader->load('unknown.file.json');
+		$result = $loader->load(ModulesMetadata\Constants::MODULE_TRIGGERS_ORIGIN, ModulesMetadata\Constants::MESSAGE_BUS_DEVICES_CREATED_ENTITY_ROUTING_KEY);
 	}
 
 }

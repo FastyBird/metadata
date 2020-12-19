@@ -16,7 +16,7 @@
     "control" : {
       "type" : "string",
       "enum" : [
-        "configure"
+        "reset"
       ]
     }
   },
@@ -30,17 +30,7 @@
       "$ref" : "#/definitions/control"
     },
     "expected" : {
-      "oneOf" : [
-        {
-          "type" : "null"
-        },
-        {
-          "type" : "string"
-        },
-        {
-          "type" : "object"
-        }
-      ]
+      "$ref" : "#/definitions/types/nullable_string"
     },
     "device" : {
       "type" : "string",
@@ -60,42 +50,12 @@
       "description" : "Channel identifier used across services."
     }
   },
-  "if" : {
-    "properties" : {
-      "control" : {
-        "const" : "configure"
-      }
-    }
-  },
-  "then" : {
-    "properties" : {
-      "expected" : {
-        "type" : "object"
-      }
-    },
-    "required" : [
-      "id",
-      "control",
-      "expected",
-      "device",
-      "owner",
-      "parent",
-      "channel"
-    ]
-  },
-  "else" : {
-    "properties" : {
-      "expected" : {
-        "$ref" : "#/definitions/types/nullable_string"
-      }
-    },
-    "required" : [
-      "id",
-      "control",
-      "device",
-      "owner",
-      "parent",
-      "channel"
-    ]
-  }
+  "required" : [
+    "id",
+    "control",
+    "device",
+    "owner",
+    "parent",
+    "channel"
+  ]
 }

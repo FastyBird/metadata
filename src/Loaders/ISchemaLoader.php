@@ -27,10 +27,11 @@ interface ISchemaLoader
 {
 
 	/**
-	 * @param string $filename
+	 * @param string $origin
+	 * @param string $routingKey
 	 *
 	 * @return string
 	 */
-	public function load(string $filename): string;
+	public function load(string $origin, string $routingKey): string;
 
 }

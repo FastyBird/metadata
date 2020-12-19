@@ -34,10 +34,7 @@ final class Validator implements IValidator
 	use Nette\SmartObject;
 
 	/**
-	 * @param string $data
-	 * @param string $schema
-	 *
-	 * @return Utils\ArrayHash
+	 * {@inheritDoc}
 	 */
 	public function validate(string $data, string $schema): Utils\ArrayHash
 	{

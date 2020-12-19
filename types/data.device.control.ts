@@ -1,5 +1,8 @@
 export enum Control {
     CONFIGURE = 'configure',
+    RESET = 'reset',
+    RECONNECT = 'reconnect',
+    FACTORY_RESET = 'factory-reset',
 }
 
 export interface Entity {
@@ -8,13 +11,10 @@ export interface Entity {
     expected:
         | null
         | string
-        | {
-        [k: string]: any
-    }
+        | undefined
     device: string
     owner: string
     parent: string | null
-    channel: string
 
     [k: string]: string | Control | Array<string> | Array<number> | null | any
 }

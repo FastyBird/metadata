@@ -16,7 +16,6 @@
     "control" : {
       "type" : "string",
       "enum" : [
-        "configure",
         "reset",
         "reconnect",
         "factory-reset"
@@ -33,17 +32,7 @@
       "$ref" : "#/definitions/control"
     },
     "expected" : {
-      "oneOf" : [
-        {
-          "type" : "null"
-        },
-        {
-          "type" : "string"
-        },
-        {
-          "type" : "object"
-        }
-      ]
+      "$ref" : "#/definitions/types/nullable_string"
     },
     "device" : {
       "type" : "string",
@@ -59,40 +48,11 @@
       "description" : "Parent device identifier used across services."
     }
   },
-  "if" : {
-    "properties" : {
-      "control" : {
-        "const" : "configure"
-      }
-    }
-  },
-  "then" : {
-    "properties" : {
-      "expected" : {
-        "type" : "object"
-      }
-    },
-    "required" : [
-      "id",
-      "control",
-      "expected",
-      "device",
-      "owner",
-      "parent"
-    ]
-  },
-  "else" : {
-    "properties" : {
-      "expected" : {
-        "$ref" : "#/definitions/types/nullable_string"
-      }
-    },
-    "required" : [
-      "id",
-      "control",
-      "device",
-      "owner",
-      "parent"
-    ]
-  }
+  "required" : [
+    "id",
+    "control",
+    "device",
+    "owner",
+    "parent"
+  ]
 }

@@ -15,6 +15,7 @@
 
 namespace FastyBird\ModulesMetadata\Loaders;
 
+use FastyBird\ModulesMetadata;
 use FastyBird\ModulesMetadata\Exceptions;
 
 /**
@@ -32,26 +33,34 @@ final class SchemaLoader implements ISchemaLoader
 	 * {@inheritDoc}
 	 *
 	 * @throws Exceptions\FileNotFoundException
+	 * @throws Exceptions\InvalidArgumentException
 	 */
-	public function load(string $filename): string
+	public function load(string $origin, string $routingKey): string
 	{
-		if (is_file($filename)) {
-			$schema = $filename;
+		if (isset(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$origin])) {
+			$mapping = ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$origin];
 
-		} elseif (defined('FB_RESOURCES_DIR') === true) {
-			$schema = FB_RESOURCES_DIR . '/schemas/' . $filename;
+			if (isset($mapping[$routingKey])) {
+				$schema = file_get_contents($mapping[$routingKey]);
 
-		} else {
-			throw new Exceptions\FileNotFoundException('Schema could not be loaded');
+				if ($schema === false) {
+					throw new Exceptions\FileNotFoundException('Schema could not be loaded');
+				}
+
+				return $schema;
+			}
+
+		} elseif (isset(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[ModulesMetadata\Constants::NOT_SPECIFIED_ORIGIN][$routingKey])) {
+			$schema = file_get_contents(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING['*'][$routingKey]);
+
+			if ($schema === false) {
+				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
+			}
+
+			return $schema;
 		}
 
-		$schema = file_get_contents($schema);
-
-		if ($schema === false) {
-			throw new Exceptions\FileNotFoundException('Schema could not be loaded');
-		}
-
-		return $schema;
+		throw new Exceptions\InvalidArgumentException(sprintf('Schema for origin: %s and routing key: %s is not configured', $origin, $routingKey));
 	}
 
 }
