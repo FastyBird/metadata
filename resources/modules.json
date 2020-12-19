@@ -3,6 +3,8 @@
     {
       "version" : "*",
       "metadata" : {
+        "exchange": [
+        ],
         "routes" : [
           {
             "name" : "Get session info",
@@ -350,6 +352,12 @@
     {
       "version" : "*",
       "metadata" : {
+        "exchange": [
+          "fb.bus.data.device",
+          "fb.bus.data.device.*",
+          "fb.bus.data.channel",
+          "fb.bus.data.channel.*"
+        ],
         "routes" : [
           {
             "name" : "Get devices",
@@ -567,6 +575,12 @@
     {
       "version" : "*",
       "metadata" : {
+        "exchange": [
+          "fb.bus.entity.deleted.channel",
+          "fb.bus.entity.*.channel.property",
+          "fb.bus.entity.deleted.device",
+          "fb.bus.entity.*.device.property"
+        ],
         "routes" : [
           {
             "name" : "Get triggers",
@@ -768,6 +782,17 @@
     {
       "version" : "*",
       "metadata" : {
+        "exchange": [
+          "fb.bus.entity.*.device",
+          "fb.bus.entity.*.device.*",
+          "fb.bus.entity.*.channel",
+          "fb.bus.entity.*.channel.*",
+          "fb.bus.entity.*.account",
+          "fb.bus.entity.*.email",
+          "fb.bus.entity.*.identity",
+          "fb.bus.entity.*.trigger",
+          "fb.bus.entity.*.trigger.*"
+        ]
       }
     }
   ]

@@ -25,6 +25,14 @@
         "metadata" : {
           "type" : "object",
           "properties" : {
+            "exchange": {
+              "type" : "array",
+              "description" : "Module exchange routing keys",
+              "uniqueItems" : true,
+              "items" : {
+                "type" : "string"
+              }
+            },
             "routes" : {
               "type" : "array",
               "description" : "Module api routes",
