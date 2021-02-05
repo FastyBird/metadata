@@ -1,5 +1,6 @@
 export interface Entity {
     id: string
+    key: string
     name: string | null
     comment: string | null
     control: Array<string>

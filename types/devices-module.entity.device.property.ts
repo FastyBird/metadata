@@ -9,6 +9,7 @@ export enum Datatype {
 
 export interface Entity {
     id: string
+    key: string
     property: string
     name: string | null
     settable: boolean

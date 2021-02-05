@@ -16,6 +16,7 @@ export enum State {
 
 export interface Entity {
     id: string
+    key: string
     identifier: string
     type: Type
     name: string | null

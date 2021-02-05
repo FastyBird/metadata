@@ -52,6 +52,10 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
+    "key" : {
+      "type" : "string",
+      "description" : "Unique identifier per each entity"
+    },
     "type" : {
       "$ref" : "#/definitions/configuration_type"
     },
@@ -103,6 +107,7 @@
     },
     "required" : [
       "id",
+      "key",
       "type",
       "configuration",
       "name",
@@ -140,6 +145,7 @@
       },
       "required" : [
         "id",
+        "key",
         "type",
         "configuration",
         "name",
@@ -157,6 +163,7 @@
     "else" : {
       "required" : [
         "id",
+        "key",
         "type",
         "configuration",
         "name",

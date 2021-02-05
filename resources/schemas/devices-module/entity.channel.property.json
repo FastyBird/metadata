@@ -84,6 +84,10 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
+    "key" : {
+      "type" : "string",
+      "description" : "Unique identifier per each entity"
+    },
     "property" : {
       "type" : "string"
     },
@@ -140,6 +144,7 @@
   },
   "required" : [
     "id",
+    "key",
     "property",
     "name",
     "settable",

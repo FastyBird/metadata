@@ -20,6 +20,10 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
+    "key" : {
+      "type" : "string",
+      "description" : "Unique identifier per each entity"
+    },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
@@ -56,6 +60,7 @@
   },
   "required" : [
     "id",
+    "key",
     "name",
     "comment",
     "control",

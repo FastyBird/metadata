@@ -7,6 +7,7 @@ export enum Type {
 
 export interface Entity {
     id: string
+    key: string
     type: Type
     configuration: string
     name: string | null
