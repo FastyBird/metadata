@@ -61,6 +61,27 @@
       "type" : "boolean",
       "default" : false
     },
+    "hardware_version" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "hardware_manufacturer" : {
+      "type" : "string"
+    },
+    "hardware_model" : {
+      "type" : "string"
+    },
+    "mac_address" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "firmware_manufacturer" : {
+      "type" : "string"
+    },
+    "firmware_version" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
     "control" : {
       "type" : "array",
       "items" : {
@@ -91,6 +112,12 @@
     "comment",
     "state",
     "enabled",
+    "hardware_version",
+    "hardware_manufacturer",
+    "hardware_model",
+    "mac_address",
+    "firmware_manufacturer",
+    "firmware_version",
     "control",
     "device",
     "owner",

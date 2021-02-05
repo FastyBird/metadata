@@ -22,6 +22,12 @@ export interface Entity {
     comment: string | null
     state: State
     enabled: boolean
+    hardware_version: string | null
+    hardware_manufacturer: string
+    hardware_model: string
+    mac_address: string | null
+    firmware_manufacturer: string
+    firmware_version: string | null
     control: Array<string>
     device: string
     owner: string

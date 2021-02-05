@@ -11,8 +11,6 @@ async function generate() {
 	writeFileSync('./types/devices-module.entity.device.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.device.json'))
 	writeFileSync('./types/devices-module.entity.device.property.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.device.property.json'))
 	writeFileSync('./types/devices-module.entity.device.configuration.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.device.configuration.json'))
-	writeFileSync('./types/devices-module.entity.device.firmware.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.device.firmware.json'))
-	writeFileSync('./types/devices-module.entity.device.hardware.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.device.hardware.json'))
 	writeFileSync('./types/devices-module.entity.channel.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.channel.json'))
 	writeFileSync('./types/devices-module-entity.channel.property.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.channel.property.json'))
 	writeFileSync('./types/devices-module.entity.channel.configuration.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.channel.configuration.json'))
