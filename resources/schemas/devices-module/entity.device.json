@@ -13,13 +13,6 @@
         ]
       }
     },
-    "type" : {
-      "type" : "string",
-      "enum" : [
-        "network",
-        "local"
-      ]
-    },
     "state" : {
       "type" : "string",
       "enum" : [
@@ -27,7 +20,9 @@
         "disconnected",
         "init",
         "ready",
+        "running",
         "sleeping",
+        "stopped",
         "lost",
         "alert",
         "unknown"
@@ -46,9 +41,6 @@
     },
     "identifier" : {
       "type" : "string"
-    },
-    "type" : {
-      "$ref" : "#/definitions/type"
     },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -112,7 +104,6 @@
     "id",
     "key",
     "identifier",
-    "type",
     "name",
     "comment",
     "state",

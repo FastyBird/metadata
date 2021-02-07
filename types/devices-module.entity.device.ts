@@ -1,14 +1,11 @@
-export enum Type {
-    NETWORK = 'network',
-    LOCAL = 'local',
-}
-
 export enum State {
     CONNECTED = 'connected',
     DISCONNECTED = 'disconnected',
     INIT = 'init',
     READY = 'ready',
+    RUNNING = 'running',
     SLEEPING = 'sleeping',
+    STOPPED = 'stopped',
     LOST = 'lost',
     ALERT = 'alert',
     UNKNOWN = 'unknown',
@@ -18,7 +15,6 @@ export interface Entity {
     id: string
     key: string
     identifier: string
-    type: Type
     name: string | null
     comment: string | null
     state: State
@@ -34,5 +30,5 @@ export interface Entity {
     owner: string
     parent: string | null
 
-    [k: string]: string | Type | State | boolean | Array<string> | null
+    [k: string]: string | State | boolean | Array<string> | null
 }
