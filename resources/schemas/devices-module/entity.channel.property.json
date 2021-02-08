@@ -22,13 +22,13 @@
           }
         ]
       },
-      "nullable_datatype" : {
+      "nullable_data_type" : {
         "oneOf" : [
           {
             "type" : "null"
           },
           {
-            "$ref" : "#/definitions/datatype"
+            "$ref" : "#/definitions/data_type"
           }
         ]
       },
@@ -66,7 +66,7 @@
         ]
       }
     },
-    "datatype" : {
+    "data_type" : {
       "type" : "string",
       "enum" : [
         "string",
@@ -88,7 +88,7 @@
       "type" : "string",
       "description" : "Unique identifier per each entity"
     },
-    "property" : {
+    "identifier" : {
       "type" : "string"
     },
     "name" : {
@@ -103,8 +103,8 @@
       "type" : "boolean",
       "default" : false
     },
-    "datatype" : {
-      "$ref" : "#/definitions/types/nullable_datatype",
+    "data_type" : {
+      "$ref" : "#/definitions/types/nullable_data_type",
       "default" : null
     },
     "unit" : {
@@ -123,23 +123,6 @@
     },
     "previous_value" : {
       "$ref" : "#/definitions/types/string_number_boolean_null"
-    },
-    "device" : {
-      "type" : "string",
-      "description" : "Device identifier used across services. Could be used as identifier & is unique."
-    },
-    "owner" : {
-      "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
-    },
-    "parent" : {
-      "$ref" : "#/definitions/types/nullable_string",
-      "default" : null,
-      "description" : "Parent device identifier used across services."
-    },
-    "channel" : {
-      "type" : "string",
-      "description" : "Channel identifier used across services."
     }
   },
   "required" : [
@@ -149,12 +132,8 @@
     "name",
     "settable",
     "queryable",
-    "datatype",
+    "data_type",
     "unit",
-    "format",
-    "device",
-    "owner",
-    "parent",
-    "channel"
+    "format"
   ]
 }

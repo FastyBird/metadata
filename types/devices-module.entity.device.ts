@@ -26,9 +26,6 @@ export interface Entity {
     firmware_manufacturer: string
     firmware_version: string | null
     control: Array<string>
-    device: string
-    owner: string
-    parent: string | null
 
     [k: string]: string | State | boolean | Array<string> | null
 }

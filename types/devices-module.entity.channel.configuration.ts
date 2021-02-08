@@ -9,15 +9,11 @@ export interface Entity {
     id: string
     key: string
     type: Type
-    configuration: string
+    identifier: string
     name: string | null
     comment: string | null
     default: string | number | null
     value: string | number | null
-    device: string
-    owner: string
-    parent: string | null
-    channel: string
     values?: Array<any>
     min?: number | null
     max?: number | null

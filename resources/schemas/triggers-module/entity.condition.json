@@ -35,10 +35,6 @@
     "trigger" : {
       "type" : "string",
       "description" : "Trigger identifier used across services. Could be used as identifier & is unique."
-    },
-    "owner" : {
-      "type" : "string",
-      "description" : "Trigger notification owner uuid v4 identifier."
     }
   },
   "if" : {
@@ -71,7 +67,6 @@
       "type",
       "enabled",
       "trigger",
-      "owner",
       "device",
       "channel",
       "property",
@@ -107,7 +102,6 @@
         "type",
         "enabled",
         "trigger",
-        "owner",
         "device",
         "property",
         "operand",
@@ -143,7 +137,6 @@
           "type",
           "enabled",
           "trigger",
-          "owner",
           "time",
           "days"
         ]
@@ -168,7 +161,6 @@
             "type",
             "enabled",
             "trigger",
-            "owner",
             "date"
           ]
         },
@@ -177,8 +169,7 @@
             "id",
             "type",
             "enabled",
-            "trigger",
-            "owner"
+            "trigger"
           ]
         }
       }

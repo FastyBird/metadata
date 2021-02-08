@@ -1,4 +1,4 @@
-export enum Datatype {
+export enum DataType {
     STRING = 'string',
     INTEGER = 'integer',
     FLOAT = 'float',
@@ -10,20 +10,16 @@ export enum Datatype {
 export interface Entity {
     id: string
     key: string
-    property: string
+    identifier: string
     name: string | null
     settable: boolean
     queryable: boolean
-    datatype: Datatype | null
+    data_type: DataType | null
     unit: string | null
     format: string | Array<string> | Array<number> | null
     value?: string | number | boolean | null
     expected?: string | number | boolean | null
     previous_value?: string | number | boolean | null
-    device: string
-    owner: string
-    parent: string | null
-    channel: string
 
-    [k: string]: string | Datatype | boolean | number | Array<string> | Array<number> | null | undefined
+    [k: string]: string | DataType | boolean | number | Array<string> | Array<number> | null | undefined
 }

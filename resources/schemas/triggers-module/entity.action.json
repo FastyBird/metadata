@@ -24,10 +24,6 @@
     "trigger" : {
       "type" : "string",
       "description" : "Trigger identifier used across services. Could be used as identifier & is unique."
-    },
-    "owner" : {
-      "type" : "string",
-      "description" : "Trigger action owner uuid v4 identifier."
     }
   },
   "if" : {
@@ -58,8 +54,10 @@
       "type",
       "enabled",
       "trigger",
-      "owner",
-      "email"
+      "device",
+      "channel",
+      "property",
+      "value"
     ]
   },
   "else" : {
@@ -67,8 +65,7 @@
       "id",
       "type",
       "enabled",
-      "trigger",
-      "owner"
+      "trigger"
     ]
   }
 }

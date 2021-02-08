@@ -59,7 +59,7 @@
     "type" : {
       "$ref" : "#/definitions/configuration_type"
     },
-    "configuration" : {
+    "identifier" : {
       "type" : "string"
     },
     "name" : {
@@ -77,19 +77,6 @@
     "value" : {
       "$ref" : "#/definitions/types/nullable_string_number",
       "default" : null
-    },
-    "device" : {
-      "type" : "string",
-      "description" : "Device identifier used across services. Could be used as identifier & is unique."
-    },
-    "owner" : {
-      "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
-    },
-    "parent" : {
-      "$ref" : "#/definitions/types/nullable_string",
-      "default" : null,
-      "description" : "Parent device identifier used across services."
     }
   },
   "if" : {
@@ -114,10 +101,7 @@
       "comment",
       "default",
       "value",
-      "values",
-      "device",
-      "owner",
-      "parent"
+      "values"
     ]
   },
   "else" : {
@@ -154,10 +138,7 @@
         "value",
         "min",
         "max",
-        "step",
-        "device",
-        "owner",
-        "parent"
+        "step"
       ]
     },
     "else" : {
@@ -169,10 +150,7 @@
         "name",
         "comment",
         "default",
-        "value",
-        "device",
-        "owner",
-        "parent"
+        "value"
       ]
     }
   }

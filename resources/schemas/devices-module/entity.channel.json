@@ -24,6 +24,10 @@
       "type" : "string",
       "description" : "Unique identifier per each entity"
     },
+    "identifier" : {
+      "type" : "string",
+      "description" : "Channel identifier used across services."
+    },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
@@ -39,34 +43,14 @@
       },
       "required" : [],
       "default" : []
-    },
-    "device" : {
-      "type" : "string",
-      "description" : "Device identifier used across services. Could be used as identifier & is unique."
-    },
-    "owner" : {
-      "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
-    },
-    "parent" : {
-      "$ref" : "#/definitions/types/nullable_string",
-      "default" : null,
-      "description" : "Parent device identifier used across services."
-    },
-    "channel" : {
-      "type" : "string",
-      "description" : "Channel identifier used across services."
     }
   },
   "required" : [
     "id",
     "key",
+    "identifier",
     "name",
     "comment",
-    "control",
-    "device",
-    "owner",
-    "parent",
-    "channel"
+    "control"
   ]
 }

@@ -2,7 +2,7 @@ export interface Data {
     device: string
     channel: string
     property: string
-    expected: string | number | boolean | null
+    expected: string | number | boolean
 
-    [k: string]: string | number | boolean | null | undefined
+    [k: string]: string | number | boolean | undefined
 }

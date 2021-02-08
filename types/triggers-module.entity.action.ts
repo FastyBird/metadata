@@ -7,7 +7,6 @@ export interface Entity {
     type: Type
     enabled: boolean
     trigger: string
-    owner: string
     device?: string
     channel?: string
     property?: string

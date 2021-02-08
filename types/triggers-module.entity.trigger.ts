@@ -16,7 +16,6 @@ export interface Entity {
     name: string
     comment: string | null
     enabled: boolean
-    owner: string
     device?: string
     channel?: string
     property?: string

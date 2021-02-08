@@ -25,10 +25,6 @@
     "trigger" : {
       "type" : "string",
       "description" : "Trigger identifier used across services. Could be used as identifier & is unique."
-    },
-    "owner" : {
-      "type" : "string",
-      "description" : "Trigger notification owner uuid v4 identifier."
     }
   },
   "if" : {
@@ -50,7 +46,6 @@
       "type",
       "enabled",
       "trigger",
-      "owner",
       "email"
     ]
   },
@@ -74,7 +69,6 @@
         "type",
         "enabled",
         "trigger",
-        "owner",
         "phone"
       ]
     },
@@ -83,8 +77,7 @@
         "id",
         "type",
         "enabled",
-        "trigger",
-        "owner"
+        "trigger"
       ]
     }
   }

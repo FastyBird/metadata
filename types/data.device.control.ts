@@ -6,15 +6,11 @@ export enum Control {
 }
 
 export interface Entity {
-    id: string
     control: Control
-    expected:
+    value?:
         | null
         | string
-        | undefined
     device: string
-    owner: string
-    parent: string | null
 
-    [k: string]: string | Control | Array<string> | Array<number> | null | any
+    [k: string]: string | Control | null | any
 }

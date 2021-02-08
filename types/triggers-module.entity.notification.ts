@@ -8,7 +8,6 @@ export interface Entity {
     type: Type
     enabled: boolean
     trigger: string
-    owner: string
     email?: string
     phone?: string
 
