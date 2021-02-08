@@ -76,14 +76,6 @@ final class Constants
 
 	public const MESSAGE_BUS_DEVICES_CONFIGURATION_DATA_ROUTING_KEY = 'fb.bus.data.device.configuration';
 
-	// Physical device hardware info
-	public const MESSAGE_BUS_DEVICES_HARDWARE_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.device.hardware';
-	public const MESSAGE_BUS_DEVICES_HARDWARE_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.device.hardware';
-
-	// Physical device firmware info
-	public const MESSAGE_BUS_DEVICES_FIRMWARE_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.device.firmware';
-	public const MESSAGE_BUS_DEVICES_FIRMWARE_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.device.firmware';
-
 	// Channels
 	public const MESSAGE_BUS_CHANNELS_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.channel';
 	public const MESSAGE_BUS_CHANNELS_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.channel';
