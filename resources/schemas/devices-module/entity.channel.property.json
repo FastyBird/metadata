@@ -133,7 +133,6 @@
     "id",
     "key",
     "property",
-    "name",
     "settable",
     "queryable",
     "data_type",
