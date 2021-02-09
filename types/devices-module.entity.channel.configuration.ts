@@ -18,6 +18,7 @@ export interface Entity {
     min?: number | null
     max?: number | null
     step?: number | null
+    owner?: string
 
     [k: string]: string | Type | number | Array<any> | null | undefined
 }

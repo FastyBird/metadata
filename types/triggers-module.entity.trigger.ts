@@ -21,6 +21,7 @@ export interface Entity {
     property?: string
     operand?: string
     operator?: Operator
+    owner?: string
 
     [k: string]: string | Type | Operator | boolean | null | undefined
 }

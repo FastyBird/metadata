@@ -11,6 +11,7 @@ export interface Entity {
     channel?: string
     property?: string
     value?: string
+    owner?: string
 
     [k: string]: string | Type | boolean | undefined
 }

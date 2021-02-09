@@ -49,6 +49,10 @@
     "enabled" : {
       "type" : "boolean",
       "default" : false
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
     }
   },
   "if" : {

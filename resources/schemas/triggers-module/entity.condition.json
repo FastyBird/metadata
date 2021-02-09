@@ -35,6 +35,10 @@
     "trigger" : {
       "type" : "string",
       "description" : "Trigger identifier used across services. Could be used as identifier & is unique."
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
     }
   },
   "if" : {

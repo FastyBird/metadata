@@ -123,6 +123,10 @@
     },
     "previous_value" : {
       "$ref" : "#/definitions/types/string_number_boolean_null"
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
     }
   },
   "required" : [

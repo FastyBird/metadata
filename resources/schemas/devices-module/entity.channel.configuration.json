@@ -77,6 +77,10 @@
     "value" : {
       "$ref" : "#/definitions/types/nullable_string_number",
       "default" : null
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
     }
   },
   "if" : {

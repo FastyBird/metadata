@@ -10,6 +10,7 @@ export interface Entity {
     trigger: string
     email?: string
     phone?: string
+    owner?: string
 
     [k: string]: string | Type | boolean | undefined
 }

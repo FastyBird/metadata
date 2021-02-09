@@ -24,6 +24,7 @@ export interface Entity {
     time?: string
     days?: Array<number>
     date?: string
+    owner?: string
 
     [k: string]: string | Type | Operator | boolean | Array<number> | null | undefined
 }

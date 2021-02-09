@@ -85,6 +85,10 @@
       },
       "required" : [],
       "default" : []
+    },
+    "owner" : {
+      "type" : "string",
+      "description" : "Device owner uuid v4 identifier."
     }
   },
   "required" : [

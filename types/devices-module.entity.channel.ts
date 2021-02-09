@@ -5,7 +5,7 @@ export interface Entity {
     name: string | null
     comment: string | null
     control: Array<string>
-    device: string
+    owner?: string
 
-    [k: string]: string | Array<string> | null
+    [k: string]: string | Array<string> | null | undefined
 }
