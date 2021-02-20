@@ -36,13 +36,20 @@
         ]
       }
     },
-    "configuration_type" : {
+    "data_type" : {
       "type" : "string",
       "enum" : [
-        "boolean",
-        "number",
-        "select",
-        "text"
+        "char",
+        "uchar",
+        "short",
+        "ushort",
+        "int",
+        "uint",
+        "float",
+        "bool",
+        "string",
+        "enum",
+        "color"
       ]
     }
   },
@@ -56,9 +63,6 @@
       "type" : "string",
       "description" : "Unique identifier per each entity"
     },
-    "type" : {
-      "$ref" : "#/definitions/configuration_type"
-    },
     "identifier" : {
       "type" : "string"
     },
@@ -68,6 +72,10 @@
     },
     "comment" : {
       "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "data_type" : {
+      "$ref" : "#/definitions/data_type",
       "default" : null
     },
     "default" : {
@@ -85,8 +93,8 @@
   },
   "if" : {
     "properties" : {
-      "type" : {
-        "const" : "select"
+      "data_type" : {
+        "const" : "enum"
       }
     }
   },
@@ -99,10 +107,10 @@
     "required" : [
       "id",
       "key",
-      "type",
       "configuration",
       "name",
       "comment",
+      "data_type",
       "default",
       "value",
       "values"
@@ -111,8 +119,16 @@
   "else" : {
     "if" : {
       "properties" : {
-        "type" : {
-          "const" : "number"
+        "data_type" : {
+          "enum" : [
+            "char",
+            "uchar",
+            "short",
+            "ushort",
+            "int",
+            "uint",
+            "float"
+          ]
         }
       }
     },
@@ -134,10 +150,10 @@
       "required" : [
         "id",
         "key",
-        "type",
         "configuration",
         "name",
         "comment",
+        "data_type",
         "default",
         "value",
         "min",
@@ -149,10 +165,10 @@
       "required" : [
         "id",
         "key",
-        "type",
         "configuration",
         "name",
         "comment",
+        "data_type",
         "default",
         "value"
       ]

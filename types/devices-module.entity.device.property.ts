@@ -1,8 +1,13 @@
 export enum DataType {
-    STRING = 'string',
-    INTEGER = 'integer',
+    CHAR = 'char',
+    UCHAR = 'uchar',
+    SHORT = 'short',
+    USHORT = 'ushort',
+    INT = 'int',
+    UINT = 'uint',
     FLOAT = 'float',
-    BOOLEAN = 'boolean',
+    BOOLEAN = 'bool',
+    STRING = 'string',
     ENUM = 'enum',
     COLOR = 'color',
 }
@@ -22,5 +27,5 @@ export interface Entity {
     previous_value?: string | number | boolean | null
     owner?: string
 
-    [k: string]: string | DataType | boolean | number | Array<string> | Array<number> | null | undefined
+    [k: string]: string | boolean | number | Array<string> | Array<number> | DataType | null | undefined
 }

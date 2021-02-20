@@ -69,10 +69,15 @@
     "data_type" : {
       "type" : "string",
       "enum" : [
-        "string",
-        "integer",
+        "char",
+        "uchar",
+        "short",
+        "ushort",
+        "int",
+        "uint",
         "float",
-        "boolean",
+        "bool",
+        "string",
         "enum",
         "color"
       ]
