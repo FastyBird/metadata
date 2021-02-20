@@ -1,11 +1,11 @@
 # FastyBird modules metadata library
 
-[![Build Status](https://img.shields.io/travis/com/FastyBird/modules-metadata.svg?style=flat-square)](https://travis-ci.com/FastyBird/modules-metadata)
-[![Code coverage](https://img.shields.io/coveralls/FastyBird/modules-metadata.svg?style=flat-square)](https://coveralls.io/r/FastyBird/modules-metadata)
-![PHP](https://img.shields.io/packagist/php-v/fastybird/json-schemas?style=flat-square)
-[![Licence](https://img.shields.io/packagist/l/FastyBird/modules-metadata.svg?style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
-[![Downloads total](https://img.shields.io/packagist/dt/FastyBird/modules-metadata.svg?style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
-[![Latest stable](https://img.shields.io/packagist/v/FastyBird/modules-metadata.svg?style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
+[![Build Status](https://badgen.net/github/checks/FastyBird/modules-metadata/master?cache=300&style=flast-square)](https://travis-ci.com/FastyBird/modules-metadata)
+[![Code coverage](https://badgen.net/coveralls/c/github/FastyBird/modules-metadata?cache=300&style=flast-square)](https://coveralls.io/r/FastyBird/modules-metadata)
+![PHP](https://badgen.net/packagist/php/FastyBird/modules-metadata?cache=300&style=flast-square)
+[![Licence](https://badgen.net/packagist/license/FastyBird/modules-metadata?cache=300&style=flast-square)](https://packagist.org/packages/FastyBird/modules-metadata)
+[![Downloads total](https://badgen.net/packagist/dt/FastyBird/modules-metadata?cache=300&style=flast-square)](https://packagist.org/packages/FastyBird/modules-metadata)
+[![Latest stable](https://badgen.net/packagist/v/FastyBird/modules-metadata/latest?cache=300&style=flast-square)](https://packagist.org/packages/FastyBird/modules-metadata)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
 ## What is FastyBird modules metadata library?
