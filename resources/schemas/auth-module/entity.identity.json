@@ -13,13 +13,6 @@
         ]
       }
     },
-    "type" : {
-      "type" : "string",
-      "enum" : [
-        "user",
-        "machine"
-      ]
-    },
     "state" : {
       "type" : "string",
       "enum" : [
@@ -40,13 +33,13 @@
       "type" : "string",
       "description" : "Account entity uuid v4 identifier. This identifier is unique"
     },
-    "type" : {
-      "$ref" : "#/definitions/type"
-    },
     "state" : {
       "$ref" : "#/definitions/state"
     },
     "uid" : {
+      "type" : "string"
+    },
+    "password" : {
       "type" : "string"
     }
   },
@@ -57,28 +50,11 @@
       }
     }
   },
-  "then" : {
-    "properties" : {
-      "password" : {
-        "type" : "string"
-      }
-    },
-    "required" : [
-      "id",
-      "account",
-      "type",
-      "state",
-      "uid",
-      "password"
-    ]
-  },
-  "else" : {
-    "required" : [
-      "id",
-      "account",
-      "type",
-      "state",
-      "uid"
-    ]
-  }
+  "required" : [
+    "id",
+    "account",
+    "state",
+    "uid",
+    "password"
+  ]
 }

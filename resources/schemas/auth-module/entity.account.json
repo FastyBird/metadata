@@ -13,13 +13,6 @@
         ]
       }
     },
-    "type" : {
-      "type" : "string",
-      "enum" : [
-        "user",
-        "machine"
-      ]
-    },
     "state" : {
       "type" : "string",
       "enum" : [
@@ -37,8 +30,22 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "type" : {
-      "$ref" : "#/definitions/type"
+    "first_name" : {
+      "type" : "string"
+    },
+    "last_name" : {
+      "type" : "string"
+    },
+    "middle_name" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "email" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
+    },
+    "language" : {
+      "type" : "string"
     },
     "state" : {
       "$ref" : "#/definitions/state"
@@ -60,66 +67,16 @@
       }
     }
   },
-  "if" : {
-    "properties" : {
-      "type" : {
-        "const" : "user"
-      }
-    }
-  },
-  "then" : {
-    "properties" : {
-      "first_name" : {
-        "type" : "string"
-      },
-      "last_name" : {
-        "type" : "string"
-      },
-      "middle_name" : {
-        "$ref" : "#/definitions/types/nullable_string",
-        "default" : null
-      },
-      "email" : {
-        "$ref" : "#/definitions/types/nullable_string",
-        "default" : null
-      },
-      "language" : {
-        "type" : "string"
-      }
-    },
-    "required" : [
-      "id",
-      "type",
-      "state",
-      "registered",
-      "last_visit",
-      "first_name",
-      "last_name",
-      "middle_name",
-      "email",
-      "language"
-    ]
-  },
-  "else" : {
-    "properties" : {
-      "device" : {
-        "type" : "string",
-        "description" : "Devices module device entity identifier. This identifier is unique"
-      },
-      "owner" : {
-        "type" : "string",
-        "description" : "Owner entity uuid v4 identifier. This identifier is unique",
-        "default" : null
-      }
-    },
-    "required" : [
-      "id",
-      "type",
-      "state",
-      "registered",
-      "last_visit",
-      "device",
-      "owner"
-    ]
-  }
+  "required" : [
+    "id",
+    "type",
+    "state",
+    "registered",
+    "last_visit",
+    "first_name",
+    "last_name",
+    "middle_name",
+    "email",
+    "language"
+  ]
 }

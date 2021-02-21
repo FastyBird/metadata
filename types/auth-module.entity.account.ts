@@ -1,8 +1,3 @@
-export enum Type {
-    USER = 'user',
-    MACHINE = 'machine',
-}
-
 export enum State {
     ACTIVE = 'active',
     BLOCKED = 'blocked',
@@ -13,7 +8,6 @@ export enum State {
 
 export interface Entity {
     id: string
-    type: Type
     state: State
     registered: string | null
     last_visit: string | null
@@ -26,5 +20,5 @@ export interface Entity {
     device?: string
     owner?: string
 
-    [k: string]: string | Type | State | Array<string> | null | undefined
+    [k: string]: string | Array<string> | State | null | undefined
 }
