@@ -1,7 +1,6 @@
 /src
 /vendor
 .editorconfig
-.travis.yml
 .composer.json
 Makefile
 phpstan.neon
