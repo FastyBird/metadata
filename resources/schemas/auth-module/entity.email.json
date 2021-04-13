@@ -6,10 +6,6 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "account" : {
-      "type" : "string",
-      "description" : "Account entity uuid v4 identifier. This identifier is unique"
-    },
     "address" : {
       "type" : "string",
       "description" : "Email address like: john@doe.com"
@@ -33,7 +29,6 @@
   },
   "required" : [
     "id",
-    "account",
     "address",
     "default",
     "verified",

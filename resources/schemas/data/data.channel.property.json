@@ -25,11 +25,11 @@
     },
     "channel" : {
       "type" : "string",
-      "description" : "Channel identifier used across services. Is same as key field"
+      "description" : "Channel key used across services. Is same as key field"
     },
     "property" : {
       "type" : "string",
-      "description" : "Property identifier used across services. Is same as key field"
+      "description" : "Property key used across services. Is same as key field"
     },
     "expected" : {
       "$ref" : "#/definitions/types/string_number_boolean"

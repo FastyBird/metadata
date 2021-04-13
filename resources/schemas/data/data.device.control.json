@@ -32,7 +32,7 @@
     },
     "device" : {
       "type" : "string",
-      "description" : "Device identifier used across services. Is same as key field"
+      "description" : "Device key used across services. Is same as key field"
     }
   },
   "required" : [

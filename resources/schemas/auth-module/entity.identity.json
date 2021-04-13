@@ -1,18 +1,6 @@
 {
   "$schema" : "http://json-schema.org/draft-07/schema#",
   "definitions" : {
-    "types" : {
-      "nullable_string" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "string"
-          }
-        ]
-      }
-    },
     "state" : {
       "type" : "string",
       "enum" : [
@@ -29,10 +17,6 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "account" : {
-      "type" : "string",
-      "description" : "Account entity uuid v4 identifier. This identifier is unique"
-    },
     "state" : {
       "$ref" : "#/definitions/state"
     },
@@ -43,18 +27,9 @@
       "type" : "string"
     }
   },
-  "if" : {
-    "properties" : {
-      "type" : {
-        "const" : "machine"
-      }
-    }
-  },
   "required" : [
     "id",
-    "account",
     "state",
-    "uid",
-    "password"
+    "uid"
   ]
 }

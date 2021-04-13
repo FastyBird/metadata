@@ -30,11 +30,11 @@
     },
     "device" : {
       "type" : "string",
-      "description" : "Device identifier used across services. Is same as key field"
+      "description" : "Device key used across services. Is same as key field"
     },
     "channel" : {
       "type" : "string",
-      "description" : "Channel identifier used across services. Is same as key field"
+      "description" : "Channel key used across services. Is same as key field"
     }
   },
   "required" : [

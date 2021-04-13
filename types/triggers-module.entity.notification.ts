@@ -11,6 +11,4 @@ export interface Entity {
     email?: string
     phone?: string
     owner?: string
-
-    [k: string]: string | Type | boolean | undefined
 }

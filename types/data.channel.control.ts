@@ -9,6 +9,4 @@ export interface Entity {
         | string
     device: string
     channel: string
-
-    [k: string]: string | Control | null | any
 }

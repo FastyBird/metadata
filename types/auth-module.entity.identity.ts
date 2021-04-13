@@ -7,10 +7,7 @@ export enum State {
 
 export interface Entity {
     id: string
-    account: string
     state: State
     uid: string
     password?: string
-
-    [k: string]: string | State | undefined
 }
