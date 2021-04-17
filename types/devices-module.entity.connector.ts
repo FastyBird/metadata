@@ -1,6 +1,11 @@
+export enum Type {
+    FB_BUS = 'fb-bus',
+    FB_MQTT_V1 = 'fb-mqtt-v1',
+}
+
 export interface Entity {
     id: string
-    type: string
+    type: Type
     name: string
     key: string
     enabled: boolean
