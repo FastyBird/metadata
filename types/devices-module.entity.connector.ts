@@ -17,4 +17,6 @@ export interface Entity {
     port?: number | null
     secured_port?: number | null
     username?: string | null
+
+    [k: string]: string | number | Array<string> | Type | boolean | null | undefined
 }

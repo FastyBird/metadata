@@ -12,4 +12,6 @@ export interface Entity {
     property?: string
     value?: string
     owner?: string
+
+    [k: string]: string | Type | boolean | undefined
 }

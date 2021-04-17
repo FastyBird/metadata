@@ -26,4 +26,6 @@ export interface Entity {
     expected?: string | number | boolean | null
     previous_value?: string | number | boolean | null
     owner?: string
+
+    [k: string]: string | boolean | number | Array<string> | Array<number> | DataType | null | undefined
 }

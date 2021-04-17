@@ -26,4 +26,6 @@ export interface Entity {
     max?: number | null
     step?: number | null
     owner?: string
+
+    [k: string]: string | number | Array<any> | DataType | null | undefined
 }

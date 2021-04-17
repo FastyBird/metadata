@@ -19,4 +19,6 @@ export interface Entity {
     language?: string
     device?: string
     owner?: string
+
+    [k: string]: string | Array<string> | State | null | undefined
 }

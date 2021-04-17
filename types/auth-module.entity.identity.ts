@@ -10,4 +10,6 @@ export interface Entity {
     state: State
     uid: string
     password?: string
+
+    [k: string]: string | State | undefined
 }

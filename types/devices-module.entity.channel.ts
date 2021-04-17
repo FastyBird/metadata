@@ -6,4 +6,6 @@ export interface Entity {
     comment: string | null
     control: Array<string>
     owner?: string
+
+    [k: string]: string | Array<string> | null | undefined
 }

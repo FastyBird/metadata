@@ -12,4 +12,6 @@ export interface Entity {
     settings_support?: boolean
     configured_key_length?: number | null
     username?: string | null
+
+    [k: string]: string | number | Array<string> | Connector | boolean | null | undefined
 }

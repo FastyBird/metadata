@@ -5,4 +5,6 @@ export interface Entity {
     verified: boolean
     private: boolean
     public: boolean
+
+    [k: string]: string | boolean
 }

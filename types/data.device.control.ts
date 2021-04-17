@@ -11,4 +11,6 @@ export interface Entity {
         | null
         | string
     device: string
+
+    [k: string]: string | Control | null | undefined
 }
