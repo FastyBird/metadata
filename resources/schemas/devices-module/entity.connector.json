@@ -1,0 +1,148 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      },
+      "nullable_number" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "number"
+          }
+        ]
+      }
+    },
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "fb-bus",
+        "fb-mqtt-v1"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "key" : {
+      "type" : "string",
+      "description" : "Unique identifier per each entity"
+    },
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "control" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      },
+      "required" : [],
+      "default" : []
+    }
+  },
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "fb-bus"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "address" : {
+        "$ref" : "#/definitions/types/nullable_number",
+        "default" : null
+      },
+      "serial_interface" : {
+        "$ref" : "#/definitions/types/nullable_string",
+        "default" : null
+      },
+      "baud_rate" : {
+        "$ref" : "#/definitions/types/nullable_number",
+        "default" : null
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "name",
+      "key",
+      "enabled",
+      "control",
+      "address",
+      "serial_interface",
+      "baud_rate"
+    ]
+  },
+  "else" : {
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "fb-mqtt-v1"
+        }
+      }
+    },
+    "then" : {
+      "properties" : {
+        "server" : {
+          "$ref" : "#/definitions/types/nullable_string",
+          "default" : null
+        },
+        "port" : {
+          "$ref" : "#/definitions/types/nullable_number",
+          "default" : null
+        },
+        "secured_port" : {
+          "$ref" : "#/definitions/types/nullable_number",
+          "default" : null
+        },
+        "username" : {
+          "$ref" : "#/definitions/types/nullable_string",
+          "default" : null
+        }
+      },
+      "required" : [
+        "id",
+        "type",
+        "name",
+        "key",
+        "enabled",
+        "control",
+        "server",
+        "port",
+        "secured_port",
+        "username"
+      ]
+    },
+    "else" : {
+      "required" : [
+        "id",
+        "type",
+        "name",
+        "key",
+        "enabled",
+        "control"
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      },
+      "nullable_number" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "number"
+          }
+        ]
+      }
+    },
+    "connector" : {
+      "type" : "string",
+      "enum" : [
+        "fb-bus",
+        "fb-mqtt-v1"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "connector" : {
+      "$ref" : "#/definitions/connector"
+    }
+  },
+  "if" : {
+    "properties" : {
+      "connector" : {
+        "const" : "fb-bus"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "address" : {
+        "$ref" : "#/definitions/types/nullable_number",
+        "default" : null
+      },
+      "max_packet_length" : {
+        "$ref" : "#/definitions/types/nullable_number",
+        "default" : null
+      },
+      "description_support" : {
+        "type" : "boolean",
+        "default" : false
+      },
+      "settings_support" : {
+        "type" : "boolean",
+        "default" : false
+      },
+      "configured_key_length" : {
+        "$ref" : "#/definitions/types/nullable_number",
+        "default" : null
+      }
+    },
+    "required" : [
+      "id",
+      "connector",
+      "address",
+      "max_packet_length",
+      "description_support",
+      "settings_support",
+      "configured_key_length"
+    ]
+  },
+  "else" : {
+    "if" : {
+      "properties" : {
+        "connector" : {
+          "const" : "fb-mqtt-v1"
+        }
+      }
+    },
+    "then" : {
+      "properties" : {
+        "username" : {
+          "$ref" : "#/definitions/types/nullable_string",
+          "default" : null
+        }
+      },
+      "required" : [
+        "id",
+        "connector",
+        "username"
+      ]
+    },
+    "else" : {
+      "required" : [
+        "id",
+        "connector"
+      ]
+    }
+  }
+}

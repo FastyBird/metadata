@@ -1,0 +1,41 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          }
+        ]
+      }
+    },
+    "control" : {
+      "type" : "string",
+      "enum" : [
+        "restart",
+        "search"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "control" : {
+      "$ref" : "#/definitions/control"
+    },
+    "value" : {
+      "$ref" : "#/definitions/types/nullable_string"
+    },
+    "connector" : {
+      "type" : "string",
+      "description" : "Connector key used across services. Is same as key field"
+    }
+  },
+  "required" : [
+    "control",
+    "device"
+  ]
+}
