@@ -1,18 +1,6 @@
-export enum DataType {
-    CHAR = 'char',
-    UCHAR = 'uchar',
-    SHORT = 'short',
-    USHORT = 'ushort',
-    INT = 'int',
-    UINT = 'uint',
-    FLOAT = 'float',
-    BOOLEAN = 'bool',
-    STRING = 'string',
-    ENUM = 'enum',
-    COLOR = 'color',
-}
+import {DataType} from './types'
 
-export interface Entity {
+export default interface Entity {
     id: string
     key: string
     identifier: string

@@ -1,15 +1,10 @@
-export enum State {
-    ACTIVE = 'active',
-    BLOCKED = 'blocked',
-    DELETED = 'deleted',
-    INVALID = 'invalid',
-}
+import {AccountEmailState} from './types'
 
-export interface Entity {
+export default interface Entity {
     id: string
-    state: State
+    state: AccountEmailState
     uid: string
     password?: string
 
-    [k: string]: string | State | undefined
+    [k: string]: string | AccountEmailState | undefined
 }

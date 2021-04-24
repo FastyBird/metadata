@@ -1,11 +1,8 @@
-export enum Type {
-    FB_BUS = 'fb-bus',
-    FB_MQTT_V1 = 'fb-mqtt-v1',
-}
+import {ConnectorType} from './types'
 
-export interface Entity {
+export default interface Entity {
     id: string
-    type: Type
+    type: ConnectorType
     name: string
     key: string
     enabled: boolean
@@ -18,5 +15,5 @@ export interface Entity {
     secured_port?: number | null
     username?: string | null
 
-    [k: string]: string | number | Array<string> | Type | boolean | null | undefined
+    [k: string]: string | number | Array<string> | ConnectorType | boolean | null | undefined
 }

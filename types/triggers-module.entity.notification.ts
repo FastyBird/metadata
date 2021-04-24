@@ -1,16 +1,13 @@
-export enum Type {
-    EMAIL = 'email',
-    SMS = 'sms',
-}
+import {TriggerNotificationType} from './types'
 
-export interface Entity {
+export default interface Entity {
     id: string
-    type: Type
+    type: TriggerNotificationType
     enabled: boolean
     trigger: string
     email?: string
     phone?: string
     owner?: string
 
-    [k: string]: string | Type | boolean | undefined
+    [k: string]: string | TriggerNotificationType | boolean | undefined
 }

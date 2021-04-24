@@ -17,16 +17,7 @@
       "type" : "string",
       "enum" : [
         "manual",
-        "automatic",
-        "channel-property"
-      ]
-    },
-    "operator" : {
-      "type" : "string",
-      "enum" : [
-        "eq",
-        "above",
-        "below"
+        "automatic"
       ]
     }
   },
@@ -55,51 +46,11 @@
       "description" : "Device owner uuid v4 identifier."
     }
   },
-  "if" : {
-    "properties" : {
-      "type" : {
-        "const" : "channel-property"
-      }
-    }
-  },
-  "then" : {
-    "properties" : {
-      "device" : {
-        "type" : "string"
-      },
-      "channel" : {
-        "type" : "string"
-      },
-      "property" : {
-        "type" : "string"
-      },
-      "operand" : {
-        "type" : "string"
-      },
-      "operator" : {
-        "$ref" : "#/definitions/operator"
-      }
-    },
-    "required" : [
-      "id",
-      "type",
-      "name",
-      "comment",
-      "enabled",
-      "device",
-      "channel",
-      "property",
-      "operand",
-      "operator"
-    ]
-  },
-  "else" : {
-    "required" : [
-      "id",
-      "type",
-      "name",
-      "comment",
-      "enabled"
-    ]
-  }
+  "required" : [
+    "id",
+    "type",
+    "name",
+    "comment",
+    "enabled"
+  ]
 }

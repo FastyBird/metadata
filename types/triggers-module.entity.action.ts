@@ -1,10 +1,8 @@
-export enum Type {
-    CHANNEL_PROPERTY = 'channel-property',
-}
+import {TriggerActionType} from './types'
 
-export interface Entity {
+export default interface Entity {
     id: string
-    type: Type
+    type: TriggerActionType
     enabled: boolean
     trigger: string
     device?: string
@@ -13,5 +11,5 @@ export interface Entity {
     value?: string
     owner?: string
 
-    [k: string]: string | Type | boolean | undefined
+    [k: string]: string | TriggerActionType | boolean | undefined
 }

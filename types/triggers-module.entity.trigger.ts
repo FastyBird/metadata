@@ -1,27 +1,12 @@
-export enum Type {
-    MANUAL = 'manual',
-    AUTOMATIC = 'automatic',
-    CHANNEL_PROPERTY = 'channel-property',
-}
+import {TriggerType} from './types'
 
-export enum Operator {
-    EQUAL = 'eq',
-    ABOVE = 'above',
-    BELOW = 'below',
-}
-
-export interface Entity {
+export default interface Entity {
     id: string
-    type: Type
+    type: TriggerType
     name: string
     comment: string | null
     enabled: boolean
-    device?: string
-    channel?: string
-    property?: string
-    operand?: string
-    operator?: Operator
     owner?: string
 
-    [k: string]: string | Type | Operator | boolean | null | undefined
+    [k: string]: string | TriggerType | boolean | null | undefined
 }

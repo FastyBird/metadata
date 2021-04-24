@@ -1,14 +1,8 @@
-export enum State {
-    ACTIVE = 'active',
-    BLOCKED = 'blocked',
-    DELETED = 'deleted',
-    NOT_ACTIVATED = 'notActivated',
-    APPROVAL_WAITING = 'approvalWaiting',
-}
+import {AccountState} from './types'
 
-export interface Entity {
+export default interface Entity {
     id: string
-    state: State
+    state: AccountState
     registered: string | null
     last_visit: string | null
     roles: Array<string>
@@ -20,5 +14,5 @@ export interface Entity {
     device?: string
     owner?: string
 
-    [k: string]: string | Array<string> | State | null | undefined
+    [k: string]: string | Array<string> | AccountState | null | undefined
 }

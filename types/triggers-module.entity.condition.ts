@@ -1,30 +1,19 @@
-export enum Type {
-    CHANNEL_PROPERTY = 'channel-property',
-    DEVICE_PROPERTY = 'device-property',
-    TIME = 'time',
-    DATE = 'date',
-}
+import {TriggerConditionOperator, TriggerConditionType} from './types'
 
-export enum Operator {
-    EQUAL = 'eq',
-    ABOVE = 'above',
-    BELOW = 'below',
-}
-
-export interface Entity {
+export default interface Entity {
     id: string
-    type: Type
+    type: TriggerConditionType
     enabled: boolean
     trigger: string
     device?: string
     channel?: string
     property?: string
     operand?: string
-    operator?: Operator
+    operator?: TriggerConditionOperator
     time?: string
     days?: Array<number>
     date?: string
     owner?: string
 
-    [k: string]: string | Type | Operator | boolean | Array<number> | null | undefined
+    [k: string]: string | TriggerConditionType | TriggerConditionOperator | boolean | Array<number> | null | undefined
 }

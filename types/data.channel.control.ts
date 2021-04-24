@@ -1,14 +1,12 @@
-export enum Control {
-    RESET = 'reset',
-}
+import {ChannelControlAction} from './types'
 
-export interface Entity {
-    control: Control
+export default interface Data {
+    control: ChannelControlAction
     value?:
         | null
         | string
     device: string
     channel: string
 
-    [k: string]: string | Control | null | undefined
+    [k: string]: string | ChannelControlAction | null | undefined
 }
