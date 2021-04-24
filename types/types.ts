@@ -42,7 +42,8 @@ export enum ConnectorType {
     FB_BUS = 'fb-bus',
     FB_MQTT_V1 = 'fb-mqtt-v1',
 }
-export enum DeviceState {
+
+export enum DeviceConnectionState {
     CONNECTED = 'connected',
     DISCONNECTED = 'disconnected',
     INIT = 'init',
@@ -53,6 +54,12 @@ export enum DeviceState {
     LOST = 'lost',
     ALERT = 'alert',
     UNKNOWN = 'unknown',
+}
+
+export enum DeviceType {
+    LOCAL = 'local',
+    NETWORK = 'network',
+    VIRTUAL = 'virtual',
 }
 
 export enum HardwareManufacturer {
@@ -126,4 +133,10 @@ export enum TriggerNotificationType {
 export enum TriggerType {
     MANUAL = 'manual',
     AUTOMATIC = 'automatic',
+}
+
+export enum SwitchPayload {
+    ON = 'on',
+    OFF = 'off',
+    TOGGLE = 'toggle',
 }
