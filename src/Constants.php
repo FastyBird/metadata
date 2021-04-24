@@ -144,6 +144,7 @@ final class Constants
 	public const MODULE_DEVICES_ORIGIN = 'com.fastybird.devices-module';
 	public const MODULE_TRIGGERS_ORIGIN = 'com.fastybird.triggers-module';
 	public const MODULE_UI_ORIGIN = 'com.fastybird.ui-module';
+	public const MODULE_WEB_UI_ORIGIN = 'com.fastybird.web-ui-module';
 
 	/*
 	 * JSON schemas mapping
@@ -224,5 +225,14 @@ final class Constants
 			self::MESSAGE_BUS_TRIGGERS_CONDITIONS_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.condition.json',
 		],
 	];
+
+	/**
+	 * Devices & Channels control actions
+	 */
+	public const CONTROL_CONFIG = 'configure';
+	public const CONTROL_RESET = 'reset';
+	public const CONTROL_RECONNECT = 'reconnect';
+	public const CONTROL_FACTORY_RESET = 'factory-reset';
+	public const CONTROL_OTA = 'ota';
 
 }
