@@ -4,9 +4,9 @@ import pkg from 'json-schema-to-typescript'
 const { compileFromFile } = pkg
 
 async function generate() {
-	writeFileSync('./types/auth-module.entity.account.d.ts', await compileFromFile('./resources/schemas/auth-module/entity.account.json'))
-	writeFileSync('./types/auth-module.entity.email.d.ts', await compileFromFile('./resources/schemas/auth-module/entity.email.json'))
-	writeFileSync('./types/auth-module.entity.identity.d.ts', await compileFromFile('./resources/schemas/auth-module/entity.identity.json'))
+	writeFileSync('./types/accounts-module.entity.account.d.ts', await compileFromFile('./resources/schemas/accounts-module/entity.account.json'))
+	writeFileSync('./types/accounts-module.entity.email.d.ts', await compileFromFile('./resources/schemas/accounts-module/entity.email.json'))
+	writeFileSync('./types/accounts-module.entity.identity.d.ts', await compileFromFile('./resources/schemas/accounts-module/entity.identity.json'))
 
 	writeFileSync('./types/devices-module.entity.device.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.device.json'))
 	writeFileSync('./types/devices-module.entity.device.property.d.ts', await compileFromFile('./resources/schemas/devices-module/entity.device.property.json'))

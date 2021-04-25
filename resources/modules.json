@@ -1,5 +1,5 @@
 {
-  "com.fastybird.auth-module" : [
+  "com.fastybird.accounts-module" : [
     {
       "version" : "*",
       "metadata" : {
