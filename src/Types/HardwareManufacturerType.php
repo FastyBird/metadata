@@ -18,7 +18,7 @@ namespace FastyBird\ModulesMetadata\Types;
 use Consistence;
 
 /**
- * Doctrine2 DB type for machine device manufacturer column
+ * Device hardware manufacturer type
  *
  * @package        FastyBird:ModulesMetadata!
  * @subpackage     Types

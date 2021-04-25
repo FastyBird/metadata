@@ -1,10 +1,10 @@
-import {AccountEmailState} from './types'
+import {IdentityState} from './types'
 
 export default interface Entity {
     id: string
-    state: AccountEmailState
+    state: IdentityState
     uid: string
     password?: string
 
-    [k: string]: string | AccountEmailState | undefined
+    [k: string]: string | IdentityState | undefined
 }

@@ -1,16 +1,16 @@
 <?php declare(strict_types = 1);
 
 /**
- * FirmwareManufacturerType.php
+ * AccountStateType.php
  *
  * @license        More in license.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  * @package        FastyBird:ModulesMetadata!
- * @subpackage     Types
+ * @subpackage     Entities
  * @since          0.1.0
  *
- * @date           27.07.18
+ * @date           30.03.20
  */
 
 namespace FastyBird\ModulesMetadata\Types;
@@ -18,21 +18,35 @@ namespace FastyBird\ModulesMetadata\Types;
 use Consistence;
 
 /**
- * Device firmware manufacturer type
+ * Account state type
  *
  * @package        FastyBird:ModulesMetadata!
  * @subpackage     Types
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-class FirmwareManufacturerType extends Consistence\Enum\Enum
+class AccountStateType extends Consistence\Enum\Enum
 {
 
 	/**
-	 * Define data types
+	 * Define states
 	 */
-	public const MANUFACTURER_GENERIC = 'generic';
-	public const MANUFACTURER_FASTYBIRD = 'fastybird';
+	public const STATE_ACTIVE = 'active';
+	public const STATE_BLOCKED = 'blocked';
+	public const STATE_DELETED = 'deleted';
+	public const STATE_NOT_ACTIVATED = 'notActivated';
+	public const STATE_APPROVAL_WAITING = 'approvalWaiting';
+
+	/**
+	 * List of allowed states
+	 *
+	 * @var string[]
+	 */
+	public static array $allowedStates = [
+		self::STATE_ACTIVE,
+		self::STATE_BLOCKED,
+		self::STATE_DELETED,
+	];
 
 	/**
 	 * @return string

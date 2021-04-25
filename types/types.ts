@@ -20,7 +20,7 @@ export enum AccountState {
     APPROVAL_WAITING = 'approvalWaiting',
 }
 
-export enum AccountEmailState {
+export enum IdentityState {
     ACTIVE = 'active',
     BLOCKED = 'blocked',
     DELETED = 'deleted',

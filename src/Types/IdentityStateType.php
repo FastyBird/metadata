@@ -1,16 +1,16 @@
 <?php declare(strict_types = 1);
 
 /**
- * FirmwareManufacturerType.php
+ * IdentityStateType.php
  *
  * @license        More in license.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  * @package        FastyBird:ModulesMetadata!
- * @subpackage     Types
+ * @subpackage     Entities
  * @since          0.1.0
  *
- * @date           27.07.18
+ * @date           30.03.20
  */
 
 namespace FastyBird\ModulesMetadata\Types;
@@ -18,21 +18,23 @@ namespace FastyBird\ModulesMetadata\Types;
 use Consistence;
 
 /**
- * Device firmware manufacturer type
+ * Account identity state type
  *
  * @package        FastyBird:ModulesMetadata!
  * @subpackage     Types
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-class FirmwareManufacturerType extends Consistence\Enum\Enum
+class IdentityStateType extends Consistence\Enum\Enum
 {
 
 	/**
-	 * Define data types
+	 * Define states
 	 */
-	public const MANUFACTURER_GENERIC = 'generic';
-	public const MANUFACTURER_FASTYBIRD = 'fastybird';
+	public const STATE_ACTIVE = 'active';
+	public const STATE_BLOCKED = 'blocked';
+	public const STATE_DELETED = 'deleted';
+	public const STATE_INVALID = 'invalid';
 
 	/**
 	 * @return string
