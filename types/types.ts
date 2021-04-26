@@ -1,3 +1,19 @@
+export enum ModuleOrigin {
+    NOT_SPECIFIED_ORIGIN = '*',
+    MODULE_ACCOUNTS_ORIGIN = 'com.fastybird.accounts-module',
+    MODULE_DEVICES_ORIGIN = 'com.fastybird.devices-module',
+    MODULE_TRIGGERS_ORIGIN = 'com.fastybird.triggers-module',
+    MODULE_UI_ORIGIN = 'com.fastybird.ui-module',
+    MODULE_WEB_UI_ORIGIN = 'com.fastybird.web-ui-module',
+}
+
+export enum ModuleOrigin {
+    MODULE_ACCOUNTS_PREFIX = 'accounts-module',
+    MODULE_DEVICES_PREFIX = 'devices-module',
+    MODULE_TRIGGERS_PREFIX = 'triggers-module',
+    MODULE_UI_PREFIX = 'ui-module',
+}
+
 export enum DataType {
     CHAR = 'char',
     UCHAR = 'uchar',
