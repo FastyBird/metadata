@@ -29,6 +29,17 @@ final class Constants
 	public const RESOURCES_FOLDER = __DIR__ . '/../resources';
 
 	/**
+	 * Modules origins
+	 */
+
+	public const NOT_SPECIFIED_ORIGIN = '*';
+	public const MODULE_ACCOUNTS_ORIGIN = 'com.fastybird.accounts-module';
+	public const MODULE_DEVICES_ORIGIN = 'com.fastybird.devices-module';
+	public const MODULE_TRIGGERS_ORIGIN = 'com.fastybird.triggers-module';
+	public const MODULE_UI_ORIGIN = 'com.fastybird.ui-module';
+	public const MODULE_WEB_UI_ORIGIN = 'com.fastybird.web-ui-module';
+
+	/**
 	 * Message bus routing keys
 	 */
 
@@ -134,17 +145,6 @@ final class Constants
 	public const MESSAGE_BUS_TRIGGERS_CONDITIONS_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.trigger.condition';
 	public const MESSAGE_BUS_TRIGGERS_CONDITIONS_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.trigger.condition';
 	public const MESSAGE_BUS_TRIGGERS_CONDITIONS_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.trigger.condition';
-
-	/**
-	 * Modules origins
-	 */
-
-	public const NOT_SPECIFIED_ORIGIN = '*';
-	public const MODULE_ACCOUNTS_ORIGIN = 'com.fastybird.accounts-module';
-	public const MODULE_DEVICES_ORIGIN = 'com.fastybird.devices-module';
-	public const MODULE_TRIGGERS_ORIGIN = 'com.fastybird.triggers-module';
-	public const MODULE_UI_ORIGIN = 'com.fastybird.ui-module';
-	public const MODULE_WEB_UI_ORIGIN = 'com.fastybird.web-ui-module';
 
 	/*
 	 * JSON schemas mapping
