@@ -227,6 +227,15 @@ final class Constants
 	];
 
 	/**
+	 * Modules prefixes
+	 */
+
+	public const MODULE_ACCOUNTS_PREFIX = 'accounts-module';
+	public const MODULE_DEVICES_PREFIX = 'devices-module';
+	public const MODULE_TRIGGERS_PREFIX = 'triggers-module';
+	public const MODULE_UI_PREFIX = 'ui-module';
+
+	/**
 	 * Devices & Channels control actions
 	 */
 	public const CONTROL_CONFIG = 'configure';
