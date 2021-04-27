@@ -28,6 +28,8 @@ final class Constants
 
 	public const RESOURCES_FOLDER = __DIR__ . '/../resources';
 
+	public const EXCHANGE_CHANNEL_NAME = 'fb_exchange';
+
 	/**
 	 * Modules origins
 	 */
