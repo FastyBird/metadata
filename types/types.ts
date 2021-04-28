@@ -130,6 +130,10 @@ export enum DeviceModel {
     FASTYBIRD_16CH_BUTTONS = '16ch_buttons',
 }
 
+export enum TriggerControlAction {
+    TRIGGER = 'trigger',
+}
+
 export enum TriggerActionType {
     CHANNEL_PROPERTY = 'channel-property',
 }

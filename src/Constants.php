@@ -247,5 +247,6 @@ final class Constants
 	public const CONTROL_OTA = 'ota';
 	public const CONTROL_SEARCH = 'search';
 	public const CONTROL_RESTART = 'restart';
+	public const CONTROL_TRIGGER = 'trigger';
 
 }
