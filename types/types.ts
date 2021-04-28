@@ -7,7 +7,7 @@ export enum ModuleOrigin {
     MODULE_WEB_UI_ORIGIN = 'com.fastybird.web-ui-module',
 }
 
-export enum ModuleOrigin {
+export enum ModulePrefix {
     MODULE_ACCOUNTS_PREFIX = 'accounts-module',
     MODULE_DEVICES_PREFIX = 'devices-module',
     MODULE_TRIGGERS_PREFIX = 'triggers-module',
