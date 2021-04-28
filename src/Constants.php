@@ -245,5 +245,7 @@ final class Constants
 	public const CONTROL_RECONNECT = 'reconnect';
 	public const CONTROL_FACTORY_RESET = 'factory-reset';
 	public const CONTROL_OTA = 'ota';
+	public const CONTROL_SEARCH = 'search';
+	public const CONTROL_RESTART = 'restart';
 
 }

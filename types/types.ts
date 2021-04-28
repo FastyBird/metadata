@@ -59,6 +59,11 @@ export enum ConnectorType {
     FB_MQTT_V1 = 'fb-mqtt-v1',
 }
 
+export enum ConnectorControlAction {
+    SEARCH = 'search',
+    RESTART = 'restart',
+}
+
 export enum DeviceConnectionState {
     CONNECTED = 'connected',
     DISCONNECTED = 'disconnected',
