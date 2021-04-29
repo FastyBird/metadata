@@ -70,7 +70,7 @@ if (!argv.format || argv.format === 'es') {
     ...baseConfig,
     external,
     output: {
-      file: 'dist/vue-wamp-v1.esm.js',
+      file: 'dist/modules-metadata.esm.js',
       format: 'esm',
       exports: 'named',
     },
@@ -104,7 +104,7 @@ if (!argv.format || argv.format === 'cjs') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-wamp-v1.ssr.js',
+      file: 'dist/modules-metadata.ssr.js',
       format: 'cjs',
       name: 'VueWampV1',
       exports: 'named',
@@ -133,7 +133,7 @@ if (!argv.format || argv.format === 'iife') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-wamp-v1.min.js',
+      file: 'dist/modules-metadata.min.js',
       format: 'iife',
       name: 'VueWampV1',
       exports: 'named',
