@@ -3,11 +3,11 @@ import {
     DataType,
     DeviceControlAction,
     DeviceModel,
-    DeviceState,
+    DeviceConnectionState,
     FirmwareManufacturer,
     HardwareManufacturer,
     ChannelControlAction,
-} from from '@/lib/types.d.ts'
+} from './types'
 
 export interface ConnectorEntity {
     id: string
@@ -33,7 +33,7 @@ export interface DeviceEntity {
     identifier: string
     name: string | null
     comment: string | null
-    state: DeviceState
+    state: DeviceConnectionState
     enabled: boolean
     hardware_version: string | null
     hardware_manufacturer: HardwareManufacturer
@@ -44,7 +44,7 @@ export interface DeviceEntity {
     control: Array<string>
     owner?: string
 
-    [k: string]: string | DeviceState | HardwareManufacturer | DeviceModel | FirmwareManufacturer | boolean | Array<string> | null | undefined
+    [k: string]: string | DeviceConnectionState | HardwareManufacturer | DeviceModel | FirmwareManufacturer | boolean | Array<string> | null | undefined
 }
 
 export interface DeviceConnectorEntity {

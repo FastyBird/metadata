@@ -4,7 +4,7 @@ import {
     TriggerConditionOperator,
     TriggerConditionType,
     TriggerNotificationType,
-} from from '@/lib/types.d.ts'
+} from './types'
 
 export interface TriggerEntity {
     id: string

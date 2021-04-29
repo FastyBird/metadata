@@ -1,4 +1,4 @@
-import {AccountState, IdentityState} from from '@/lib/types.d.ts'
+import {AccountState, IdentityState} from './types'
 
 export interface AccountEntity {
     id: string
