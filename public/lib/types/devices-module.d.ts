@@ -78,7 +78,7 @@ export interface DevicePropertyEntity {
     [k: string]: string | boolean | number | Array<string> | Array<number> | DataType | null | undefined
 }
 
-export default interface DeviceConfigurationEntity {
+export interface DeviceConfigurationEntity {
     id: string
     key: string
     identifier: string
