@@ -1,6 +1,6 @@
-export * from '@/lib/types/types'
-export * from '@/lib/types/routing'
+export * from './public/lib/types/types'
+export * from './public/lib/types/routing'
 
-export * from '@/lib/types/accounts-module'
-export * from '@/lib/types/devices-module'
-export * from '@/lib/types/triggers-module'
+export * from './public/lib/types/accounts-module'
+export * from './public/lib/types/devices-module'
+export * from './public/lib/types/triggers-module'
