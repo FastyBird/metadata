@@ -301,8 +301,6 @@ jobs:
       - run: npm version ${{ steps.get_version.outputs.version-without-v }} --allow-same-version
       # Build the project
       - run: yarn build
-      # Configure registry where pacakge will be published
-      - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPMJS_TOKEN }}"
       # Publish to NPM -> there is one caveat, continue reading for the fix
       - run: npm publish --access public
         env:
