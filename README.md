@@ -14,10 +14,20 @@ This is a [Nette framework](https://nette.org) extension which is implementing [
 
 ## Installation
 
-The best way to install fastybird/modules-metadata is using [Composer](http://getcomposer.org/):
+### PHP project:
+
+The best way to install **fastybird/modules-metadata** is using [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require fastybird/modules-metadata
+composer require fastybird/modules-metadata
+```
+
+### JS project:
+
+The best way to install **@fastybird/modules-metadata** is using [Yarn](https://yarnpkg.com/):
+
+```sh
+yarn add @fastybird/modules-metadata
 ```
 
 ## Updating metadata
