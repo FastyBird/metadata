@@ -1,7 +1,8 @@
-/src
-/vendor
+src
+vendor
 .editorconfig
 .composer.json
 Makefile
 phpstan.neon
 ruleset.xml
+yarn.lock

@@ -5,7 +5,7 @@
 		<!-- we want brace on same line for multi-line definitions, checked by Squiz.Functions.MultiLineFunctionDeclaration -->
 		<exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
 
-		<exclude name="SlevomatCodingStandard.ControlStructures.ControlStructureSpacing"/>
+		<exclude name="SlevomatCodingStandard.ControlStructures.ControlStructureSpacing.IncorrectLinesCountAfterLastControlStructure"/>
 		<exclude name="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator"/>
 		<exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
 		<exclude name="SlevomatCodingStandard.ControlStructures.AssignmentInCondition.assignmentInCondition"/>
@@ -20,4 +20,5 @@
 
 	<!--Exclude folders -->
 	<exclude-pattern>/tests/tmp</exclude-pattern>
+	<exclude-pattern>tests/PHPStan/stubs/*</exclude-pattern>
 </ruleset>
