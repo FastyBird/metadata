@@ -307,11 +307,6 @@ jobs:
         env:
           # Use a token to publish to NPM
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
-      # Push the version changes to GitHub
-      - run: git push
-        env:
-          # The secret is passed automatically. Nothing to configure.
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   publish-github:
     name: "Build library and publish it to Github packages"
@@ -349,9 +344,4 @@ jobs:
       # Configure registry where pacakge will be published
       - run: npm config set '//npm.pkg.github.com/:_authToken=readWriteToken
       # Publish to NPM -> there is one caveat, continue reading for the fix
-      - run: npm publish
-      # Push the version changes to GitHub
-      - run: git push
-        env:
-          # The secret is passed automatically. Nothing to configure.
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm publish --access public
