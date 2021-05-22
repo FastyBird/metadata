@@ -303,7 +303,7 @@ jobs:
       # Configure registry where pacakge will be published
       - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPMJS_TOKEN }}"
       # Publish to NPM -> there is one caveat, continue reading for the fix
-      - run: npm publish
+      - run: npm publish --access public
         env:
           # Use a token to publish to NPM
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
