@@ -31,7 +31,7 @@ final class SchemaLoaderTest extends BaseTestCase
 	{
 		$loader = new Loaders\SchemaLoader();
 
-		$result = $loader->load(ModulesMetadata\Constants::MODULE_TRIGGERS_ORIGIN, ModulesMetadata\Constants::MESSAGE_BUS_DEVICES_CREATED_ENTITY_ROUTING_KEY);
+		$loader->load(ModulesMetadata\Constants::MODULE_TRIGGERS_ORIGIN, ModulesMetadata\Constants::MESSAGE_BUS_DEVICES_CREATED_ENTITY_ROUTING_KEY);
 	}
 
 }
