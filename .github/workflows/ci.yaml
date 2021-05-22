@@ -303,7 +303,7 @@ jobs:
       # Configure registry where pacakge will be published
       - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPMJS_TOKEN }}"
       # Publish to NPM -> there is one caveat, continue reading for the fix
-      - run: npm publish --tag ${{ steps.get_version.outputs.version-without-v }}
+      - run: npm publish
         env:
           # Use a token to publish to NPM
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
@@ -349,7 +349,7 @@ jobs:
       # Configure registry where pacakge will be published
       - run: npm config set '//npm.pkg.github.com/:_authToken=readWriteToken
       # Publish to NPM -> there is one caveat, continue reading for the fix
-      - run: npm publish --tag ${{ steps.get_version.outputs.version-without-v }}
+      - run: npm publish
       # Push the version changes to GitHub
       - run: git push
         env:
