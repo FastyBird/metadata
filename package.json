@@ -28,7 +28,8 @@
   "unpkg": "dist/modules-metadata.min.js",
   "types": "modules-metadata.d.ts",
   "files": [
-    "resources/*"
+    "resources/*",
+    "modules-metadata.d.ts"
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
