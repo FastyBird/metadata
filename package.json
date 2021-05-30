@@ -28,6 +28,7 @@
   "unpkg": "dist/modules-metadata.min.js",
   "types": "modules-metadata.d.ts",
   "files": [
+    "public/types",
     "resources/*",
     "modules-metadata.d.ts"
   ],
