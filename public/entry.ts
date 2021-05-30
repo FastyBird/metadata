@@ -1,2 +1,5 @@
-export * from '@/lib/types/types'
-export * from '@/lib/types/routing'
+export * from '@/types/types'
+export * from '@/types/routing'
+export * from '@/types/accounts-module'
+export * from '@/types/devices-module'
+export * from '@/types/triggers-module'
