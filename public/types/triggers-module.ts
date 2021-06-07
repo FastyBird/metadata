@@ -42,11 +42,11 @@ export interface ConditionEntity {
     operand?: string
     operator?: TriggerConditionOperator
     time?: string
-    days?: Array<number>
+    days?: number[]
     date?: string
     owner?: string
 
-    [k: string]: string | TriggerConditionType | TriggerConditionOperator | boolean | Array<number> | null | undefined
+    [k: string]: string | TriggerConditionType | TriggerConditionOperator | boolean | number[] | null | undefined
 }
 
 export interface NotificationEntity {

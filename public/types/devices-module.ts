@@ -15,7 +15,7 @@ export interface ConnectorEntity {
     name: string
     key: string
     enabled: boolean
-    control: Array<string>
+    control: string[]
     address?: number | null
     serial_interface?: string | null
     baud_rate?: number | null
@@ -24,7 +24,7 @@ export interface ConnectorEntity {
     secured_port?: number | null
     username?: string | null
 
-    [k: string]: string | number | Array<string> | ConnectorType | boolean | null | undefined
+    [k: string]: string | number | string[] | ConnectorType | boolean | null | undefined
 }
 
 export interface DeviceEntity {
@@ -41,10 +41,10 @@ export interface DeviceEntity {
     mac_address: string | null
     firmware_manufacturer: FirmwareManufacturer
     firmware_version: string | null
-    control: Array<string>
+    control: string[]
     owner?: string
 
-    [k: string]: string | DeviceConnectionState | HardwareManufacturer | DeviceModel | FirmwareManufacturer | boolean | Array<string> | null | undefined
+    [k: string]: string | DeviceConnectionState | HardwareManufacturer | DeviceModel | FirmwareManufacturer | boolean | string[] | null | undefined
 }
 
 export interface DeviceConnectorEntity {
@@ -57,7 +57,7 @@ export interface DeviceConnectorEntity {
     configured_key_length?: number | null
     username?: string | null
 
-    [k: string]: string | number | Array<string> | ConnectorType | boolean | null | undefined
+    [k: string]: string | number | string[] | ConnectorType | boolean | null | undefined
 }
 
 export interface DevicePropertyEntity {
@@ -69,13 +69,13 @@ export interface DevicePropertyEntity {
     queryable: boolean
     data_type: DataType | null
     unit: string | null
-    format: string | Array<string> | Array<number> | null
+    format: string | string[] | number[] | null
     value?: string | number | boolean | null
     expected?: string | number | boolean | null
     previous_value?: string | number | boolean | null
     owner?: string
 
-    [k: string]: string | boolean | number | Array<string> | Array<number> | DataType | null | undefined
+    [k: string]: string | boolean | number | string[] | number[] | DataType | null | undefined
 }
 
 export interface DeviceConfigurationEntity {
@@ -87,13 +87,13 @@ export interface DeviceConfigurationEntity {
     data_type: DataType
     default: string | number | null
     value: string | number | null
-    values?: Array<any>
+    values?: string[] | number[] | boolean[]
     min?: number | null
     max?: number | null
     step?: number | null
     owner?: string
 
-    [k: string]: string | number | Array<any> | DataType | null | undefined
+    [k: string]: string | number | string[] | number[] | boolean[] | DataType | null | undefined
 }
 
 export interface ChannelEntity {
@@ -102,10 +102,10 @@ export interface ChannelEntity {
     identifier: string
     name: string | null
     comment: string | null
-    control: Array<string>
+    control: string[]
     owner?: string
 
-    [k: string]: string | Array<string> | null | undefined
+    [k: string]: string | string[] | null | undefined
 }
 
 export interface ChannelPropertyEntity {
@@ -117,13 +117,13 @@ export interface ChannelPropertyEntity {
     queryable: boolean
     data_type: DataType | null
     unit: string | null
-    format: string | Array<string> | Array<number> | null
+    format: string | string[] | number[] | null
     value?: string | number | boolean | null
     expected?: string | number | boolean | null
     previous_value?: string | number | boolean | null
     owner?: string
 
-    [k: string]: string | boolean | number | Array<string> | Array<number> | DataType | null | undefined
+    [k: string]: string | boolean | number | string[] | number[] | DataType | null | undefined
 }
 
 export interface ChannelConfigurationEntity {
@@ -135,13 +135,13 @@ export interface ChannelConfigurationEntity {
     data_type: DataType
     default: string | number | null
     value: string | number | null
-    values?: Array<any>
+    values?: string[] | number[] | boolean[]
     min?: number | null
     max?: number | null
     step?: number | null
     owner?: string
 
-    [k: string]: string | number | Array<any> | DataType | null | undefined
+    [k: string]: string | number | string[] | number[] | boolean[] | DataType | null | undefined
 }
 
 export interface DeviceControlData {

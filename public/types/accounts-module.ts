@@ -5,7 +5,7 @@ export interface AccountEntity {
     state: AccountState
     registered: string | null
     last_visit: string | null
-    roles: Array<string>
+    roles: string[]
     first_name?: string
     last_name?: string
     middle_name?: string
@@ -14,7 +14,7 @@ export interface AccountEntity {
     device?: string
     owner?: string
 
-    [k: string]: string | Array<string> | AccountState | null | undefined
+    [k: string]: string | string[] | AccountState | null | undefined
 }
 
 export interface EmailEntity {
