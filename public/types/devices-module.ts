@@ -87,13 +87,13 @@ export interface DeviceConfigurationEntity {
     data_type: DataType
     default: string | number | null
     value: string | number | null
-    values?: string[] | number[] | boolean[]
+    values?: (string | number | boolean)[]
     min?: number | null
     max?: number | null
     step?: number | null
     owner?: string
 
-    [k: string]: string | number | string[] | number[] | boolean[] | DataType | null | undefined
+    [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined
 }
 
 export interface ChannelEntity {
@@ -135,13 +135,13 @@ export interface ChannelConfigurationEntity {
     data_type: DataType
     default: string | number | null
     value: string | number | null
-    values?: string[] | number[] | boolean[]
+    values?: (string | number | boolean)[]
     min?: number | null
     max?: number | null
     step?: number | null
     owner?: string
 
-    [k: string]: string | number | string[] | number[] | boolean[] | DataType | null | undefined
+    [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined
 }
 
 export interface DeviceControlData {
