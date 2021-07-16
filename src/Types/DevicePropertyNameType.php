@@ -8,7 +8,7 @@
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  * @package        FastyBird:ModulesMetadata!
  * @subpackage     Types
- * @since          0.1.11
+ * @since          0.2.0
  *
  * @date           16.07.21
  */
