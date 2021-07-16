@@ -13,21 +13,6 @@
         ]
       }
     },
-    "state" : {
-      "type" : "string",
-      "enum" : [
-        "connected",
-        "disconnected",
-        "init",
-        "ready",
-        "running",
-        "sleeping",
-        "stopped",
-        "lost",
-        "alert",
-        "unknown"
-      ]
-    },
     "hardware_manufacturer" : {
       "type" : "string",
       "enum" : [
@@ -103,9 +88,6 @@
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
     },
-    "state" : {
-      "$ref" : "#/definitions/state"
-    },
     "enabled" : {
       "type" : "boolean",
       "default" : false
@@ -150,7 +132,6 @@
     "identifier",
     "name",
     "comment",
-    "state",
     "enabled",
     "hardware_version",
     "hardware_manufacturer",

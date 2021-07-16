@@ -1,12 +1,12 @@
 import {
-    ConnectorType,
-    DataType,
-    DeviceControlAction,
-    DeviceModel,
-    DeviceConnectionState,
-    FirmwareManufacturer,
-    HardwareManufacturer,
-    ChannelControlAction,
+  ConnectorType,
+  DataType,
+  DeviceConnectionState,
+  DeviceControlAction,
+  DeviceModel,
+  FirmwareManufacturer,
+  HardwareManufacturer,
+  ChannelControlAction,
 } from './types'
 
 export interface ConnectorEntity {
@@ -33,7 +33,6 @@ export interface DeviceEntity {
     identifier: string
     name: string | null
     comment: string | null
-    state: DeviceConnectionState
     enabled: boolean
     hardware_version: string | null
     hardware_manufacturer: HardwareManufacturer
@@ -44,7 +43,7 @@ export interface DeviceEntity {
     control: string[]
     owner?: string
 
-    [k: string]: string | DeviceConnectionState | HardwareManufacturer | DeviceModel | FirmwareManufacturer | boolean | string[] | null | undefined
+    [k: string]: string | HardwareManufacturer | DeviceModel | FirmwareManufacturer | boolean | string[] | null | undefined
 }
 
 export interface DeviceConnectorEntity {
@@ -70,12 +69,12 @@ export interface DevicePropertyEntity {
     data_type: DataType | null
     unit: string | null
     format: string | string[] | number[] | null
-    value?: string | number | boolean | null
+    value?: string | number | boolean | DeviceConnectionState | null
     expected?: string | number | boolean | null
     previous_value?: string | number | boolean | null
     owner?: string
 
-    [k: string]: string | boolean | number | string[] | number[] | DataType | null | undefined
+    [k: string]: string | boolean | number | string[] | number[] | DataType | DeviceConnectionState | null | undefined
 }
 
 export interface DeviceConfigurationEntity {
