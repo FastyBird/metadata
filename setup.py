@@ -45,7 +45,13 @@ setup(
     ],
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
     data_files=[
-        ("schemas", ["resources/schemas/*.json"])
+        ("schemas", [
+            "resources/schemas/accounts-module/*.json",
+            "resources/schemas/data/*.json",
+            "resources/schemas/devices-module/*.json",
+            "resources/schemas/triggers-module/*.json",
+            "resources/schemas/modules.json",
+        ])
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",
