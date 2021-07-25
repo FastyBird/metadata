@@ -41,13 +41,11 @@ yarn add @fastybird/modules-metadata
 
 ### Python project:
 
-To use this library in project in Python language you could import is any other Python module by requiring:
+The best way to install **modules-metadata** is using [pip](https://pip.pypa.io/):
 
+```sh
+pip install modules-metadata
 ```
-modules-metadata
-```
-
-This module is published to PyPi
 
 ## Updating metadata
 
