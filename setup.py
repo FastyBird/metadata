@@ -44,7 +44,7 @@ setup(
         "simplejson>=3.17.2"
     ],
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
-    package_data={
+    data_files={
         "*", ["resources/*.json"]
     },
     classifiers=[
