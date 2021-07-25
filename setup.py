@@ -45,11 +45,9 @@ setup(
         "simplejson>=3.17.2"
     ],
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
-    data_files=[
-        ("schemas", [
-            glob("resources/schemas/**/*", recursive=True),
-        ])
-    ],
+    package_dir={
+        "resources": "resources",
+    },
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
