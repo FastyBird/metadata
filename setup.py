@@ -46,10 +46,7 @@ setup(
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
     data_files=[
         ("schemas", [
-            "resources/schemas/accounts-module/*",
-            "resources/schemas/data/*",
-            "resources/schemas/devices-module/*",
-            "resources/schemas/triggers-module/*",
+            "resources/schemas/accounts-module/entity.account.json",
         ])
     ],
     classifiers=[
