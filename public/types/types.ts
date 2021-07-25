@@ -28,6 +28,12 @@ export enum DataType {
     COLOR = 'color',
 }
 
+export enum SwitchPayload {
+    ON = 'on',
+    OFF = 'off',
+    TOGGLE = 'toggle',
+}
+
 export enum AccountState {
     ACTIVE = 'active',
     BLOCKED = 'blocked',
@@ -41,6 +47,11 @@ export enum IdentityState {
     BLOCKED = 'blocked',
     DELETED = 'deleted',
     INVALID = 'invalid',
+}
+
+export enum ConnectorControlAction {
+    SEARCH = 'search',
+    RESTART = 'restart',
 }
 
 export enum DeviceControlAction {
@@ -57,11 +68,6 @@ export enum ChannelControlAction {
 export enum ConnectorType {
     FB_BUS = 'fb-bus',
     FB_MQTT_V1 = 'fb-mqtt-v1',
-}
-
-export enum ConnectorControlAction {
-    SEARCH = 'search',
-    RESTART = 'restart',
 }
 
 export enum DeviceConnectionState {
@@ -141,6 +147,11 @@ export enum TriggerControlAction {
     TRIGGER = 'trigger',
 }
 
+export enum TriggerType {
+    MANUAL = 'manual',
+    AUTOMATIC = 'automatic',
+}
+
 export enum TriggerActionType {
     CHANNEL_PROPERTY = 'channel-property',
 }
@@ -152,24 +163,13 @@ export enum TriggerConditionType {
     DATE = 'date',
 }
 
-export enum TriggerConditionOperator {
-    EQUAL = 'eq',
-    ABOVE = 'above',
-    BELOW = 'below',
-}
-
 export enum TriggerNotificationType {
     EMAIL = 'email',
     SMS = 'sms',
 }
 
-export enum TriggerType {
-    MANUAL = 'manual',
-    AUTOMATIC = 'automatic',
-}
-
-export enum SwitchPayload {
-    ON = 'on',
-    OFF = 'off',
-    TOGGLE = 'toggle',
+export enum TriggerConditionOperator {
+    EQUAL = 'eq',
+    ABOVE = 'above',
+    BELOW = 'below',
 }
