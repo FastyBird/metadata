@@ -45,7 +45,7 @@ setup(
     ],
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
     package_data={
-        "", ["resources/*.json"]
+        "*", ["resources/*.json"]
     },
     classifiers=[
         "Development Status :: 3 - Alpha",
