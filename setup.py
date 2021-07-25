@@ -14,6 +14,7 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+from glob import glob
 from setuptools import setup
 from os import path
 
@@ -46,7 +47,7 @@ setup(
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
     data_files=[
         ("schemas", [
-            "resources/schemas/accounts-module/entity.account.json",
+            glob("resources/schemas/**/*", recursive=True),
         ])
     ],
     classifiers=[
