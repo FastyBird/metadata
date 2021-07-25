@@ -14,7 +14,6 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-from glob import glob
 from setuptools import setup
 from os import path
 
@@ -23,7 +22,7 @@ this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
-VERSION = "0.2.2"
+VERSION = "0.2.3"
 
 setup(
     version=VERSION,
