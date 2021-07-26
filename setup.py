@@ -14,6 +14,7 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+import re
 from setuptools import setup
 from os import path
 
@@ -22,11 +23,22 @@ this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
-VERSION = "0.2.3"
+
+def find_version(*file_paths):
+    version_file = read(*file_paths)
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", version_file, re.M)
+
+    if version_match:
+        return version_match.group(1)
+
+    raise RuntimeError("Unable to find version string.")
+
+
+VERSION: str = find_version("modules-metadata", "__init__.py")
 
 setup(
     version=VERSION,
-    name="modules-metadata",
+    name="fastybird-modules-metadata",
     author="FastyBird",
     author_email="code@fastybird.com",
     license="Apache Software License (Apache Software License 2.0)",
