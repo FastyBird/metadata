@@ -42,7 +42,7 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-VERSION: str = find_version("modules-metadata", "__init__.py")
+VERSION: str = find_version("modules_metadata", "__init__.py")
 
 setup(
     version=VERSION,
@@ -57,7 +57,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.5",
     packages=[
-        "modules-metadata",
+        "modules_metadata",
     ],
     install_requires=[
         "setuptools",
