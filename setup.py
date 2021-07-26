@@ -14,6 +14,7 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+import codecs
 import re
 from setuptools import setup
 from os import path
@@ -22,6 +23,13 @@ this_directory = path.abspath(path.dirname(__file__))
 
 with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
+
+
+def read(*parts):
+    filename = path.join(path.dirname(__file__), *parts)
+
+    with codecs.open(filename, encoding='utf-8') as fp:
+        return fp.read()
 
 
 def find_version(*file_paths):
