@@ -12,9 +12,9 @@
 [![Downloads total](https://badgen.net/npm/dt/@fastybird/modules-metadata?cache=300&style=flast-square)](https://www.npmjs.com/package/@fastybird/modules-metadata)
 ![Types](https://badgen.net/npm/types/@fastybird/modules-metadata?cache=300&style=flast-square)
 
-![Python](https://badgen.net/pypi/python/modules-metadata?cache=300&style=flat-square)
-[![Licence](https://badgen.net/pypi/license/modules-metadata?cache=300&style=flast-square)](https://github.com/FastyBird/modules-metadata/blob/master/LICENSE.md)
-[![Latest stable](https://badgen.net/pypi/v/modules-metadata?cache=300&style=flast-square)](https://pypi.org/project/modules-metadata/)
+![Python](https://badgen.net/pypi/python/fastybird-modules-metadata?cache=300&style=flat-square)
+[![Licence](https://badgen.net/pypi/license/fastybird-modules-metadata?cache=300&style=flast-square)](https://github.com/FastyBird/modules-metadata/blob/master/LICENSE.md)
+[![Latest stable](https://badgen.net/pypi/v/fastybird-modules-metadata?cache=300&style=flast-square)](https://pypi.org/project/fastybird-modules-metadata/)
 [![Black](https://img.shields.io/badge/Black-enabled-brightgreen.svg?style=flat-square)](https://github.com/psf/black)
 
 ## What is FastyBird modules metadata library?
@@ -41,10 +41,10 @@ yarn add @fastybird/modules-metadata
 
 ### Python project:
 
-The best way to install **modules-metadata** is using [pip](https://pip.pypa.io/):
+The best way to install **fastybird-modules-metadata** is using [pip](https://pip.pypa.io/):
 
 ```sh
-pip install modules-metadata
+pip install fastybird-modules-metadata
 ```
 
 ## Updating metadata
