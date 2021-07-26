@@ -481,7 +481,7 @@ jobs:
       - name: "Install wheel"
         if: matrix.installable == 'wheel'
         run: |
-          pip install dist/modules-metadata-*-py3-none-any.whl
+          pip install dist/fastybird_modules_metadata-*-py3-none-any.whl
 
       - name: "Install source tarball"
         if: matrix.installable == 'sdist'
