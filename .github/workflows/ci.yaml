@@ -481,12 +481,12 @@ jobs:
       - name: "Install wheel"
         if: matrix.installable == 'wheel'
         run: |
-          pip install dist/modules-metadata-*-py3-none-any.whl
+          pip install dist/fastybird-modules-metadata-*-py3-none-any.whl
 
       - name: "Install source tarball"
         if: matrix.installable == 'sdist'
         run: |
-          pip install dist/modules-metadata-*.tar.gz
+          pip install dist/fastybird-modules-metadata-*.tar.gz
 
   publish-on-testpypi:
     name: "Publish on TestPyPI"
