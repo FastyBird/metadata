@@ -64,21 +64,21 @@ setup(
         "setuptools",
     ],
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
-    data_files={
-        "modules-metadata-data/schemas/data": [
+    data_files=[
+        ("modules-metadata-data/schemas/data", [
             "resources/schemas/data/data.channel.control.json",
             "resources/schemas/data/data.channel.property.json",
             "resources/schemas/data/data.connector.control.json",
             "resources/schemas/data/data.device.control.json",
             "resources/schemas/data/data.device.property.json",
             "resources/schemas/data/data.trigger.control.json",
-        ],
-        "modules-metadata-data/schemas/accounts-module": [
+        ]),
+        ("modules-metadata-data/schemas/accounts-module", [
             "resources/schemas/accounts-module/entity.account.json",
             "resources/schemas/accounts-module/entity.email.json",
             "resources/schemas/accounts-module/entity.identity.json",
-        ],
-        "modules-metadata-data/schemas/devices-module": [
+        ]),
+        ("modules-metadata-data/schemas/devices-module", [
             "resources/schemas/devices-module/entity.channel.configuration.json",
             "resources/schemas/devices-module/entity.channel.json",
             "resources/schemas/devices-module/entity.channel.property.json",
@@ -87,20 +87,20 @@ setup(
             "resources/schemas/devices-module/entity.device.connector.json",
             "resources/schemas/devices-module/entity.device.json",
             "resources/schemas/devices-module/entity.device.property.json",
-        ],
-        "modules-metadata-data/schemas/triggers-module": [
+        ]),
+        ("modules-metadata-data/schemas/triggers-module", [
             "resources/schemas/triggers-module/entity.action.json",
             "resources/schemas/triggers-module/entity.condition.json",
             "resources/schemas/triggers-module/entity.notification.json",
             "resources/schemas/triggers-module/entity.trigger.json",
-        ],
-        "modules-metadata-data/schemas": [
+        ]),
+        ("modules-metadata-data/schemas", [
             "resources/schemas/modules.json",
-        ],
-        "modules-metadata-data": [
+        ]),
+        ("modules-metadata-data", [
             "resources/modules.json",
-        ],
-    },
+        ]),
+    ],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
