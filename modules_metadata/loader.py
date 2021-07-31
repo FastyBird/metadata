@@ -125,10 +125,9 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
 
     if routing_key.value in JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value]:
         schema: str = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value][routing_key.value]
-        print(schema)
 
         schema_file = get_data_file(schema)
-        print(schema_file)
+
         if os.path.isfile(schema_file):
             with open(schema_file, "r") as schema_file_content:
                 schema_content = schema_file_content.read()
