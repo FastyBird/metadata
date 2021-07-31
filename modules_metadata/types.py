@@ -28,6 +28,7 @@ from enum import Enum, unique
 #
 @unique
 class ModuleOrigin(Enum):
+    NOT_SPECIFIED_ORIGIN: str = "*"
     DEVICES_MODULE: str = "com.fastybird.devices-module"
     AUTH_MODULE: str = "com.fastybird.auth-module"
     TRIGGERS_MODULE: str = "com.fastybird.triggers-module"

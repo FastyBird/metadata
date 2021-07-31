@@ -27,7 +27,22 @@ from enum import Enum, unique
 # @author         Adam Kadlec <adam.kadlec@fastybird.com>
 #
 @unique
-class RoutingKeys(Enum):
+class RoutingKey(Enum):
+    # Accounts
+    ACCOUNTS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.account"
+    ACCOUNTS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.account"
+    ACCOUNTS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.account"
+
+    # Emails
+    EMAILS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.email"
+    EMAILS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.email"
+    EMAILS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.email"
+
+    # Identities
+    IDENTITIES_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.identity"
+    IDENTITIES_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.identity"
+    IDENTITIES_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.identity"
+
     # Devices
     DEVICES_CREATED_ENTITY_ROUTING_KEY: str = "fb.bus.entity.created.device"
     DEVICES_UPDATED_ENTITY_ROUTING_KEY: str = "fb.bus.entity.updated.device"
@@ -50,9 +65,9 @@ class RoutingKeys(Enum):
     DEVICES_CONFIGURATION_DATA_ROUTING_KEY: str = "fb.bus.data.device.configuration"
 
     # Devices connectors
-    MESSAGE_BUS_DEVICES_CONNECTOR_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.device.connector"
-    MESSAGE_BUS_DEVICES_CONNECTOR_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.device.connector"
-    MESSAGE_BUS_DEVICES_CONNECTOR_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.device.connector"
+    DEVICES_CONNECTOR_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.device.connector"
+    DEVICES_CONNECTOR_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.device.connector"
+    DEVICES_CONNECTOR_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.device.connector"
 
     # Channels
     CHANNELS_CREATED_ENTITY_ROUTING_KEY: str = "fb.bus.entity.created.channel"
@@ -76,33 +91,33 @@ class RoutingKeys(Enum):
     CHANNELS_CONFIGURATION_DATA_ROUTING_KEY: str = "fb.bus.data.channel.configuration"
 
     # Connectors
-    MESSAGE_BUS_CONNECTOR_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.connector"
-    MESSAGE_BUS_CONNECTOR_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.connector"
-    MESSAGE_BUS_CONNECTOR_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.connector"
+    CONNECTOR_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.connector"
+    CONNECTOR_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.connector"
+    CONNECTOR_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.connector"
 
-    MESSAGE_BUS_CONNECTOR_CONTROLS_ROUTING_KEY = "fb.bus.control.connector"
+    CONNECTOR_CONTROLS_ROUTING_KEY = "fb.bus.control.connector"
 
     # Triggers
-    MESSAGE_BUS_TRIGGERS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger"
-    MESSAGE_BUS_TRIGGERS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger"
-    MESSAGE_BUS_TRIGGERS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger"
+    TRIGGERS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger"
+    TRIGGERS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger"
+    TRIGGERS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger"
 
-    MESSAGE_BUS_TRIGGER_CONTROLS_ROUTING_KEY = "fb.bus.control.trigger"
+    TRIGGER_CONTROLS_ROUTING_KEY = "fb.bus.control.trigger"
 
     # Triggers actions
-    MESSAGE_BUS_TRIGGERS_ACTIONS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger.action"
-    MESSAGE_BUS_TRIGGERS_ACTIONS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger.action"
-    MESSAGE_BUS_TRIGGERS_ACTIONS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger.action"
+    TRIGGERS_ACTIONS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger.action"
+    TRIGGERS_ACTIONS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger.action"
+    TRIGGERS_ACTIONS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger.action"
 
     # Triggers notifications
-    MESSAGE_BUS_TRIGGERS_NOTIFICATIONS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger.notification"
-    MESSAGE_BUS_TRIGGERS_NOTIFICATIONS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger.notification"
-    MESSAGE_BUS_TRIGGERS_NOTIFICATIONS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger.notification"
+    TRIGGERS_NOTIFICATIONS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger.notification"
+    TRIGGERS_NOTIFICATIONS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger.notification"
+    TRIGGERS_NOTIFICATIONS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger.notification"
 
     # Triggers conditions
-    MESSAGE_BUS_TRIGGERS_CONDITIONS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger.condition"
-    MESSAGE_BUS_TRIGGERS_CONDITIONS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger.condition"
-    MESSAGE_BUS_TRIGGERS_CONDITIONS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger.condition"
+    TRIGGERS_CONDITIONS_CREATED_ENTITY_ROUTING_KEY = "fb.bus.entity.created.trigger.condition"
+    TRIGGERS_CONDITIONS_UPDATED_ENTITY_ROUTING_KEY = "fb.bus.entity.updated.trigger.condition"
+    TRIGGERS_CONDITIONS_DELETED_ENTITY_ROUTING_KEY = "fb.bus.entity.deleted.trigger.condition"
 
     @classmethod
     def has_value(cls, value: str) -> bool:

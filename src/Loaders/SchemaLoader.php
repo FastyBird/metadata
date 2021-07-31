@@ -51,7 +51,7 @@ final class SchemaLoader implements ISchemaLoader
 			}
 
 		} elseif (isset(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[ModulesMetadata\Constants::NOT_SPECIFIED_ORIGIN][$routingKey])) {
-			$schema = file_get_contents(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING['*'][$routingKey]);
+			$schema = file_get_contents(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[ModulesMetadata\Constants::NOT_SPECIFIED_ORIGIN][$routingKey]);
 
 			if ($schema === false) {
 				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
