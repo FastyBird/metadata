@@ -461,8 +461,8 @@ jobs:
       - name: "Upload build result"
         uses: actions/upload-artifact@v1
         with:
-          name: pydist
-          path: pydist
+          name: dist
+          path: dist
 
   test-install-python:
     name: "Installation tests for Python"
@@ -479,8 +479,8 @@ jobs:
       - name: "Download build result"
         uses: "actions/download-artifact@v1"
         with:
-          name: pydist
-          path: pydist
+          name: dist
+          path: dist
 
       - name: "Set up Python ${{ matrix.python }}"
         uses: "actions/setup-python@v1"
