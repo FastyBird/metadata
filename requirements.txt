@@ -1,2 +1,2 @@
-fastjsonschema
+fastjsonschema~=2.15.0
 setuptools~=41.2.0
