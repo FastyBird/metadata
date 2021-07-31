@@ -22,9 +22,9 @@ from modules_metadata.types import ModuleOrigin
 
 
 class TestLoader(unittest.TestCase):
-    def test_load_schema(self):
+    def test_load_data_schema(self):
         loaded_schema = load_schema(
-            ModuleOrigin(ModuleOrigin.DEVICES_MODULE),
+            ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN),
             RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA_ROUTING_KEY),
         )
 
