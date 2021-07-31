@@ -121,7 +121,7 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
                     return schema_content
 
             else:
-                FileNotFoundException("Schema could not be loaded")
+                raise FileNotFoundException("Schema could not be loaded")
 
     if routing_key.value in JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value]:
         schema: str = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value][routing_key.value]
@@ -138,7 +138,7 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
                 return schema_content
 
         else:
-            FileNotFoundException("Schema could not be loaded")
+            raise FileNotFoundException("Schema could not be loaded")
 
     raise InvalidArgumentException("Schema for origin: {} and routing key: {} is not configured".format(
         origin.value,
