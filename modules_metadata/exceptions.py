@@ -40,6 +40,30 @@ class InvalidDataException(Exception):
 
 
 #
+# Error thrown when data file could not be found
+#
+# @package        FastyBird:ModulesMetadata!
+# @subpackage     Exceptions
+#
+# @author         Adam Kadlec <adam.kadlec@fastybird.com>
+#
+class FileNotFoundException(Exception):
+    pass
+
+
+#
+# Error thrown when provided argument is not valid
+#
+# @package        FastyBird:ModulesMetadata!
+# @subpackage     Exceptions
+#
+# @author         Adam Kadlec <adam.kadlec@fastybird.com>
+#
+class InvalidArgumentException(Exception):
+    pass
+
+
+#
 # Error thrown when logic error occur
 #
 # @package        FastyBird:ModulesMetadata!

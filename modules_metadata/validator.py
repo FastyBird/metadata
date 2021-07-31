@@ -28,7 +28,7 @@ def validate(data: str, schema: str) -> Dict:
         decoded_data = json.loads(data)
 
     except json.JSONDecodeError:
-        raise MalformedInputException("Failed to decode input data")
+        raise MalformedInputException("Failed to decode data")
 
     try:
         decoded_schema = json.loads(schema)
@@ -43,7 +43,7 @@ def validate(data: str, schema: str) -> Dict:
         raise LogicException("Failed to decode schema")
 
     try:
-        return validator(data)
+        return validator(decoded_data)
 
     except JsonSchemaException as ex:
         raise InvalidDataException(ex.message)
