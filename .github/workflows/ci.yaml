@@ -443,7 +443,7 @@ jobs:
 
       - name: "Create symbolic links for resources"
         run: |
-          ln -s resources modules_metadata/resources
+          copy resources modules_metadata/resources
 
       - name: "Extract version"
         uses: "battila7/get-version-action@v2"
