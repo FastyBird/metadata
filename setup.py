@@ -54,8 +54,14 @@ setup(
     url="https://github.com/FastyBird/modules-metadata",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    include_package_data=True,
     python_requires=">=3.7",
     packages=find_packages(),
+    package_data={
+        "modules_metadata": [
+            "resources",
+        ],
+    },
     install_requires=[
         "fastjsonschema",
         "setuptools",
