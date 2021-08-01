@@ -59,8 +59,8 @@ setup(
     packages=find_packages(),
     package_data={
         "modules_metadata": [
-            "resources",
-        ],
+            "resources/**/*.json"
+        ]
     },
     install_requires=[
         "fastjsonschema",
