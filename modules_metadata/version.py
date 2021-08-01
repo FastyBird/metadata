@@ -26,7 +26,7 @@ PACKAGE_PATH = abspath(dirname(__file__))
 DIST_SPEC = 'modules_metadata'
 
 # Base version, which will be augmented with Git information
-BASE_VERSION = '0.2.9'
+BASE_VERSION = '0.3.0'
 
 # This string will be replaced by `git-archive`
 # with the abbreviated commit hash
