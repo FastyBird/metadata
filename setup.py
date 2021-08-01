@@ -34,7 +34,7 @@ def get_version():
     # If CI_BUILD_VERSION is set, use it as package version
     build_version = os.getenv("CI_BUILD_VERSION")
 
-    if build_version:
+    if build_version and build_version != "master":
         return build_version
 
     # Otherwise, use the auto-versioning
