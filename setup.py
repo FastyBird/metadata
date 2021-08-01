@@ -15,12 +15,10 @@
 #     limitations under the License.
 
 # Library dependencies
-import os
+import codecs
+import re
 from setuptools import setup, find_packages
 from os import path
-
-# Library libs
-from modules_metadata.version import BASE_VERSION
 
 
 this_directory = path.abspath(path.dirname(__file__))
@@ -29,19 +27,24 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 
-def get_version():
-    # CI builds
-    # If CI_BUILD_VERSION is set, use it as package version
-    build_version = os.getenv("CI_BUILD_VERSION")
+def read(*parts):
+    filename = path.join(path.dirname(__file__), *parts)
 
-    if build_version and build_version != "master":
-        return build_version
-
-    # Otherwise, use the auto-versioning
-    return BASE_VERSION
+    with codecs.open(filename, encoding='utf-8') as fp:
+        return fp.read()
 
 
-VERSION: str = get_version()
+def find_version(*file_paths):
+    version_file = read(*file_paths)
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", version_file, re.M)
+
+    if version_match:
+        return version_match.group(1)
+
+    raise RuntimeError("Unable to find version string.")
+
+
+VERSION: str = find_version("devices_module", "__init__.py")
 
 
 setup(
