@@ -15,8 +15,8 @@
 #     limitations under the License.
 
 # Library dependencies
-import pkgutil
 from io import BytesIO
+from pkg_resources import resource_string
 from typing import Dict
 
 # Library libs
@@ -147,6 +147,8 @@ def load_metadata() -> Dict:
 
 
 def get_data_file_content(filename: str) -> str or None:
-    from pkg_resources import resource_string
+    try:
+        return BytesIO(resource_string(__name__, filename)).read().decode()
 
-    return BytesIO(resource_string(__name__, filename)).read().decode()
+    except FileNotFoundError:
+        return None
