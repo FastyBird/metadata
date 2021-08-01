@@ -1,2 +1,2 @@
-fastjsonschema>=2.0
-setuptools>=57.0
+fastjsonschema>=2.15
+setuptools>=57.4
