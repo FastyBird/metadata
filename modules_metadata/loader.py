@@ -147,10 +147,6 @@ def load_metadata() -> Dict:
 
 
 def get_data_file_content(filename: str) -> str or None:
-    try:
-        resource_data: BytesIO = BytesIO(pkgutil.get_data("resources", filename))
+    from pkg_resources import resource_string as read_text
 
-    except FileNotFoundError:
-        return None
-
-    return resource_data.read().decode()
+    return BytesIO(read_text(__name__, "resources/{}".format(filename))).read().decode()
