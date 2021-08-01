@@ -55,8 +55,11 @@ def get_version():
     return find_version("modules_metadata", "__init__.py")
 
 
+VERSION: str = get_version()
+
+
 setup(
-    version=get_version(),
+    version=VERSION,
     name="fastybird-modules-metadata",
     author="FastyBird",
     author_email="code@fastybird.com",
