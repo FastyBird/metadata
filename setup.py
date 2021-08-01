@@ -44,7 +44,7 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-VERSION: str = find_version("devices_module", "__init__.py")
+VERSION: str = find_version("modules_metadata", "__init__.py")
 
 
 setup(
