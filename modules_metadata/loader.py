@@ -16,7 +16,8 @@
 
 # App dependencies
 import os
-from typing import Dict
+import sys
+from typing import Dict, List
 
 # App libs
 import modules_metadata
@@ -110,8 +111,21 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
         if routing_key.value in mapping:
             schema: str = JSON_SCHEMAS_MAPPING[origin.value][routing_key.value]
 
-            schema_file = get_data_file(schema)
+            for schema_file in get_data_file(schema):
+                if os.path.isfile(schema_file):
+                    with open(schema_file, "r") as schema_file_content:
+                        schema_content = schema_file_content.read()
 
+                        schema_file_content.close()
+
+                        return schema_content
+
+            raise FileNotFoundException("Schema could not be loaded")
+
+    if routing_key.value in JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value]:
+        schema: str = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value][routing_key.value]
+
+        for schema_file in get_data_file(schema):
             if os.path.isfile(schema_file):
                 with open(schema_file, "r") as schema_file_content:
                     schema_content = schema_file_content.read()
@@ -120,24 +134,7 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
 
                     return schema_content
 
-            else:
-                raise FileNotFoundException("Schema could not be loaded")
-
-    if routing_key.value in JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value]:
-        schema: str = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value][routing_key.value]
-
-        schema_file = get_data_file(schema)
-
-        if os.path.isfile(schema_file):
-            with open(schema_file, "r") as schema_file_content:
-                schema_content = schema_file_content.read()
-
-                schema_file_content.close()
-
-                return schema_content
-
-        else:
-            raise FileNotFoundException("Schema could not be loaded")
+        raise FileNotFoundException("Schema could not be loaded")
 
     raise InvalidArgumentException("Schema for origin: {} and routing key: {} is not configured".format(
         origin.value,
@@ -146,34 +143,38 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
 
 
 def load_metadata() -> Dict:
-    schema_file = get_data_file("schemas/modules.json")
+    schema_content: str or None = None
 
-    if os.path.isfile(schema_file):
-        with open(schema_file, "r") as schema_file_content:
-            schema_content = schema_file_content.read()
+    for schema_file in get_data_file("schemas/modules.json"):
+        if os.path.isfile(schema_file):
+            with open(schema_file, "r") as schema_file_content:
+                schema_content = schema_file_content.read()
 
-            schema_file_content.close()
+                schema_file_content.close()
 
-    else:
+    if schema_content is None:
         FileNotFoundException("Schema could not be loaded")
 
-    metadata_file = get_data_file("modules.json")
+    metadata_content: str or None = None
 
-    if os.path.isfile(metadata_file):
-        with open(metadata_file, "r") as metadata_file_content:
-            metadata_content = metadata_file_content.read()
+    for metadata_file in get_data_file("modules.json"):
+        if os.path.isfile(metadata_file):
+            with open(metadata_file, "r") as metadata_file_content:
+                metadata_content = metadata_file_content.read()
 
-            metadata_file_content.close()
+                metadata_file_content.close()
 
-    else:
+    if metadata_content is None:
         FileNotFoundException("Metadata could not be loaded")
 
     return validate(metadata_content, schema_content)
 
 
-def get_data_file(filename: str) -> str:
+def get_data_file(filename: str) -> List[str]:
     package_dir = modules_metadata.__path__[0]
 
-    dirname = os.path.join(os.path.dirname(package_dir), '..', '..', '..', 'modules-metadata-data')
-
-    return os.path.join(dirname, filename)
+    return [
+        os.path.join(os.path.dirname(package_dir), 'resources', filename),
+        os.path.join(os.path.dirname(sys.prefix), 'modules-metadata-data', filename),
+        os.path.join(os.path.dirname(sys.exec_prefix), 'modules-metadata-data', filename),
+    ]
