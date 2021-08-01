@@ -1,5 +1,5 @@
-from os.path import abspath, dirname, exists, join, normpath
 import sys
+from os.path import abspath, dirname, exists, join, normpath
 
 # This logic has been adapted from that of PyInstaller
 # https://github.com/pyinstaller/pyinstaller/

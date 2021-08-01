@@ -20,8 +20,6 @@ import re
 from setuptools import setup
 from os import path
 
-from modules_metadata.version import BASE_VERSION
-
 this_directory = path.abspath(path.dirname(__file__))
 
 with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
@@ -31,7 +29,7 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
 def read(*parts):
     filename = path.join(path.dirname(__file__), *parts)
 
-    with codecs.open(filename, encoding='utf-8') as fp:
+    with codecs.open(filename, encoding="utf-8") as fp:
         return fp.read()
 
 
@@ -48,10 +46,10 @@ def find_version(*file_paths):
 def get_version():
     # CI builds
     # If CI_VERSION_BUILD_NUMBER is set, append that to the base version
-    build_num = os.getenv('CI_VERSION_BUILD_NUMBER')
+    build_version = os.getenv("CI_VERSION_BUILD_NUMBER")
 
-    if build_num:
-        return '{}.{}'.format(BASE_VERSION, build_num)
+    if build_version:
+        return build_version
 
     # Otherwise, use the auto-versioning
     return find_version("modules_metadata", "__init__.py")
