@@ -17,7 +17,7 @@
 import codecs
 import os
 import re
-from setuptools import setup
+from setuptools import setup, find_packages
 from os import path
 
 this_directory = path.abspath(path.dirname(__file__))
@@ -70,9 +70,7 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     python_requires=">=3.5",
-    packages=[
-        "modules_metadata",
-    ],
+    packages=find_packages(),
     package_data={
         "modules_metadata": [
             "resources",
