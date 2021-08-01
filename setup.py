@@ -15,9 +15,12 @@
 #     limitations under the License.
 
 import codecs
+import os
 import re
 from setuptools import setup
 from os import path
+
+from modules_metadata.version import BASE_VERSION
 
 this_directory = path.abspath(path.dirname(__file__))
 
@@ -42,10 +45,20 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-VERSION: str = find_version("modules_metadata", "__init__.py")
+def get_version():
+    # CI builds
+    # If CI_VERSION_BUILD_NUMBER is set, append that to the base version
+    build_num = os.getenv('CI_VERSION_BUILD_NUMBER')
+
+    if build_num:
+        return '{}.{}'.format(BASE_VERSION, build_num)
+
+    # Otherwise, use the auto-versioning
+    return find_version("modules_metadata", "__init__.py")
+
 
 setup(
-    version=VERSION,
+    version=get_version(),
     name="fastybird-modules-metadata",
     author="FastyBird",
     author_email="code@fastybird.com",
@@ -59,6 +72,11 @@ setup(
     packages=[
         "modules_metadata",
     ],
+    package_data={
+        "modules_metadata": [
+            "resources",
+        ],
+    },
     install_requires=[
         "fastjsonschema",
         "setuptools",
