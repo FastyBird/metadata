@@ -14,7 +14,7 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-# App dependencies
+# Library dependencies
 from enum import Enum, unique
 
 

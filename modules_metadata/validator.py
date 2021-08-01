@@ -14,12 +14,12 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-# App dependencies
+# Library dependencies
 import json
 from fastjsonschema import JsonSchemaException, JsonSchemaDefinitionException, compile
 from typing import Dict
 
-# App libs
+# Library libs
 from modules_metadata.exceptions import InvalidDataException, LogicException, MalformedInputException
 
 

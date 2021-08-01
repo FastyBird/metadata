@@ -456,7 +456,7 @@ jobs:
 
       - name: "Build a binary wheel and a source tarball"
         env:
-          CI_VERSION_BUILD_NUMBER: ${{ steps.get_version.outputs.version-without-v }}
+          CI_BUILD_VERSION: ${{ steps.get_version.outputs.version-without-v }}
         run: |
           python setup.py sdist bdist_wheel
 

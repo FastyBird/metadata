@@ -14,11 +14,14 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-import codecs
+# Library dependencies
 import os
-import re
 from setuptools import setup, find_packages
 from os import path
+
+# Library libs
+from modules_metadata.version import BASE_VERSION
+
 
 this_directory = path.abspath(path.dirname(__file__))
 
@@ -26,33 +29,16 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 
-def read(*parts):
-    filename = path.join(path.dirname(__file__), *parts)
-
-    with codecs.open(filename, encoding="utf-8") as fp:
-        return fp.read()
-
-
-def find_version(*file_paths):
-    version_file = read(*file_paths)
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", version_file, re.M)
-
-    if version_match:
-        return version_match.group(1)
-
-    raise RuntimeError("Unable to find version string.")
-
-
 def get_version():
     # CI builds
-    # If CI_VERSION_BUILD_NUMBER is set, append that to the base version
-    build_version = os.getenv("CI_VERSION_BUILD_NUMBER")
+    # If CI_BUILD_VERSION is set, use it as package version
+    build_version = os.getenv("CI_BUILD_VERSION")
 
     if build_version:
         return build_version
 
     # Otherwise, use the auto-versioning
-    return find_version("modules_metadata", "__init__.py")
+    return BASE_VERSION
 
 
 VERSION: str = get_version()
@@ -68,14 +54,8 @@ setup(
     url="https://github.com/FastyBird/modules-metadata",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    include_package_data=True,
-    python_requires=">=3.5",
+    python_requires=">=3.7",
     packages=find_packages(),
-    package_data={
-        "modules_metadata": [
-            "resources",
-        ],
-    },
     install_requires=[
         "fastjsonschema",
         "setuptools",
@@ -90,7 +70,6 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3 :: Only",
