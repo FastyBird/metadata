@@ -22,7 +22,6 @@ from os.path import abspath, dirname, exists, join, normpath
 # https://github.com/pyinstaller/pyinstaller/
 
 PACKAGE_PATH = abspath(dirname(__file__))
-PROJECT_PATH = dirname(PACKAGE_PATH)
 
 DIST_SPEC = 'modules_metadata'
 
@@ -38,9 +37,9 @@ def git_describe():
     from subprocess import check_call, check_output
 
     # Get the version from the local Git repository
-    check_call(['git', 'update-index', '-q', '--refresh'], cwd=PROJECT_PATH)
+    check_call(['git', 'update-index', '-q', '--refresh'], cwd=PACKAGE_PATH)
 
-    desc = check_output(['git', 'describe', '--long', '--dirty', '--tag'], cwd=PROJECT_PATH)
+    desc = check_output(['git', 'describe', '--long', '--dirty', '--tag'], cwd=PACKAGE_PATH)
     desc = desc.decode('utf-8').strip()
 
     tag, commits, rev = desc.split('-', 2)
@@ -53,7 +52,7 @@ def git_describe():
 def get_version():
     # Git repo
     # If a local git repository is present, use `git describe` to provide a rich version
-    git_dir = normpath(join(PROJECT_PATH, '.git'))
+    git_dir = normpath(join(PACKAGE_PATH, '.git'))
 
     if exists(git_dir):
         tag, commits, rev = git_describe()
