@@ -15,7 +15,7 @@
 # Test dependencies
 import unittest
 
-# App libs
+# Library libs
 from modules_metadata.loader import load_schema
 from modules_metadata.routing import RoutingKey
 from modules_metadata.types import ModuleOrigin

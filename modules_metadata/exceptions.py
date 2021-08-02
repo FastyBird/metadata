@@ -15,61 +15,25 @@
 #     limitations under the License.
 
 
-#
-# Error thrown when data could not be handled
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Exceptions
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 class MalformedInputException(Exception):
     pass
 
 
-#
-# Error thrown when data are not valid
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Exceptions
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 class InvalidDataException(Exception):
     pass
 
 
-#
-# Error thrown when data file could not be found
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Exceptions
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 class FileNotFoundException(Exception):
     pass
 
 
-#
-# Error thrown when provided argument is not valid
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Exceptions
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 class InvalidArgumentException(Exception):
     pass
 
 
-#
-# Error thrown when logic error occur
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Exceptions
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 class LogicException(Exception):
+    pass
+
+
+class InvalidStateException(Exception):
     pass

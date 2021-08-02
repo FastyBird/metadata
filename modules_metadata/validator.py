@@ -24,6 +24,8 @@ from modules_metadata.exceptions import InvalidDataException, LogicException, Ma
 
 
 def validate(data: str, schema: str) -> Dict:
+    """JSON object validation against JSON schema"""
+
     try:
         decoded_data = json.loads(data)
 

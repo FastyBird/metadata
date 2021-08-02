@@ -23,7 +23,7 @@ This is library for [FastyBird](https://www.fastybird.com) ecosystem which is im
 
 ## Installation
 
-### PHP project:
+### PHP based project:
 
 The best way to install **fastybird/modules-metadata** is using [Composer](http://getcomposer.org/):
 
@@ -31,7 +31,7 @@ The best way to install **fastybird/modules-metadata** is using [Composer](http:
 composer require fastybird/modules-metadata
 ```
 
-### JS project:
+### JS based project:
 
 The best way to install **@fastybird/modules-metadata** is using [Yarn](https://yarnpkg.com/):
 
@@ -39,7 +39,7 @@ The best way to install **@fastybird/modules-metadata** is using [Yarn](https://
 yarn add @fastybird/modules-metadata
 ```
 
-### Python project:
+### Python based project:
 
 The best way to install **fastybird-modules-metadata** is using [pip](https://pip.pypa.io/):
 

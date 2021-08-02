@@ -20,10 +20,69 @@ from pkg_resources import resource_string
 from typing import Dict
 
 # Library libs
-from modules_metadata.exceptions import FileNotFoundException, InvalidArgumentException
+from modules_metadata.exceptions import FileNotFoundException, InvalidArgumentException, InvalidStateException
 from modules_metadata.routing import RoutingKey
 from modules_metadata.types import ModuleOrigin
 from modules_metadata.validator import validate
+
+
+def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
+    """Load JSON schema for module origin and routing key"""
+
+    if origin.value in JSON_SCHEMAS_MAPPING:
+        mapping = JSON_SCHEMAS_MAPPING[origin.value]
+
+        if routing_key.value in mapping:
+            schema: str = JSON_SCHEMAS_MAPPING[origin.value][routing_key.value]
+
+            schema_content = get_data_file_content(schema)
+
+            if schema_content is not None:
+                return schema_content
+
+            raise FileNotFoundException("Schema could not be loaded")
+
+    if routing_key.value in JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value]:
+        schema: str = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value][routing_key.value]
+
+        schema_content = get_data_file_content(schema)
+
+        if schema_content is not None:
+            return schema_content
+
+        raise FileNotFoundException("Schema could not be loaded")
+
+    raise InvalidArgumentException("Schema for origin: {} and routing key: {} is not configured".format(
+        origin.value,
+        routing_key.value,
+    ))
+
+
+def load_metadata() -> Dict:
+    """Load modules metadata"""
+
+    schema_content = get_data_file_content("resources/schemas/modules.json")
+
+    if schema_content is None:
+        InvalidStateException("Metadata schema could not be loaded")
+
+    metadata_content = get_data_file_content("resources/modules.json")
+
+    if metadata_content is None:
+        InvalidStateException("Metadata content could not be loaded")
+
+    return validate(metadata_content, schema_content)
+
+
+def get_data_file_content(filename: str) -> str or None:
+    """Load file content from package resources"""
+
+    try:
+        return BytesIO(resource_string(__name__, filename)).read().decode()
+
+    except FileNotFoundError:
+        return None
+
 
 JSON_SCHEMAS_MAPPING = {
     ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value: {
@@ -100,55 +159,3 @@ JSON_SCHEMAS_MAPPING = {
         RoutingKey(RoutingKey.TRIGGERS_CONDITIONS_DELETED_ENTITY_ROUTING_KEY).value: "resources/schemas/triggers-module/entity.condition.json",
     },
 }
-
-
-def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
-    if origin.value in JSON_SCHEMAS_MAPPING:
-        mapping = JSON_SCHEMAS_MAPPING[origin.value]
-
-        if routing_key.value in mapping:
-            schema: str = JSON_SCHEMAS_MAPPING[origin.value][routing_key.value]
-
-            schema_content = get_data_file_content(schema)
-
-            if schema_content is not None:
-                return schema_content
-
-            raise FileNotFoundException("Schema could not be loaded")
-
-    if routing_key.value in JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value]:
-        schema: str = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value][routing_key.value]
-
-        schema_content = get_data_file_content(schema)
-
-        if schema_content is not None:
-            return schema_content
-
-        raise FileNotFoundException("Schema could not be loaded")
-
-    raise InvalidArgumentException("Schema for origin: {} and routing key: {} is not configured".format(
-        origin.value,
-        routing_key.value,
-    ))
-
-
-def load_metadata() -> Dict:
-    schema_content = get_data_file_content("resources/schemas/modules.json")
-
-    if schema_content is None:
-        FileNotFoundException("Schema could not be loaded")
-
-    metadata_content = get_data_file_content("resources/modules.json")
-
-    if metadata_content is None:
-        FileNotFoundException("Metadata could not be loaded")
-
-    return validate(metadata_content, schema_content)
-
-
-def get_data_file_content(filename: str) -> str or None:
-    try:
-        return BytesIO(resource_string(__name__, filename)).read().decode()
-
-    except FileNotFoundError:
-        return None

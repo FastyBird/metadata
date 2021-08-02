@@ -63,6 +63,7 @@ class TriggerType(Enum):
 #
 @unique
 class TriggerActionType(Enum):
+    DEVICE_PROPERTY: str = "device-property"
     CHANNEL_PROPERTY: str = "channel-property"
 
     @classmethod
@@ -80,8 +81,8 @@ class TriggerActionType(Enum):
 #
 @unique
 class TriggerConditionType(Enum):
-    CHANNEL_PROPERTY: str = "channel-property"
     DEVICE_PROPERTY: str = "device-property"
+    CHANNEL_PROPERTY: str = "channel-property"
     TIME: str = "time"
     DATE: str = "date"
 
