@@ -27,7 +27,10 @@ from pkg_resources import resource_string
 from modules_metadata.exceptions import (
     FileNotFoundException,
     InvalidArgumentException,
+    InvalidDataException,
     InvalidStateException,
+    LogicException,
+    MalformedInputException,
 )
 from modules_metadata.routing import RoutingKey
 from modules_metadata.types import ModuleOrigin
@@ -83,7 +86,13 @@ def load_metadata() -> Dict:
     if metadata_content is None:
         InvalidStateException("Metadata content could not be loaded")
 
-    return validate(metadata_content, schema_content)
+    try:
+        return validate(metadata_content, schema_content)
+
+    except (MalformedInputException, LogicException, InvalidDataException) as ex:
+        raise InvalidStateException(
+            "Modules metadata could not be loaded. Metadata files are corrupted or could not be loaded"
+        ) from ex
 
 
 def get_data_file_content(filename: str) -> str or None:
