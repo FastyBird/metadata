@@ -26,7 +26,4 @@ php_tests: vendor
 php_coverage: vendor
 	vendor/bin/tester -s -p phpdbg --colors 1 -C --coverage ./coverage.xml --coverage-src ./src tests/cases
 
-pip: pip install -r requirements.txt
-
-python_qa: pip
-	pylint **/*.py
+python_qa: pylint **/*.py
