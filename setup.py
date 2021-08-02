@@ -53,7 +53,7 @@ setup(
     author="FastyBird",
     author_email="code@fastybird.com",
     license="Apache Software License (Apache Software License 2.0)",
-    description="FastyBird metadata for modules.",
+    description="FastyBird metadata reader & validator for modules",
     url="https://github.com/FastyBird/modules-metadata",
     long_description=long_description,
     long_description_content_type="text/markdown",
