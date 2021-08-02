@@ -14,10 +14,14 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+"""
+JSON schema validator
+"""
+
 # Library dependencies
 import json
-from fastjsonschema import JsonSchemaException, JsonSchemaDefinitionException, compile
 from typing import Dict
+from fastjsonschema import JsonSchemaValueException, JsonSchemaDefinitionException, compile as json_compile
 
 # Library libs
 from modules_metadata.exceptions import InvalidDataException, LogicException, MalformedInputException
@@ -29,23 +33,23 @@ def validate(data: str, schema: str) -> Dict:
     try:
         decoded_data = json.loads(data)
 
-    except json.JSONDecodeError:
-        raise MalformedInputException("Failed to decode data")
+    except json.JSONDecodeError as ex:
+        raise MalformedInputException("Failed to decode data") from ex
 
     try:
         decoded_schema = json.loads(schema)
 
-    except json.JSONDecodeError:
-        raise LogicException("Failed to decode schema")
+    except json.JSONDecodeError as ex:
+        raise LogicException("Failed to decode schema") from ex
 
     try:
-        validator = compile(decoded_schema)
+        validator = json_compile(decoded_schema)
 
-    except JsonSchemaDefinitionException:
-        raise LogicException("Failed to decode schema")
+    except JsonSchemaDefinitionException as ex:
+        raise LogicException("Failed to decode schema") from ex
 
     try:
         return validator(decoded_data)
 
-    except JsonSchemaException as ex:
-        raise InvalidDataException(ex.message)
+    except JsonSchemaValueException as ex:
+        raise InvalidDataException(ex.message) from ex

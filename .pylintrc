@@ -1,1 +1,10 @@
+[MASTER]
+
+# List of plugins (as comma separated values of python modules names) to load,
+# usually to register additional checkers.
 load-plugins=pylint_enums,pylint-quotes
+
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=120

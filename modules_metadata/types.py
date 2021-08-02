@@ -14,20 +14,24 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+"""
+Sets of universal enums for application
+"""
+
 # Library dependencies
 from enum import Enum, unique
 
 
-#
-# Modules origins string
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class ModuleOrigin(Enum):
+    """
+    Module origin
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     NOT_SPECIFIED_ORIGIN: str = "*"
     ACCOUNTS_MODULE: str = "com.fastybird.accounts-module"
     DEVICES_MODULE: str = "com.fastybird.devices-module"
@@ -37,19 +41,20 @@ class ModuleOrigin(Enum):
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Modules prefixes string
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class ModulePrefix(Enum):
+    """
+    Module prefix
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     ACCOUNTS_MODULE_PREFIX: str = "accounts-module"
     DEVICES_MODULE_PREFIX: str = "devices-module"
     TRIGGERS_MODULE_PREFIX: str = "triggers-module"
@@ -57,19 +62,20 @@ class ModulePrefix(Enum):
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Record data types
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class DataType(Enum):
+    """
+    Record data type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     DATA_TYPE_CHAR: str = "char"
     DATA_TYPE_UCHAR: str = "uchar"
     DATA_TYPE_SHORT: str = "short"
@@ -82,21 +88,27 @@ class DataType(Enum):
     DATA_TYPE_ENUM: str = "enum"
     DATA_TYPE_COLOR: str = "color"
 
+    @classmethod
+    def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
+        return value in cls._value2member_map_
 
-#
-# Switch payloads string
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
+
 @unique
 class SwitchPayload(Enum):
+    """
+    Switch enum payload
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     ON: str = "on"
     OFF: str = "off"
     TOGGLE: str = "toggle"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_

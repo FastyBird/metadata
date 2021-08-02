@@ -14,92 +14,100 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+"""
+Sets of enums for Devices Module
+"""
+
 # Library dependencies
 from enum import Enum, unique
 
 
-#
-# Control connector actions
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class ConnectorControlAction(Enum):
+    """
+    Control connector action
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     RESTART_CONNECTOR: str = "restart"
     SEARCH_DEVICES: str = "search"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Control device actions
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class DeviceControlAction(Enum):
+    """
+    Control device action
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     RESET_DEVICE: str = "reset"
     RECONNECT_DEVICE: str = "reconnect"
     DEVICE_FACTORY_RESET: str = "factory-reset"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Control channel actions
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class ChannelControlAction(Enum):
+    """
+    Control channel action
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     RESET_CHANNEL: str = "reset"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Connector supported types
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class ConnectorType(Enum):
+    """
+    Connector type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     FB_BUS: str = "fb-bus"
     FB_MQTT_V1: str = "fb-mqtt-v1"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Device states
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class DeviceConnectionState(Enum):
+    """
+    Device connection state
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     # Device is connected to gateway
     STATE_CONNECTED: str = "connected"
     # Device is disconnected from gateway
@@ -123,38 +131,40 @@ class DeviceConnectionState(Enum):
 
     @classmethod
     def has_value(cls, value: int) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Device type
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class DeviceType(Enum):
+    """
+    Device type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     LOCAL: str = "local"
     NETWORK: str = "network"
     VIRTUAL: str = "virtual"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Device hardware manufacturer
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class HardwareManufacturer(Enum):
+    """
+    Device hardware manufacturer
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     GENERIC = "generic"
     FASTYBIRD = "fastybird"
     ITEAD = "itead"
@@ -162,37 +172,39 @@ class HardwareManufacturer(Enum):
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Device firmware manufacturer
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class FirmwareManufacturer(Enum):
+    """
+    Device firmware manufacturer
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     GENERIC: str = "generic"
     FASTYBIRD: str = "fastybird"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Device known properties names
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class DevicePropertyName(Enum):
+    """
+    Device known property name
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     STATE: str = "state"
     BATTERY: str = "battery"
     WIFI: str = "wifi"
@@ -200,4 +212,5 @@ class DevicePropertyName(Enum):
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_

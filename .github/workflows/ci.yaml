@@ -78,7 +78,7 @@ jobs:
         run: "${{ env.composer-install }}"
 
       - name: "Coding Standard"
-        run: "make cs"
+        run: "make php_cs"
 
   php-static-analysis:
     name: "Static analysis for PHP code"
@@ -193,7 +193,7 @@ jobs:
         run: "${{ env.composer-install }} ${{ matrix.composer-args }}"
 
       - name: "Tests"
-        run: "make tests"
+        run: "make php_tests"
 
       - name: "Upload test output"
         if: ${{ failure() }}
@@ -260,7 +260,7 @@ jobs:
         run: "${{ env.composer-install }} ${{ matrix.composer-args }}"
 
       - name: "Tests"
-        run: "make coverage"
+        run: "make php_coverage"
 
       - name: "Coveralls.io"
         env:
@@ -453,8 +453,7 @@ jobs:
           python-version: 3.7
 
       - name: "Move resources under into module"
-        run: |
-          mv resources modules_metadata/resources
+        run: "mv resources modules_metadata/resources"
 
       - name: "Extract version"
         uses: "battila7/get-version-action@v2"
@@ -466,19 +465,19 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: "Install build dependencies"
-        run: |
-          python -m pip install wheel --user
+        run: "python -m pip install wheel --user"
 
       - name: "Build a binary wheel and a source tarball"
-        run: |
-          python setup.py sdist bdist_wheel
+        run: "python setup.py sdist bdist_wheel"
+
+      - name: "Run code lint"
+        run: "make python_qa"
 
       - name: "Run tests"
-        run: |
-          python -m unittest
+        run: "python -m unittest"
 
       - name: "Upload build result"
-        uses: actions/upload-artifact@v1
+        uses: "actions/upload-artifact@v1"
         with:
           name: dist
           path: dist

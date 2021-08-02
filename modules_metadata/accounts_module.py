@@ -14,20 +14,24 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+"""
+Sets of enums for Accounts Module
+"""
+
 # Library dependencies
 from enum import Enum, unique
 
 
-#
-# Account state types
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class AccountState(Enum):
+    """
+    Account state type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         accounts_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     ACTIVE: str = "active"
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
@@ -36,19 +40,20 @@ class AccountState(Enum):
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_
 
 
-#
-# Account identity state types
-#
-# @package        FastyBird:ModulesMetadata!
-# @subpackage     Metadata
-#
-# @author         Adam Kadlec <adam.kadlec@fastybird.com>
-#
 @unique
 class IdentityState(Enum):
+    """
+    Account identity state type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         accounts_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
     ACTIVE: str = "active"
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
@@ -56,4 +61,5 @@ class IdentityState(Enum):
 
     @classmethod
     def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
         return value in cls._value2member_map_

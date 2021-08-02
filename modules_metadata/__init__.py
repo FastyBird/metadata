@@ -12,4 +12,8 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+"""
+Modules metadata loader and validator and sets of useful enums
+"""
+
 __version__ = "0.3.3"

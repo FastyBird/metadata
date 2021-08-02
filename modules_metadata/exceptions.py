@@ -14,26 +14,30 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+"""
+Package exceptions classes
+"""
+
 
 class MalformedInputException(Exception):
-    pass
+    """Exception thrown when input data are malformed"""
 
 
 class InvalidDataException(Exception):
-    pass
+    """Exception thrown when validated data are not valid"""
 
 
 class FileNotFoundException(Exception):
-    pass
+    """Exception thrown when resource file could not be found"""
 
 
 class InvalidArgumentException(Exception):
-    pass
+    """Exception thrown when invalid argument was provided to method"""
 
 
 class LogicException(Exception):
-    pass
+    """Exception thrown when logic error occur"""
 
 
 class InvalidStateException(Exception):
-    pass
+    """Exception thrown when invalid state occur"""

@@ -7,7 +7,7 @@
 [![PHP code coverage](https://badgen.net/coveralls/c/github/FastyBird/modules-metadata?cache=300&style=flat-square)](https://coveralls.io/r/FastyBird/modules-metadata)
 [![PHP latest stable](https://badgen.net/packagist/v/FastyBird/modules-metadata/latest?cache=300&style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
 [![PHP downloads total](https://badgen.net/packagist/dt/FastyBird/modules-metadata?cache=300&style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+[![PHPStan](https://img.shields.io/badge/phpstan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
 [![JS latest stable](https://badgen.net/npm/v/@fastybird/modules-metadata?cache=300&style=flat-square)](https://www.npmjs.com/package/@fastybird/modules-metadata)
 [![JS downloads total](https://badgen.net/npm/dt/@fastybird/modules-metadata?cache=300&style=flat-square)](https://www.npmjs.com/package/@fastybird/modules-metadata)
@@ -16,7 +16,7 @@
 ![Python](https://badgen.net/pypi/python/fastybird-modules-metadata?cache=300&style=flat-square)
 [![Python latest stable](https://badgen.net/pypi/v/fastybird-modules-metadata?cache=300&style=flat-square)](https://pypi.org/project/fastybird-modules-metadata/)
 [![Python downloads month](https://img.shields.io/pypi/dm/fastybird-modules-metadata?cache=300&style=flat-square)](https://pypi.org/project/fastybird-modules-metadata/)
-[![Black](https://img.shields.io/badge/Black-enabled-brightgreen.svg?style=flat-square)](https://github.com/psf/black)
+[![Black](https://img.shields.io/badge/black-enabled-brightgreen.svg?style=flat-square)](https://github.com/psf/black)
 
 ## What is FastyBird modules metadata library?
 
