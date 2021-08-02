@@ -124,6 +124,8 @@ class RoutingKey(Enum):
     TRIGGERS_CONDITIONS_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.condition"
     TRIGGERS_CONDITIONS_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.condition"
 
+    value: str
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""

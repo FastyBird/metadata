@@ -38,6 +38,8 @@ class AccountState(Enum):
     NOT_ACTIVATED: str = "notActivated"
     APPROVAL_WAITING: str = "approvalWaiting"
 
+    value: str
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -58,6 +60,8 @@ class IdentityState(Enum):
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
     INVALID: str = "invalid"
+
+    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:

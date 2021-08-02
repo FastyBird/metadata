@@ -473,7 +473,7 @@ jobs:
       - name: "Run code lint"
         run: |
           python -m pip install pylint
-          python -m pip install pylint_enums
+          python -m pip install pylint-enums
           python -m pip install pylint-quotes
           pylint **/*.py
 

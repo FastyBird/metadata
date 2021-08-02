@@ -39,6 +39,8 @@ class ModuleOrigin(Enum):
     UI_MODULE: str = "com.fastybird.ui-module"
     WEB_UI_MODULE: str = "com.fastybird.web-ui-module"
 
+    value: str
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -59,6 +61,8 @@ class ModulePrefix(Enum):
     DEVICES_MODULE_PREFIX: str = "devices-module"
     TRIGGERS_MODULE_PREFIX: str = "triggers-module"
     UI_MODULE_PREFIX: str = "ui-module"
+
+    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -88,6 +92,8 @@ class DataType(Enum):
     DATA_TYPE_ENUM: str = "enum"
     DATA_TYPE_COLOR: str = "color"
 
+    value: str
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -107,6 +113,8 @@ class SwitchPayload(Enum):
     ON: str = "on"
     OFF: str = "off"
     TOGGLE: str = "toggle"
+
+    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:

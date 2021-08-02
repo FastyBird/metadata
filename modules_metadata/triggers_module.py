@@ -34,6 +34,8 @@ class TriggerControlAction(Enum):
     """
     TRIGGER_TRIGGER: str = "trigger"
 
+    value: str
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -53,6 +55,8 @@ class TriggerType(Enum):
     MANUAL: str = "manual"
     AUTOMATIC: str = "automatic"
 
+    value: str
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -71,6 +75,8 @@ class TriggerActionType(Enum):
     """
     DEVICE_PROPERTY: str = "device-property"
     CHANNEL_PROPERTY: str = "channel-property"
+
+    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -93,6 +99,8 @@ class TriggerConditionType(Enum):
     TIME: str = "time"
     DATE: str = "date"
 
+    value: str
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -111,6 +119,8 @@ class TriggerNotificationType(Enum):
     """
     EMAIL: str = "email"
     SMS: str = "sms"
+
+    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -131,6 +141,8 @@ class TriggerConditionOperator(Enum):
     EQUAL: str = "eq"
     ABOVE: str = "above"
     BELOW: str = "below"
+
+    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
