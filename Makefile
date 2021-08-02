@@ -6,7 +6,7 @@ all:
 vendor: composer.json composer.lock
 	composer install
 
-php_qa: lint phpstan cs
+php_qa: php_lint phpstan php_cs
 
 php_lint: vendor
 	vendor/bin/linter src tests
@@ -29,4 +29,4 @@ php_coverage: vendor
 pip: pip install -r requirements.txt
 
 python_qa: pip
-    pylint **/*.py
+	pylint **/*.py
