@@ -35,8 +35,6 @@ class ConnectorControlAction(Enum):
     RESTART_CONNECTOR: str = "restart"
     SEARCH_DEVICES: str = "search"
 
-    value: str
-
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -57,8 +55,6 @@ class DeviceControlAction(Enum):
     RECONNECT_DEVICE: str = "reconnect"
     DEVICE_FACTORY_RESET: str = "factory-reset"
 
-    value: str
-
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -76,8 +72,6 @@ class ChannelControlAction(Enum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
     RESET_CHANNEL: str = "reset"
-
-    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -97,8 +91,6 @@ class ConnectorType(Enum):
     """
     FB_BUS: str = "fb-bus"
     FB_MQTT_V1: str = "fb-mqtt-v1"
-
-    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -137,8 +129,6 @@ class DeviceConnectionState(Enum):
     # Device is in unknown state
     STATE_UNKNOWN: str = "unknown"
 
-    value: str
-
     @classmethod
     def has_value(cls, value: int) -> bool:
         """Check if provided value is valid enum value"""
@@ -158,8 +148,6 @@ class DeviceType(Enum):
     LOCAL: str = "local"
     NETWORK: str = "network"
     VIRTUAL: str = "virtual"
-
-    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -182,8 +170,6 @@ class HardwareManufacturer(Enum):
     ITEAD = "itead"
     AI_THINKER = "ai_thinker"
 
-    value: str
-
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
@@ -202,8 +188,6 @@ class FirmwareManufacturer(Enum):
     """
     GENERIC: str = "generic"
     FASTYBIRD: str = "fastybird"
-
-    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -225,8 +209,6 @@ class DevicePropertyName(Enum):
     BATTERY: str = "battery"
     WIFI: str = "wifi"
     SIGNAL: str = "signal"
-
-    value: str
 
     @classmethod
     def has_value(cls, value: str) -> bool:
