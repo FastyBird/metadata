@@ -127,4 +127,4 @@ class RoutingKey(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member

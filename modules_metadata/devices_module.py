@@ -38,7 +38,7 @@ class ConnectorControlAction(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -58,7 +58,7 @@ class DeviceControlAction(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -76,7 +76,7 @@ class ChannelControlAction(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -95,7 +95,7 @@ class ConnectorType(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -132,7 +132,7 @@ class DeviceConnectionState(Enum):
     @classmethod
     def has_value(cls, value: int) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -152,7 +152,7 @@ class DeviceType(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -173,7 +173,7 @@ class HardwareManufacturer(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -192,7 +192,7 @@ class FirmwareManufacturer(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -213,4 +213,4 @@ class DevicePropertyName(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member

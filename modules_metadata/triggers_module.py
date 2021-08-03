@@ -37,7 +37,7 @@ class TriggerControlAction(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -56,7 +56,7 @@ class TriggerType(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -75,7 +75,7 @@ class TriggerActionType(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -96,7 +96,7 @@ class TriggerConditionType(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -115,7 +115,7 @@ class TriggerNotificationType(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
 
 
 @unique
@@ -135,4 +135,4 @@ class TriggerConditionOperator(Enum):
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_
+        return value in cls._value2member_map_  # pylint: disable=no-member
