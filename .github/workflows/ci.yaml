@@ -197,7 +197,7 @@ jobs:
 
       - name: "Upload test output"
         if: ${{ failure() }}
-        uses: actions/upload-artifact@v2
+        uses: "actions/upload-artifact@v2"
         with:
           name: output
           path: tests/**/output
@@ -240,7 +240,7 @@ jobs:
           php-version: "${{ matrix.php-version }}"
           extensions: "${{ env.extensions }}"
           tools: "composer:${{ env.composer-version }}"
-          coverage: "xdebug"
+          coverage: "pcov"
 
       - name: "Setup problem matchers for PHP"
         run: 'echo "::add-matcher::${{ runner.tool_cache }}/php.json"'
@@ -303,10 +303,10 @@ jobs:
 
       - name: "Install dependencies"
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: 'yarn install'
+        run: "yarn install"
 
       - name: "Check linter"
-        run: 'yarn lint:js'
+        run: "yarn lint:js"
 
   tslint:
     name: "Typescript linting for JS code"
@@ -340,10 +340,10 @@ jobs:
 
       - name: "Install dependencies"
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: 'yarn install'
+        run: "yarn install"
 
       - name: "Check linter"
-        run: 'yarn lint:ts'
+        run: "yarn lint:ts"
 
   publish-npmjs:
     name: "Build JS library and publish it to NPM"
@@ -371,7 +371,7 @@ jobs:
         id: "get_version"
 
       - name: "Install package dependencies"
-        run: yarn install
+        run: "yarn install"
 
       - name: "Set up git since we will later push to the repo"
         run: |
@@ -382,12 +382,12 @@ jobs:
         run: npm version ${{ steps.get_version.outputs.version-without-v }} --allow-same-version
 
       - name: "Build the project"
-        run: yarn build
+        run: "yarn build"
 
       - name: "Publish to NPM"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
-        run: npm publish --access public
+        run: "npm publish --access public"
 
   publish-github:
     name: "Build JS library and publish it to Github packages"
@@ -417,7 +417,7 @@ jobs:
       - name: "Install package dependencies"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn install
+        run: "yarn install"
 
       - name: "Set up git since we will later push to the repo"
         run: |
@@ -428,12 +428,12 @@ jobs:
         run: npm version ${{ steps.get_version.outputs.version-without-v }} --allow-same-version
 
       - name: "Build the project"
-        run: yarn build
+        run: "yarn build"
 
       - name: "Publish to NPM"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm publish --access public
+        run: "npm publish --access public"
 
   build-python:
     name: "Build python distribution"
@@ -471,12 +471,10 @@ jobs:
         run: "python setup.py sdist bdist_wheel"
 
       - name: "Run code lint"
-        run: |
-          python -m pip install pylint
-          pylint **/*.py
+        run: "make python_qa"
 
       - name: "Run tests"
-        run: "python -m unittest"
+        run: "make python_tests"
 
       - name: "Upload build result"
         uses: "actions/upload-artifact@v1"
@@ -509,13 +507,11 @@ jobs:
 
       - name: "Install wheel"
         if: matrix.installable == 'wheel'
-        run: |
-          pip install dist/fastybird_modules_metadata-*-py3-none-any.whl
+        run: "pip install dist/fastybird_modules_metadata-*-py3-none-any.whl"
 
       - name: "Install source tarball"
         if: matrix.installable == 'sdist'
-        run: |
-          pip install dist/fastybird-modules-metadata-*.tar.gz
+        run: "pip install dist/fastybird-modules-metadata-*.tar.gz"
 
   publish-on-testpypi:
     name: "Publish Python package on TestPyPI"
@@ -537,7 +533,6 @@ jobs:
 
       - name: "Publish to index"
         uses: "pypa/gh-action-pypi-publish@master"
-        continue-on-error: true
         with:
           password: ${{ secrets.testpypi_password }}
           repository_url: "https://test.pypi.org/legacy/"
