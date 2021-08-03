@@ -63,7 +63,6 @@ final class Validator implements IValidator
 			} catch (Utils\JsonException $ex) {
 				throw new Exceptions\LogicException(sprintf('Failed to encode input data'));
 			}
-
 		} else {
 			$messages = [];
 

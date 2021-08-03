@@ -1,7 +1,7 @@
 # FastyBird modules metadata library
 
 [![Build Status](https://badgen.net/github/checks/FastyBird/modules-metadata/master?cache=300&style=flat-square)](https://github.com/FastyBird/modules-metadata/actions)
-[![Licence](https://badgen.net/packagist/license/FastyBird/modules-metadata?cache=300&style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
+[![Licence](https://badgen.net/packagist/license/FastyBird/modules-metadata?cache=300&style=flat-square)](https://github.com/FastyBird/modules-metadata/blob/master/LICENSE.md)
 
 ![PHP](https://badgen.net/packagist/php/FastyBird/modules-metadata?cache=300&style=flat-square)
 [![PHP code coverage](https://badgen.net/coveralls/c/github/FastyBird/modules-metadata?cache=300&style=flat-square)](https://coveralls.io/r/FastyBird/modules-metadata)

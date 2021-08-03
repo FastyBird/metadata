@@ -15,6 +15,7 @@
 
 namespace FastyBird\ModulesMetadata\Loaders;
 
+use FastyBird\ModulesMetadata;
 use FastyBird\ModulesMetadata\Exceptions;
 use FastyBird\ModulesMetadata\Schemas;
 use Nette\Utils;
@@ -29,8 +30,6 @@ use Nette\Utils;
  */
 final class MetadataLoader implements IMetadataLoader
 {
-
-	private const RESOURCES_FOLDER = __DIR__ . '/../../resources';
 
 	/** @var Schemas\IValidator */
 	private Schemas\IValidator $jsonValidator;
@@ -48,9 +47,9 @@ final class MetadataLoader implements IMetadataLoader
 	 */
 	public function load(): Utils\ArrayHash
 	{
-		$schema = self::RESOURCES_FOLDER . '/schemas/modules.json';
+		$schema = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'modules.json';
 
-		$metadata = self::RESOURCES_FOLDER . '/modules.json';
+		$metadata = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'modules.json';
 
 		$schema = file_get_contents($schema);
 
