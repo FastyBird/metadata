@@ -31,7 +31,7 @@
       "type" : "string",
       "description" : "Property key used across services. Is same as key field"
     },
-    "expected" : {
+    "expected_value" : {
       "$ref" : "#/definitions/types/string_number_boolean"
     }
   },
@@ -39,6 +39,6 @@
     "device",
     "channel",
     "property",
-    "expected"
+    "expected_value"
   ]
 }

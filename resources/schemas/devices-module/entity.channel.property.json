@@ -120,10 +120,10 @@
       "$ref" : "#/definitions/types/nullable_format",
       "default" : null
     },
-    "value" : {
+    "actual_value" : {
       "$ref" : "#/definitions/types/string_number_boolean_null"
     },
-    "expected" : {
+    "expected_value" : {
       "$ref" : "#/definitions/types/string_number_boolean_null"
     },
     "previous_value" : {

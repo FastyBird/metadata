@@ -69,8 +69,8 @@ export interface DevicePropertyEntity {
     data_type: DataType | null
     unit: string | null
     format: string | string[] | number[] | null
-    value?: string | number | boolean | DeviceConnectionState | null
-    expected?: string | number | boolean | null
+    actual_value?: string | number | boolean | DeviceConnectionState | null
+    expected_value?: string | number | boolean | null
     previous_value?: string | number | boolean | null
     owner?: string
 
@@ -117,8 +117,8 @@ export interface ChannelPropertyEntity {
     data_type: DataType | null
     unit: string | null
     format: string | string[] | number[] | null
-    value?: string | number | boolean | null
-    expected?: string | number | boolean | null
+    actual_value?: string | number | boolean | null
+    expected_value?: string | number | boolean | null
     previous_value?: string | number | boolean | null
     owner?: string
 
@@ -156,7 +156,7 @@ export interface DeviceControlData {
 export interface DevicePropertyData {
     device: string
     property: string
-    expected: string | number | boolean
+    expected_value: string | number | boolean
 
     [k: string]: string | number | boolean | undefined
 }
@@ -176,7 +176,7 @@ export interface ChannelPropertyData {
     device: string
     channel: string
     property: string
-    expected: string | number | boolean
+    expected_value: string | number | boolean
 
     [k: string]: string | number | boolean | undefined
 }
