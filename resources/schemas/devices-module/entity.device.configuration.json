@@ -86,9 +86,13 @@
       "$ref" : "#/definitions/types/nullable_string_number",
       "default" : null
     },
+    "device" : {
+      "type" : "string",
+      "description" : "Device unique uuid v4 identifier used across services"
+    },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
+      "description" : "Device owner uuid v4 identifier"
     }
   },
   "if" : {
@@ -113,6 +117,7 @@
       "data_type",
       "default",
       "value",
+      "device",
       "values"
     ]
   },
@@ -156,6 +161,7 @@
         "data_type",
         "default",
         "value",
+        "device",
         "min",
         "max",
         "step"
@@ -170,7 +176,8 @@
         "comment",
         "data_type",
         "default",
-        "value"
+        "value",
+        "device"
       ]
     }
   }

@@ -129,9 +129,13 @@
     "previous_value" : {
       "$ref" : "#/definitions/types/string_number_boolean_null"
     },
+    "device" : {
+      "type" : "string",
+      "description" : "Device unique uuid v4 identifier used across services"
+    },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
+      "description" : "Device owner uuid v4 identifier"
     }
   },
   "required" : [
@@ -142,6 +146,7 @@
     "queryable",
     "data_type",
     "unit",
-    "format"
+    "format",
+    "device"
   ]
 }

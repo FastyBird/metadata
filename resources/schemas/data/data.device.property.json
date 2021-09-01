@@ -21,11 +21,11 @@
   "properties" : {
     "device" : {
       "type" : "string",
-      "description" : "Device key used across services. Is same as key field"
+      "description" : "Device unique uuid v4 identifier used across services"
     },
     "property" : {
       "type" : "string",
-      "description" : "Property key used across services. Is same as key field"
+      "description" : "Property unique uuid v4 identifier used across services"
     },
     "expected_value" : {
       "$ref" : "#/definitions/types/string_number_boolean"

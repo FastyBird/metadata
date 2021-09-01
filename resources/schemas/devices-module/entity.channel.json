@@ -26,7 +26,7 @@
     },
     "identifier" : {
       "type" : "string",
-      "description" : "Channel identifier used across services."
+      "description" : "Channel identifier used across services"
     },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -44,9 +44,13 @@
       "required" : [],
       "default" : []
     },
+    "device" : {
+      "type" : "string",
+      "description" : "Device unique uuid v4 identifier used across services"
+    },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
+      "description" : "Device owner uuid v4 identifier"
     }
   },
   "required" : [
@@ -55,6 +59,7 @@
     "identifier",
     "name",
     "comment",
-    "control"
+    "control",
+    "device"
   ]
 }

@@ -25,6 +25,10 @@
     "public" : {
       "type" : "boolean",
       "default" : false
+    },
+    "account" : {
+      "type": "string",
+      "description": "Account unique uuid v4 identifier used across services"
     }
   },
   "required" : [
@@ -33,6 +37,7 @@
     "default",
     "verified",
     "private",
-    "public"
+    "public",
+    "account"
   ]
 }

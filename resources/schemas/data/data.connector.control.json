@@ -31,7 +31,7 @@
     },
     "connector" : {
       "type" : "string",
-      "description" : "Connector key used across services. Is same as key field"
+      "description" : "Connector unique uuid v4 identifier used across services"
     }
   },
   "required" : [

@@ -48,13 +48,15 @@ export interface DeviceEntity {
 
 export interface DeviceConnectorEntity {
     id: string
-    connector: ConnectorType
+    type: ConnectorType
     address?: number | null
     max_packet_length?: number | null
     description_support?: boolean
     settings_support?: boolean
     configured_key_length?: number | null
     username?: string | null
+    connector: string
+    device: string
 
     [k: string]: string | number | string[] | ConnectorType | boolean | null | undefined
 }
@@ -72,6 +74,7 @@ export interface DevicePropertyEntity {
     actual_value?: string | number | boolean | DeviceConnectionState | null
     expected_value?: string | number | boolean | null
     previous_value?: string | number | boolean | null
+    device: string
     owner?: string
 
     [k: string]: string | boolean | number | string[] | number[] | DataType | DeviceConnectionState | null | undefined
@@ -90,6 +93,7 @@ export interface DeviceConfigurationEntity {
     min?: number | null
     max?: number | null
     step?: number | null
+    device: string
     owner?: string
 
     [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined
@@ -102,6 +106,7 @@ export interface ChannelEntity {
     name: string | null
     comment: string | null
     control: string[]
+    device: string
     owner?: string
 
     [k: string]: string | string[] | null | undefined
@@ -120,6 +125,7 @@ export interface ChannelPropertyEntity {
     actual_value?: string | number | boolean | null
     expected_value?: string | number | boolean | null
     previous_value?: string | number | boolean | null
+    channel: string
     owner?: string
 
     [k: string]: string | boolean | number | string[] | number[] | DataType | null | undefined
@@ -138,6 +144,7 @@ export interface ChannelConfigurationEntity {
     min?: number | null
     max?: number | null
     step?: number | null
+    channel: string
     owner?: string
 
     [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined

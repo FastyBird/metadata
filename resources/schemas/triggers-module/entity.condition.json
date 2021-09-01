@@ -34,11 +34,11 @@
     },
     "trigger" : {
       "type" : "string",
-      "description" : "Trigger identifier used across services. Could be used as identifier & is unique."
+      "description" : "Trigger unique uuid v4 identifier used across services"
     },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
+      "description" : "Device owner uuid v4 identifier"
     }
   },
   "if" : {
@@ -124,7 +124,7 @@
         "properties" : {
           "time" : {
             "type" : "string",
-            "description" : "Ful time representation formatted in ATOM."
+            "description" : "Ful time representation formatted in ATOM"
           },
           "days" : {
             "type" : "array",
@@ -133,7 +133,7 @@
               "uniqueItems" : true,
               "minItems" : 1
             },
-            "description" : "Days numbers 1 - 7 where 1 is mon and 7 is sun."
+            "description" : "Days numbers 1 - 7 where 1 is mon and 7 is sun"
           }
         },
         "required" : [
@@ -157,7 +157,7 @@
           "properties" : {
             "date" : {
               "type" : "string",
-              "description" : "Ful date representation formatted in ATOM."
+              "description" : "Ful date representation formatted in ATOM"
             }
           },
           "required" : [

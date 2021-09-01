@@ -32,7 +32,7 @@
     },
     "device" : {
       "type" : "string",
-      "description" : "Device key used across services. Is same as key field"
+      "description" : "Device unique uuid v4 identifier used across services"
     }
   },
   "required" : [

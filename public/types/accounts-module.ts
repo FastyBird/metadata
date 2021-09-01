@@ -24,6 +24,7 @@ export interface EmailEntity {
     verified: boolean
     private: boolean
     public: boolean
+    account: string
 
     [k: string]: string | boolean
 }
@@ -33,6 +34,7 @@ export interface IdentityEntity {
     state: IdentityState
     uid: string
     password?: string
+    account: string
 
     [k: string]: string | IdentityState | undefined
 }

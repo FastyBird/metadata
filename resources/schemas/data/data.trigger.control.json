@@ -30,7 +30,7 @@
     },
     "trigger" : {
       "type" : "string",
-      "description" : "Trigger key used across services. Is same as key field"
+      "description" : "Trigger unique uuid v4 identifier used across services"
     }
   },
   "required" : [

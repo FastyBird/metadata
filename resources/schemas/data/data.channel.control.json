@@ -30,11 +30,11 @@
     },
     "device" : {
       "type" : "string",
-      "description" : "Device key used across services. Is same as key field"
+      "description" : "Device unique uuid v4 identifier used across services"
     },
     "channel" : {
       "type" : "string",
-      "description" : "Channel key used across services. Is same as key field"
+      "description" : "Channel unique uuid v4 identifier used across services"
     }
   },
   "required" : [

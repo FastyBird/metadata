@@ -123,7 +123,7 @@
     },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier."
+      "description" : "Device owner uuid v4 identifier"
     }
   },
   "required" : [

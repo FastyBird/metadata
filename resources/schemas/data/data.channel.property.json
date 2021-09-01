@@ -21,15 +21,15 @@
   "properties" : {
     "device" : {
       "type" : "string",
-      "description" : "Device identifier used across services. Is same as key field"
+      "description" : "Device unique uuid v4 identifier used across services"
     },
     "channel" : {
       "type" : "string",
-      "description" : "Channel key used across services. Is same as key field"
+      "description" : "Channel unique uuid v4 identifier used across services"
     },
     "property" : {
       "type" : "string",
-      "description" : "Property key used across services. Is same as key field"
+      "description" : "Property unique uuid v4 identifier used across services"
     },
     "expected_value" : {
       "$ref" : "#/definitions/types/string_number_boolean"

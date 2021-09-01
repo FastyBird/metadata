@@ -25,11 +25,16 @@
     },
     "password" : {
       "type" : "string"
+    },
+    "account" : {
+      "type": "string",
+      "description": "Account unique uuid v4 identifier used across services"
     }
   },
   "required" : [
     "id",
     "state",
-    "uid"
+    "uid",
+    "account"
   ]
 }

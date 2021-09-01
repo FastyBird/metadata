@@ -23,7 +23,7 @@
         ]
       }
     },
-    "connector" : {
+    "connector_type" : {
       "type" : "string",
       "enum" : [
         "fb-bus",
@@ -37,13 +37,21 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
+    "type" : {
+      "$ref" : "#/definitions/connector_type"
+    },
+    "device" : {
+      "type" : "string",
+      "description" : "Device unique uuid v4 identifier used across services"
+    },
     "connector" : {
-      "$ref" : "#/definitions/connector"
+      "type" : "string",
+      "description" : "Connector unique uuid v4 identifier used across services"
     }
   },
   "if" : {
     "properties" : {
-      "connector" : {
+      "type" : {
         "const" : "fb-bus"
       }
     }
@@ -73,7 +81,9 @@
     },
     "required" : [
       "id",
+      "type",
       "connector",
+      "device",
       "address",
       "max_packet_length",
       "description_support",
@@ -84,7 +94,7 @@
   "else" : {
     "if" : {
       "properties" : {
-        "connector" : {
+        "type" : {
           "const" : "fb-mqtt-v1"
         }
       }
@@ -98,14 +108,18 @@
       },
       "required" : [
         "id",
+        "type",
         "connector",
+        "device",
         "username"
       ]
     },
     "else" : {
       "required" : [
         "id",
-        "connector"
+        "type",
+        "connector",
+        "device"
       ]
     }
   }
