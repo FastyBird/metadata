@@ -153,6 +153,7 @@ export enum TriggerType {
 }
 
 export enum TriggerActionType {
+    DEVICE_PROPERTY = 'device-property',
     CHANNEL_PROPERTY = 'channel-property',
 }
 
