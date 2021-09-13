@@ -11,6 +11,16 @@
             "type" : "string"
           }
         ]
+      },
+      "nullable_boolean": {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
       }
     },
     "type" : {
@@ -41,16 +51,44 @@
       "type" : "boolean",
       "default" : false
     },
+    "is_triggered" : {
+      "$ref" : "#/definitions/types/nullable_boolean",
+      "default" : null
+    },
     "owner" : {
       "type" : "string",
       "description" : "Device owner uuid v4 identifier"
     }
   },
-  "required" : [
-    "id",
-    "type",
-    "name",
-    "comment",
-    "enabled"
-  ]
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "automatic"
+      }
+    }
+  },
+  "then" : {
+    "properties" : {
+      "is_fulfilled" : {
+        "$ref": "#/definitions/types/nullable_boolean",
+        "default": null
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "name",
+      "comment",
+      "enabled"
+    ]
+  },
+  "else" : {
+    "required" : [
+      "id",
+      "type",
+      "name",
+      "comment",
+      "enabled"
+    ]
+  }
 }
