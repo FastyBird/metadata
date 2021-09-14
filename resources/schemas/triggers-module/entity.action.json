@@ -16,6 +16,7 @@
     "type" : {
       "type" : "string",
       "enum" : [
+        "device-property",
         "channel-property"
       ]
     }
