@@ -141,7 +141,7 @@
   "required" : [
     "id",
     "key",
-    "property",
+    "identifier",
     "settable",
     "queryable",
     "data_type",

@@ -111,7 +111,7 @@
     "required" : [
       "id",
       "key",
-      "configuration",
+      "identifier",
       "name",
       "comment",
       "data_type",
@@ -155,7 +155,7 @@
       "required" : [
         "id",
         "key",
-        "configuration",
+        "identifier",
         "name",
         "comment",
         "data_type",
@@ -171,7 +171,7 @@
       "required" : [
         "id",
         "key",
-        "configuration",
+        "identifier",
         "name",
         "comment",
         "data_type",
