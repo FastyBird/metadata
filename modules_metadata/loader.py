@@ -66,10 +66,7 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
         raise FileNotFoundException("Schema could not be loaded")
 
     raise InvalidArgumentException(
-        "Schema for origin: {} and routing key: {} is not configured".format(
-            origin.value,
-            routing_key.value,
-        )
+        f"Schema for origin: {origin.value} and routing key: {routing_key.value} is not configured",
     )
 
 
