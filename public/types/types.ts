@@ -49,25 +49,9 @@ export enum IdentityState {
     INVALID = 'invalid',
 }
 
-export enum ConnectorControlAction {
-    SEARCH = 'search',
-    RESTART = 'restart',
-}
-
-export enum DeviceControlAction {
-    CONFIGURE = 'configure',
-    RESET = 'reset',
-    RECONNECT = 'reconnect',
-    FACTORY_RESET = 'factory-reset',
-}
-
-export enum ChannelControlAction {
-    RESET = 'reset',
-}
-
 export enum ConnectorType {
     FB_BUS = 'fb-bus',
-    FB_MQTT_V1 = 'fb-mqtt-v1',
+    FB_MQTT = 'fb-mqtt',
 }
 
 export enum DeviceConnectionState {
@@ -141,10 +125,14 @@ export enum DevicePropertyName {
     BATTERY = 'battery',
     WIFI = 'wifi',
     SIGNAL = 'signal',
-}
-
-export enum TriggerControlAction {
-    TRIGGER = 'trigger',
+    SSID = 'ssid',
+    RSSI = 'rssi',
+    VCC = 'vcc',
+    CPU_LOAD = 'cpu-load',
+    UPTIME = 'uptime',
+    IP_ADDRESS = 'ip-address',
+    STATUS_LED = 'status-led',
+    FREE_HEAP = 'free-heap',
 }
 
 export enum TriggerType {

@@ -2,18 +2,16 @@ import {
   ConnectorType,
   DataType,
   DeviceConnectionState,
-  DeviceControlAction,
   DeviceModel,
   FirmwareManufacturer,
   HardwareManufacturer,
-  ChannelControlAction,
 } from './types'
 
 export interface ConnectorEntity {
     id: string
     type: ConnectorType
-    name: string
     key: string
+    name: string
     enabled: boolean
     control: string[]
     address?: number | null
@@ -29,15 +27,15 @@ export interface ConnectorEntity {
 
 export interface DeviceEntity {
     id: string
-    key: string
     identifier: string
+    key: string
     name: string | null
     comment: string | null
     enabled: boolean
     hardware_version: string | null
     hardware_manufacturer: HardwareManufacturer
     hardware_model: DeviceModel
-    mac_address: string | null
+    hardware_mac_address: string | null
     firmware_manufacturer: FirmwareManufacturer
     firmware_version: string | null
     control: string[]
@@ -63,8 +61,8 @@ export interface DeviceConnectorEntity {
 
 export interface DevicePropertyEntity {
     id: string
-    key: string
     identifier: string
+    key: string
     name: string | null
     settable: boolean
     queryable: boolean
@@ -82,8 +80,8 @@ export interface DevicePropertyEntity {
 
 export interface DeviceConfigurationEntity {
     id: string
-    key: string
     identifier: string
+    key: string
     name: string | null
     comment: string | null
     data_type: DataType
@@ -101,8 +99,8 @@ export interface DeviceConfigurationEntity {
 
 export interface ChannelEntity {
     id: string
-    key: string
     identifier: string
+    key: string
     name: string | null
     comment: string | null
     control: string[]
@@ -114,8 +112,8 @@ export interface ChannelEntity {
 
 export interface ChannelPropertyEntity {
     id: string
-    key: string
     identifier: string
+    key: string
     name: string | null
     settable: boolean
     queryable: boolean
@@ -133,8 +131,8 @@ export interface ChannelPropertyEntity {
 
 export interface ChannelConfigurationEntity {
     id: string
-    key: string
     identifier: string
+    key: string
     name: string | null
     comment: string | null
     data_type: DataType
@@ -151,13 +149,15 @@ export interface ChannelConfigurationEntity {
 }
 
 export interface DeviceControlData {
-    control: DeviceControlAction
-    value?:
+    control: string
+    expected_value?:
         | null
         | string
+        | number
+        | boolean
     device: string
 
-    [k: string]: string | DeviceControlAction | null | undefined
+    [k: string]: string | number | boolean | null | undefined
 }
 
 export interface DevicePropertyData {
@@ -169,14 +169,16 @@ export interface DevicePropertyData {
 }
 
 export interface ChannelControlData {
-    control: ChannelControlAction
-    value?:
-        | null
-        | string
+    control: string
+    expected_value?:
+      | null
+      | string
+      | number
+      | boolean
     device: string
     channel: string
 
-    [k: string]: string | ChannelControlAction | null | undefined
+    [k: string]: string | number | boolean | null | undefined
 }
 
 export interface ChannelPropertyData {

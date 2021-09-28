@@ -55,9 +55,17 @@
       "$ref" : "#/definitions/types/nullable_boolean",
       "default" : null
     },
+    "control" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      },
+      "required" : [],
+      "default" : []
+    },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier"
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
   "if" : {

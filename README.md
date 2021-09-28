@@ -9,7 +9,7 @@
 [![PHP latest stable](https://badgen.net/packagist/v/FastyBird/modules-metadata/latest?cache=300&style=flat-square)](https://packagist.org/packages/FastyBird/modules-metadata)
 [![PHPStan](https://img.shields.io/badge/phpstan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
-[![Nuxt](https://img.shields.io/badge/nuxt-v2-brightgreen.svg?style=flat-square)](https://nuxtjs.org)
+![JS](https://img.shields.io/badge/js-es6-blue.svg?style=flat-square)
 [![JS downloads total](https://badgen.net/npm/dt/@fastybird/modules-metadata?cache=300&style=flat-square)](https://www.npmjs.com/package/@fastybird/modules-metadata)
 [![JS latest stable](https://badgen.net/npm/v/@fastybird/modules-metadata?cache=300&style=flat-square)](https://www.npmjs.com/package/@fastybird/modules-metadata)
 ![Types](https://badgen.net/npm/types/@fastybird/modules-metadata?cache=300&style=flat-square)

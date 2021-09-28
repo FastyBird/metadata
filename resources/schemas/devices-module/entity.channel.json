@@ -20,13 +20,13 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "key" : {
-      "type" : "string",
-      "description" : "Unique identifier per each entity"
-    },
     "identifier" : {
       "type" : "string",
-      "description" : "Channel identifier used across services"
+      "description" : "Unique human readable identifier used across services"
+    },
+    "key" : {
+      "type" : "string",
+      "description" : "Unique pub/sub identifier per each entity"
     },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -50,13 +50,13 @@
     },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier"
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
   "required" : [
     "id",
-    "key",
     "identifier",
+    "key",
     "name",
     "comment",
     "control",

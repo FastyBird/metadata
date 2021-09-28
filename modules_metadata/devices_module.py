@@ -23,63 +23,6 @@ from enum import Enum, unique
 
 
 @unique
-class ConnectorControlAction(Enum):
-    """
-    Control connector action
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-    RESTART_CONNECTOR: str = "restart"
-    SEARCH_DEVICES: str = "search"
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-
-@unique
-class DeviceControlAction(Enum):
-    """
-    Control device action
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-    RESET_DEVICE: str = "reset"
-    RECONNECT_DEVICE: str = "reconnect"
-    DEVICE_FACTORY_RESET: str = "factory-reset"
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-
-@unique
-class ChannelControlAction(Enum):
-    """
-    Control channel action
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-    RESET_CHANNEL: str = "reset"
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-
-@unique
 class ConnectorType(Enum):
     """
     Connector type
@@ -90,7 +33,7 @@ class ConnectorType(Enum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
     FB_BUS: str = "fb-bus"
-    FB_MQTT_V1: str = "fb-mqtt-v1"
+    FB_MQTT: str = "fb-mqtt"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -209,6 +152,13 @@ class DevicePropertyName(Enum):
     BATTERY: str = "battery"
     WIFI: str = "wifi"
     SIGNAL: str = "signal"
+    RSSI: str = "rssi"
+    VCC: str = "vcc"
+    CPU_LOAD: str = "cpu-load"
+    UPTIME: str = "uptime"
+    IP_ADDRESS: str = "ip-address"
+    STATUS_LED: str = "status-led"
+    FREE_HEAP: str = "free-heap"
 
     @classmethod
     def has_value(cls, value: str) -> bool:

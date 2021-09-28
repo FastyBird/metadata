@@ -27,7 +27,7 @@
       "type" : "string",
       "enum" : [
         "fb-bus",
-        "fb-mqtt-v1"
+        "fb-mqtt"
       ]
     }
   },
@@ -95,7 +95,7 @@
     "if" : {
       "properties" : {
         "type" : {
-          "const" : "fb-mqtt-v1"
+          "const" : "fb-mqtt"
         }
       }
     },

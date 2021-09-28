@@ -23,24 +23,6 @@ from enum import Enum, unique
 
 
 @unique
-class TriggerControlAction(Enum):
-    """
-    Control trigger action
-
-    @package        FastyBird:ModulesMetadata!
-    @module         triggers_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-    TRIGGER_TRIGGER: str = "trigger"
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-
-@unique
 class TriggerType(Enum):
     """
     Trigger type

@@ -73,12 +73,13 @@
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
+    "identifier" : {
+      "type" : "string",
+      "description" : "Unique human readable identifier used across services"
+    },
     "key" : {
       "type" : "string",
-      "description" : "Unique identifier per each entity"
-    },
-    "identifier" : {
-      "type" : "string"
+      "description" : "Unique pub/sub identifier per each entity"
     },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -102,7 +103,7 @@
     "hardware_model" : {
       "$ref" : "#/definitions/device_model"
     },
-    "mac_address" : {
+    "hardware_mac_address" : {
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
     },
@@ -123,20 +124,20 @@
     },
     "owner" : {
       "type" : "string",
-      "description" : "Device owner uuid v4 identifier"
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
   "required" : [
     "id",
-    "key",
     "identifier",
+    "key",
     "name",
     "comment",
     "enabled",
     "hardware_version",
     "hardware_manufacturer",
     "hardware_model",
-    "mac_address",
+    "hardware_mac_address",
     "firmware_manufacturer",
     "firmware_version",
     "control"

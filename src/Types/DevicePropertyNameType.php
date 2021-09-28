@@ -35,6 +35,13 @@ class DevicePropertyNameType extends Consistence\Enum\Enum
 	public const TYPE_BATTERY = 'battery';
 	public const TYPE_WIFI = 'wifi';
 	public const TYPE_SIGNAL = 'signal';
+	public const RSSI = 'rssi';
+	public const VCC = 'vcc';
+	public const CPU_LOAD = 'cpu-load';
+	public const UPTIME = 'uptime';
+	public const IP_ADDRESS = 'ip-address';
+	public const STATUS_LED = 'status-led';
+	public const FREE_HEAP = 'free-heap';
 
 	/**
 	 * @return string

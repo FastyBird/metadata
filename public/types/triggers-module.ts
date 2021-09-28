@@ -12,11 +12,12 @@ export interface TriggerEntity {
     name: string
     comment: string | null
     enabled: boolean
+    control?: string[]
     owner?: string
     is_triggered?: boolean | null
     is_fulfilled?: boolean | null
 
-    [k: string]: string | TriggerType | boolean | null | undefined
+    [k: string]: string | TriggerType | boolean | string[] | null | undefined
 }
 
 export interface ActionEntity {
@@ -63,4 +64,16 @@ export interface NotificationEntity {
     owner?: string
 
     [k: string]: string | TriggerNotificationType | boolean | undefined
+}
+
+export interface TriggerControlData {
+    control: string
+    expected_value?:
+      | null
+      | string
+      | number
+      | boolean
+    trigger: string
+
+    [k: string]: string | number | boolean | null | undefined
 }

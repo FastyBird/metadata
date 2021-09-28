@@ -27,7 +27,7 @@
       "type" : "string",
       "enum" : [
         "fb-bus",
-        "fb-mqtt-v1"
+        "fb-mqtt"
       ]
     }
   },
@@ -40,12 +40,12 @@
     "type" : {
       "$ref" : "#/definitions/type"
     },
-    "name" : {
-      "type" : "string"
-    },
     "key" : {
       "type" : "string",
-      "description" : "Unique identifier per each entity"
+      "description" : "Unique pub/sub identifier per each entity"
+    },
+    "name" : {
+      "type" : "string"
     },
     "enabled" : {
       "type" : "boolean",
@@ -85,8 +85,8 @@
     "required" : [
       "id",
       "type",
-      "name",
       "key",
+      "name",
       "enabled",
       "control",
       "address",
@@ -98,7 +98,7 @@
     "if" : {
       "properties" : {
         "type" : {
-          "const" : "fb-mqtt-v1"
+          "const" : "fb-mqtt"
         }
       }
     },
@@ -124,8 +124,8 @@
       "required" : [
         "id",
         "type",
-        "name",
         "key",
+        "name",
         "enabled",
         "control",
         "server",
@@ -138,8 +138,8 @@
       "required" : [
         "id",
         "type",
-        "name",
         "key",
+        "name",
         "enabled",
         "control"
       ]
