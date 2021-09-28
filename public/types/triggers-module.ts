@@ -20,6 +20,15 @@ export interface TriggerEntity {
     [k: string]: string | TriggerType | boolean | string[] | null | undefined
 }
 
+export interface TriggerControlEntity {
+  id: string
+  name: string
+  trigger: string
+  owner?: string
+
+  [k: string]: string | undefined
+}
+
 export interface ActionEntity {
     id: string
     type: TriggerActionType

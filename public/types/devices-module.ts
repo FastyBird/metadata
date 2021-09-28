@@ -25,6 +25,14 @@ export interface ConnectorEntity {
     [k: string]: string | number | string[] | ConnectorType | boolean | null | undefined
 }
 
+export interface ConnectorControlEntity {
+  id: string
+  name: string
+  connector: string
+
+  [k: string]: string
+}
+
 export interface DeviceEntity {
     id: string
     identifier: string
@@ -97,6 +105,15 @@ export interface DeviceConfigurationEntity {
     [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined
 }
 
+export interface DeviceControlEntity {
+    id: string
+    name: string
+    device: string
+    owner?: string
+
+    [k: string]: string | undefined
+}
+
 export interface ChannelEntity {
     id: string
     identifier: string
@@ -146,6 +163,27 @@ export interface ChannelConfigurationEntity {
     owner?: string
 
     [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined
+}
+
+export interface ChannelControlEntity {
+    id: string
+    name: string
+    channel: string
+    owner?: string
+
+    [k: string]: string | undefined
+}
+
+export interface ConnectorControlData {
+    control: string
+    expected_value?:
+        | null
+        | string
+        | number
+        | boolean
+    connector: string
+
+    [k: string]: string | number | boolean | null | undefined
 }
 
 export interface DeviceControlData {

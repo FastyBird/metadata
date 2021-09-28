@@ -73,8 +73,6 @@ final class Constants
 	public const MESSAGE_BUS_DEVICES_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.device';
 	public const MESSAGE_BUS_DEVICES_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.device';
 
-	public const MESSAGE_BUS_DEVICES_CONTROLS_ROUTING_KEY = 'fb.bus.control.device';
-
 	// Devices properties
 	public const MESSAGE_BUS_DEVICES_PROPERTY_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.device.property';
 	public const MESSAGE_BUS_DEVICES_PROPERTY_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.device.property';
@@ -89,6 +87,13 @@ final class Constants
 
 	public const MESSAGE_BUS_DEVICES_CONFIGURATION_DATA_ROUTING_KEY = 'fb.bus.data.device.configuration';
 
+	// Devices control
+	public const MESSAGE_BUS_DEVICES_CONTROL_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.device.control';
+	public const MESSAGE_BUS_DEVICES_CONTROL_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.device.control';
+	public const MESSAGE_BUS_DEVICES_CONTROL_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.device.control';
+
+	public const MESSAGE_BUS_DEVICES_CONTROL_DATA_ROUTING_KEY = 'fb.bus.data.device.control';
+
 	// Devices connectors
 	public const MESSAGE_BUS_DEVICES_CONNECTOR_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.device.connector';
 	public const MESSAGE_BUS_DEVICES_CONNECTOR_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.device.connector';
@@ -98,8 +103,6 @@ final class Constants
 	public const MESSAGE_BUS_CHANNELS_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.channel';
 	public const MESSAGE_BUS_CHANNELS_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.channel';
 	public const MESSAGE_BUS_CHANNELS_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.channel';
-
-	public const MESSAGE_BUS_CHANNELS_CONTROLS_ROUTING_KEY = 'fb.bus.control.channel';
 
 	// Channels properties
 	public const MESSAGE_BUS_CHANNELS_PROPERTY_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.channel.property';
@@ -115,12 +118,24 @@ final class Constants
 
 	public const MESSAGE_BUS_CHANNELS_CONFIGURATION_DATA_ROUTING_KEY = 'fb.bus.data.channel.configuration';
 
-	// Connectors configuration
-	public const MESSAGE_BUS_CONNECTOR_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.connector';
-	public const MESSAGE_BUS_CONNECTOR_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.connector';
-	public const MESSAGE_BUS_CONNECTOR_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.connector';
+	// Channels control
+	public const MESSAGE_BUS_CHANNELS_CONTROL_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.channel.control';
+	public const MESSAGE_BUS_CHANNELS_CONTROL_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.channel.control';
+	public const MESSAGE_BUS_CHANNELS_CONTROL_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.channel.control';
 
-	public const MESSAGE_BUS_CONNECTOR_CONTROLS_ROUTING_KEY = 'fb.bus.control.connector';
+	public const MESSAGE_BUS_CHANNELS_CONTROL_DATA_ROUTING_KEY = 'fb.bus.data.channel.control';
+
+	// Connectors configuration
+	public const MESSAGE_BUS_CONNECTORS_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.connector';
+	public const MESSAGE_BUS_CONNECTORS_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.connector';
+	public const MESSAGE_BUS_CONNECTORS_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.connector';
+
+	// Connectors control
+	public const MESSAGE_BUS_CONNECTORS_CONTROL_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.connector.control';
+	public const MESSAGE_BUS_CONNECTORS_CONTROL_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.connector.control';
+	public const MESSAGE_BUS_CONNECTORS_CONTROL_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.connector.control';
+
+	public const MESSAGE_BUS_CONNECTORS_CONTROL_DATA_ROUTING_KEY = 'fb.bus.data.connector.control';
 
 	/**
 	 * Triggers module
@@ -131,7 +146,12 @@ final class Constants
 	public const MESSAGE_BUS_TRIGGERS_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.trigger';
 	public const MESSAGE_BUS_TRIGGERS_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.trigger';
 
-	public const MESSAGE_BUS_TRIGGER_CONTROLS_ROUTING_KEY = 'fb.bus.control.trigger';
+	// Triggers control
+	public const MESSAGE_BUS_TRIGGERS_CONTROL_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.trigger.control';
+	public const MESSAGE_BUS_TRIGGERS_CONTROL_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.trigger.control';
+	public const MESSAGE_BUS_TRIGGERS_CONTROL_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.trigger.control';
+
+	public const MESSAGE_BUS_TRIGGERS_CONTROL_DATA_ROUTING_KEY = 'fb.bus.data.trigger.control';
 
 	// Triggers actions
 	public const MESSAGE_BUS_TRIGGERS_ACTIONS_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.trigger.action';
@@ -154,14 +174,14 @@ final class Constants
 
 	public const JSON_SCHEMAS_MAPPING = [
 		self::NOT_SPECIFIED_ORIGIN   => [
-			self::MESSAGE_BUS_DEVICES_CONTROLS_ROUTING_KEY            => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.device.control.json',
 			self::MESSAGE_BUS_DEVICES_PROPERTIES_DATA_ROUTING_KEY     => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.device.property.json',
 			self::MESSAGE_BUS_DEVICES_CONFIGURATION_DATA_ROUTING_KEY  => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.device.configuration.json',
-			self::MESSAGE_BUS_CHANNELS_CONTROLS_ROUTING_KEY           => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.channel.control.json',
+			self::MESSAGE_BUS_DEVICES_CONTROL_DATA_ROUTING_KEY        => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.device.control.json',
 			self::MESSAGE_BUS_CHANNELS_PROPERTIES_DATA_ROUTING_KEY    => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.channel.property.json',
 			self::MESSAGE_BUS_CHANNELS_CONFIGURATION_DATA_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.channel.configuration.json',
-			self::MESSAGE_BUS_CONNECTOR_CONTROLS_ROUTING_KEY          => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.connector.control.json',
-			self::MESSAGE_BUS_TRIGGER_CONTROLS_ROUTING_KEY            => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.trigger.control.json',
+			self::MESSAGE_BUS_CHANNELS_CONTROL_DATA_ROUTING_KEY       => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.channel.control.json',
+			self::MESSAGE_BUS_CONNECTORS_CONTROL_DATA_ROUTING_KEY     => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.connector.control.json',
+			self::MESSAGE_BUS_TRIGGERS_CONTROL_DATA_ROUTING_KEY       => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.trigger.control.json',
 		],
 		self::MODULE_ACCOUNTS_ORIGIN     => [
 			self::MESSAGE_BUS_ACCOUNTS_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.account.json',
@@ -189,6 +209,10 @@ final class Constants
 			self::MESSAGE_BUS_DEVICES_CONFIGURATION_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.configuration.json',
 			self::MESSAGE_BUS_DEVICES_CONFIGURATION_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.configuration.json',
 
+			self::MESSAGE_BUS_DEVICES_CONTROL_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.control.json',
+			self::MESSAGE_BUS_DEVICES_CONTROL_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.control.json',
+			self::MESSAGE_BUS_DEVICES_CONTROL_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.control.json',
+
 			self::MESSAGE_BUS_DEVICES_CONNECTOR_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.connector.json',
 			self::MESSAGE_BUS_DEVICES_CONNECTOR_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.connector.json',
 			self::MESSAGE_BUS_DEVICES_CONNECTOR_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.connector.json',
@@ -205,14 +229,26 @@ final class Constants
 			self::MESSAGE_BUS_CHANNELS_CONFIGURATION_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.channel.configuration.json',
 			self::MESSAGE_BUS_CHANNELS_CONFIGURATION_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.channel.configuration.json',
 
-			self::MESSAGE_BUS_CONNECTOR_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.json',
-			self::MESSAGE_BUS_CONNECTOR_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.json',
-			self::MESSAGE_BUS_CONNECTOR_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.json',
+			self::MESSAGE_BUS_CHANNELS_CONTROL_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.channel.control.json',
+			self::MESSAGE_BUS_CHANNELS_CONTROL_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.channel.control.json',
+			self::MESSAGE_BUS_CHANNELS_CONTROL_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.channel.control.json',
+
+			self::MESSAGE_BUS_CONNECTORS_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.json',
+			self::MESSAGE_BUS_CONNECTORS_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.json',
+			self::MESSAGE_BUS_CONNECTORS_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.json',
+
+			self::MESSAGE_BUS_CONNECTORS_CONTROL_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.control.json',
+			self::MESSAGE_BUS_CONNECTORS_CONTROL_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.control.json',
+			self::MESSAGE_BUS_CONNECTORS_CONTROL_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.connector.control.json',
 		],
 		self::MODULE_TRIGGERS_ORIGIN => [
 			self::MESSAGE_BUS_TRIGGERS_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.trigger.json',
 			self::MESSAGE_BUS_TRIGGERS_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.trigger.json',
 			self::MESSAGE_BUS_TRIGGERS_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.trigger.json',
+
+			self::MESSAGE_BUS_TRIGGERS_CONTROL_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.trigger.control.json',
+			self::MESSAGE_BUS_TRIGGERS_CONTROL_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.trigger.control.json',
+			self::MESSAGE_BUS_TRIGGERS_CONTROL_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.trigger.control.json',
 
 			self::MESSAGE_BUS_TRIGGERS_ACTIONS_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.action.json',
 			self::MESSAGE_BUS_TRIGGERS_ACTIONS_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.action.json',
@@ -236,17 +272,5 @@ final class Constants
 	public const MODULE_DEVICES_PREFIX = 'devices-module';
 	public const MODULE_TRIGGERS_PREFIX = 'triggers-module';
 	public const MODULE_UI_PREFIX = 'ui-module';
-
-	/**
-	 * Devices & Channels control actions
-	 */
-	public const CONTROL_CONFIG = 'configure';
-	public const CONTROL_RESET = 'reset';
-	public const CONTROL_RECONNECT = 'reconnect';
-	public const CONTROL_FACTORY_RESET = 'factory-reset';
-	public const CONTROL_OTA = 'ota';
-	public const CONTROL_SEARCH = 'search';
-	public const CONTROL_RESTART = 'restart';
-	public const CONTROL_TRIGGER = 'trigger';
 
 }

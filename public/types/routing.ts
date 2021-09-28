@@ -21,8 +21,6 @@ export enum DevicesModule {
     DEVICES_ENTITY_UPDATED = 'fb.bus.entity.updated.device',
     DEVICES_ENTITY_DELETED = 'fb.bus.entity.deleted.device',
 
-    DEVICES_CONTROLS = 'fb.bus.control.device',
-
     // Devices properties
     DEVICES_PROPERTY_ENTITY_CREATED = 'fb.bus.entity.created.device.property',
     DEVICES_PROPERTY_ENTITY_UPDATED = 'fb.bus.entity.updated.device.property',
@@ -37,6 +35,13 @@ export enum DevicesModule {
 
     DEVICES_CONFIGURATION_DATA = 'fb.bus.data.device.configuration',
 
+    // Devices control
+    DEVICES_CONTROL_ENTITY_CREATED = 'fb.bus.entity.created.device.control',
+    DEVICES_CONTROL_ENTITY_UPDATED = 'fb.bus.entity.updated.device.control',
+    DEVICES_CONTROL_ENTITY_DELETED = 'fb.bus.entity.deleted.device.control',
+
+    DEVICES_CONTROL_DATA = 'fb.bus.data.device.control',
+
     // Devices connectors
     DEVICES_CONNECTOR_ENTITY_CREATED = 'fb.bus.entity.created.device.connector',
     DEVICES_CONNECTOR_ENTITY_UPDATED = 'fb.bus.entity.updated.device.connector',
@@ -46,8 +51,6 @@ export enum DevicesModule {
     CHANNELS_ENTITY_CREATED = 'fb.bus.entity.created.channel',
     CHANNELS_ENTITY_UPDATED = 'fb.bus.entity.updated.channel',
     CHANNELS_ENTITY_DELETED = 'fb.bus.entity.deleted.channel',
-
-    CHANNELS_CONTROLS = 'fb.bus.control.channel',
 
     // Channels properties
     CHANNELS_PROPERTY_ENTITY_CREATED = 'fb.bus.entity.created.channel.property',
@@ -63,12 +66,24 @@ export enum DevicesModule {
 
     CHANNELS_CONFIGURATION_DATA = 'fb.bus.data.channel.configuration',
 
-    // Connectors configuration
-    CONNECTOR_ENTITY_CREATED = 'fb.bus.entity.created.connector',
-    CONNECTOR_ENTITY_UPDATED = 'fb.bus.entity.updated.connector',
-    CONNECTOR_ENTITY_DELETED = 'fb.bus.entity.deleted.connector',
+    // Channels control
+    CHANNELS_CONTROL_ENTITY_CREATED = 'fb.bus.entity.created.channel.control',
+    CHANNELS_CONTROL_ENTITY_UPDATED = 'fb.bus.entity.updated.channel.control',
+    CHANNELS_CONTROL_ENTITY_DELETED = 'fb.bus.entity.deleted.channel.control',
 
-    CONNECTOR_CONTROLS = 'fb.bus.control.connector',
+    CHANNELS_CONTROL_DATA = 'fb.bus.data.channel.control',
+
+    // Connectors configuration
+    CONNECTORS_ENTITY_CREATED = 'fb.bus.entity.created.connector',
+    CONNECTORS_ENTITY_UPDATED = 'fb.bus.entity.updated.connector',
+    CONNECTORS_ENTITY_DELETED = 'fb.bus.entity.deleted.connector',
+
+    // Connectors control
+    CONNECTORS_CONTROL_ENTITY_CREATED = 'fb.bus.entity.created.connector.control',
+    CONNECTORS_CONTROL_ENTITY_UPDATED = 'fb.bus.entity.updated.connector.control',
+    CONNECTORS_CONTROL_ENTITY_DELETED = 'fb.bus.entity.deleted.connector.control',
+
+    CONNECTORS_CONTROL_DATA = 'fb.bus.data.connector.control',
 }
 
 export enum TriggersModule {
@@ -77,7 +92,12 @@ export enum TriggersModule {
     TRIGGERS_ENTITY_UPDATED = 'fb.bus.entity.updated.trigger',
     TRIGGERS_ENTITY_DELETED = 'fb.bus.entity.deleted.trigger',
 
-    TRIGGER_CONTROLS = 'fb.bus.control.trigger',
+    // Connectors control
+    TRIGGERS_CONTROL_ENTITY_CREATED = 'fb.bus.entity.created.trigger.control',
+    TRIGGERS_CONTROL_ENTITY_UPDATED = 'fb.bus.entity.updated.trigger.control',
+    TRIGGERS_CONTROL_ENTITY_DELETED = 'fb.bus.entity.deleted.trigger.control',
+
+    TRIGGERS_CONTROL_DATA = 'fb.bus.data.trigger.control',
 
     // Triggers actions
     TRIGGERS_ACTIONS_ENTITY_CREATED = 'fb.bus.entity.created.trigger.action',
