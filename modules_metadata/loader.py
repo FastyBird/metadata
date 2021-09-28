@@ -207,11 +207,11 @@ JSON_SCHEMAS_MAPPING = {
         RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_DELETED).value:
             "resources/schemas/devices-module/entity.channel.control.json",
 
-        RoutingKey(RoutingKey.CONNECTOR_ENTITY_CREATED).value:
+        RoutingKey(RoutingKey.CONNECTORS_ENTITY_CREATED).value:
             "resources/schemas/devices-module/entity.connector.json",
-        RoutingKey(RoutingKey.CONNECTOR_ENTITY_UPDATED).value:
+        RoutingKey(RoutingKey.CONNECTORS_ENTITY_UPDATED).value:
             "resources/schemas/devices-module/entity.connector.json",
-        RoutingKey(RoutingKey.CONNECTOR_ENTITY_DELETED).value:
+        RoutingKey(RoutingKey.CONNECTORS_ENTITY_DELETED).value:
             "resources/schemas/devices-module/entity.connector.json",
 
         RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_CREATED).value:

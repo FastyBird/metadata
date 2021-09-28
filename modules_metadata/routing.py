@@ -67,17 +67,17 @@ class RoutingKey(Enum):
 
     DEVICES_CONFIGURATION_DATA_ROUTING_KEY: str = "fb.bus.data.device.configuration"
 
-	# Devices control
-	DEVICES_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.device.control"
-	DEVICES_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.device.control"
-	DEVICES_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.device.control"
+    # Devices control
+    DEVICES_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.device.control"
+    DEVICES_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.device.control"
+    DEVICES_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.device.control"
 
-	DEVICES_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.device.control"
+    DEVICES_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.device.control"
 
     # Devices connectors
-    DEVICES_CONNECTORS_ENTITY_CREATED = "fb.bus.entity.created.device.connector"
-    DEVICES_CONNECTORS_ENTITY_UPDATED = "fb.bus.entity.updated.device.connector"
-    DEVICES_CONNECTORS_ENTITY_DELETED = "fb.bus.entity.deleted.device.connector"
+    DEVICES_CONNECTOR_ENTITY_CREATED = "fb.bus.entity.created.device.connector"
+    DEVICES_CONNECTOR_ENTITY_UPDATED = "fb.bus.entity.updated.device.connector"
+    DEVICES_CONNECTOR_ENTITY_DELETED = "fb.bus.entity.deleted.device.connector"
 
     # Channels
     CHANNELS_ENTITY_CREATED: str = "fb.bus.entity.created.channel"
@@ -98,36 +98,36 @@ class RoutingKey(Enum):
 
     CHANNELS_CONFIGURATION_DATA_ROUTING_KEY: str = "fb.bus.data.channel.configuration"
 
-	# Channels control
-	CHANNELS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.channel.control"
-	CHANNELS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.channel.control"
-	CHANNELS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.channel.control"
+    # Channels control
+    CHANNELS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.channel.control"
+    CHANNELS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.channel.control"
+    CHANNELS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.channel.control"
 
-	CHANNELS_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.channel.control"
+    CHANNELS_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.channel.control"
 
     # Connectors
     CONNECTORS_ENTITY_CREATED = "fb.bus.entity.created.connector"
     CONNECTORS_ENTITY_UPDATED = "fb.bus.entity.updated.connector"
     CONNECTORS_ENTITY_DELETED = "fb.bus.entity.deleted.connector"
 
-	# Connectors control
-	CONNECTORS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.connector.control"
-	CONNECTORS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.connector.control"
-	CONNECTORS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.connector.control"
+    # Connectors control
+    CONNECTORS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.connector.control"
+    CONNECTORS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.connector.control"
+    CONNECTORS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.connector.control"
 
-	CONNECTORS_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.connector.control"
+    CONNECTORS_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.connector.control"
 
     # Triggers
     TRIGGERS_ENTITY_CREATED = "fb.bus.entity.created.trigger"
     TRIGGERS_ENTITY_UPDATED = "fb.bus.entity.updated.trigger"
     TRIGGERS_ENTITY_DELETED = "fb.bus.entity.deleted.trigger"
 
-	# Triggers control
-	TRIGGERS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.trigger.control"
-	TRIGGERS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.control"
-	TRIGGERS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.control"
+    # Triggers control
+    TRIGGERS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.trigger.control"
+    TRIGGERS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.control"
+    TRIGGERS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.control"
 
-	TRIGGERS_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.trigger.control"
+    TRIGGERS_CONTROL_ENTITY_DATA_ROUTING_KEY = "fb.bus.data.trigger.control"
 
     # Triggers actions
     TRIGGERS_ACTIONS_ENTITY_CREATED = "fb.bus.entity.created.trigger.action"
