@@ -164,7 +164,7 @@ export enum TriggerConditionOperator {
 }
 
 export enum ControlName {
-  CONFIGURATION = 'configuration',
+  CONFIGURE = 'configure',
   RESET = 'reset',
   REBOOT = 'reboot',
   TRIGGER = 'trigger',

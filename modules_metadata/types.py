@@ -124,7 +124,7 @@ class ControlName(Enum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
-    CONFIGURATION: str = "configuration"
+    CONFIGURE: str = "configure"
     RESET: str = "reset"
     REBOOT: str = "reboot"
     TRIGGER: str = "trigger"
