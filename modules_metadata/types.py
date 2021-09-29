@@ -112,3 +112,24 @@ class SwitchPayload(Enum):
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+
+@unique
+class ControlName(Enum):
+    """
+    Known control name
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+    CONFIGURATION: str = "configuration"
+    RESET: str = "reset"
+    REBOOT: str = "reboot"
+    TRIGGER: str = "trigger"
+
+    @classmethod
+    def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
+        return value in cls._value2member_map_  # pylint: disable=no-member
