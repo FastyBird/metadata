@@ -50,14 +50,6 @@
     "enabled" : {
       "type" : "boolean",
       "default" : false
-    },
-    "control" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      },
-      "required" : [],
-      "default" : []
     }
   },
   "if" : {
@@ -88,7 +80,6 @@
       "key",
       "name",
       "enabled",
-      "control",
       "address",
       "serial_interface",
       "baud_rate"
@@ -127,7 +118,6 @@
         "key",
         "name",
         "enabled",
-        "control",
         "server",
         "port",
         "secured_port",
@@ -140,8 +130,7 @@
         "type",
         "key",
         "name",
-        "enabled",
-        "control"
+        "enabled"
       ]
     }
   }

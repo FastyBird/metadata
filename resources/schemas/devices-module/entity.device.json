@@ -114,14 +114,6 @@
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
     },
-    "control" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      },
-      "required" : [],
-      "default" : []
-    },
     "owner" : {
       "type" : "string",
       "description" : "Entity owner uuid v4 identifier"
@@ -139,7 +131,6 @@
     "hardware_model",
     "hardware_mac_address",
     "firmware_manufacturer",
-    "firmware_version",
-    "control"
+    "firmware_version"
   ]
 }

@@ -36,14 +36,6 @@
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
     },
-    "control" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      },
-      "required" : [],
-      "default" : []
-    },
     "device" : {
       "type" : "string",
       "description" : "Device unique uuid v4 identifier used across services"
@@ -59,7 +51,6 @@
     "key",
     "name",
     "comment",
-    "control",
     "device"
   ]
 }
