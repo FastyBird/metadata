@@ -56,13 +56,13 @@ class ModulesMetadataExtension extends DI\CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 
-		$builder->addDefinition(null)
+		$builder->addDefinition(null, new DI\Definitions\ServiceDefinition())
 			->setType(Schemas\Validator::class);
 
-		$builder->addDefinition(null)
+		$builder->addDefinition(null, new DI\Definitions\ServiceDefinition())
 			->setType(Loaders\MetadataLoader::class);
 
-		$builder->addDefinition(null)
+		$builder->addDefinition(null, new DI\Definitions\ServiceDefinition())
 			->setType(Loaders\SchemaLoader::class);
 	}
 
