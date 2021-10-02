@@ -142,6 +142,13 @@ JSON_SCHEMAS_MAPPING = {
             "resources/schemas/accounts-module/entity.identity.json",
         RoutingKey(RoutingKey.IDENTITIES_ENTITY_DELETED).value:
             "resources/schemas/accounts-module/entity.identity.json",
+
+        RoutingKey(RoutingKey.ROLES_ENTITY_CREATED).value:
+            "resources/schemas/accounts-module/entity.role.json",
+        RoutingKey(RoutingKey.ROLES_ENTITY_UPDATED).value:
+            "resources/schemas/accounts-module/entity.role.json",
+        RoutingKey(RoutingKey.ROLES_ENTITY_DELETED).value:
+            "resources/schemas/accounts-module/entity.role.json",
     },
     ModuleOrigin(ModuleOrigin.DEVICES_MODULE).value: {
         RoutingKey(RoutingKey.DEVICES_ENTITY_CREATED).value:

@@ -48,6 +48,11 @@ class RoutingKey(Enum):
     IDENTITIES_ENTITY_UPDATED = "fb.bus.entity.updated.identity"
     IDENTITIES_ENTITY_DELETED = "fb.bus.entity.deleted.identity"
 
+    # Roles
+    ROLES_ENTITY_CREATED = "fb.bus.entity.created.role"
+    ROLES_ENTITY_UPDATED = "fb.bus.entity.updated.role"
+    ROLES_ENTITY_DELETED = "fb.bus.entity.deleted.role"
+
     # Devices
     DEVICES_ENTITY_CREATED: str = "fb.bus.entity.created.device"
     DEVICES_ENTITY_UPDATED: str = "fb.bus.entity.updated.device"

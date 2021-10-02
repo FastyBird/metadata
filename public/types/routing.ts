@@ -13,6 +13,11 @@ export enum AccountsModule {
     IDENTITIES_ENTITY_CREATED = 'fb.bus.entity.created.identity',
     IDENTITIES_ENTITY_UPDATED = 'fb.bus.entity.updated.identity',
     IDENTITIES_ENTITY_DELETED = 'fb.bus.entity.deleted.identity',
+
+    // Roles
+    ROLES_ENTITY_CREATED = 'fb.bus.entity.created.role',
+    ROLES_ENTITY_UPDATED = 'fb.bus.entity.updated.role',
+    ROLES_ENTITY_DELETED = 'fb.bus.entity.deleted.role',
 }
 
 export enum DevicesModule {

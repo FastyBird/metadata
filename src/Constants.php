@@ -64,6 +64,11 @@ final class Constants
 	public const MESSAGE_BUS_IDENTITIES_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.identity';
 	public const MESSAGE_BUS_IDENTITIES_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.identity';
 
+	// Roles
+	public const MESSAGE_BUS_ROLES_CREATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.created.role';
+	public const MESSAGE_BUS_ROLES_UPDATED_ENTITY_ROUTING_KEY = 'fb.bus.entity.updated.role';
+	public const MESSAGE_BUS_ROLES_DELETED_ENTITY_ROUTING_KEY = 'fb.bus.entity.deleted.role';
+
 	/**
 	 * Devices module
 	 */
@@ -195,6 +200,10 @@ final class Constants
 			self::MESSAGE_BUS_IDENTITIES_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.identity.json',
 			self::MESSAGE_BUS_IDENTITIES_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.identity.json',
 			self::MESSAGE_BUS_IDENTITIES_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.identity.json',
+
+			self::MESSAGE_BUS_ROLES_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.role.json',
+			self::MESSAGE_BUS_ROLES_UPDATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.role.json',
+			self::MESSAGE_BUS_ROLES_DELETED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.role.json',
 		],
 		self::MODULE_DEVICES_ORIGIN  => [
 			self::MESSAGE_BUS_DEVICES_CREATED_ENTITY_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'devices-module' . DIRECTORY_SEPARATOR . 'entity.device.json',

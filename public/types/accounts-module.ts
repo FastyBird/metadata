@@ -38,3 +38,15 @@ export interface IdentityEntity {
 
     [k: string]: string | IdentityState | undefined
 }
+
+export interface RoleEntity {
+    id: string
+    name: string
+    description: string
+    anonymous: boolean
+    authenticated: boolean
+    administrator: boolean
+    parent: string | null
+
+    [k: string]: string | boolean | null
+}
