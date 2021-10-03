@@ -127,6 +127,9 @@ class ControlName(Enum):
     CONFIGURE: str = "configure"
     RESET: str = "reset"
     REBOOT: str = "reboot"
+    RECONNECT: str = "reconnect"
+    FACTORY_RESET: str = "factory-reset"
+    OTA: str = "ota"
     TRIGGER: str = "trigger"
 
     @classmethod
