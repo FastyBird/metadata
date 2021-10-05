@@ -24,8 +24,8 @@ from modules_metadata.types import ModuleOrigin
 class TestLoader(unittest.TestCase):
     def test_load_data_schema(self):
         loaded_schema = load_schema(
-            ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN),
-            RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA_ROUTING_KEY),
+            ModuleOrigin(ModuleOrigin.NOT_SPECIFIED),
+            RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA),
         )
 
         self.assertTrue(isinstance(loaded_schema, str))
