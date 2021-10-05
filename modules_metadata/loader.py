@@ -104,21 +104,21 @@ def get_data_file_content(filename: str) -> str or None:
 
 JSON_SCHEMAS_MAPPING = {
     ModuleOrigin(ModuleOrigin.NOT_SPECIFIED).value: {
-        RoutingKey(RoutingKey.DEVICES_PROPERTIES_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.DEVICES_PROPERTIES_DATA).value:
             "resources/schemas/data/data.device.property.json",
-        RoutingKey(RoutingKey.DEVICES_CONFIGURATION_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.DEVICES_CONFIGURATION_DATA).value:
             "resources/schemas/data/data.device.configuration.json",
-        RoutingKey(RoutingKey.DEVICES_CONTROL_ENTITY_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.DEVICES_CONTROL_ENTITY_DATA).value:
             "resources/schemas/data/data.device.control.json",
-        RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA).value:
             "resources/schemas/data/data.channel.property.json",
-        RoutingKey(RoutingKey.CHANNELS_CONFIGURATION_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.CHANNELS_CONFIGURATION_DATA).value:
             "resources/schemas/data/data.channel.configuration.json",
-        RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_DATA).value:
             "resources/schemas/data/data.channel.control.json",
-        RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_DATA).value:
             "resources/schemas/data/data.connector.control.json",
-        RoutingKey(RoutingKey.TRIGGERS_CONTROL_ENTITY_DATA_ROUTING_KEY).value:
+        RoutingKey(RoutingKey.TRIGGERS_CONTROL_ENTITY_DATA).value:
             "resources/schemas/data/data.trigger.control.json",
     },
     ModuleOrigin(ModuleOrigin.ACCOUNTS_MODULE).value: {
