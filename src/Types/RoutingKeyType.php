@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * RouteType.php
+ * RoutingKeyType.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -26,7 +26,7 @@ use FastyBird\ModulesMetadata;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-class RouteType extends Consistence\Enum\Enum
+class RoutingKeyType extends Consistence\Enum\Enum
 {
 
 	/**
