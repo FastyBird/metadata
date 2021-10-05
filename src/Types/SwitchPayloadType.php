@@ -31,9 +31,9 @@ class SwitchPayloadType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-	public const TYPE_ON = 'on';
-	public const TYPE_OFF = 'off';
-	public const TYPE_TOGGLE = 'toggle';
+	public const PAYLOAD_ON = 'on';
+	public const PAYLOAD_OFF = 'off';
+	public const PAYLOAD_TOGGLE = 'toggle';
 
 	/**
 	 * @return string

@@ -31,10 +31,10 @@ class ControlNameType extends Consistence\Enum\Enum
 	/**
 	 * Define device states
 	 */
-	public const TYPE_CONFIGURE = 'configure';
-	public const TYPE_RESET = 'reset';
-	public const TYPE_REBOOT = 'reboot';
-	public const TYPE_TRIGGER = 'trigger';
+	public const NAME_CONFIGURE = 'configure';
+	public const NAME_RESET = 'reset';
+	public const NAME_REBOOT = 'reboot';
+	public const NAME_TRIGGER = 'trigger';
 
 	/**
 	 * @return string

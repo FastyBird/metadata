@@ -32,10 +32,10 @@ class ModulePrefixType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-	public const TYPE_MODULE_ACCOUNTS_PREFIX = ModulesMetadata\Constants::MODULE_ACCOUNTS_PREFIX;
-	public const TYPE_MODULE_DEVICES_PREFIX = ModulesMetadata\Constants::MODULE_DEVICES_PREFIX;
-	public const TYPE_MODULE_TRIGGERS_PREFIX = ModulesMetadata\Constants::MODULE_TRIGGERS_PREFIX;
-	public const TYPE_MODULE_UI_PREFIX = ModulesMetadata\Constants::MODULE_UI_PREFIX;
+	public const PREFIX_MODULE_ACCOUNTS = ModulesMetadata\Constants::MODULE_ACCOUNTS_PREFIX;
+	public const PREFIX_MODULE_DEVICES = ModulesMetadata\Constants::MODULE_DEVICES_PREFIX;
+	public const PREFIX_MODULE_TRIGGERS = ModulesMetadata\Constants::MODULE_TRIGGERS_PREFIX;
+	public const PREFIX_MODULE_UI = ModulesMetadata\Constants::MODULE_UI_PREFIX;
 
 	/**
 	 * @return string

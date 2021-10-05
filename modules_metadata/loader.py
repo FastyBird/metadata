@@ -53,7 +53,7 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
 
             raise FileNotFoundException("Schema could not be loaded")
 
-    no_modules_routes = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value]
+    no_modules_routes = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED).value]
 
     if routing_key.value in no_modules_routes:
         schema: str = no_modules_routes[routing_key.value]
@@ -103,7 +103,7 @@ def get_data_file_content(filename: str) -> str or None:
 
 
 JSON_SCHEMAS_MAPPING = {
-    ModuleOrigin(ModuleOrigin.NOT_SPECIFIED_ORIGIN).value: {
+    ModuleOrigin(ModuleOrigin.NOT_SPECIFIED).value: {
         RoutingKey(RoutingKey.DEVICES_PROPERTIES_DATA_ROUTING_KEY).value:
             "resources/schemas/data/data.device.property.json",
         RoutingKey(RoutingKey.DEVICES_CONFIGURATION_DATA_ROUTING_KEY).value:

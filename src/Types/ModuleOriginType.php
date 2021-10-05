@@ -32,12 +32,12 @@ class ModuleOriginType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-	public const TYPE_NOT_SPECIFIED_ORIGIN = ModulesMetadata\Constants::NOT_SPECIFIED_ORIGIN;
-	public const TYPE_MODULE_ACCOUNTS_ORIGIN = ModulesMetadata\Constants::MODULE_ACCOUNTS_ORIGIN;
-	public const TYPE_MODULE_DEVICES_ORIGIN = ModulesMetadata\Constants::MODULE_DEVICES_ORIGIN;
-	public const TYPE_MODULE_TRIGGERS_ORIGIN = ModulesMetadata\Constants::MODULE_TRIGGERS_ORIGIN;
-	public const TYPE_MODULE_UI_ORIGIN = ModulesMetadata\Constants::MODULE_UI_ORIGIN;
-	public const TYPE_MODULE_WEB_UI_ORIGIN = ModulesMetadata\Constants::MODULE_WEB_UI_ORIGIN;
+	public const ORIGIN_NOT_SPECIFIED = ModulesMetadata\Constants::NOT_SPECIFIED_ORIGIN;
+	public const ORIGIN_MODULE_ACCOUNTS = ModulesMetadata\Constants::MODULE_ACCOUNTS_ORIGIN;
+	public const ORIGIN_MODULE_DEVICES = ModulesMetadata\Constants::MODULE_DEVICES_ORIGIN;
+	public const ORIGIN_MODULE_TRIGGERS = ModulesMetadata\Constants::MODULE_TRIGGERS_ORIGIN;
+	public const ORIGIN_MODULE_UI = ModulesMetadata\Constants::MODULE_UI_ORIGIN;
+	public const ORIGIN_MODULE_WEB_UI = ModulesMetadata\Constants::MODULE_WEB_UI_ORIGIN;
 
 	/**
 	 * @return string

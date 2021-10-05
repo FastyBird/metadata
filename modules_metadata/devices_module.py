@@ -52,25 +52,25 @@ class DeviceConnectionState(Enum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
     # Device is connected to gateway
-    STATE_CONNECTED: str = "connected"
+    CONNECTED: str = "connected"
     # Device is disconnected from gateway
-    STATE_DISCONNECTED: str = "disconnected"
+    DISCONNECTED: str = "disconnected"
     # Device is in initialization process
-    STATE_INIT: str = "init"
+    INIT: str = "init"
     # Device is ready to operate
-    STATE_READY: str = "ready"
+    READY: str = "ready"
     # Device is in operating mode
-    STATE_RUNNING: str = "running"
+    RUNNING: str = "running"
     # Device is in sleep mode - support fow low power devices
-    STATE_SLEEPING: str = "sleeping"
+    SLEEPING: str = "sleeping"
     # Device is not ready for receiving commands
-    STATE_STOPPED: str = "stopped"
+    STOPPED: str = "stopped"
     # Connection with device is lost
-    STATE_LOST: str = "lost"
+    LOST: str = "lost"
     # Device has some error
-    STATE_ALERT: str = "alert"
+    ALERT: str = "alert"
     # Device is in unknown state
-    STATE_UNKNOWN: str = "unknown"
+    UNKNOWN: str = "unknown"
 
     @classmethod
     def has_value(cls, value: int) -> bool:

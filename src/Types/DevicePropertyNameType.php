@@ -31,17 +31,17 @@ class DevicePropertyNameType extends Consistence\Enum\Enum
 	/**
 	 * Define device states
 	 */
-	public const TYPE_STATE = 'state';
-	public const TYPE_BATTERY = 'battery';
-	public const TYPE_WIFI = 'wifi';
-	public const TYPE_SIGNAL = 'signal';
-	public const RSSI = 'rssi';
-	public const VCC = 'vcc';
-	public const CPU_LOAD = 'cpu-load';
-	public const UPTIME = 'uptime';
-	public const IP_ADDRESS = 'ip-address';
-	public const STATUS_LED = 'status-led';
-	public const FREE_HEAP = 'free-heap';
+	public const NAME_STATE = 'state';
+	public const NAME_BATTERY = 'battery';
+	public const NAME_WIFI = 'wifi';
+	public const NAME_SIGNAL = 'signal';
+	public const NAME_RSSI = 'rssi';
+	public const NAME_VCC = 'vcc';
+	public const NAME_CPU_LOAD = 'cpu-load';
+	public const NAME_UPTIME = 'uptime';
+	public const NAME_IP_ADDRESS = 'ip-address';
+	public const NAME_STATUS_LED = 'status-led';
+	public const NAME_FREE_HEAP = 'free-heap';
 
 	/**
 	 * @return string

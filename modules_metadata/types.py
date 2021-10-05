@@ -32,7 +32,7 @@ class ModuleOrigin(Enum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
-    NOT_SPECIFIED_ORIGIN: str = "*"
+    NOT_SPECIFIED: str = "*"
     ACCOUNTS_MODULE: str = "com.fastybird.accounts-module"
     DEVICES_MODULE: str = "com.fastybird.devices-module"
     TRIGGERS_MODULE: str = "com.fastybird.triggers-module"
@@ -55,10 +55,10 @@ class ModulePrefix(Enum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
-    ACCOUNTS_MODULE_PREFIX: str = "accounts-module"
-    DEVICES_MODULE_PREFIX: str = "devices-module"
-    TRIGGERS_MODULE_PREFIX: str = "triggers-module"
-    UI_MODULE_PREFIX: str = "ui-module"
+    ACCOUNTS_MODULE: str = "accounts-module"
+    DEVICES_MODULE: str = "devices-module"
+    TRIGGERS_MODULE: str = "triggers-module"
+    UI_MODULE: str = "ui-module"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -76,17 +76,17 @@ class DataType(Enum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
-    DATA_TYPE_CHAR: str = "char"
-    DATA_TYPE_UCHAR: str = "uchar"
-    DATA_TYPE_SHORT: str = "short"
-    DATA_TYPE_USHORT: str = "ushort"
-    DATA_TYPE_INT: str = "int"
-    DATA_TYPE_UINT: str = "uint"
-    DATA_TYPE_FLOAT: str = "float"
-    DATA_TYPE_BOOLEAN: str = "bool"
-    DATA_TYPE_STRING: str = "string"
-    DATA_TYPE_ENUM: str = "enum"
-    DATA_TYPE_COLOR: str = "color"
+    CHAR: str = "char"
+    UCHAR: str = "uchar"
+    SHORT: str = "short"
+    USHORT: str = "ushort"
+    INT: str = "int"
+    UINT: str = "uint"
+    FLOAT: str = "float"
+    BOOLEAN: str = "bool"
+    STRING: str = "string"
+    ENUM: str = "enum"
+    COLOR: str = "color"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
