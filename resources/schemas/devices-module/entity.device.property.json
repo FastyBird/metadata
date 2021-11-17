@@ -79,7 +79,9 @@
         "bool",
         "string",
         "enum",
-        "color"
+        "color",
+        "button",
+        "switch"
       ]
     }
   },

@@ -48,8 +48,7 @@
         "float",
         "bool",
         "string",
-        "enum",
-        "color"
+        "enum"
       ]
     }
   },

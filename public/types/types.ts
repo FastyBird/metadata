@@ -26,6 +26,8 @@ export enum DataType {
     STRING = 'string',
     ENUM = 'enum',
     COLOR = 'color',
+    BUTTON = 'button',
+    SWITCH = 'switch',
 }
 
 export enum SwitchPayload {

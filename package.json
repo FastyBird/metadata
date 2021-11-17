@@ -1,6 +1,6 @@
 {
   "name": "@fastybird/modules-metadata",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "FastyBird metadata reader & validator for modules",
   "keywords": [
     "fastybird",

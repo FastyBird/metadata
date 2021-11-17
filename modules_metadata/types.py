@@ -87,6 +87,8 @@ class DataType(Enum):
     STRING: str = "string"
     ENUM: str = "enum"
     COLOR: str = "color"
+    BUTTON: str = "button"
+    SWITCH: str = "switch"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
