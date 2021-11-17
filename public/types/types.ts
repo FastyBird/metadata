@@ -29,9 +29,19 @@ export enum DataType {
 }
 
 export enum SwitchPayload {
-    ON = 'on',
-    OFF = 'off',
-    TOGGLE = 'toggle',
+    ON = 'switch-on',
+    OFF = 'switch-off',
+    TOGGLE = 'switch-toggle',
+}
+
+export enum ButtonPayload {
+    PRESSED = 'btn-pressed',
+    RELEASED = 'btn-released',
+    CLICKED = 'btn-clicked',
+    DOUBLE_CLICKED = 'btn-double-clicked',
+    TRIPLE_CLICKED = 'btn-triple-clicked',
+    LONG_CLICKED = 'btn-long-clicked',
+    EXTRA_LONG_CLICKED = 'btn-extra-long-clicked',
 }
 
 export enum AccountState {

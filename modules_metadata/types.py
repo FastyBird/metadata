@@ -104,9 +104,33 @@ class SwitchPayload(Enum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
-    ON: str = "on"
-    OFF: str = "off"
-    TOGGLE: str = "toggle"
+    ON: str = "switch-on"
+    OFF: str = "switch-off"
+    TOGGLE: str = "switch-toggle"
+
+    @classmethod
+    def has_value(cls, value: str) -> bool:
+        """Check if provided value is valid enum value"""
+        return value in cls._value2member_map_  # pylint: disable=no-member
+
+
+@unique
+class ButtonPayload(Enum):
+    """
+    Switch enum payload
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+    PRESSED: str = "btn-pressed"
+    RELEASED: str = "btn-released"
+    CLICKED: str = "btn-clicked"
+    DOUBLE_CLICKED: str = "btn-double-clicked"
+    TRIPLE_CLICKED: str = "btn-triple-clicked"
+    LONG_CLICKED: str = "btn-long-clicked"
+    EXTRA_LONG_CLICKED: str = "btn-extra-long-clicked"
 
     @classmethod
     def has_value(cls, value: str) -> bool:

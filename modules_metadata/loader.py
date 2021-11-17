@@ -20,7 +20,7 @@ JSON schema & modules metadata loaders
 
 # Library dependencies
 from io import BytesIO
-from typing import Dict
+from typing import Dict, Optional
 from pkg_resources import resource_string
 
 # Library libs
@@ -44,7 +44,7 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
         mapping = JSON_SCHEMAS_MAPPING[origin.value]
 
         if routing_key.value in mapping:
-            schema: str = JSON_SCHEMAS_MAPPING[origin.value][routing_key.value]
+            schema = str(JSON_SCHEMAS_MAPPING[origin.value][routing_key.value])
 
             schema_content = get_data_file_content(schema)
 
@@ -56,7 +56,7 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
     no_modules_routes = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED).value]
 
     if routing_key.value in no_modules_routes:
-        schema: str = no_modules_routes[routing_key.value]
+        schema = str(no_modules_routes[routing_key.value])
 
         schema_content = get_data_file_content(schema)
 
@@ -92,7 +92,7 @@ def load_metadata() -> Dict:
         ) from ex
 
 
-def get_data_file_content(filename: str) -> str or None:
+def get_data_file_content(filename: str) -> Optional[str]:
     """Load file content from package resources"""
 
     try:
