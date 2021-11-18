@@ -19,11 +19,14 @@ Sets of enums for Triggers Module
 """
 
 # Library dependencies
-from enum import Enum, unique
+from enum import unique
+
+# Library libs
+from modules_metadata.enum import ExtendedEnum
 
 
 @unique
-class TriggerType(Enum):
+class TriggerType(ExtendedEnum):
     """
     Trigger type
 
@@ -35,22 +38,9 @@ class TriggerType(Enum):
     MANUAL: str = "manual"
     AUTOMATIC: str = "automatic"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class TriggerActionType(Enum):
+class TriggerActionType(ExtendedEnum):
     """
     Trigger action type
 
@@ -62,22 +52,9 @@ class TriggerActionType(Enum):
     DEVICE_PROPERTY: str = "device-property"
     CHANNEL_PROPERTY: str = "channel-property"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class TriggerConditionType(Enum):
+class TriggerConditionType(ExtendedEnum):
     """
     Trigger condition type
 
@@ -91,22 +68,9 @@ class TriggerConditionType(Enum):
     TIME: str = "time"
     DATE: str = "date"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class TriggerNotificationType(Enum):
+class TriggerNotificationType(ExtendedEnum):
     """
     Trigger notification type
 
@@ -118,22 +82,9 @@ class TriggerNotificationType(Enum):
     EMAIL: str = "email"
     SMS: str = "sms"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class TriggerConditionOperator(Enum):
+class TriggerConditionOperator(ExtendedEnum):
     """
     Condition operator
 
@@ -145,16 +96,3 @@ class TriggerConditionOperator(Enum):
     EQUAL: str = "eq"
     ABOVE: str = "above"
     BELOW: str = "below"
-
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)

@@ -19,11 +19,14 @@ Sets of enums for Accounts Module
 """
 
 # Library dependencies
-from enum import Enum, unique
+from enum import unique
+
+# Library libs
+from modules_metadata.enum import ExtendedEnum
 
 
 @unique
-class AccountState(Enum):
+class AccountState(ExtendedEnum):
     """
     Account state type
 
@@ -38,22 +41,9 @@ class AccountState(Enum):
     NOT_ACTIVATED: str = "notActivated"
     APPROVAL_WAITING: str = "approvalWaiting"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class IdentityState(Enum):
+class IdentityState(ExtendedEnum):
     """
     Account identity state type
 
@@ -66,16 +56,3 @@ class IdentityState(Enum):
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
     INVALID: str = "invalid"
-
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)

@@ -19,11 +19,14 @@ Sets of enums for Devices Module
 """
 
 # Library dependencies
-from enum import Enum, unique
+from enum import unique
+
+# Library libs
+from modules_metadata.enum import ExtendedEnum
 
 
 @unique
-class ConnectorType(Enum):
+class ConnectorType(ExtendedEnum):
     """
     Connector type
 
@@ -35,22 +38,9 @@ class ConnectorType(Enum):
     FB_BUS: str = "fb-bus"
     FB_MQTT: str = "fb-mqtt"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class DeviceConnectionState(Enum):
+class DeviceConnectionState(ExtendedEnum):
     """
     Device connection state
 
@@ -80,22 +70,9 @@ class DeviceConnectionState(Enum):
     # Device is in unknown state
     UNKNOWN: str = "unknown"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class DeviceType(Enum):
+class DeviceType(ExtendedEnum):
     """
     Device type
 
@@ -108,22 +85,9 @@ class DeviceType(Enum):
     NETWORK: str = "network"
     VIRTUAL: str = "virtual"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class HardwareManufacturer(Enum):
+class HardwareManufacturer(ExtendedEnum):
     """
     Device hardware manufacturer
 
@@ -137,22 +101,9 @@ class HardwareManufacturer(Enum):
     ITEAD = "itead"
     AI_THINKER = "ai_thinker"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class FirmwareManufacturer(Enum):
+class FirmwareManufacturer(ExtendedEnum):
     """
     Device firmware manufacturer
 
@@ -164,22 +115,9 @@ class FirmwareManufacturer(Enum):
     GENERIC: str = "generic"
     FASTYBIRD: str = "fastybird"
 
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
-
 
 @unique
-class DevicePropertyName(Enum):
+class DevicePropertyName(ExtendedEnum):
     """
     Device known property name
 
@@ -199,16 +137,3 @@ class DevicePropertyName(Enum):
     IP_ADDRESS: str = "ip-address"
     STATUS_LED: str = "status-led"
     FREE_HEAP: str = "free-heap"
-
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)

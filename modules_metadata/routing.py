@@ -19,11 +19,14 @@ Sets of enums for application data exchange routing
 """
 
 # Library dependencies
-from enum import Enum, unique
+from enum import unique
+
+# Library libs
+from modules_metadata.enum import ExtendedEnum
 
 
 @unique
-class RoutingKey(Enum):
+class RoutingKey(ExtendedEnum):
     """
     Data exchange routing key
 
@@ -148,16 +151,3 @@ class RoutingKey(Enum):
     TRIGGERS_CONDITIONS_ENTITY_CREATED = "fb.bus.entity.created.trigger.condition"
     TRIGGERS_CONDITIONS_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.condition"
     TRIGGERS_CONDITIONS_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.condition"
-
-    # -----------------------------------------------------------------------------
-
-    @classmethod
-    def has_value(cls, value: str) -> bool:
-        """Check if provided value is valid enum value"""
-        return value in cls._value2member_map_  # pylint: disable=no-member
-
-    # -----------------------------------------------------------------------------
-
-    def __str__(self):
-        """Transform enum to string"""
-        return str(self.value)
