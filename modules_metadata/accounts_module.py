@@ -38,10 +38,18 @@ class AccountState(Enum):
     NOT_ACTIVATED: str = "notActivated"
     APPROVAL_WAITING: str = "approvalWaiting"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)
 
 
 @unique
@@ -59,7 +67,15 @@ class IdentityState(Enum):
     DELETED: str = "deleted"
     INVALID: str = "invalid"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)

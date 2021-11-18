@@ -39,10 +39,18 @@ class ModuleOrigin(Enum):
     UI_MODULE: str = "com.fastybird.ui-module"
     WEB_UI_MODULE: str = "com.fastybird.web-ui-module"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)
 
 
 @unique
@@ -60,10 +68,18 @@ class ModulePrefix(Enum):
     TRIGGERS_MODULE: str = "triggers-module"
     UI_MODULE: str = "ui-module"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)
 
 
 @unique
@@ -90,10 +106,18 @@ class DataType(Enum):
     BUTTON: str = "button"
     SWITCH: str = "switch"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)
 
 
 @unique
@@ -110,10 +134,18 @@ class SwitchPayload(Enum):
     OFF: str = "switch-off"
     TOGGLE: str = "switch-toggle"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)
 
 
 @unique
@@ -134,10 +166,18 @@ class ButtonPayload(Enum):
     LONG_CLICKED: str = "btn-long-clicked"
     EXTRA_LONG_CLICKED: str = "btn-extra-long-clicked"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)
 
 
 @unique
@@ -158,7 +198,15 @@ class ControlName(Enum):
     OTA: str = "ota"
     TRIGGER: str = "trigger"
 
+    # -----------------------------------------------------------------------------
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
         return value in cls._value2member_map_  # pylint: disable=no-member
+
+    # -----------------------------------------------------------------------------
+
+    def __str__(self):
+        """Transform enum to string"""
+        return str(self.value)
