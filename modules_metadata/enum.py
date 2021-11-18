@@ -24,6 +24,15 @@ from enum import Enum, unique
 
 @unique
 class ExtendedEnum(Enum):
+    """
+    Extended enum data type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         enum
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
     @classmethod
     def has_value(cls, value: str) -> bool:
         """Check if provided value is valid enum value"""
