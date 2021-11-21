@@ -60,6 +60,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.7",
     packages=find_packages(),
+    package_data={"modules_metadata": ["py.typed"]},
     install_requires=[
         "fastjsonschema",
         "setuptools",

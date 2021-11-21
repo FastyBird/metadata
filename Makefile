@@ -29,8 +29,16 @@ php_coverage: vendor
 pylint:
 	python -m pip install pylint
 
-python_qa: pylint
+mypy:
+	python -m pip install mypy
+
+python_qa: python_cs python_types
+
+python_cs: pylint
 	pylint **/*.py
+
+python_types: mypy
+	mypy **/*.py
 
 python_tests:
 	python -m unittest

@@ -20,7 +20,7 @@ JSON schema & modules metadata loaders
 
 # Library dependencies
 from io import BytesIO
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 from pkg_resources import resource_string
 
 # Library libs
@@ -70,18 +70,18 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
     )
 
 
-def load_metadata() -> Dict:
+def load_metadata() -> Dict[str, Any]:
     """Load modules metadata"""
 
     schema_content = get_data_file_content("resources/schemas/modules.json")
 
     if schema_content is None:
-        InvalidStateException("Metadata schema could not be loaded")
+        raise InvalidStateException("Metadata schema could not be loaded")
 
     metadata_content = get_data_file_content("resources/modules.json")
 
     if metadata_content is None:
-        InvalidStateException("Metadata content could not be loaded")
+        raise InvalidStateException("Metadata content could not be loaded")
 
     try:
         return validate(metadata_content, schema_content)

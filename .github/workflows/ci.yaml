@@ -517,7 +517,7 @@ jobs:
       - name: "Build a binary wheel and a source tarball"
         run: "python setup.py sdist bdist_wheel"
 
-      - name: "Run code lint"
+      - name: "Run code check"
         run: "make python_qa"
 
       - name: "Run tests"
