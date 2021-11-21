@@ -35,6 +35,7 @@ class ModuleOrigin(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     NOT_SPECIFIED: str = "*"
     ACCOUNTS_MODULE: str = "com.fastybird.accounts-module"
     DEVICES_MODULE: str = "com.fastybird.devices-module"
@@ -53,6 +54,7 @@ class ModulePrefix(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     ACCOUNTS_MODULE: str = "accounts-module"
     DEVICES_MODULE: str = "devices-module"
     TRIGGERS_MODULE: str = "triggers-module"
@@ -69,6 +71,7 @@ class DataType(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     CHAR: str = "char"
     UCHAR: str = "uchar"
     SHORT: str = "short"
@@ -94,6 +97,7 @@ class SwitchPayload(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     ON: str = "switch-on"
     OFF: str = "switch-off"
     TOGGLE: str = "switch-toggle"
@@ -109,6 +113,7 @@ class ButtonPayload(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     PRESSED: str = "btn-pressed"
     RELEASED: str = "btn-released"
     CLICKED: str = "btn-clicked"
@@ -128,6 +133,7 @@ class ControlName(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     CONFIGURE: str = "configure"
     RESET: str = "reset"
     REBOOT: str = "reboot"

@@ -53,7 +53,9 @@ def load_schema(origin: ModuleOrigin, routing_key: RoutingKey) -> str:
 
             raise FileNotFoundException("Schema could not be loaded")
 
-    no_modules_routes = JSON_SCHEMAS_MAPPING[ModuleOrigin(ModuleOrigin.NOT_SPECIFIED).value]
+    no_modules_routes = JSON_SCHEMAS_MAPPING[
+        ModuleOrigin(ModuleOrigin.NOT_SPECIFIED).value
+    ]
 
     if routing_key.value in no_modules_routes:
         schema = str(no_modules_routes[routing_key.value])
@@ -104,164 +106,215 @@ def get_data_file_content(filename: str) -> Optional[str]:
 
 JSON_SCHEMAS_MAPPING = {
     ModuleOrigin(ModuleOrigin.NOT_SPECIFIED).value: {
-        RoutingKey(RoutingKey.DEVICES_PROPERTIES_DATA).value:
-            "resources/schemas/data/data.device.property.json",
-        RoutingKey(RoutingKey.DEVICES_CONFIGURATION_DATA).value:
-            "resources/schemas/data/data.device.configuration.json",
-        RoutingKey(RoutingKey.DEVICES_CONTROL_ENTITY_DATA).value:
-            "resources/schemas/data/data.device.control.json",
-        RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA).value:
-            "resources/schemas/data/data.channel.property.json",
-        RoutingKey(RoutingKey.CHANNELS_CONFIGURATION_DATA).value:
-            "resources/schemas/data/data.channel.configuration.json",
-        RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_DATA).value:
-            "resources/schemas/data/data.channel.control.json",
-        RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_DATA).value:
-            "resources/schemas/data/data.connector.control.json",
-        RoutingKey(RoutingKey.TRIGGERS_CONTROL_ENTITY_DATA).value:
-            "resources/schemas/data/data.trigger.control.json",
+        RoutingKey(
+            RoutingKey.DEVICES_PROPERTIES_DATA
+        ).value: "resources/schemas/data/data.device.property.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONFIGURATION_DATA
+        ).value: "resources/schemas/data/data.device.configuration.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONTROL_ENTITY_DATA
+        ).value: "resources/schemas/data/data.device.control.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_PROPERTIES_DATA
+        ).value: "resources/schemas/data/data.channel.property.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONFIGURATION_DATA
+        ).value: "resources/schemas/data/data.channel.configuration.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONTROL_ENTITY_DATA
+        ).value: "resources/schemas/data/data.channel.control.json",
+        RoutingKey(
+            RoutingKey.CONNECTORS_CONTROL_ENTITY_DATA
+        ).value: "resources/schemas/data/data.connector.control.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_CONTROL_ENTITY_DATA
+        ).value: "resources/schemas/data/data.trigger.control.json",
     },
     ModuleOrigin(ModuleOrigin.ACCOUNTS_MODULE).value: {
-        RoutingKey(RoutingKey.ACCOUNTS_ENTITY_CREATED).value:
-            "resources/schemas/accounts-module/entity.account.json",
-        RoutingKey(RoutingKey.ACCOUNTS_ENTITY_UPDATED).value:
-            "resources/schemas/accounts-module/entity.account.json",
-        RoutingKey(RoutingKey.ACCOUNTS_ENTITY_DELETED).value:
-            "resources/schemas/accounts-module/entity.account.json",
-
-        RoutingKey(RoutingKey.EMAILS_ENTITY_CREATED).value:
-            "resources/schemas/accounts-module/entity.email.json",
-        RoutingKey(RoutingKey.EMAILS_ENTITY_UPDATED).value:
-            "resources/schemas/accounts-module/entity.email.json",
-        RoutingKey(RoutingKey.EMAILS_ENTITY_DELETED).value:
-            "resources/schemas/accounts-module/entity.email.json",
-
-        RoutingKey(RoutingKey.IDENTITIES_ENTITY_CREATED).value:
-            "resources/schemas/accounts-module/entity.identity.json",
-        RoutingKey(RoutingKey.IDENTITIES_ENTITY_UPDATED).value:
-            "resources/schemas/accounts-module/entity.identity.json",
-        RoutingKey(RoutingKey.IDENTITIES_ENTITY_DELETED).value:
-            "resources/schemas/accounts-module/entity.identity.json",
-
-        RoutingKey(RoutingKey.ROLES_ENTITY_CREATED).value:
-            "resources/schemas/accounts-module/entity.role.json",
-        RoutingKey(RoutingKey.ROLES_ENTITY_UPDATED).value:
-            "resources/schemas/accounts-module/entity.role.json",
-        RoutingKey(RoutingKey.ROLES_ENTITY_DELETED).value:
-            "resources/schemas/accounts-module/entity.role.json",
+        RoutingKey(
+            RoutingKey.ACCOUNTS_ENTITY_CREATED
+        ).value: "resources/schemas/accounts-module/entity.account.json",
+        RoutingKey(
+            RoutingKey.ACCOUNTS_ENTITY_UPDATED
+        ).value: "resources/schemas/accounts-module/entity.account.json",
+        RoutingKey(
+            RoutingKey.ACCOUNTS_ENTITY_DELETED
+        ).value: "resources/schemas/accounts-module/entity.account.json",
+        RoutingKey(
+            RoutingKey.EMAILS_ENTITY_CREATED
+        ).value: "resources/schemas/accounts-module/entity.email.json",
+        RoutingKey(
+            RoutingKey.EMAILS_ENTITY_UPDATED
+        ).value: "resources/schemas/accounts-module/entity.email.json",
+        RoutingKey(
+            RoutingKey.EMAILS_ENTITY_DELETED
+        ).value: "resources/schemas/accounts-module/entity.email.json",
+        RoutingKey(
+            RoutingKey.IDENTITIES_ENTITY_CREATED
+        ).value: "resources/schemas/accounts-module/entity.identity.json",
+        RoutingKey(
+            RoutingKey.IDENTITIES_ENTITY_UPDATED
+        ).value: "resources/schemas/accounts-module/entity.identity.json",
+        RoutingKey(
+            RoutingKey.IDENTITIES_ENTITY_DELETED
+        ).value: "resources/schemas/accounts-module/entity.identity.json",
+        RoutingKey(
+            RoutingKey.ROLES_ENTITY_CREATED
+        ).value: "resources/schemas/accounts-module/entity.role.json",
+        RoutingKey(
+            RoutingKey.ROLES_ENTITY_UPDATED
+        ).value: "resources/schemas/accounts-module/entity.role.json",
+        RoutingKey(
+            RoutingKey.ROLES_ENTITY_DELETED
+        ).value: "resources/schemas/accounts-module/entity.role.json",
     },
     ModuleOrigin(ModuleOrigin.DEVICES_MODULE).value: {
-        RoutingKey(RoutingKey.DEVICES_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.device.json",
-        RoutingKey(RoutingKey.DEVICES_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.device.json",
-        RoutingKey(RoutingKey.DEVICES_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.device.json",
-
-        RoutingKey(RoutingKey.DEVICES_PROPERTY_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.device.property.json",
-        RoutingKey(RoutingKey.DEVICES_PROPERTY_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.device.property.json",
-        RoutingKey(RoutingKey.DEVICES_PROPERTY_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.device.property.json",
-
-        RoutingKey(RoutingKey.DEVICES_CONFIGURATION_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.device.configuration.json",
-        RoutingKey(RoutingKey.DEVICES_CONFIGURATION_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.device.configuration.json",
-        RoutingKey(RoutingKey.DEVICES_CONFIGURATION_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.device.configuration.json",
-
-        RoutingKey(RoutingKey.DEVICES_CONTROL_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.device.control.json",
-        RoutingKey(RoutingKey.DEVICES_CONTROL_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.device.control.json",
-        RoutingKey(RoutingKey.DEVICES_CONTROL_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.device.control.json",
-
-        RoutingKey(RoutingKey.DEVICES_CONNECTOR_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.device.connector.json",
-        RoutingKey(RoutingKey.DEVICES_CONNECTOR_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.device.connector.json",
-        RoutingKey(RoutingKey.DEVICES_CONNECTOR_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.device.connector.json",
-
-        RoutingKey(RoutingKey.CHANNELS_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.channel.json",
-        RoutingKey(RoutingKey.CHANNELS_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.channel.json",
-        RoutingKey(RoutingKey.CHANNELS_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.channel.json",
-
-        RoutingKey(RoutingKey.CHANNELS_PROPERTY_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.channel.property.json",
-        RoutingKey(RoutingKey.CHANNELS_PROPERTY_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.channel.property.json",
-        RoutingKey(RoutingKey.CHANNELS_PROPERTY_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.channel.property.json",
-
-        RoutingKey(RoutingKey.CHANNELS_CONFIGURATION_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.channel.configuration.json",
-        RoutingKey(RoutingKey.CHANNELS_CONFIGURATION_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.channel.configuration.json",
-        RoutingKey(RoutingKey.CHANNELS_CONFIGURATION_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.channel.configuration.json",
-
-        RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.channel.control.json",
-        RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.channel.control.json",
-        RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.channel.control.json",
-
-        RoutingKey(RoutingKey.CONNECTORS_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.connector.json",
-        RoutingKey(RoutingKey.CONNECTORS_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.connector.json",
-        RoutingKey(RoutingKey.CONNECTORS_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.connector.json",
-
-        RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_CREATED).value:
-            "resources/schemas/devices-module/entity.connector.control.json",
-        RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_UPDATED).value:
-            "resources/schemas/devices-module/entity.connector.control.json",
-        RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_DELETED).value:
-            "resources/schemas/devices-module/entity.connector.control.json",
+        RoutingKey(
+            RoutingKey.DEVICES_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.device.json",
+        RoutingKey(
+            RoutingKey.DEVICES_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.device.json",
+        RoutingKey(
+            RoutingKey.DEVICES_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.device.json",
+        RoutingKey(
+            RoutingKey.DEVICES_PROPERTY_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.device.property.json",
+        RoutingKey(
+            RoutingKey.DEVICES_PROPERTY_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.device.property.json",
+        RoutingKey(
+            RoutingKey.DEVICES_PROPERTY_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.device.property.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONFIGURATION_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.device.configuration.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONFIGURATION_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.device.configuration.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONFIGURATION_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.device.configuration.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONTROL_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.device.control.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONTROL_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.device.control.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONTROL_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.device.control.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONNECTOR_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.device.connector.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONNECTOR_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.device.connector.json",
+        RoutingKey(
+            RoutingKey.DEVICES_CONNECTOR_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.device.connector.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.channel.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.channel.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.channel.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_PROPERTY_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.channel.property.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_PROPERTY_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.channel.property.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_PROPERTY_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.channel.property.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONFIGURATION_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.channel.configuration.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONFIGURATION_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.channel.configuration.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONFIGURATION_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.channel.configuration.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONTROL_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.channel.control.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONTROL_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.channel.control.json",
+        RoutingKey(
+            RoutingKey.CHANNELS_CONTROL_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.channel.control.json",
+        RoutingKey(
+            RoutingKey.CONNECTORS_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.connector.json",
+        RoutingKey(
+            RoutingKey.CONNECTORS_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.connector.json",
+        RoutingKey(
+            RoutingKey.CONNECTORS_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.connector.json",
+        RoutingKey(
+            RoutingKey.CONNECTORS_CONTROL_ENTITY_CREATED
+        ).value: "resources/schemas/devices-module/entity.connector.control.json",
+        RoutingKey(
+            RoutingKey.CONNECTORS_CONTROL_ENTITY_UPDATED
+        ).value: "resources/schemas/devices-module/entity.connector.control.json",
+        RoutingKey(
+            RoutingKey.CONNECTORS_CONTROL_ENTITY_DELETED
+        ).value: "resources/schemas/devices-module/entity.connector.control.json",
     },
     ModuleOrigin(ModuleOrigin.TRIGGERS_MODULE).value: {
-        RoutingKey(RoutingKey.TRIGGERS_ENTITY_CREATED).value:
-            "resources/schemas/triggers-module/entity.trigger.json",
-        RoutingKey(RoutingKey.TRIGGERS_ENTITY_UPDATED).value:
-            "resources/schemas/triggers-module/entity.trigger.json",
-        RoutingKey(RoutingKey.TRIGGERS_ENTITY_DELETED).value:
-            "resources/schemas/triggers-module/entity.trigger.json",
-
-        RoutingKey(RoutingKey.TRIGGERS_CONTROL_ENTITY_CREATED).value:
-            "resources/schemas/triggers-module/entity.trigger.control.json",
-        RoutingKey(RoutingKey.TRIGGERS_CONTROL_ENTITY_UPDATED).value:
-            "resources/schemas/triggers-module/entity.trigger.control.json",
-        RoutingKey(RoutingKey.TRIGGERS_CONTROL_ENTITY_DELETED).value:
-            "resources/schemas/triggers-module/entity.trigger.control.json",
-
-        RoutingKey(RoutingKey.TRIGGERS_ACTIONS_ENTITY_CREATED).value:
-            "resources/schemas/triggers-module/entity.action.json",
-        RoutingKey(RoutingKey.TRIGGERS_ACTIONS_ENTITY_UPDATED).value:
-            "resources/schemas/triggers-module/entity.action.json",
-        RoutingKey(RoutingKey.TRIGGERS_ACTIONS_ENTITY_DELETED).value:
-            "resources/schemas/triggers-module/entity.action.json",
-
-        RoutingKey(RoutingKey.TRIGGERS_NOTIFICATIONS_ENTITY_CREATED).value:
-            "resources/schemas/triggers-module/entity.notification.json",
-        RoutingKey(RoutingKey.TRIGGERS_NOTIFICATIONS_ENTITY_UPDATED).value:
-            "resources/schemas/triggers-module/entity.notification.json",
-        RoutingKey(RoutingKey.TRIGGERS_NOTIFICATIONS_ENTITY_DELETED).value:
-            "resources/schemas/triggers-module/entity.notification.json",
-
-        RoutingKey(RoutingKey.TRIGGERS_CONDITIONS_ENTITY_CREATED).value:
-            "resources/schemas/triggers-module/entity.condition.json",
-        RoutingKey(RoutingKey.TRIGGERS_CONDITIONS_ENTITY_UPDATED).value:
-            "resources/schemas/triggers-module/entity.condition.json",
-        RoutingKey(RoutingKey.TRIGGERS_CONDITIONS_ENTITY_DELETED).value:
-            "resources/schemas/triggers-module/entity.condition.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_ENTITY_CREATED
+        ).value: "resources/schemas/triggers-module/entity.trigger.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_ENTITY_UPDATED
+        ).value: "resources/schemas/triggers-module/entity.trigger.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_ENTITY_DELETED
+        ).value: "resources/schemas/triggers-module/entity.trigger.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_CONTROL_ENTITY_CREATED
+        ).value: "resources/schemas/triggers-module/entity.trigger.control.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_CONTROL_ENTITY_UPDATED
+        ).value: "resources/schemas/triggers-module/entity.trigger.control.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_CONTROL_ENTITY_DELETED
+        ).value: "resources/schemas/triggers-module/entity.trigger.control.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_ACTIONS_ENTITY_CREATED
+        ).value: "resources/schemas/triggers-module/entity.action.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_ACTIONS_ENTITY_UPDATED
+        ).value: "resources/schemas/triggers-module/entity.action.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_ACTIONS_ENTITY_DELETED
+        ).value: "resources/schemas/triggers-module/entity.action.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_NOTIFICATIONS_ENTITY_CREATED
+        ).value: "resources/schemas/triggers-module/entity.notification.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_NOTIFICATIONS_ENTITY_UPDATED
+        ).value: "resources/schemas/triggers-module/entity.notification.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_NOTIFICATIONS_ENTITY_DELETED
+        ).value: "resources/schemas/triggers-module/entity.notification.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_CONDITIONS_ENTITY_CREATED
+        ).value: "resources/schemas/triggers-module/entity.condition.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_CONDITIONS_ENTITY_UPDATED
+        ).value: "resources/schemas/triggers-module/entity.condition.json",
+        RoutingKey(
+            RoutingKey.TRIGGERS_CONDITIONS_ENTITY_DELETED
+        ).value: "resources/schemas/triggers-module/entity.condition.json",
     },
 }

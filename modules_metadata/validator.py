@@ -21,10 +21,18 @@ JSON schema validator
 # Library dependencies
 import json
 from typing import Dict, Any
-from fastjsonschema import JsonSchemaValueException, JsonSchemaDefinitionException, compile as json_compile
+from fastjsonschema import (
+    JsonSchemaValueException,
+    JsonSchemaDefinitionException,
+    compile as json_compile,
+)
 
 # Library libs
-from modules_metadata.exceptions import InvalidDataException, LogicException, MalformedInputException
+from modules_metadata.exceptions import (
+    InvalidDataException,
+    LogicException,
+    MalformedInputException,
+)
 
 
 def validate(data: str, schema: str) -> Dict[str, Any]:

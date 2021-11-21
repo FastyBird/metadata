@@ -35,6 +35,7 @@ class ConnectorType(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     FB_BUS: str = "fb-bus"
     FB_MQTT: str = "fb-mqtt"
 
@@ -49,6 +50,7 @@ class DeviceConnectionState(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     # Device is connected to gateway
     CONNECTED: str = "connected"
     # Device is disconnected from gateway
@@ -81,6 +83,7 @@ class DeviceType(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     LOCAL: str = "local"
     NETWORK: str = "network"
     VIRTUAL: str = "virtual"
@@ -96,6 +99,7 @@ class HardwareManufacturer(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     GENERIC = "generic"
     FASTYBIRD = "fastybird"
     ITEAD = "itead"
@@ -112,6 +116,7 @@ class FirmwareManufacturer(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     GENERIC: str = "generic"
     FASTYBIRD: str = "fastybird"
 
@@ -126,6 +131,7 @@ class DevicePropertyName(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     STATE: str = "state"
     BATTERY: str = "battery"
     WIFI: str = "wifi"

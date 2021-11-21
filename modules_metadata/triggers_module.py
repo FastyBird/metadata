@@ -35,6 +35,7 @@ class TriggerType(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     MANUAL: str = "manual"
     AUTOMATIC: str = "automatic"
 
@@ -49,6 +50,7 @@ class TriggerActionType(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     DEVICE_PROPERTY: str = "device-property"
     CHANNEL_PROPERTY: str = "channel-property"
 
@@ -63,6 +65,7 @@ class TriggerConditionType(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     DEVICE_PROPERTY: str = "device-property"
     CHANNEL_PROPERTY: str = "channel-property"
     TIME: str = "time"
@@ -79,6 +82,7 @@ class TriggerNotificationType(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     EMAIL: str = "email"
     SMS: str = "sms"
 
@@ -93,6 +97,7 @@ class TriggerConditionOperator(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     EQUAL: str = "eq"
     ABOVE: str = "above"
     BELOW: str = "below"

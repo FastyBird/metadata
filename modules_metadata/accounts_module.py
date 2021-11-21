@@ -35,6 +35,7 @@ class AccountState(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     ACTIVE: str = "active"
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
@@ -52,6 +53,7 @@ class IdentityState(ExtendedEnum):
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
+
     ACTIVE: str = "active"
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
