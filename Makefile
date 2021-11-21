@@ -32,13 +32,25 @@ pylint:
 mypy:
 	python -m pip install mypy
 
-python_qa: python_cs python_types
+black:
+	python -m pip install black
+
+isort:
+	python -m pip install isort
+
+python_qa: python_cs python_types python_isort python_black
 
 python_cs: pylint
 	pylint **/*.py
 
 python_types: mypy
 	mypy **/*.py
+
+python_isort: isort
+	black **/*.py --check
+
+python_black: black
+	black **/*.py --check
 
 python_tests:
 	python -m unittest
