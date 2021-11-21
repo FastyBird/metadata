@@ -56,4 +56,4 @@ python_tests:
 	python -m unittest
 
 python_coverage:
-	coverage run --source=mqtt_connector_plugin -m unittest
+	coverage run --source=modules_metadata -m unittest
