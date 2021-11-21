@@ -499,6 +499,9 @@ jobs:
         with:
           python-version: 3.7
 
+      - name: "Move resources under into module"
+        run: "mv resources modules_metadata/resources"
+
       - name: "Extract version"
         uses: "battila7/get-version-action@v2"
         id: "get_version"
