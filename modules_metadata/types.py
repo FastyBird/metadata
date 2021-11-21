@@ -18,7 +18,7 @@
 Sets of universal enums for application
 """
 
-# Library dependencies
+# Python base dependencies
 from enum import unique
 
 # Library libs

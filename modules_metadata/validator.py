@@ -18,14 +18,13 @@
 JSON schema validator
 """
 
-# Library dependencies
+# Python base dependencies
 import json
-from typing import Dict, Any
-from fastjsonschema import (
-    JsonSchemaValueException,
-    JsonSchemaDefinitionException,
-    compile as json_compile,
-)
+from typing import Any, Dict
+
+# Library dependencies
+from fastjsonschema import JsonSchemaDefinitionException, JsonSchemaValueException
+from fastjsonschema import compile as json_compile
 
 # Library libs
 from modules_metadata.exceptions import (

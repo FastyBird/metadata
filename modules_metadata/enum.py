@@ -18,7 +18,7 @@
 Extended enum type
 """
 
-# Library dependencies
+# Python base dependencies
 from enum import Enum, unique
 
 

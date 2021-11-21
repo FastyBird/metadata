@@ -18,9 +18,11 @@
 JSON schema & modules metadata loaders
 """
 
-# Library dependencies
+# Python base dependencies
 from io import BytesIO
-from typing import Dict, Optional, Any
+from typing import Any, Dict, Optional
+
+# Library dependencies
 from pkg_resources import resource_string
 
 # Library libs

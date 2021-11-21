@@ -18,7 +18,7 @@
 Sets of enums for Triggers Module
 """
 
-# Library dependencies
+# Python base dependencies
 from enum import unique
 
 # Library libs
