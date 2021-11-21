@@ -47,7 +47,7 @@ python_types: mypy
 	mypy **/*.py
 
 python_isort: isort
-	black **/*.py --check
+	isort **/*.py --check
 
 python_black: black
 	black **/*.py --check
