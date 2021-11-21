@@ -488,16 +488,17 @@ jobs:
 
     strategy:
       matrix:
+        python: [ "3.9" ]
         operating-system: ["ubuntu-latest"]
 
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v2"
 
-      - name: "Set up Python 3.7"
+      - name: "Set up Python 3.9"
         uses: "actions/setup-python@v1"
         with:
-          python-version: 3.7
+          python-version: ${{ matrix.python }}
 
       - name: "Move resources under into module"
         run: "mv resources modules_metadata/resources"
@@ -568,6 +569,9 @@ jobs:
         uses: "actions/setup-python@v1"
         with:
           python-version: ${{ matrix.python }}
+
+      - name: "Move resources under into module"
+        run: "mv resources modules_metadata/resources"
 
       - name: "Install dependencies"
         run: |
