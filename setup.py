@@ -64,6 +64,7 @@ setup(
     install_requires=[
         "fastjsonschema",
         "setuptools",
+        "types-setuptools",
     ],
     download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
     classifiers=[
