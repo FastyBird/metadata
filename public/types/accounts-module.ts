@@ -1,4 +1,17 @@
-import {AccountState, IdentityState} from './types'
+export enum AccountState {
+    ACTIVE = 'active',
+    BLOCKED = 'blocked',
+    DELETED = 'deleted',
+    NOT_ACTIVATED = 'notActivated',
+    APPROVAL_WAITING = 'approvalWaiting',
+}
+
+export enum IdentityState {
+    ACTIVE = 'active',
+    BLOCKED = 'blocked',
+    DELETED = 'deleted',
+    INVALID = 'invalid',
+}
 
 export interface AccountEntity {
     id: string

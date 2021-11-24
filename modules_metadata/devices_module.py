@@ -143,3 +143,81 @@ class DevicePropertyName(ExtendedEnum):
     IP_ADDRESS: str = "ip-address"
     STATUS_LED: str = "status-led"
     FREE_HEAP: str = "free-heap"
+
+
+@unique
+class ConfigurationField(ExtendedEnum):
+    """
+    Configuration fields types
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    BOOLEAN: str = "boolean"
+    NUMBER: str = "number"
+    SELECT: str = "select"
+    TEXT: str = "text"
+
+
+@unique
+class ConfigurationNumberFieldAttribute(ExtendedEnum):
+    """
+    Configuration number field attributes
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    MIN: str = "min"
+    MAX: str = "max"
+    STEP: str = "step"
+    DEFAULT: str = "default"
+
+
+@unique
+class ConfigurationTextFieldAttribute(ExtendedEnum):
+    """
+    Configuration text field attributes
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    DEFAULT: str = "default"
+
+
+@unique
+class ConfigurationBooleanFieldAttribute(ExtendedEnum):
+    """
+    Configuration boolean field attributes
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    DEFAULT: str = "default"
+
+
+@unique
+class ConfigurationSelectFieldAttribute(ExtendedEnum):
+    """
+    Configuration select field attributes
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    VALUES: str = "values"
+    DEFAULT: str = "default"
+

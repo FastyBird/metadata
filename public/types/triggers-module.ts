@@ -1,10 +1,30 @@
-import {
-    TriggerType,
-    TriggerActionType,
-    TriggerConditionOperator,
-    TriggerConditionType,
-    TriggerNotificationType,
-} from './types'
+export enum TriggerType {
+    MANUAL = 'manual',
+    AUTOMATIC = 'automatic',
+}
+
+export enum TriggerActionType {
+    DEVICE_PROPERTY = 'device-property',
+    CHANNEL_PROPERTY = 'channel-property',
+}
+
+export enum TriggerConditionType {
+    CHANNEL_PROPERTY = 'channel-property',
+    DEVICE_PROPERTY = 'device-property',
+    TIME = 'time',
+    DATE = 'date',
+}
+
+export enum TriggerNotificationType {
+    EMAIL = 'email',
+    SMS = 'sms',
+}
+
+export enum TriggerConditionOperator {
+    EQUAL = 'eq',
+    ABOVE = 'above',
+    BELOW = 'below',
+}
 
 export interface TriggerEntity {
     id: string
