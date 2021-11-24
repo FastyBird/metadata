@@ -220,4 +220,3 @@ class ConfigurationSelectFieldAttribute(ExtendedEnum):
 
     VALUES: str = "values"
     DEFAULT: str = "default"
-
