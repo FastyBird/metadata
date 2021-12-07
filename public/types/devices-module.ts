@@ -3,6 +3,10 @@ import { DataType } from './types'
 export enum ConnectorType {
     FB_BUS = 'fb-bus',
     FB_MQTT = 'fb-mqtt',
+    SHELLY = 'shelly',
+    TUYA = 'tuya',
+    SONOFF = 'sonoff',
+    MODBUS = 'modbus',
 }
 
 export enum DeviceConnectionState {

@@ -38,6 +38,10 @@ class ConnectorType(ExtendedEnum):
 
     FB_BUS: str = "fb-bus"
     FB_MQTT: str = "fb-mqtt"
+    SHELLY: str = "shelly"
+    TUYA: str = "tuya"
+    SONOFF: str = "sonoff"
+    MODBUS: str = "modbus"
 
 
 @unique

@@ -27,7 +27,11 @@
       "type" : "string",
       "enum" : [
         "fb-bus",
-        "fb-mqtt"
+        "fb-mqtt",
+        "shelly",
+        "tuya",
+        "sonoff",
+        "modbus"
       ]
     }
   },
