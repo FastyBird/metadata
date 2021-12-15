@@ -19,14 +19,20 @@
         "generic",
         "fastybird",
         "itead",
-        "ai_thinker"
+        "ai_thinker",
+        "shelly",
+        "tuya",
+        "sonoff"
       ]
     },
     "firmware_manufacturer" : {
       "type" : "string",
       "enum" : [
         "generic",
-        "fastybird"
+        "fastybird",
+        "shelly",
+        "tuya",
+        "sonoff"
       ]
     },
     "device_model" : {

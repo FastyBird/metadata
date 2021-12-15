@@ -35,6 +35,9 @@ class HardwareManufacturerType extends Consistence\Enum\Enum
 	public const MANUFACTURER_FASTYBIRD = 'fastybird';
 	public const MANUFACTURER_ITEAD = 'itead';
 	public const MANUFACTURER_AI_THINKER = 'ai_thinker';
+	public const MANUFACTURER_SHELLY = 'shelly';
+	public const MANUFACTURER_TUYA = 'tuya';
+	public const MANUFACTURER_SONOFF = 'sonoff';
 
 	/**
 	 * @return string

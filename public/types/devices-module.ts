@@ -33,11 +33,17 @@ export enum HardwareManufacturer {
     FASTYBIRD = 'fastybird',
     ITEAD = 'itead',
     AI_THINKER = 'ai_thinker',
+    SHELLY = 'shelly',
+    TUYA = 'tuya',
+    SONOFF = 'sonoff',
 }
 
 export enum FirmwareManufacturer {
     GENERIC = 'generic',
     FASTYBIRD = 'fastybird',
+    SHELLY = 'shelly',
+    TUYA = 'tuya',
+    SONOFF = 'sonoff',
 }
 
 export enum DeviceModel {

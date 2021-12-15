@@ -108,6 +108,9 @@ class HardwareManufacturer(ExtendedEnum):
     FASTYBIRD = "fastybird"
     ITEAD = "itead"
     AI_THINKER = "ai_thinker"
+    SHELLY: str = "shelly"
+    TUYA: str = "tuya"
+    SONOFF: str = "sonoff"
 
 
 @unique
@@ -123,6 +126,9 @@ class FirmwareManufacturer(ExtendedEnum):
 
     GENERIC: str = "generic"
     FASTYBIRD: str = "fastybird"
+    SHELLY: str = "shelly"
+    TUYA: str = "tuya"
+    SONOFF: str = "sonoff"
 
 
 @unique
