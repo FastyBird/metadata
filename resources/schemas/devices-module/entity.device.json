@@ -12,65 +12,6 @@
           }
         ]
       }
-    },
-    "hardware_manufacturer" : {
-      "type" : "string",
-      "enum" : [
-        "generic",
-        "fastybird",
-        "itead",
-        "ai_thinker",
-        "shelly",
-        "tuya",
-        "sonoff"
-      ]
-    },
-    "firmware_manufacturer" : {
-      "type" : "string",
-      "enum" : [
-        "generic",
-        "fastybird",
-        "shelly",
-        "tuya",
-        "sonoff"
-      ]
-    },
-    "device_model" : {
-      "type" : "string",
-      "enum" : [
-        "custom",
-
-        "sonoff_basic",
-        "sonoff_rf",
-        "sonoff_th",
-        "sonoff_sv",
-        "sonoff_slampher",
-        "sonoff_s20",
-        "sonoff_touch",
-        "sonoff_pow",
-        "sonoff_pow_r2",
-        "sonoff_dual",
-        "sonoff_dual_r2",
-        "sonoff_4ch",
-        "sonoff_4ch_pro",
-        "sonoff_rf_bridge",
-        "sonoff_b1",
-        "sonoff_led",
-        "sonoff_t1_1ch",
-        "sonoff_t1_2ch",
-        "sonoff_t1_3ch",
-        "sonoff_s31",
-        "sonoff_sc",
-        "sonoff_sc_pro",
-        "sonoff_ps_15",
-
-        "ai_thinker_ai_light",
-
-        "fastybird_wifi_gw",
-        "fastybird_3ch_power_strip_r1",
-        "8ch_buttons",
-        "16ch_buttons"
-      ]
     }
   },
   "type" : "object",
@@ -104,17 +45,20 @@
       "default" : null
     },
     "hardware_manufacturer" : {
-      "$ref" : "#/definitions/hardware_manufacturer"
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
     "hardware_model" : {
-      "$ref" : "#/definitions/device_model"
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
     "hardware_mac_address" : {
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
     },
     "firmware_manufacturer" : {
-      "$ref" : "#/definitions/firmware_manufacturer"
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
     "firmware_version" : {
       "$ref" : "#/definitions/types/nullable_string",
