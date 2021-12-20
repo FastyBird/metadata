@@ -47,11 +47,6 @@ export enum DevicesModule {
 
     DEVICES_CONTROL_DATA = 'fb.bus.data.device.control',
 
-    // Devices connectors
-    DEVICES_CONNECTOR_ENTITY_CREATED = 'fb.bus.entity.created.device.connector',
-    DEVICES_CONNECTOR_ENTITY_UPDATED = 'fb.bus.entity.updated.device.connector',
-    DEVICES_CONNECTOR_ENTITY_DELETED = 'fb.bus.entity.deleted.device.connector',
-
     // Channels
     CHANNELS_ENTITY_CREATED = 'fb.bus.entity.created.channel',
     CHANNELS_ENTITY_UPDATED = 'fb.bus.entity.updated.channel',

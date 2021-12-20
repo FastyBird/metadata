@@ -82,11 +82,6 @@ class RoutingKey(ExtendedEnum):
 
     DEVICES_CONTROL_ENTITY_DATA = "fb.bus.data.device.control"
 
-    # Devices connectors
-    DEVICES_CONNECTOR_ENTITY_CREATED = "fb.bus.entity.created.device.connector"
-    DEVICES_CONNECTOR_ENTITY_UPDATED = "fb.bus.entity.updated.device.connector"
-    DEVICES_CONNECTOR_ENTITY_DELETED = "fb.bus.entity.deleted.device.connector"
-
     # Channels
     CHANNELS_ENTITY_CREATED: str = "fb.bus.entity.created.channel"
     CHANNELS_ENTITY_UPDATED: str = "fb.bus.entity.updated.channel"
