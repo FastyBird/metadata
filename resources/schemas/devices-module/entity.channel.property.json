@@ -12,6 +12,16 @@
           }
         ]
       },
+      "nullable_number" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "number"
+          }
+        ]
+      },
       "string_number" : {
         "oneOf" : [
           {
@@ -28,7 +38,7 @@
             "type" : "null"
           },
           {
-            "$ref" : "#/definitions/data_type"
+            "$ref" : "#/definitions/datatype"
           }
         ]
       },
@@ -38,14 +48,31 @@
             "type" : "null"
           },
           {
-            "type" : "string"
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type" : "string"
+            }
           },
           {
             "type": "array",
             "uniqueItems": true,
             "items": {
-              "$ref" : "#/definitions/types/string_number"
+              "$ref" : "#/definitions/types/nullable_number"
             }
+          }
+        ]
+      },
+      "nullable_invalid" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "number"
           }
         ]
       },
@@ -66,7 +93,14 @@
         ]
       }
     },
-    "data_type" : {
+    "type" : {
+      "type" : "string",
+      "enum" : [
+        "static",
+        "dynamic"
+      ]
+    },
+    "datatype" : {
       "type" : "string",
       "enum" : [
         "char",
@@ -90,6 +124,9 @@
     "id" : {
       "type" : "string",
       "description" : "Entity uuid v4 identifier. This identifier is unique"
+    },
+    "type" : {
+      "$ref" : "#/definitions/type"
     },
     "identifier" : {
       "type" : "string",
@@ -123,14 +160,13 @@
       "$ref" : "#/definitions/types/nullable_format",
       "default" : null
     },
-    "actual_value" : {
-      "$ref" : "#/definitions/types/string_number_boolean_null"
+    "invalid" : {
+      "$ref" : "#/definitions/types/nullable_invalid",
+      "default" : null
     },
-    "expected_value" : {
-      "$ref" : "#/definitions/types/string_number_boolean_null"
-    },
-    "previous_value" : {
-      "$ref" : "#/definitions/types/string_number_boolean_null"
+    "number_of_decimals" : {
+      "$ref" : "#/definitions/types/nullable_number",
+      "default" : null
     },
     "channel" : {
       "type" : "string",
@@ -141,15 +177,63 @@
       "description" : "Entity owner uuid v4 identifier"
     }
   },
-  "required" : [
-    "id",
-    "identifier",
-    "key",
-    "settable",
-    "queryable",
-    "data_type",
-    "unit",
-    "format",
-    "channel"
-  ]
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "dynamic"
+      }
+    }
+  },
+  "then" : {
+    "properties": {
+      "actual_value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
+      },
+      "previous_value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
+      },
+      "expected_value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
+      },
+      "pending" : {
+        "type" : "boolean"
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "identifier",
+      "key",
+      "settable",
+      "queryable",
+      "data_type",
+      "unit",
+      "format",
+      "invalid",
+      "number_of_decimals",
+      "channel"
+    ]
+  },
+  "else" : {
+    "properties": {
+      "value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
+      }
+    },
+    "required" : [
+      "id",
+      "type",
+      "identifier",
+      "key",
+      "settable",
+      "queryable",
+      "data_type",
+      "unit",
+      "format",
+      "invalid",
+      "number_of_decimals",
+      "value",
+      "channel"
+    ]
+  }
 }

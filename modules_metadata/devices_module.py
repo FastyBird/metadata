@@ -230,3 +230,18 @@ class ConfigurationSelectFieldAttribute(ExtendedEnum):
 
     VALUES: str = "values"
     DEFAULT: str = "default"
+
+
+@unique
+class PropertyType(ExtendedEnum):
+    """
+    Property entity type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    DYNAMIC: str = "dynamic"
+    STATIC: str = "static"

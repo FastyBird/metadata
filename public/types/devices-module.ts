@@ -123,6 +123,11 @@ export enum ConfigurationSelectFieldAttributeType {
     DEFAULT = 'default',
 }
 
+export enum PropertyType {
+    DYNAMIC = 'dynamic',
+    STATIC = 'static',
+}
+
 export interface ConnectorEntity {
     id: string
     type: ConnectorType

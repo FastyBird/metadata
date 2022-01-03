@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 #     Copyright 2021. FastyBird s.r.o.
 #
 #     Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,4 +18,4 @@
 Modules metadata loader and validator and sets of useful enums
 """
 
-__version__ = "0.13.0"
+__version__ = "0.14.0"
