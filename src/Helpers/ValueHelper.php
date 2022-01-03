@@ -35,7 +35,7 @@ final class ValueHelper
 	 * @param bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|null $value
 	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null  $format
 	 *
-	 * @return bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|string[]|null
+	 * @return bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|Array<string | null>|null
 	 */
 	public static function normalizeValue(
 		Types\DataTypeType $dataType,
@@ -136,17 +136,15 @@ final class ValueHelper
 
 		} elseif ($dataType->equalsValue(Types\DataTypeType::DATA_TYPE_ENUM)) {
 			if (is_array($format) && count($format) > 0) {
-				$filtered = array_filter($format, function ($item) use($value): bool {
+				$filtered = array_filter($format, function ($item) use ($value): bool {
 					if (is_array($item)) {
 						if (count($item) !== 3) {
 							return false;
 						}
 
-						return (
-							strtolower($value) === $item[0]
+						return strtolower($value) === $item[0]
 							|| strtolower($value) === $item[1]
-							|| strtolower($value) === $item[2]
-						);
+							|| strtolower($value) === $item[2];
 					}
 
 					return strtolower($value) === $item;

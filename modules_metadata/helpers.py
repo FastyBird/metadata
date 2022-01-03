@@ -20,7 +20,7 @@ Modules helpers
 
 # Python base dependencies
 from datetime import datetime
-from typing import Optional, Set, Tuple, Union, List
+from typing import List, Optional, Set, Tuple, Union
 
 # Library dependencies
 from fastnumbers import fast_float, fast_int
