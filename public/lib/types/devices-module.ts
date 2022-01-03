@@ -199,7 +199,7 @@ export interface DevicePropertyEntity {
     queryable: boolean
     data_type: DataType | null
     unit: string | null
-    format: string[] | (number | null)[] | null
+    format: string[] | ((string | null)[])[] | (number | null)[] | null
     invalid: string | number | null
     number_of_decimals: number | null
     value?: string | number | boolean | ButtonPayload | SwitchPayload | null
@@ -210,7 +210,7 @@ export interface DevicePropertyEntity {
     device: string
     owner?: string
 
-    [k: string]: string | boolean | number | string[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
+    [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface DeviceConfigurationEntity {
@@ -264,7 +264,7 @@ export interface ChannelPropertyEntity {
     queryable: boolean
     data_type: DataType | null
     unit: string | null
-    format: string[] | (number | null)[] | null
+    format: string[] | ((string | null)[])[] | (number | null)[] | null
     invalid: string | number | null
     number_of_decimals: number | null
     value?: string | number | boolean | ButtonPayload | SwitchPayload | null
@@ -275,7 +275,7 @@ export interface ChannelPropertyEntity {
     channel: string
     owner?: string
 
-    [k: string]: string | boolean | number | string[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
+    [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface ChannelConfigurationEntity {
