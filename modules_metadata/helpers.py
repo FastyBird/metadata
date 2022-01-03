@@ -141,9 +141,6 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
 
                 return filtered[0], filtered[1], filtered[2] if len(filtered) == 1 else None
 
-            if value_format is not None and isinstance(value_format, (list, set)) and str(value) in list(value_format):
-                return str(value)
-
             return None
 
         if data_type == DataType.DATE:
