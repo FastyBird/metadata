@@ -5,7 +5,7 @@ export const normalizeValue = (
   dataType: DataType,
   value: string | null,
   format?: string[] | (number | null)[] | null,
-): number | string | boolean | Date | null => {
+): number | string | boolean | Date | (string | null)[] | null => {
   if (value === null) {
     return null
   }
@@ -55,8 +55,25 @@ export const normalizeValue = (
       return value
 
     case DataType.ENUM:
-      if (Array.isArray(format) && (format as string[]).includes(value.toLowerCase())) {
-        return value.toLowerCase()
+      if (Array.isArray(format)) {
+        const filtered = (format as (string | (string | null)[])[])
+          .filter((item): boolean => {
+            if (Array.isArray(item)) {
+              if (item.length !== 3) {
+                return false
+              }
+
+              return (
+                value.toLowerCase() === item[0]
+                || value.toLowerCase() === item[1]
+                || value.toLowerCase() === item[2]
+              )
+            }
+
+            return value.toLowerCase() === item
+          })
+
+          return filtered.length === 1 ? filtered[0] : null
       }
 
       return null

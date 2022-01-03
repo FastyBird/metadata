@@ -20,13 +20,33 @@ Modules helpers
 
 # Python base dependencies
 from datetime import datetime
-from typing import Optional, Set, Tuple, Union
+from typing import Optional, Set, Tuple, Union, List
 
 # Library dependencies
 from fastnumbers import fast_float, fast_int
 
 # Library libs
 from modules_metadata.types import ButtonPayload, DataType, SwitchPayload
+
+
+def filter_enum_format(
+    item: Union[str, List[Optional[str]], Set[Optional[str]]],
+    value: Union[int, float, str, bool, datetime, ButtonPayload, SwitchPayload],
+) -> bool:
+    """Filter enum format value by value"""
+    if isinstance(item, (list, set)):
+        if len(item) != 3:
+            return False
+
+        item_as_list = list(item)
+
+        return (
+            str(value).lower() == item_as_list[0]
+            or str(value).lower() == item_as_list[1]
+            or str(value).lower() == item_as_list[2]
+        )
+
+    return str(value).lower() == item
 
 
 class ValueHelper:  # pylint: disable=too-few-public-methods
@@ -46,7 +66,9 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
         value_format: Union[
             Tuple[Optional[int], Optional[int]], Tuple[Optional[float], Optional[float]], Set[str], None
         ] = None,
-    ) -> Union[int, float, str, bool, datetime, ButtonPayload, SwitchPayload, None]:
+    ) -> Union[
+        int, float, str, bool, datetime, ButtonPayload, SwitchPayload, Tuple[str, Optional[str], Optional[str]], None
+    ]:
         """Normalize property value based od property data type"""
         if value is None:
             return value
@@ -114,6 +136,11 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
             return str(value)
 
         if data_type == DataType.ENUM:
+            if value_format is not None and isinstance(value_format, (list, set)):
+                filtered = [item for item in value_format if filter_enum_format(item=item, value=value)]
+
+                return filtered[0], filtered[1], filtered[2] if len(filtered) == 1 else None
+
             if value_format is not None and isinstance(value_format, (list, set)) and str(value) in list(value_format):
                 return str(value)
 
