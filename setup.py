@@ -63,6 +63,7 @@ setup(
     package_data={"modules_metadata": ["py.typed"]},
     install_requires=[
         "fastjsonschema",
+        "fastnumbers",
         "setuptools",
         "types-setuptools",
     ],

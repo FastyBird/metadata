@@ -1,4 +1,4 @@
-export enum AccountsModule {
+export enum AccountsModuleRoutes {
     // Accounts
     ACCOUNTS_ENTITY_CREATED = 'fb.bus.entity.created.account',
     ACCOUNTS_ENTITY_UPDATED = 'fb.bus.entity.updated.account',
@@ -20,7 +20,7 @@ export enum AccountsModule {
     ROLES_ENTITY_DELETED = 'fb.bus.entity.deleted.role',
 }
 
-export enum DevicesModule {
+export enum DevicesModuleRoutes {
     // Devices
     DEVICES_ENTITY_CREATED = 'fb.bus.entity.created.device',
     DEVICES_ENTITY_UPDATED = 'fb.bus.entity.updated.device',
@@ -86,7 +86,7 @@ export enum DevicesModule {
     CONNECTORS_CONTROL_DATA = 'fb.bus.data.connector.control',
 }
 
-export enum TriggersModule {
+export enum TriggersModuleRoutes {
     // Triggers
     TRIGGERS_ENTITY_CREATED = 'fb.bus.entity.created.trigger',
     TRIGGERS_ENTITY_UPDATED = 'fb.bus.entity.updated.trigger',
@@ -115,5 +115,5 @@ export enum TriggersModule {
     TRIGGERS_CONDITIONS_ENTITY_DELETED = 'fb.bus.entity.deleted.trigger.condition',
 }
 
-export enum UiModule {
+export enum UiModuleRoutes {
 }

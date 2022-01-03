@@ -1,4 +1,4 @@
-import { DataType } from './types'
+import { ButtonPayload, DataType, SwitchPayload } from '@/lib/types/types'
 
 export enum ConnectorType {
     FB_BUS = 'fb-bus',
@@ -168,6 +168,7 @@ export interface DeviceEntity {
     firmware_manufacturer: FirmwareManufacturer
     firmware_version: string | null
     control: string[]
+    connector: string
     owner?: string
 
     [k: string]: string | HardwareManufacturer | DeviceModel | FirmwareManufacturer | boolean | string[] | null | undefined
@@ -190,6 +191,7 @@ export interface DeviceConnectorEntity {
 
 export interface DevicePropertyEntity {
     id: string
+    type: PropertyType
     identifier: string
     key: string
     name: string | null
@@ -197,14 +199,18 @@ export interface DevicePropertyEntity {
     queryable: boolean
     data_type: DataType | null
     unit: string | null
-    format: string | string[] | number[] | null
-    actual_value?: string | number | boolean | DeviceConnectionState | null
-    expected_value?: string | number | boolean | null
-    previous_value?: string | number | boolean | null
+    format: string[] | (number | null)[] | null
+    invalid: string | number | null
+    number_of_decimals: number | null
+    value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    actual_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    expected_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    pending?: boolean
     device: string
     owner?: string
 
-    [k: string]: string | boolean | number | string[] | number[] | DataType | DeviceConnectionState | null | undefined
+    [k: string]: string | boolean | number | string[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface DeviceConfigurationEntity {
@@ -250,6 +256,7 @@ export interface ChannelEntity {
 
 export interface ChannelPropertyEntity {
     id: string
+    type: PropertyType
     identifier: string
     key: string
     name: string | null
@@ -257,14 +264,18 @@ export interface ChannelPropertyEntity {
     queryable: boolean
     data_type: DataType | null
     unit: string | null
-    format: string | string[] | number[] | null
-    actual_value?: string | number | boolean | null
-    expected_value?: string | number | boolean | null
-    previous_value?: string | number | boolean | null
+    format: string[] | (number | null)[] | null
+    invalid: string | number | null
+    number_of_decimals: number | null
+    value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    actual_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    expected_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    pending?: boolean
     channel: string
     owner?: string
 
-    [k: string]: string | boolean | number | string[] | number[] | DataType | null | undefined
+    [k: string]: string | boolean | number | string[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface ChannelConfigurationEntity {
@@ -322,9 +333,9 @@ export interface DeviceControlData {
 export interface DevicePropertyData {
     device: string
     property: string
-    expected_value: string | number | boolean
+    expected_value: string | number | boolean | ButtonPayload | SwitchPayload
 
-    [k: string]: string | number | boolean | undefined
+    [k: string]: string | number | boolean | ButtonPayload | SwitchPayload | undefined
 }
 
 export interface ChannelControlData {
@@ -344,7 +355,7 @@ export interface ChannelPropertyData {
     device: string
     channel: string
     property: string
-    expected_value: string | number | boolean
+    expected_value: string | number | boolean | ButtonPayload | SwitchPayload
 
-    [k: string]: string | number | boolean | undefined
+    [k: string]: string | number | boolean | ButtonPayload | SwitchPayload |undefined
 }

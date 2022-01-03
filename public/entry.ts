@@ -1,5 +1,5 @@
-export * from '@/types/types'
-export * from '@/types/routing'
-export * from '@/types/accounts-module'
-export * from '@/types/devices-module'
-export * from '@/types/triggers-module'
+// Re-export plugin helpers
+export * from '@/lib/helpers'
+
+// Re-export plugin typing
+export * from '@/types/modules-metadata'

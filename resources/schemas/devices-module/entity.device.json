@@ -64,6 +64,10 @@
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
     },
+    "connector" : {
+      "type" : "string",
+      "description" : "Entity connector uuid v4 identifier"
+    },
     "owner" : {
       "type" : "string",
       "description" : "Entity owner uuid v4 identifier"
@@ -81,6 +85,7 @@
     "hardware_model",
     "hardware_mac_address",
     "firmware_manufacturer",
-    "firmware_version"
+    "firmware_version",
+    "connector"
   ]
 }

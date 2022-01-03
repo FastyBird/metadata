@@ -1,3 +1,4 @@
 fastjsonschema>=2.15
+fastnumbers>=3.2
 setuptools>=57.4
 types-setuptools>=57.4
