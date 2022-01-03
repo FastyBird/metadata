@@ -142,12 +142,12 @@ final class ValueHelper
 							return false;
 						}
 
-						return strtolower((string) $value) === $item[0]
-							|| strtolower((string) $value) === $item[1]
-							|| strtolower((string) $value) === $item[2];
+						return strtolower(strval($value)) === $item[0]
+							|| strtolower(strval($value)) === $item[1]
+							|| strtolower(strval($value)) === $item[2];
 					}
 
-					return strtolower((string) $value) === $item;
+					return strtolower(strval($value)) === $item;
 				});
 
 				return count($filtered) === 1 ? $filtered[0] : null;
