@@ -32,10 +32,10 @@ final class ValueHelper
 
 	/**
 	 * @param Types\DataTypeType $dataType
-	 * @param bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|null $value
+	 * @param bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|Array<string|null>|null $value
 	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null  $format
 	 *
-	 * @return bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|Array<string | null>|null
+	 * @return bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|null
 	 */
 	public static function normalizeValue(
 		Types\DataTypeType $dataType,
@@ -142,6 +142,10 @@ final class ValueHelper
 							return false;
 						}
 
+						if (is_array($value)) {
+							return $value === $item;
+						}
+
 						return strtolower(strval($value)) === $item[0]
 							|| strtolower(strval($value)) === $item[1]
 							|| strtolower(strval($value)) === $item[2];
@@ -150,7 +154,7 @@ final class ValueHelper
 					return strtolower(strval($value)) === $item;
 				});
 
-				return count($filtered) === 1 ? $filtered[0] : null;
+				return count($filtered) === 1 ? (is_array($filtered[0]) ? $filtered[0][0] : $filtered[0]) : null;
 			}
 
 			return null;

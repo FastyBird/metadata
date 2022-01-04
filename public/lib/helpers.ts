@@ -4,8 +4,8 @@ import { parse } from 'date-fns'
 export const normalizeValue = (
   dataType: DataType,
   value: string | null,
-  format?: string[] | (number | null)[] | null,
-): number | string | boolean | Date | (string | null)[] | null => {
+  format?: string[] | ((string | null)[])[] | (number | null)[] | null,
+): string | number | boolean | Date | null => {
   if (value === null) {
     return null
   }
@@ -73,7 +73,7 @@ export const normalizeValue = (
             return value.toLowerCase() === item
           })
 
-          return filtered.length === 1 ? filtered[0] : null
+          return filtered.length === 1 ? (Array.isArray(filtered[0]) ? filtered[0][0] : filtered[0]) : null
       }
 
       return null

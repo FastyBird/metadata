@@ -66,9 +66,7 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
         value_format: Union[
             Tuple[Optional[int], Optional[int]], Tuple[Optional[float], Optional[float]], Set[str], None
         ] = None,
-    ) -> Union[
-        int, float, str, bool, datetime, ButtonPayload, SwitchPayload, Tuple[str, Optional[str], Optional[str]], None
-    ]:
+    ) -> Union[int, float, str, bool, datetime, ButtonPayload, SwitchPayload, None]:
         """Normalize property value based od property data type"""
         if value is None:
             return value
@@ -139,7 +137,7 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
             if value_format is not None and isinstance(value_format, (list, set)):
                 filtered = [item for item in value_format if filter_enum_format(item=item, value=value)]
 
-                return filtered[0], filtered[1], filtered[2] if len(filtered) == 1 else None
+                return (filtered[0][0] if isinstance(filtered[0], (list, set)) else filtered[0]) if len(filtered) == 1 else None
 
             return None
 
