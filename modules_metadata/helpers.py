@@ -137,7 +137,11 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
             if value_format is not None and isinstance(value_format, (list, set)):
                 filtered = [item for item in value_format if filter_enum_format(item=item, value=value)]
 
-                return (filtered[0][0] if isinstance(filtered[0], (list, set)) else filtered[0]) if len(filtered) == 1 else None
+                return (
+                    (filtered[0][0] if isinstance(filtered[0], (list, set)) else filtered[0])
+                    if len(filtered) == 1
+                    else None
+                )
 
             return None
 
