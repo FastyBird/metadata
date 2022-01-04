@@ -202,15 +202,15 @@ export interface DevicePropertyEntity {
     format: string[] | ((string | null)[])[] | (number | null)[] | null
     invalid: string | number | null
     number_of_decimals: number | null
-    value?: string | number | boolean | ButtonPayload | SwitchPayload | null
-    actual_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
-    expected_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
-    previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    value?: string | number | boolean | null
+    actual_value?: string | number | boolean | ButtonPayload | SwitchPayload | (string | null)[] | null
+    expected_value?: string | number | boolean | ButtonPayload | SwitchPayload | (string | null)[] | null
+    previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | (string | null)[] | null
     pending?: boolean
     device: string
     owner?: string
 
-    [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
+    [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | (string | null)[] | null | undefined
 }
 
 export interface DeviceConfigurationEntity {
@@ -267,15 +267,15 @@ export interface ChannelPropertyEntity {
     format: string[] | ((string | null)[])[] | (number | null)[] | null
     invalid: string | number | null
     number_of_decimals: number | null
-    value?: string | number | boolean | ButtonPayload | SwitchPayload | null
-    actual_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
-    expected_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
-    previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+    value?: string | number | boolean | null
+    actual_value?: string | number | boolean | ButtonPayload | SwitchPayload | (string | null)[] | null
+    expected_value?: string | number | boolean | ButtonPayload | SwitchPayload | (string | null)[] | null
+    previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | (string | null)[] | null
     pending?: boolean
     channel: string
     owner?: string
 
-    [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
+    [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | (string | null)[] | null | undefined
 }
 
 export interface ChannelConfigurationEntity {

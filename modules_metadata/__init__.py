@@ -18,4 +18,4 @@
 Modules metadata loader and validator and sets of useful enums
 """
 
-__version__ = "0.16.0"
+__version__ = "0.16.1"

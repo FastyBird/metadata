@@ -91,6 +91,35 @@
           }
         ]
       },
+      "nullable_value" : {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/definitions/types/nullable_string"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            }
+          }
+        ]
+      },
       "string_number_boolean_null" : {
         "oneOf" : [
           {
@@ -202,13 +231,13 @@
   "then" : {
     "properties": {
       "actual_value" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
+        "$ref" : "#/definitions/types/nullable_value"
       },
       "previous_value" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
+        "$ref" : "#/definitions/types/nullable_value"
       },
       "expected_value" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
+        "$ref" : "#/definitions/types/nullable_value"
       },
       "pending" : {
         "type" : "boolean"
