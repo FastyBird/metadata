@@ -12,10 +12,10 @@ export const normalizeValue = (
 
   switch (dataType) {
     case DataType.BOOLEAN:
-      return ['true', 't', 'yes', 'y', '1', 'on'].includes(`${value}`.toLowerCase())
+      return ['true', 't', 'yes', 'y', '1', 'on'].includes(String(value).toLowerCase())
 
     case DataType.FLOAT: {
-      const floatValue = parseFloat(`${value}`)
+      const floatValue = parseFloat(String(value))
 
       if (Array.isArray(format) && format.length === 2) {
         if (format[0] !== null && format[0] > floatValue) {
@@ -36,7 +36,7 @@ export const normalizeValue = (
     case DataType.USHORT:
     case DataType.INT:
     case DataType.UINT: {
-      const intValue = parseInt(`${value}`, 10)
+      const intValue = parseInt(String(value), 10)
 
       if (Array.isArray(format) && format.length === 2) {
         if (format[0] !== null && format[0] > intValue) {
@@ -64,13 +64,13 @@ export const normalizeValue = (
               }
 
               return (
-                `${value}`.toLowerCase() === item[0]
-                || `${value}`.toLowerCase() === item[1]
-                || `${value}`.toLowerCase() === item[2]
+                String(value).toLowerCase() === item[0]
+                || String(value).toLowerCase() === item[1]
+                || String(value).toLowerCase() === item[2]
               )
             }
 
-            return `${value}`.toLowerCase() === item
+            return String(value).toLowerCase() === item
           })
 
           return filtered.length === 1 ? (Array.isArray(filtered[0]) ? filtered[0][0] : filtered[0]) : null
@@ -79,27 +79,27 @@ export const normalizeValue = (
       return null
 
     case DataType.DATE:
-      return parse(`${value}`, 'yyyy-MM-DD', new Date())
+      return parse(String(value), 'yyyy-MM-DD', new Date())
 
     case DataType.TIME:
-      return parse(`${value}`, 'HH:mm:ssxxx', new Date())
+      return parse(String(value), 'HH:mm:ssxxx', new Date())
 
     case DataType.DATETIME:
-      return parse(`${value}`, "yyyy-MM-DD'T'HH:mm:ssxxx", new Date())
+      return parse(String(value), "yyyy-MM-DD'T'HH:mm:ssxxx", new Date())
 
     case DataType.COLOR:
       break
 
     case DataType.BUTTON:
-      if (`${value}`.toLowerCase() in ButtonPayload) {
-        return `${value}`.toLowerCase()
+      if (String(value).toLowerCase() in ButtonPayload) {
+        return String(value).toLowerCase()
       }
 
       return null
 
     case DataType.SWITCH:
-      if (`${value}`.toLowerCase() in SwitchPayload) {
-        return `${value}`.toLowerCase()
+      if (String(value).toLowerCase() in SwitchPayload) {
+        return String(value).toLowerCase()
       }
 
       return null
