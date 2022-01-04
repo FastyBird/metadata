@@ -142,10 +142,6 @@ final class ValueHelper
 							return false;
 						}
 
-						if (is_array($value)) {
-							return $value === $item;
-						}
-
 						return strtolower(strval($value)) === $item[0]
 							|| strtolower(strval($value)) === $item[1]
 							|| strtolower(strval($value)) === $item[2];
