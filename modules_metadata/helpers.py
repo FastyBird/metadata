@@ -141,9 +141,7 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
                 filtered = [item for item in value_format if filter_enum_format(item=item, value=value)]
 
                 return (
-                    (filtered[0][0] if isinstance(filtered[0], tuple) else filtered[0])
-                    if len(filtered) == 1
-                    else None
+                    (filtered[0][0] if isinstance(filtered[0], tuple) else filtered[0]) if len(filtered) == 1 else None
                 )
 
             return None
