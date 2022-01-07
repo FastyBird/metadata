@@ -43,3 +43,9 @@ class ExtendedEnum(Enum):
     def __str__(self) -> str:
         """Transform enum to string"""
         return str(self.value)
+
+    # -----------------------------------------------------------------------------
+
+    def __eq__(self, other: "ExtendedEnum") -> bool:
+        """Compare two enums"""
+        return str(self) == str(other)
