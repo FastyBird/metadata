@@ -91,14 +91,14 @@ export const normalizeValue = (
       break
 
     case DataType.BUTTON:
-      if (String(value).toLowerCase() in ButtonPayload) {
+      if (Object.values<string>(ButtonPayload).includes(String(value).toLowerCase())) {
         return String(value).toLowerCase()
       }
 
       return null
 
     case DataType.SWITCH:
-      if (String(value).toLowerCase() in SwitchPayload) {
+      if (Object.values<string>(SwitchPayload).includes(String(value).toLowerCase())) {
         return String(value).toLowerCase()
       }
 
