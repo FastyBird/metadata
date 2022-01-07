@@ -91,6 +91,7 @@ class DeviceType(ExtendedEnum):
     LOCAL: str = "local"
     NETWORK: str = "network"
     VIRTUAL: str = "virtual"
+    HOMEKIT: str = "homekit"
 
 
 @unique

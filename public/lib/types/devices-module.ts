@@ -26,6 +26,7 @@ export enum DeviceType {
     LOCAL = 'local',
     NETWORK = 'network',
     VIRTUAL = 'virtual',
+    HOMEKIT = 'homekit',
 }
 
 export enum HardwareManufacturer {

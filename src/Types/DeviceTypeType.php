@@ -34,6 +34,7 @@ class DeviceTypeType extends Consistence\Enum\Enum
 	public const TYPE_LOCAL = 'local';
 	public const TYPE_NETWORK = 'network';
 	public const TYPE_VIRTUAL = 'virtual';
+	public const TYPE_HOMEKIT = 'homekit';
 
 	/**
 	 * @return string
