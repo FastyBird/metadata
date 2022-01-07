@@ -18,7 +18,7 @@ namespace FastyBird\ModulesMetadata\Types;
 use Consistence;
 
 /**
- * Devices models type
+ * Devices known models type
  *
  * @package        FastyBird:ModulesMetadata!
  * @subpackage     Types

@@ -20,7 +20,7 @@ Modules helpers
 
 # Python base dependencies
 from datetime import datetime
-from typing import List, Optional, Set, Tuple, Union
+from typing import List, Optional, Tuple, Union
 
 # Library dependencies
 from fastnumbers import fast_float, fast_int
@@ -30,11 +30,11 @@ from modules_metadata.types import ButtonPayload, DataType, SwitchPayload
 
 
 def filter_enum_format(
-    item: Union[str, List[Optional[str]], Set[Optional[str]]],
+    item: Union[str, Tuple[str, Optional[str], Optional[str]]],
     value: Union[int, float, str, bool, datetime, ButtonPayload, SwitchPayload],
 ) -> bool:
     """Filter enum format value by value"""
-    if isinstance(item, (list, set)):
+    if isinstance(item, tuple):
         if len(item) != 3:
             return False
 
@@ -64,7 +64,10 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
         data_type: DataType,
         value: Union[int, float, str, bool, datetime, ButtonPayload, SwitchPayload, None],
         value_format: Union[
-            Tuple[Optional[int], Optional[int]], Tuple[Optional[float], Optional[float]], Set[str], None
+            Tuple[Optional[int], Optional[int]],
+            Tuple[Optional[float], Optional[float]],
+            List[Union[str, Tuple[str, Optional[str], Optional[str]]]],
+            None,
         ] = None,
     ) -> Union[int, float, str, bool, datetime, ButtonPayload, SwitchPayload, None]:
         """Normalize property value based od property data type"""
@@ -134,11 +137,11 @@ class ValueHelper:  # pylint: disable=too-few-public-methods
             return str(value)
 
         if data_type == DataType.ENUM:
-            if value_format is not None and isinstance(value_format, (list, set)):
+            if value_format is not None and isinstance(value_format, list):
                 filtered = [item for item in value_format if filter_enum_format(item=item, value=value)]
 
                 return (
-                    (filtered[0][0] if isinstance(filtered[0], (list, set)) else filtered[0])
+                    (filtered[0][0] if isinstance(filtered[0], tuple) else filtered[0])
                     if len(filtered) == 1
                     else None
                 )

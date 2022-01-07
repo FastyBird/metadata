@@ -114,6 +114,51 @@ class HardwareManufacturer(ExtendedEnum):
 
 
 @unique
+class DeviceModel(ExtendedEnum):
+    """
+    Device known models
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    CUSTOM: str = "custom"
+
+    SONOFF_BASIC: str = "sonoff_basic"
+    SONOFF_RF: str = "sonoff_rf"
+    SONOFF_TH: str = "sonoff_th"
+    SONOFF_SV: str = "sonoff_sv"
+    SONOFF_SLAMPHER: str = "sonoff_slampher"
+    SONOFF_S20: str = "sonoff_s20"
+    SONOFF_TOUCH: str = "sonoff_touch"
+    SONOFF_POW: str = "sonoff_pow"
+    SONOFF_POW_R2: str = "sonoff_pow_r2"
+    SONOFF_DUAL: str = "sonoff_dual"
+    SONOFF_DUAL_R2: str = "sonoff_dual_r2"
+    SONOFF_4CH: str = "sonoff_4ch"
+    SONOFF_4CH_PRO: str = "sonoff_4ch_pro"
+    SONOFF_RF_BRIDGE: str = "sonoff_rf_bridge"
+    SONOFF_B1: str = "sonoff_b1"
+    SONOFF_LED: str = "sonoff_led"
+    SONOFF_T1_1CH: str = "sonoff_t1_1ch"
+    SONOFF_T1_2CH: str = "sonoff_t1_2ch"
+    SONOFF_T1_3CH: str = "sonoff_t1_3ch"
+    SONOFF_S31: str = "sonoff_s31"
+    SONOFF_SC: str = "sonoff_sc"
+    SONOFF_SC_PRO: str = "sonoff_sc_pro"
+    SONOFF_PS_15: str = "sonoff_ps_15"
+
+    AI_THINKER_AI_LIGHT: str = "ai_thinker_ai_light"
+
+    FASTYBIRD_WIFI_GW: str = "fastybird_wifi_gw"
+    FASTYBIRD_3CH_POWER_STRIP_R1: str = "fastybird_3ch_power_strip_r1"
+    FASTYBIRD_8CH_BUTTONS: str = "8ch_buttons"
+    FASTYBIRD_16CH_BUTTONS: str = "16ch_buttons"
+
+
+@unique
 class FirmwareManufacturer(ExtendedEnum):
     """
     Device firmware manufacturer
