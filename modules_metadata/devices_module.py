@@ -45,6 +45,38 @@ class ConnectorType(ExtendedEnum):
 
 
 @unique
+class DeviceType(ExtendedEnum):
+    """
+    Device type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    LOCAL: str = "local"
+    NETWORK: str = "network"
+    VIRTUAL: str = "virtual"
+    HOMEKIT: str = "homekit"
+
+
+@unique
+class PropertyType(ExtendedEnum):
+    """
+    Property entity type
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    DYNAMIC: str = "dynamic"
+    STATIC: str = "static"
+
+
+@unique
 class DeviceConnectionState(ExtendedEnum):
     """
     Device connection state
@@ -78,9 +110,9 @@ class DeviceConnectionState(ExtendedEnum):
 
 
 @unique
-class DeviceType(ExtendedEnum):
+class ConfigurationField(ExtendedEnum):
     """
-    Device type
+    Configuration fields types
 
     @package        FastyBird:ModulesMetadata!
     @module         devices_module
@@ -88,16 +120,16 @@ class DeviceType(ExtendedEnum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
-    LOCAL: str = "local"
-    NETWORK: str = "network"
-    VIRTUAL: str = "virtual"
-    HOMEKIT: str = "homekit"
+    BOOLEAN: str = "boolean"
+    NUMBER: str = "number"
+    SELECT: str = "select"
+    TEXT: str = "text"
 
 
 @unique
-class HardwareManufacturer(ExtendedEnum):
+class ConfigurationBooleanFieldAttribute(ExtendedEnum):
     """
-    Device hardware manufacturer
+    Configuration boolean field attributes
 
     @package        FastyBird:ModulesMetadata!
     @module         devices_module
@@ -105,13 +137,53 @@ class HardwareManufacturer(ExtendedEnum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
-    GENERIC = "generic"
-    FASTYBIRD = "fastybird"
-    ITEAD = "itead"
-    AI_THINKER = "ai_thinker"
-    SHELLY: str = "shelly"
-    TUYA: str = "tuya"
-    SONOFF: str = "sonoff"
+    DEFAULT: str = "default"
+
+
+@unique
+class ConfigurationNumberFieldAttribute(ExtendedEnum):
+    """
+    Configuration number field attributes
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    MIN: str = "min"
+    MAX: str = "max"
+    STEP: str = "step"
+    DEFAULT: str = "default"
+
+
+@unique
+class ConfigurationSelectFieldAttribute(ExtendedEnum):
+    """
+    Configuration select field attributes
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    VALUES: str = "values"
+    DEFAULT: str = "default"
+
+
+@unique
+class ConfigurationTextFieldAttribute(ExtendedEnum):
+    """
+    Configuration text field attributes
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    DEFAULT: str = "default"
 
 
 @unique
@@ -178,6 +250,26 @@ class FirmwareManufacturer(ExtendedEnum):
 
 
 @unique
+class HardwareManufacturer(ExtendedEnum):
+    """
+    Device hardware manufacturer
+
+    @package        FastyBird:ModulesMetadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    GENERIC = "generic"
+    FASTYBIRD = "fastybird"
+    ITEAD = "itead"
+    AI_THINKER = "ai_thinker"
+    SHELLY: str = "shelly"
+    TUYA: str = "tuya"
+    SONOFF: str = "sonoff"
+
+
+@unique
 class DevicePropertyName(ExtendedEnum):
     """
     Device known property name
@@ -199,95 +291,3 @@ class DevicePropertyName(ExtendedEnum):
     IP_ADDRESS: str = "ip-address"
     STATUS_LED: str = "status-led"
     FREE_HEAP: str = "free-heap"
-
-
-@unique
-class ConfigurationField(ExtendedEnum):
-    """
-    Configuration fields types
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    BOOLEAN: str = "boolean"
-    NUMBER: str = "number"
-    SELECT: str = "select"
-    TEXT: str = "text"
-
-
-@unique
-class ConfigurationNumberFieldAttribute(ExtendedEnum):
-    """
-    Configuration number field attributes
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    MIN: str = "min"
-    MAX: str = "max"
-    STEP: str = "step"
-    DEFAULT: str = "default"
-
-
-@unique
-class ConfigurationTextFieldAttribute(ExtendedEnum):
-    """
-    Configuration text field attributes
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    DEFAULT: str = "default"
-
-
-@unique
-class ConfigurationBooleanFieldAttribute(ExtendedEnum):
-    """
-    Configuration boolean field attributes
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    DEFAULT: str = "default"
-
-
-@unique
-class ConfigurationSelectFieldAttribute(ExtendedEnum):
-    """
-    Configuration select field attributes
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    VALUES: str = "values"
-    DEFAULT: str = "default"
-
-
-@unique
-class PropertyType(ExtendedEnum):
-    """
-    Property entity type
-
-    @package        FastyBird:ModulesMetadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    DYNAMIC: str = "dynamic"
-    STATIC: str = "static"

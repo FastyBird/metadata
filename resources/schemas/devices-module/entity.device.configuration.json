@@ -1,44 +1,44 @@
 {
-  "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
-      "nullable_string" : {
-        "oneOf" : [
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "types": {
+      "nullable_string": {
+        "oneOf": [
           {
-            "type" : "null"
+            "type": "null"
           },
           {
-            "type" : "string"
+            "type": "string"
           }
         ]
       },
-      "nullable_number" : {
-        "oneOf" : [
+      "nullable_number": {
+        "oneOf": [
           {
-            "type" : "null"
+            "type": "null"
           },
           {
-            "type" : "number"
+            "type": "number"
           }
         ]
       },
-      "nullable_string_number" : {
-        "oneOf" : [
+      "nullable_string_number": {
+        "oneOf": [
           {
-            "type" : "null"
+            "type": "null"
           },
           {
-            "type" : "string"
+            "type": "string"
           },
           {
-            "type" : "number"
+            "type": "number"
           }
         ]
       }
     },
-    "data_type" : {
-      "type" : "string",
-      "enum" : [
+    "data_type": {
+      "type": "string",
+      "enum": [
         "char",
         "uchar",
         "short",
@@ -52,63 +52,63 @@
       ]
     }
   },
-  "type" : "object",
-  "properties" : {
-    "id" : {
-      "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Entity uuid v4 identifier. This identifier is unique"
     },
-    "identifier" : {
-      "type" : "string",
-      "description" : "Unique human readable identifier used across services"
+    "identifier": {
+      "type": "string",
+      "description": "Unique human readable identifier used across services"
     },
-    "key" : {
-      "type" : "string",
-      "description" : "Unique pub/sub identifier per each entity"
+    "key": {
+      "type": "string",
+      "description": "Unique pub/sub identifier per each entity"
     },
-    "name" : {
-      "$ref" : "#/definitions/types/nullable_string",
-      "default" : null
+    "name": {
+      "$ref": "#/definitions/types/nullable_string",
+      "default": null
     },
-    "comment" : {
-      "$ref" : "#/definitions/types/nullable_string",
-      "default" : null
+    "comment": {
+      "$ref": "#/definitions/types/nullable_string",
+      "default": null
     },
-    "data_type" : {
-      "$ref" : "#/definitions/data_type",
-      "default" : null
+    "data_type": {
+      "$ref": "#/definitions/data_type",
+      "default": null
     },
-    "default" : {
-      "$ref" : "#/definitions/types/nullable_string_number",
-      "default" : null
+    "default": {
+      "$ref": "#/definitions/types/nullable_string_number",
+      "default": null
     },
-    "value" : {
-      "$ref" : "#/definitions/types/nullable_string_number",
-      "default" : null
+    "value": {
+      "$ref": "#/definitions/types/nullable_string_number",
+      "default": null
     },
-    "device" : {
-      "type" : "string",
-      "description" : "Device unique uuid v4 identifier used across services"
+    "device": {
+      "type": "string",
+      "description": "Device unique uuid v4 identifier used across services"
     },
-    "owner" : {
-      "type" : "string",
-      "description" : "Entity owner uuid v4 identifier"
+    "owner": {
+      "$ref": "#/definitions/types/nullable_string",
+      "description": "Entity owner uuid v4 identifier"
     }
   },
-  "if" : {
-    "properties" : {
-      "data_type" : {
-        "const" : "enum"
+  "if": {
+    "properties": {
+      "data_type": {
+        "const": "enum"
       }
     }
   },
-  "then" : {
-    "properties" : {
-      "values" : {
-        "type" : "array"
+  "then": {
+    "properties": {
+      "values": {
+        "type": "array"
       }
     },
-    "required" : [
+    "required": [
       "id",
       "identifier",
       "key",
@@ -121,11 +121,11 @@
       "values"
     ]
   },
-  "else" : {
-    "if" : {
-      "properties" : {
-        "data_type" : {
-          "enum" : [
+  "else": {
+    "if": {
+      "properties": {
+        "data_type": {
+          "enum": [
             "char",
             "uchar",
             "short",
@@ -137,22 +137,22 @@
         }
       }
     },
-    "then" : {
-      "properties" : {
-        "min" : {
-          "$ref" : "#/definitions/types/nullable_number",
-          "default" : null
+    "then": {
+      "properties": {
+        "min": {
+          "$ref": "#/definitions/types/nullable_number",
+          "default": null
         },
-        "max" : {
-          "$ref" : "#/definitions/types/nullable_number",
-          "default" : null
+        "max": {
+          "$ref": "#/definitions/types/nullable_number",
+          "default": null
         },
-        "step" : {
-          "$ref" : "#/definitions/types/nullable_number",
-          "default" : null
+        "step": {
+          "$ref": "#/definitions/types/nullable_number",
+          "default": null
         }
       },
-      "required" : [
+      "required": [
         "id",
         "identifier",
         "key",
@@ -167,8 +167,8 @@
         "step"
       ]
     },
-    "else" : {
-      "required" : [
+    "else": {
+      "required": [
         "id",
         "identifier",
         "key",

@@ -1,9 +1,9 @@
 {
-  "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "method" : {
-      "type" : "string",
-      "enum" : [
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "method": {
+      "type": "string",
+      "enum": [
         "get",
         "post",
         "patch",
@@ -11,50 +11,50 @@
       ]
     }
   },
-  "type" : "object",
-  "additionalProperties" : {
-    "type" : "array",
-    "uniqueItems" : true,
-    "items" : {
-      "type" : "object",
-      "properties" : {
-        "version" : {
-          "type" : "string",
-          "description" : "Module version definition"
+  "type": "object",
+  "additionalProperties": {
+    "type": "array",
+    "uniqueItems": true,
+    "items": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Module version definition"
         },
-        "metadata" : {
-          "type" : "object",
-          "properties" : {
+        "metadata": {
+          "type": "object",
+          "properties": {
             "exchange": {
-              "type" : "array",
-              "description" : "Module exchange routing keys",
-              "uniqueItems" : true,
-              "items" : {
-                "type" : "string"
+              "type": "array",
+              "description": "Module exchange routing keys",
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
               }
             },
-            "routes" : {
-              "type" : "array",
-              "description" : "Module api routes",
-              "uniqueItems" : true,
-              "items" : {
-                "type" : "object",
-                "properties" : {
-                  "name" : {
-                    "type" : "string"
+            "routes": {
+              "type": "array",
+              "description": "Module api routes",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
                   },
-                  "path" : {
-                    "type" : "string"
+                  "path": {
+                    "type": "string"
                   },
-                  "method" : {
-                    "$ref" : "#/definitions/method"
+                  "method": {
+                    "$ref": "#/definitions/method"
                   },
                   "headers": {
-                    "type" : "array",
-                    "description" : "API call required headers",
-                    "uniqueItems" : true,
-                    "items" : {
-                      "type" : "string"
+                    "type": "array",
+                    "description": "API call required headers",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string"
                     }
                   }
                 }
@@ -63,7 +63,7 @@
           }
         }
       },
-      "required" : [
+      "required": [
         "version",
         "metadata"
       ]

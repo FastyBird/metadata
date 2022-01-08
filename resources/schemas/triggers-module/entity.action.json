@@ -1,7 +1,17 @@
 {
-  "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "types": {
+      "nullable_string": {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
       "nullable_boolean": {
         "oneOf": [
           {
@@ -13,64 +23,64 @@
         ]
       }
     },
-    "type" : {
-      "type" : "string",
-      "enum" : [
+    "type": {
+      "type": "string",
+      "enum": [
         "device-property",
         "channel-property"
       ]
     }
   },
-  "type" : "object",
-  "properties" : {
-    "id" : {
-      "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Entity uuid v4 identifier. This identifier is unique"
     },
-    "type" : {
-      "$ref" : "#/definitions/type"
+    "type": {
+      "$ref": "#/definitions/type"
     },
-    "enabled" : {
-      "type" : "boolean",
-      "default" : false
+    "enabled": {
+      "type": "boolean",
+      "default": false
     },
-    "is_triggered" : {
-      "$ref" : "#/definitions/types/nullable_boolean",
-      "default" : null
+    "is_triggered": {
+      "$ref": "#/definitions/types/nullable_boolean",
+      "default": null
     },
-    "trigger" : {
-      "type" : "string",
-      "description" : "Trigger unique uuid v4 identifier used across services"
+    "trigger": {
+      "type": "string",
+      "description": "Trigger unique uuid v4 identifier used across services"
     },
-    "owner" : {
-      "type" : "string",
-      "description" : "Device owner uuid v4 identifier"
+    "owner": {
+      "$ref": "#/definitions/types/nullable_string",
+      "description": "Action trigger owner uuid v4 identifier"
     }
   },
-  "if" : {
-    "properties" : {
-      "type" : {
-        "const" : "channel-property"
+  "if": {
+    "properties": {
+      "type": {
+        "const": "channel-property"
       }
     }
   },
-  "then" : {
-    "properties" : {
-      "device" : {
-        "type" : "string"
+  "then": {
+    "properties": {
+      "device": {
+        "type": "string"
       },
-      "channel" : {
-        "type" : "string"
+      "channel": {
+        "type": "string"
       },
-      "property" : {
-        "type" : "string"
+      "property": {
+        "type": "string"
       },
-      "value" : {
-        "type" : "string",
-        "description" : "Value to be sent to the device"
+      "value": {
+        "type": "string",
+        "description": "Value to be sent to the device"
       }
     },
-    "required" : [
+    "required": [
       "id",
       "type",
       "enabled",
@@ -81,8 +91,8 @@
       "value"
     ]
   },
-  "else" : {
-    "required" : [
+  "else": {
+    "required": [
       "id",
       "type",
       "enabled",

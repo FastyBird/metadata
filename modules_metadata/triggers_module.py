@@ -41,7 +41,7 @@ class TriggerType(ExtendedEnum):
 
 
 @unique
-class TriggerActionType(ExtendedEnum):
+class ActionType(ExtendedEnum):
     """
     Trigger action type
 
@@ -56,7 +56,7 @@ class TriggerActionType(ExtendedEnum):
 
 
 @unique
-class TriggerConditionType(ExtendedEnum):
+class ConditionType(ExtendedEnum):
     """
     Trigger condition type
 
@@ -73,7 +73,7 @@ class TriggerConditionType(ExtendedEnum):
 
 
 @unique
-class TriggerNotificationType(ExtendedEnum):
+class NotificationType(ExtendedEnum):
     """
     Trigger notification type
 
@@ -88,7 +88,7 @@ class TriggerNotificationType(ExtendedEnum):
 
 
 @unique
-class TriggerConditionOperator(ExtendedEnum):
+class ConditionOperator(ExtendedEnum):
     """
     Condition operator
 

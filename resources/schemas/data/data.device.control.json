@@ -1,40 +1,50 @@
 {
-  "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
-      "nullable_string_number_boolean" : {
-        "oneOf" : [
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "types": {
+      "nullable_string_number_boolean": {
+        "oneOf": [
           {
-            "type" : "null"
+            "type": "null"
           },
           {
-            "type" : "string"
+            "type": "string"
           },
           {
-            "type" : "number"
+            "type": "number"
           },
           {
-            "type" : "boolean"
+            "type": "boolean"
           }
         ]
       }
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "set"
+      ]
     }
   },
-  "type" : "object",
-  "properties" : {
-    "device" : {
-      "type" : "string",
-      "description" : "Device unique uuid v4 identifier used across services"
+  "type": "object",
+  "properties": {
+    "action": {
+      "$ref": "#/definitions/action"
     },
-    "control" : {
-      "type" : "string",
-      "description" : "Control unique uuid v4 identifier used across services"
+    "device": {
+      "type": "string",
+      "description": "Device unique uuid v4 identifier used across services"
     },
-    "expected_value" : {
-      "$ref" : "#/definitions/types/nullable_string_number_boolean"
+    "control": {
+      "type": "string",
+      "description": "Control unique uuid v4 identifier used across services"
+    },
+    "expected_value": {
+      "$ref": "#/definitions/types/nullable_string_number_boolean"
     }
   },
-  "required" : [
+  "required": [
+    "action",
     "device",
     "control"
   ]

@@ -62,6 +62,35 @@ class ModulePrefix(ExtendedEnum):
 
 
 @unique
+class PluginOrigin(ExtendedEnum):
+    """
+    Plugin origin
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    NOT_SPECIFIED: str = "*"
+
+    FB_BUS_CONNECTOR_PLUGIN: str = "com.fastybird.fb-bus-connector-plugin"
+    FB_MQTT_CONNECTOR_PLUGIN: str = "com.fastybird.fb-mqtt-connector-plugin"
+    SHELLY_CONNECTOR_PLUGIN: str = "com.fastybird.shelly-connector-plugin"
+    TUYA_CONNECTOR_PLUGIN: str = "com.fastybird.tuya-connector-plugin"
+    SONOFF_CONNECTOR_PLUGIN: str = "com.fastybird.sonoff-connector-plugin"
+    MODBUS_CONNECTOR_PLUGIN: str = "com.fastybird.modbus-connector-plugin"
+
+    WS_EXCHANGE_PLUGIN: str = "com.fastybird.ws-exchange-plugin"
+
+    REDISDB_EXCHANGE_PLUGIN: str = "com.fastybird.redisdb-exchange-plugin"
+    RABBITMQ_EXCHANGE_PLUGIN: str = "com.fastybird.rabbitmq-exchange-plugin"
+
+    REDISDB_STORAGE_PLUGIN: str = "com.fastybird.redisdb-storage-plugin"
+    COUCHDB_STORAGE_PLUGIN: str = "com.fastybird.couchdb-storage-plugin"
+
+
+@unique
 class DataType(ExtendedEnum):
     """
     Record data type
@@ -132,7 +161,7 @@ class ControlName(ExtendedEnum):
     Known control name
 
     @package        FastyBird:ModulesMetadata!
-    @module         devices_module
+    @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
@@ -140,7 +169,33 @@ class ControlName(ExtendedEnum):
     CONFIGURE: str = "configure"
     RESET: str = "reset"
     REBOOT: str = "reboot"
-    RECONNECT: str = "reconnect"
-    FACTORY_RESET: str = "factory-reset"
-    OTA: str = "ota"
-    TRIGGER: str = "trigger"
+
+
+@unique
+class PropertyAction(ExtendedEnum):
+    """
+    Property data action
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    SET: str = "set"
+    GET: str = "get"
+    REPORT: str = "report"
+
+
+@unique
+class ControlAction(ExtendedEnum):
+    """
+    Control data action
+
+    @package        FastyBird:ModulesMetadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    SET: str = "set"

@@ -17,6 +17,7 @@ namespace FastyBird\ModulesMetadata\Loaders;
 
 use FastyBird\ModulesMetadata;
 use FastyBird\ModulesMetadata\Exceptions;
+use FastyBird\ModulesMetadata\Types;
 
 /**
  * JSON schema loader
@@ -35,24 +36,10 @@ final class SchemaLoader implements ISchemaLoader
 	 * @throws Exceptions\FileNotFoundException
 	 * @throws Exceptions\InvalidArgumentException
 	 */
-	public function load(string $origin, string $routingKey): string
+	public function loadByRoutingKey(Types\RoutingKeyType $routingKey): string
 	{
-		if (isset(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$origin])) {
-			$mapping = ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$origin];
-
-			if (isset($mapping[$routingKey])) {
-				$schema = file_get_contents($mapping[$routingKey]);
-
-				if ($schema === false) {
-					throw new Exceptions\FileNotFoundException('Schema could not be loaded');
-				}
-
-				return $schema;
-			}
-		}
-
-		if (isset(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[ModulesMetadata\Constants::NOT_SPECIFIED_ORIGIN][$routingKey])) {
-			$schema = file_get_contents(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[ModulesMetadata\Constants::NOT_SPECIFIED_ORIGIN][$routingKey]);
+		if (isset(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()])) {
+			$schema = file_get_contents(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]);
 
 			if ($schema === false) {
 				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
@@ -61,7 +48,30 @@ final class SchemaLoader implements ISchemaLoader
 			return $schema;
 		}
 
-		throw new Exceptions\InvalidArgumentException(sprintf('Schema for origin: %s and routing key: %s is not configured', $origin, $routingKey));
+		throw new Exceptions\InvalidArgumentException(sprintf('Schema for routing key: %s is not configured', $routingKey->getValue()));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @throws Exceptions\FileNotFoundException
+	 * @throws Exceptions\InvalidArgumentException
+	 */
+	public function loadByNamespace(string $namespace, string $schemaFile): string
+	{
+		$filePath = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR . $schemaFile;
+
+		if (file_exists($filePath)) {
+			$schema = file_get_contents($filePath);
+
+			if ($schema === false) {
+				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
+			}
+
+			return $schema;
+		}
+
+		throw new Exceptions\InvalidArgumentException(sprintf('Schema for namespace: %s and file: %s is not configured', $namespace, $schemaFile));
 	}
 
 }

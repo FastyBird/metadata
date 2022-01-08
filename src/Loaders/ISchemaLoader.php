@@ -15,6 +15,8 @@
 
 namespace FastyBird\ModulesMetadata\Loaders;
 
+use FastyBird\ModulesMetadata\Types;
+
 /**
  * JSON schema loader interface
  *
@@ -27,11 +29,18 @@ interface ISchemaLoader
 {
 
 	/**
-	 * @param string $origin
-	 * @param string $routingKey
+	 * @param Types\RoutingKeyType $routingKey
 	 *
 	 * @return string
 	 */
-	public function load(string $origin, string $routingKey): string;
+	public function loadByRoutingKey(Types\RoutingKeyType $routingKey): string;
+
+	/**
+	 * @param string $namespace
+	 * @param string $schemaFile
+	 *
+	 * @return string
+	 */
+	public function loadByNamespace(string $namespace, string $schemaFile): string;
 
 }

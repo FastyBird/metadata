@@ -1,108 +1,95 @@
 export enum TriggerType {
-    MANUAL = 'manual',
-    AUTOMATIC = 'automatic',
+  MANUAL = 'manual',
+  AUTOMATIC = 'automatic',
 }
 
-export enum TriggerActionType {
-    DEVICE_PROPERTY = 'device-property',
-    CHANNEL_PROPERTY = 'channel-property',
+export enum ActionType {
+  DEVICE_PROPERTY = 'device-property',
+  CHANNEL_PROPERTY = 'channel-property',
 }
 
-export enum TriggerConditionType {
-    CHANNEL_PROPERTY = 'channel-property',
-    DEVICE_PROPERTY = 'device-property',
-    TIME = 'time',
-    DATE = 'date',
+export enum ConditionType {
+  CHANNEL_PROPERTY = 'channel-property',
+  DEVICE_PROPERTY = 'device-property',
+  TIME = 'time',
+  DATE = 'date',
 }
 
-export enum TriggerNotificationType {
-    EMAIL = 'email',
-    SMS = 'sms',
+export enum NotificationType {
+  EMAIL = 'email',
+  SMS = 'sms',
 }
 
-export enum TriggerConditionOperator {
-    EQUAL = 'eq',
-    ABOVE = 'above',
-    BELOW = 'below',
+export enum ConditionOperator {
+  EQUAL = 'eq',
+  ABOVE = 'above',
+  BELOW = 'below',
 }
 
 export interface TriggerEntity {
-    id: string
-    type: TriggerType
-    name: string
-    comment: string | null
-    enabled: boolean
-    control?: string[]
-    owner?: string
-    is_triggered?: boolean | null
-    is_fulfilled?: boolean | null
+  id: string
+  type: TriggerType
+  name: string
+  comment: string | null
+  enabled: boolean
+  owner: string | null
+  is_triggered?: boolean | null
+  is_fulfilled?: boolean | null
 
-    [k: string]: string | TriggerType | boolean | string[] | null | undefined
+  [k: string]: string | TriggerType | boolean | null | undefined
 }
 
 export interface TriggerControlEntity {
   id: string
   name: string
   trigger: string
-  owner?: string
+  owner: string | null
 
-  [k: string]: string | undefined
+  [k: string]: string | null
 }
 
 export interface ActionEntity {
-    id: string
-    type: TriggerActionType
-    enabled: boolean
-    trigger: string
-    device?: string
-    channel?: string
-    property?: string
-    value?: string
-    owner?: string
-    is_triggered?: boolean | null
+  id: string
+  type: ActionType
+  enabled: boolean
+  trigger: string
+  device?: string
+  channel?: string
+  property?: string
+  value?: string
+  owner: string | null
+  is_triggered?: boolean | null
 
-    [k: string]: string | TriggerActionType | boolean | null | undefined
+  [k: string]: string | ActionType | boolean | null | undefined
 }
 
 export interface ConditionEntity {
-    id: string
-    type: TriggerConditionType
-    enabled: boolean
-    trigger: string
-    device?: string
-    channel?: string
-    property?: string
-    operand?: string
-    operator?: TriggerConditionOperator
-    time?: string
-    days?: number[]
-    date?: string
-    owner?: string
-    is_fulfilled?: boolean | null
+  id: string
+  type: ConditionType
+  enabled: boolean
+  trigger: string
+  device?: string
+  channel?: string
+  property?: string
+  operand?: string
+  operator?: ConditionOperator
+  time?: string
+  days?: number[]
+  date?: string
+  owner: string | null
+  is_fulfilled?: boolean | null
 
-    [k: string]: string | TriggerConditionType | TriggerConditionOperator | boolean | number[] | null | undefined
+  [k: string]: string | ConditionType | ConditionOperator | boolean | number[] | null | undefined
 }
 
 export interface NotificationEntity {
-    id: string
-    type: TriggerNotificationType
-    enabled: boolean
-    trigger: string
-    email?: string
-    phone?: string
-    owner?: string
+  id: string
+  type: NotificationType
+  enabled: boolean
+  trigger: string
+  email?: string
+  phone?: string
+  owner: string | null
 
-    [k: string]: string | TriggerNotificationType | boolean | undefined
-}
-
-export interface TriggerControlData {
-    control: string
-    expected_value?:
-      | null
-      | string
-      | number
-      | boolean
-    trigger: string
-
-    [k: string]: string | number | boolean | null | undefined
+  [k: string]: string | NotificationType | boolean | null | undefined
 }

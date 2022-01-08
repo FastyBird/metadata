@@ -19,19 +19,9 @@ final class SchemaLoaderTest extends BaseTestCase
 	{
 		$loader = new Loaders\SchemaLoader();
 
-		$result = $loader->load(ModulesMetadata\Constants::MODULE_DEVICES_ORIGIN, ModulesMetadata\Constants::MESSAGE_BUS_DEVICES_CREATED_ENTITY_ROUTING_KEY);
+		$result = $loader->loadByRoutingKey(ModulesMetadata\Types\RoutingKeyType::get(ModulesMetadata\Types\RoutingKeyType::ROUTE_DEVICES_ENTITY_CREATED));
 
 		Assert::true($result !== null);
-	}
-
-	/**
-	 * @throws FastyBird\ModulesMetadata\Exceptions\InvalidArgumentException
-	 */
-	public function testValidateDevicePropertyInvalid(): void
-	{
-		$loader = new Loaders\SchemaLoader();
-
-		$loader->load(ModulesMetadata\Constants::MODULE_TRIGGERS_ORIGIN, ModulesMetadata\Constants::MESSAGE_BUS_DEVICES_CREATED_ENTITY_ROUTING_KEY);
 	}
 
 }

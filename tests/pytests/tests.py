@@ -16,15 +16,13 @@
 import unittest
 
 # Library libs
-from modules_metadata.loader import load_schema
+from modules_metadata.loader import load_schema_by_routing_key
 from modules_metadata.routing import RoutingKey
-from modules_metadata.types import ModuleOrigin
 
 
 class TestLoader(unittest.TestCase):
     def test_load_data_schema(self):
-        loaded_schema = load_schema(
-            ModuleOrigin(ModuleOrigin.NOT_SPECIFIED),
+        loaded_schema = load_schema_by_routing_key(
             RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA),
         )
 
