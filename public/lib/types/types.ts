@@ -1,5 +1,3 @@
-import { ButtonPayload, ControlAction, PropertyAction, SwitchPayload } from '@/lib/types/types'
-
 export enum ModuleOrigin {
   NOT_SPECIFIED = '*',
   MODULE_ACCOUNTS = 'com.fastybird.accounts-module',
