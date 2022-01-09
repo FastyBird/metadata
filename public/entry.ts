@@ -2,4 +2,4 @@
 export * from '@/lib/helpers'
 
 // Re-export plugin typing
-export * from '@/types/modules-metadata'
+export * from '@/types/metadata'

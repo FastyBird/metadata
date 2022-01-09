@@ -22,7 +22,7 @@ Sets of enums for Devices Module
 from enum import unique
 
 # Library libs
-from modules_metadata.enum import ExtendedEnum
+from metadata.enum import ExtendedEnum
 
 
 @unique

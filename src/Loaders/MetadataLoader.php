@@ -47,9 +47,9 @@ final class MetadataLoader implements IMetadataLoader
 	 */
 	public function load(): Utils\ArrayHash
 	{
-		$schema = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'modules.json';
+		$schema = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'application.json';
 
-		$metadata = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'modules.json';
+		$metadata = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'application.json';
 
 		$schema = file_get_contents($schema);
 

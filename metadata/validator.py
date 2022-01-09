@@ -27,7 +27,7 @@ from fastjsonschema import JsonSchemaDefinitionException, JsonSchemaValueExcepti
 from fastjsonschema import compile as json_compile
 
 # Library libs
-from modules_metadata.exceptions import (
+from metadata.exceptions import (
     InvalidDataException,
     LogicException,
     MalformedInputException,

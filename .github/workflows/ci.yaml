@@ -501,7 +501,7 @@ jobs:
           python-version: ${{ matrix.python }}
 
       - name: "Move resources under into module"
-        run: "mv resources modules_metadata/resources"
+        run: "mv resources metadata/resources"
 
       - name: "Extract version"
         uses: "battila7/get-version-action@v2"
@@ -571,7 +571,7 @@ jobs:
           python-version: ${{ matrix.python }}
 
       - name: "Move resources under into module"
-        run: "mv resources modules_metadata/resources"
+        run: "mv resources metadata/resources"
 
       - name: "Install dependencies"
         run: |
@@ -601,7 +601,7 @@ jobs:
           python-version: ${{ matrix.python }}
 
       - name: "Move resources under into module"
-        run: "mv resources modules_metadata/resources"
+        run: "mv resources metadata/resources"
 
       - name: "Install dependencies"
         run: |
@@ -642,11 +642,11 @@ jobs:
 
       - name: "Install wheel"
         if: matrix.installable == 'wheel'
-        run: "pip install dist/fastybird_modules_metadata-*-py3-none-any.whl"
+        run: "pip install dist/fastybird_metadata-*-py3-none-any.whl"
 
       - name: "Install source tarball"
         if: matrix.installable == 'sdist'
-        run: "pip install dist/fastybird-modules-metadata-*.tar.gz"
+        run: "pip install dist/fastybird-metadata-*.tar.gz"
 
   publish-on-testpypi:
     name: "Publish Python distribution on Test PyPI"

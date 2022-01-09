@@ -44,30 +44,30 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-VERSION: str = find_version("modules_metadata", "__init__.py")
+VERSION: str = find_version("metadata", "__init__.py")
 
 
 setup(
     version=VERSION,
-    name="fastybird-modules-metadata",
+    name="fastybird-metadata",
     author="FastyBird",
     author_email="code@fastybird.com",
     license="Apache Software License (Apache Software License 2.0)",
-    description="FastyBird metadata reader & validator for modules",
-    url="https://github.com/FastyBird/modules-metadata",
+    description="FastyBird metadata reader & validator for modules, plugins & etc. used by FastyBird applications",
+    url="https://github.com/FastyBird/metadata",
     long_description=long_description,
     long_description_content_type="text/markdown",
     include_package_data=True,
     python_requires=">=3.7",
     packages=find_packages(),
-    package_data={"modules_metadata": ["py.typed"]},
+    package_data={"metadata": ["py.typed"]},
     install_requires=[
         "fastjsonschema",
         "fastnumbers",
         "setuptools",
         "types-setuptools",
     ],
-    download_url="https://github.com/FastyBird/modules-metadata/archive/%s.tar.gz" % VERSION,
+    download_url="https://github.com/FastyBird/metadata/archive/%s.tar.gz" % VERSION,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Console",

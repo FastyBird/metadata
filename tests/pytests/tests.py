@@ -16,8 +16,8 @@
 import unittest
 
 # Library libs
-from modules_metadata.loader import load_schema_by_routing_key
-from modules_metadata.routing import RoutingKey
+from metadata.loader import load_schema_by_routing_key
+from metadata.routing import RoutingKey
 
 
 class TestLoader(unittest.TestCase):
