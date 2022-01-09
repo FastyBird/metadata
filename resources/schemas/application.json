@@ -12,61 +12,103 @@
     }
   },
   "type": "object",
-  "additionalProperties": {
-    "type": "array",
-    "uniqueItems": true,
-    "items": {
+  "properties" : {
+    "modules": {
       "type": "object",
-      "properties": {
-        "version": {
-          "type": "string",
-          "description": "Module version definition"
-        },
-        "metadata": {
-          "type": "object",
-          "properties": {
-            "exchange": {
-              "type": "array",
-              "description": "Module exchange routing keys",
-              "uniqueItems": true,
-              "items": {
-                "type": "string"
-              }
+      "additionalProperties": {
+        "type" : "array",
+        "uniqueItems" : true,
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "version" : {
+              "type" : "string",
+              "description" : "Module version definition"
             },
-            "routes": {
-              "type": "array",
-              "description": "Module api routes",
-              "uniqueItems": true,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "path": {
-                    "type": "string"
-                  },
-                  "method": {
-                    "$ref": "#/definitions/method"
-                  },
-                  "headers": {
-                    "type": "array",
-                    "description": "API call required headers",
-                    "uniqueItems": true,
-                    "items": {
-                      "type": "string"
+            "metadata" : {
+              "type" : "object",
+              "properties" : {
+                "exchange" : {
+                  "type" : "array",
+                  "description" : "Module exchange routing keys",
+                  "uniqueItems" : true,
+                  "items" : {
+                    "type" : "string"
+                  }
+                },
+                "routes" : {
+                  "type" : "array",
+                  "description" : "Module api routes",
+                  "uniqueItems" : true,
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "name" : {
+                        "type" : "string"
+                      },
+                      "path" : {
+                        "type" : "string"
+                      },
+                      "method" : {
+                        "$ref" : "#/definitions/method"
+                      },
+                      "headers" : {
+                        "type" : "array",
+                        "description" : "API call required headers",
+                        "uniqueItems" : true,
+                        "items" : {
+                          "type" : "string"
+                        }
+                      }
                     }
                   }
                 }
               }
             }
+          },
+          "required" : [
+            "version",
+            "metadata"
+          ]
+        }
+      }
+    },
+    "plugins": {
+      "type": "object",
+      "additionalProperties": {
+        "type" : "array",
+        "uniqueItems" : true,
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "version" : {
+              "type" : "string",
+              "description" : "Plugin version definition"
+            }
           }
         }
-      },
-      "required": [
-        "version",
-        "metadata"
-      ]
+      }
+    },
+    "connectors": {
+      "type": "object",
+      "additionalProperties": {
+        "type" : "array",
+        "uniqueItems" : true,
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "version" : {
+              "type" : "string",
+              "description" : "Connector version definition"
+            }
+          }
+        }
+      }
     }
-  }
+  },
+  "required": [
+    "modules",
+    "plugins",
+    "connectors"
+  ]
 }
