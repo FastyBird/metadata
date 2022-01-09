@@ -21,9 +21,16 @@ from metadata.routing import RoutingKey
 
 
 class TestLoader(unittest.TestCase):
-    def test_load_data_schema(self):
+    def test_load_action_schema(self):
         loaded_schema = load_schema_by_routing_key(
-            RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA),
+            RoutingKey(RoutingKey.CHANNEL_ACTION),
+        )
+
+        self.assertTrue(isinstance(loaded_schema, str))
+
+    def test_load_entity_schema(self):
+        loaded_schema = load_schema_by_routing_key(
+            RoutingKey(RoutingKey.CHANNELS_ENTITY_REPORTED),
         )
 
         self.assertTrue(isinstance(loaded_schema, str))
