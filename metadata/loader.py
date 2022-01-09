@@ -99,14 +99,18 @@ def get_data_file_content(filename: str) -> Optional[str]:
 
 
 JSON_SCHEMAS_MAPPING = {
-    RoutingKey(RoutingKey.DEVICES_PROPERTIES_DATA).value: "resources/schemas/data/data.device.property.json",
-    RoutingKey(RoutingKey.DEVICES_CONFIGURATION_DATA).value: "resources/schemas/data/data.device.configuration.json",
-    RoutingKey(RoutingKey.DEVICES_CONTROL_ENTITY_DATA).value: "resources/schemas/data/data.device.control.json",
-    RoutingKey(RoutingKey.CHANNELS_PROPERTIES_DATA).value: "resources/schemas/data/data.channel.property.json",
-    RoutingKey(RoutingKey.CHANNELS_CONFIGURATION_DATA).value: "resources/schemas/data/data.channel.configuration.json",
-    RoutingKey(RoutingKey.CHANNELS_CONTROL_ENTITY_DATA).value: "resources/schemas/data/data.channel.control.json",
-    RoutingKey(RoutingKey.CONNECTORS_CONTROL_ENTITY_DATA).value: "resources/schemas/data/data.connector.control.json",
-    RoutingKey(RoutingKey.TRIGGERS_CONTROL_ENTITY_DATA).value: "resources/schemas/data/data.trigger.control.json",
+    RoutingKey(RoutingKey.CONNECTOR_ACTION).value: "resources/schemas/actions/action.connector.json",
+    RoutingKey(RoutingKey.DEVICE_ACTION).value: "resources/schemas/actions/action.device.json",
+    RoutingKey(RoutingKey.DEVICE_PROPERTY_ACTION).value: "resources/schemas/actions/action.device.property.json",
+    RoutingKey(
+        RoutingKey.DEVICE_CONFIGURATION_ACTION
+    ).value: "resources/schemas/actions/action.device.configuration.json",
+    RoutingKey(RoutingKey.CHANNEL_ACTION).value: "resources/schemas/actions/action.channel.json",
+    RoutingKey(RoutingKey.CHANNEL_PROPERTY_ACTION).value: "resources/schemas/actions/action.channel.property.json",
+    RoutingKey(
+        RoutingKey.CHANNEL_CONFIGURATION_ACTION
+    ).value: "resources/schemas/actions/action.channel.configuration.json",
+    RoutingKey(RoutingKey.TRIGGER_ACTION).value: "resources/schemas/actions/action.trigger.json",
     RoutingKey(
         RoutingKey.ACCOUNTS_ENTITY_REPORTED
     ).value: "resources/schemas/modules/accounts-module/entity.account.json",

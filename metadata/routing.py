@@ -36,126 +36,139 @@ class RoutingKey(ExtendedEnum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
-    # Global
-    DEVICES_PROPERTIES_DATA: str = "fb.bus.data.device.property"
-    DEVICES_CONFIGURATION_DATA: str = "fb.bus.data.device.configuration"
-    DEVICES_CONTROL_ENTITY_DATA = "fb.bus.data.device.control"
-    CHANNELS_PROPERTIES_DATA: str = "fb.bus.data.channel.property"
-    CHANNELS_CONFIGURATION_DATA: str = "fb.bus.data.channel.configuration"
-    CHANNELS_CONTROL_ENTITY_DATA = "fb.bus.data.channel.control"
-    CONNECTORS_CONTROL_ENTITY_DATA = "fb.bus.data.connector.control"
-    TRIGGERS_CONTROL_ENTITY_DATA = "fb.bus.data.trigger.control"
+    # GLOBAL
+
+    CONNECTOR_ACTION: str = "fb.exchange.action.connector"
+    DEVICE_ACTION: str = "fb.exchange.action.device"
+    DEVICE_PROPERTY_ACTION: str = "fb.exchange.action.device.property"
+    DEVICE_CONFIGURATION_ACTION: str = "fb.exchange.action.device.configuration"
+    CHANNEL_ACTION: str = "fb.exchange.action.channel"
+    CHANNEL_PROPERTY_ACTION: str = "fb.exchange.action.channel.property"
+    CHANNEL_CONFIGURATION_ACTION: str = "fb.exchange.action.channel.configuration"
+    TRIGGER_ACTION: str = "fb.exchange.action.trigger"
+
+    MODULE_MESSAGE: str = "fb.exchange.message.module"
+    PLUGIN_MESSAGE: str = "fb.exchange.message.plugin"
+    CONNECTOR_MESSAGE: str = "fb.exchange.message.connector"
+
+    # MODULES
 
     # Accounts
-    ACCOUNTS_ENTITY_REPORTED = "fb.bus.entity.reported.account"
-    ACCOUNTS_ENTITY_CREATED = "fb.bus.entity.created.account"
-    ACCOUNTS_ENTITY_UPDATED = "fb.bus.entity.updated.account"
-    ACCOUNTS_ENTITY_DELETED = "fb.bus.entity.deleted.account"
+    ACCOUNTS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.account"
+    ACCOUNTS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.account"
+    ACCOUNTS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.account"
+    ACCOUNTS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.account"
 
     # Emails
-    EMAILS_ENTITY_REPORTED = "fb.bus.entity.reported.email"
-    EMAILS_ENTITY_CREATED = "fb.bus.entity.created.email"
-    EMAILS_ENTITY_UPDATED = "fb.bus.entity.updated.email"
-    EMAILS_ENTITY_DELETED = "fb.bus.entity.deleted.email"
+    EMAILS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.email"
+    EMAILS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.email"
+    EMAILS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.email"
+    EMAILS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.email"
 
     # Identities
-    IDENTITIES_ENTITY_REPORTED = "fb.bus.entity.reported.identity"
-    IDENTITIES_ENTITY_CREATED = "fb.bus.entity.created.identity"
-    IDENTITIES_ENTITY_UPDATED = "fb.bus.entity.updated.identity"
-    IDENTITIES_ENTITY_DELETED = "fb.bus.entity.deleted.identity"
+    IDENTITIES_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.identity"
+    IDENTITIES_ENTITY_CREATED: str = "fb.exchange.module.entity.created.identity"
+    IDENTITIES_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.identity"
+    IDENTITIES_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.identity"
 
     # Roles
-    ROLES_ENTITY_REPORTED = "fb.bus.entity.reported.role"
-    ROLES_ENTITY_CREATED = "fb.bus.entity.created.role"
-    ROLES_ENTITY_UPDATED = "fb.bus.entity.updated.role"
-    ROLES_ENTITY_DELETED = "fb.bus.entity.deleted.role"
+    ROLES_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.role"
+    ROLES_ENTITY_CREATED: str = "fb.exchange.module.entity.created.role"
+    ROLES_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.role"
+    ROLES_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.role"
 
     # Devices
-    DEVICES_ENTITY_REPORTED: str = "fb.bus.entity.reported.device"
-    DEVICES_ENTITY_CREATED: str = "fb.bus.entity.created.device"
-    DEVICES_ENTITY_UPDATED: str = "fb.bus.entity.updated.device"
-    DEVICES_ENTITY_DELETED: str = "fb.bus.entity.deleted.device"
+    DEVICES_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device"
+    DEVICES_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device"
+    DEVICES_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device"
+    DEVICES_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device"
 
-    # Devices properties
-    DEVICES_PROPERTY_ENTITY_REPORTED: str = "fb.bus.entity.reported.device.property"
-    DEVICES_PROPERTY_ENTITY_CREATED: str = "fb.bus.entity.created.device.property"
-    DEVICES_PROPERTY_ENTITY_UPDATED: str = "fb.bus.entity.updated.device.property"
-    DEVICES_PROPERTY_ENTITY_DELETED: str = "fb.bus.entity.deleted.device.property"
+    # Device's properties
+    DEVICES_PROPERTY_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.property"
+    DEVICES_PROPERTY_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.property"
+    DEVICES_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.property"
+    DEVICES_PROPERTY_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.property"
 
-    # Devices configuration
-    DEVICES_CONFIGURATION_ENTITY_REPORTED: str = "fb.bus.entity.reported.device.configuration"
-    DEVICES_CONFIGURATION_ENTITY_CREATED: str = "fb.bus.entity.created.device.configuration"
-    DEVICES_CONFIGURATION_ENTITY_UPDATED: str = "fb.bus.entity.updated.device.configuration"
-    DEVICES_CONFIGURATION_ENTITY_DELETED: str = "fb.bus.entity.deleted.device.configuration"
+    # Device's configuration
+    DEVICES_CONFIGURATION_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.configuration"
+    DEVICES_CONFIGURATION_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.configuration"
+    DEVICES_CONFIGURATION_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.configuration"
+    DEVICES_CONFIGURATION_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.configuration"
 
-    # Devices control
-    DEVICES_CONTROL_ENTITY_REPORTED = "fb.bus.entity.reported.device.control"
-    DEVICES_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.device.control"
-    DEVICES_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.device.control"
-    DEVICES_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.device.control"
+    # Device's controls
+    DEVICES_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.control"
+    DEVICES_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.control"
+    DEVICES_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.control"
+    DEVICES_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.control"
 
     # Channels
-    CHANNELS_ENTITY_REPORTED: str = "fb.bus.entity.reported.channel"
-    CHANNELS_ENTITY_CREATED: str = "fb.bus.entity.created.channel"
-    CHANNELS_ENTITY_UPDATED: str = "fb.bus.entity.updated.channel"
-    CHANNELS_ENTITY_DELETED: str = "fb.bus.entity.deleted.channel"
+    CHANNELS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel"
+    CHANNELS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel"
+    CHANNELS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel"
+    CHANNELS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel"
 
-    # Channels properties
-    CHANNELS_PROPERTY_ENTITY_REPORTED: str = "fb.bus.entity.reported.channel.property"
-    CHANNELS_PROPERTY_ENTITY_CREATED: str = "fb.bus.entity.created.channel.property"
-    CHANNELS_PROPERTY_ENTITY_UPDATED: str = "fb.bus.entity.updated.channel.property"
-    CHANNELS_PROPERTY_ENTITY_DELETED: str = "fb.bus.entity.deleted.channel.property"
+    # Channel's properties
+    CHANNELS_PROPERTY_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.property"
+    CHANNELS_PROPERTY_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.property"
+    CHANNELS_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.property"
+    CHANNELS_PROPERTY_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.property"
 
-    # Channels configuration
-    CHANNELS_CONFIGURATION_ENTITY_REPORTED: str = "fb.bus.entity.reported.channel.configuration"
-    CHANNELS_CONFIGURATION_ENTITY_CREATED: str = "fb.bus.entity.created.channel.configuration"
-    CHANNELS_CONFIGURATION_ENTITY_UPDATED: str = "fb.bus.entity.updated.channel.configuration"
-    CHANNELS_CONFIGURATION_ENTITY_DELETED: str = "fb.bus.entity.deleted.channel.configuration"
+    # Channel's configuration
+    CHANNELS_CONFIGURATION_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.configuration"
+    CHANNELS_CONFIGURATION_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.configuration"
+    CHANNELS_CONFIGURATION_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.configuration"
+    CHANNELS_CONFIGURATION_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.configuration"
 
-    # Channels control
-    CHANNELS_CONTROL_ENTITY_REPORTED = "fb.bus.entity.reported.channel.control"
-    CHANNELS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.channel.control"
-    CHANNELS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.channel.control"
-    CHANNELS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.channel.control"
+    # Channel's controls
+    CHANNELS_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.control"
+    CHANNELS_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.control"
+    CHANNELS_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.control"
+    CHANNELS_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.control"
 
     # Connectors
-    CONNECTORS_ENTITY_REPORTED = "fb.bus.entity.reported.connector"
-    CONNECTORS_ENTITY_CREATED = "fb.bus.entity.created.connector"
-    CONNECTORS_ENTITY_UPDATED = "fb.bus.entity.updated.connector"
-    CONNECTORS_ENTITY_DELETED = "fb.bus.entity.deleted.connector"
+    CONNECTORS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector"
+    CONNECTORS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.connector"
+    CONNECTORS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector"
+    CONNECTORS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector"
 
-    # Connectors control
-    CONNECTORS_CONTROL_ENTITY_REPORTED = "fb.bus.entity.reported.connector.control"
-    CONNECTORS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.connector.control"
-    CONNECTORS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.connector.control"
-    CONNECTORS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.connector.control"
+    # Connector's control
+    CONNECTORS_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector.control"
+    CONNECTORS_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.connector.control"
+    CONNECTORS_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector.control"
+    CONNECTORS_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector.control"
 
     # Triggers
-    TRIGGERS_ENTITY_REPORTED = "fb.bus.entity.reported.trigger"
-    TRIGGERS_ENTITY_CREATED = "fb.bus.entity.created.trigger"
-    TRIGGERS_ENTITY_UPDATED = "fb.bus.entity.updated.trigger"
-    TRIGGERS_ENTITY_DELETED = "fb.bus.entity.deleted.trigger"
+    TRIGGERS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger"
+    TRIGGERS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.trigger"
+    TRIGGERS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger"
+    TRIGGERS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger"
 
-    # Triggers control
-    TRIGGERS_CONTROL_ENTITY_REPORTED = "fb.bus.entity.reported.trigger.control"
-    TRIGGERS_CONTROL_ENTITY_CREATED = "fb.bus.entity.created.trigger.control"
-    TRIGGERS_CONTROL_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.control"
-    TRIGGERS_CONTROL_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.control"
+    # Trigger's controls
+    TRIGGERS_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger.control"
+    TRIGGERS_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.trigger.control"
+    TRIGGERS_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger.control"
+    TRIGGERS_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger.control"
 
-    # Triggers actions
-    TRIGGERS_ACTIONS_ENTITY_REPORTED = "fb.bus.entity.reported.trigger.action"
-    TRIGGERS_ACTIONS_ENTITY_CREATED = "fb.bus.entity.created.trigger.action"
-    TRIGGERS_ACTIONS_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.action"
-    TRIGGERS_ACTIONS_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.action"
+    # Trigger's actions
+    TRIGGERS_ACTIONS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger.action"
+    TRIGGERS_ACTIONS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.trigger.action"
+    TRIGGERS_ACTIONS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger.action"
+    TRIGGERS_ACTIONS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger.action"
 
-    # Triggers notifications
-    TRIGGERS_NOTIFICATIONS_ENTITY_REPORTED = "fb.bus.entity.reported.trigger.notification"
-    TRIGGERS_NOTIFICATIONS_ENTITY_CREATED = "fb.bus.entity.created.trigger.notification"
-    TRIGGERS_NOTIFICATIONS_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.notification"
-    TRIGGERS_NOTIFICATIONS_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.notification"
+    # Trigger's notifications
+    TRIGGERS_NOTIFICATIONS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger.notification"
+    TRIGGERS_NOTIFICATIONS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.trigger.notification"
+    TRIGGERS_NOTIFICATIONS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger.notification"
+    TRIGGERS_NOTIFICATIONS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger.notification"
 
-    # Triggers conditions
-    TRIGGERS_CONDITIONS_ENTITY_REPORTED = "fb.bus.entity.reported.trigger.condition"
-    TRIGGERS_CONDITIONS_ENTITY_CREATED = "fb.bus.entity.created.trigger.condition"
-    TRIGGERS_CONDITIONS_ENTITY_UPDATED = "fb.bus.entity.updated.trigger.condition"
-    TRIGGERS_CONDITIONS_ENTITY_DELETED = "fb.bus.entity.deleted.trigger.condition"
+    # Trigger's conditions
+    TRIGGERS_CONDITIONS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger.condition"
+    TRIGGERS_CONDITIONS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.trigger.condition"
+    TRIGGERS_CONDITIONS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger.condition"
+    TRIGGERS_CONDITIONS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger.condition"
+
+    # CONNECTORS
+
+    # FB-Bus connector
+    FB_BUS_DEVICE_REPORTED: str = "fb.exchange.connector.reported.device"
+    FB_BUS_DEVICE_CREATED: str = "fb.exchange.connector.created.device"
