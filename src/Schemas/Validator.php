@@ -45,16 +45,16 @@ final class Validator implements IValidator
 			throw new Exceptions\MalformedInputException('Failed to decode input data', 0, $ex);
 		}
 
+		$validator = new JsonSchema\Validator();
+
 		try {
-			$jsonSchema = new JsonSchema\Schema(Utils\Json::decode($schema));
+			$jsonSchema = $validator->loader()->loadObjectSchema(Utils\Json::decode($schema));
 
 		} catch (Utils\JsonException $ex) {
 			throw new Exceptions\LogicException(sprintf('Failed to decode schema'), 0, $ex);
 		}
 
-		$validator = new JsonSchema\Validator();
-
-		$result = $validator->schemaValidation($jsonData, $jsonSchema);
+		$result = $validator->validate($jsonData, $jsonSchema);
 
 		if ($result->isValid()) {
 			try {
@@ -66,29 +66,27 @@ final class Validator implements IValidator
 		} else {
 			$messages = [];
 
-			foreach ($result->getErrors() as $error) {
+			$error = $result->error();
+
+			if ($error !== null) {
 				try {
 					$errorInfo = [
 						'keyword' => $error->keyword(),
 					];
 
-					if (count($error->dataPointer()) > 0) {
-						$errorInfo['pointer'] = $error->dataPointer();
-					}
+					$errorInfo['pointer'] = $error->data()->path();
 
-					if (count($error->keywordArgs()) > 0) {
-						$errorInfo['error'] = $error->keywordArgs();
+					if (count($error->args()) > 0) {
+						$errorInfo['error'] = $error->args();
 					}
 
 					foreach ($error->subErrors() as $subError) {
 						$errorInfo['keyword'] = $subError->keyword();
 
-						if (count($subError->dataPointer()) > 0) {
-							$errorInfo['pointer'] = $subError->dataPointer();
-						}
+						$errorInfo['pointer'] = $subError->data()->path();
 
-						if (count($subError->keywordArgs()) > 0) {
-							$errorInfo['error'] = $subError->keywordArgs();
+						if (count($subError->args()) > 0) {
+							$errorInfo['error'] = $subError->args();
 						}
 					}
 
