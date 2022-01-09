@@ -15,7 +15,7 @@
 #     limitations under the License.
 
 """
-Modules metadata loader and validator and sets of useful enums
+Metadata loader and validator and sets of useful enums
 """
 
 __version__ = "0.24.0"
