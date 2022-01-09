@@ -6,23 +6,23 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Helpers
  * @since          0.1.0
  *
  * @date           09.03.20
  */
 
-namespace FastyBird\ModulesMetadata\Loaders;
+namespace FastyBird\Metadata\Loaders;
 
-use FastyBird\ModulesMetadata;
-use FastyBird\ModulesMetadata\Exceptions;
-use FastyBird\ModulesMetadata\Types;
+use FastyBird\Metadata;
+use FastyBird\Metadata\Exceptions;
+use FastyBird\Metadata\Types;
 
 /**
  * JSON schema loader
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Helpers
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -38,8 +38,8 @@ final class SchemaLoader implements ISchemaLoader
 	 */
 	public function loadByRoutingKey(Types\RoutingKeyType $routingKey): string
 	{
-		if (isset(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()])) {
-			$schema = file_get_contents(ModulesMetadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]);
+		if (isset(Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()])) {
+			$schema = file_get_contents(Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]);
 
 			if ($schema === false) {
 				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
@@ -59,7 +59,7 @@ final class SchemaLoader implements ISchemaLoader
 	 */
 	public function loadByNamespace(string $namespace, string $schemaFile): string
 	{
-		$filePath = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR . $schemaFile;
+		$filePath = Metadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR . $schemaFile;
 
 		if (file_exists($filePath)) {
 			$schema = file_get_contents($filePath);

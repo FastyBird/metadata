@@ -30,7 +30,7 @@ class RoutingKey(ExtendedEnum):
     """
     Data exchange routing key
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         routing
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>

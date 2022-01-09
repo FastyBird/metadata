@@ -6,24 +6,24 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Loaders
  * @since          0.1.0
  *
  * @date           24.06.20
  */
 
-namespace FastyBird\ModulesMetadata\Loaders;
+namespace FastyBird\Metadata\Loaders;
 
-use FastyBird\ModulesMetadata;
-use FastyBird\ModulesMetadata\Exceptions;
-use FastyBird\ModulesMetadata\Schemas;
+use FastyBird\Metadata;
+use FastyBird\Metadata\Exceptions;
+use FastyBird\Metadata\Schemas;
 use Nette\Utils;
 
 /**
  * Metadata loader
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Loaders
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -47,9 +47,9 @@ final class MetadataLoader implements IMetadataLoader
 	 */
 	public function load(): Utils\ArrayHash
 	{
-		$schema = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'application.json';
+		$schema = Metadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'application.json';
 
-		$metadata = ModulesMetadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'application.json';
+		$metadata = Metadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'application.json';
 
 		$schema = file_get_contents($schema);
 

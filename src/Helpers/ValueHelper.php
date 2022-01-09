@@ -6,23 +6,23 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Helpers
  * @since          0.15.0
  *
  * @date           05.12.20
  */
 
-namespace FastyBird\ModulesMetadata\Helpers;
+namespace FastyBird\Metadata\Helpers;
 
 use DateTime;
-use FastyBird\ModulesMetadata\Types;
+use FastyBird\Metadata\Types;
 use Nette\Utils;
 
 /**
  * Value helpers
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Helpers
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>

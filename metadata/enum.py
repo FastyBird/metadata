@@ -27,7 +27,7 @@ class ExtendedEnum(Enum):
     """
     Extended enum data type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         enum
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>

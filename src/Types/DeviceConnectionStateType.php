@@ -6,21 +6,21 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Types
  * @since          0.1.0
  *
  * @date           25.03.18
  */
 
-namespace FastyBird\ModulesMetadata\Types;
+namespace FastyBird\Metadata\Types;
 
 use Consistence;
 
 /**
  * Device connection state types
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Types
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>

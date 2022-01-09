@@ -2,9 +2,9 @@
 
 namespace Tests\Cases;
 
-use FastyBird\ModulesMetadata;
-use FastyBird\ModulesMetadata\Loaders;
-use FastyBird\ModulesMetadata\Schemas;
+use FastyBird\Metadata;
+use FastyBird\Metadata\Loaders;
+use FastyBird\Metadata\Schemas;
 use Nette;
 use Ninjify\Nunjuck\TestCase\BaseTestCase;
 use Tester\Assert;
@@ -22,7 +22,7 @@ final class ExtensionTest extends BaseTestCase
 		$config = new Nette\Configurator();
 		$config->setTempDirectory(TEMP_DIR);
 
-		ModulesMetadata\DI\ModulesMetadataExtension::register($config);
+		Metadata\DI\MetadataExtension::register($config);
 
 		$container = $config->createContainer();
 

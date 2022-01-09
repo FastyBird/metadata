@@ -6,21 +6,21 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Loaders
  * @since          0.1.0
  *
  * @date           24.06.20
  */
 
-namespace FastyBird\ModulesMetadata\Loaders;
+namespace FastyBird\Metadata\Loaders;
 
 use Nette\Utils;
 
 /**
  * Metadata loader interface
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Loaders
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>

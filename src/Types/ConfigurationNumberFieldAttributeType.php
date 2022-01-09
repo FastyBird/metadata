@@ -6,21 +6,21 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Types
  * @since          0.9.0
  *
  * @date           24.11.21
  */
 
-namespace FastyBird\ModulesMetadata\Types;
+namespace FastyBird\Metadata\Types;
 
 use Consistence;
 
 /**
  * Configuration number field attribute type
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Types
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>

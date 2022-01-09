@@ -30,7 +30,7 @@ class ConnectorType(ExtendedEnum):
     """
     Connector type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -49,7 +49,7 @@ class DeviceType(ExtendedEnum):
     """
     Device type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -66,7 +66,7 @@ class PropertyType(ExtendedEnum):
     """
     Property entity type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -81,7 +81,7 @@ class DeviceConnectionState(ExtendedEnum):
     """
     Device connection state
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -114,7 +114,7 @@ class ConfigurationField(ExtendedEnum):
     """
     Configuration fields types
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -131,7 +131,7 @@ class ConfigurationBooleanFieldAttribute(ExtendedEnum):
     """
     Configuration boolean field attributes
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -145,7 +145,7 @@ class ConfigurationNumberFieldAttribute(ExtendedEnum):
     """
     Configuration number field attributes
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -162,7 +162,7 @@ class ConfigurationSelectFieldAttribute(ExtendedEnum):
     """
     Configuration select field attributes
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -177,7 +177,7 @@ class ConfigurationTextFieldAttribute(ExtendedEnum):
     """
     Configuration text field attributes
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -191,7 +191,7 @@ class DeviceModel(ExtendedEnum):
     """
     Device known models
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -236,7 +236,7 @@ class FirmwareManufacturer(ExtendedEnum):
     """
     Device firmware manufacturer
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -254,7 +254,7 @@ class HardwareManufacturer(ExtendedEnum):
     """
     Device hardware manufacturer
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -274,7 +274,7 @@ class DevicePropertyName(ExtendedEnum):
     """
     Device known property name
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         devices_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>

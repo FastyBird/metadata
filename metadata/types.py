@@ -30,7 +30,7 @@ class ModuleOrigin(ExtendedEnum):
     """
     Module origin
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -49,7 +49,7 @@ class ModulePrefix(ExtendedEnum):
     """
     Module prefix
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -66,7 +66,7 @@ class PluginOrigin(ExtendedEnum):
     """
     Plugin origin
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -95,7 +95,7 @@ class DataType(ExtendedEnum):
     """
     Record data type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -124,7 +124,7 @@ class SwitchPayload(ExtendedEnum):
     """
     Switch enum payload
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -140,7 +140,7 @@ class ButtonPayload(ExtendedEnum):
     """
     Switch enum payload
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -160,7 +160,7 @@ class ControlName(ExtendedEnum):
     """
     Known control name
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -176,7 +176,7 @@ class PropertyAction(ExtendedEnum):
     """
     Property data action
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -192,7 +192,7 @@ class ControlAction(ExtendedEnum):
     """
     Control data action
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         types
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>

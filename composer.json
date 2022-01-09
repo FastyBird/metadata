@@ -63,7 +63,7 @@
 
   "autoload" : {
     "psr-4" : {
-      "FastyBird\\ModulesMetadata\\" : "src/"
+      "FastyBird\\Metadata\\" : "src/"
     }
   },
 

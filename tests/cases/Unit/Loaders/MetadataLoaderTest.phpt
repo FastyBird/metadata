@@ -2,8 +2,8 @@
 
 namespace Tests\Cases;
 
-use FastyBird\ModulesMetadata\Loaders;
-use FastyBird\ModulesMetadata\Schemas;
+use FastyBird\Metadata\Loaders;
+use FastyBird\Metadata\Schemas;
 use Nette\Utils;
 use Ninjify\Nunjuck\TestCase\BaseTestCase;
 use Tester\Assert;

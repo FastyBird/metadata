@@ -2,7 +2,7 @@
 
 namespace Tests\Cases;
 
-use FastyBird\ModulesMetadata\Schemas;
+use FastyBird\Metadata\Schemas;
 use Nette\Utils;
 use Ninjify\Nunjuck\TestCase\BaseTestCase;
 use Tester\Assert;
@@ -44,7 +44,7 @@ final class ValidatorTest extends BaseTestCase
 	 *
 	 * @dataProvider ./../../../fixtures/Schemas/validateInvalidData.php
 	 *
-	 * @throws FastyBird\ModulesMetadata\Exceptions\InvalidDataException
+	 * @throws FastyBird\Metadata\Exceptions\InvalidDataException
 	 */
 	public function testValidateDevicePropertyInvalid(
 		string $data,

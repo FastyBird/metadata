@@ -6,21 +6,21 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Entities
  * @since          0.22.0
  *
  * @date           08.01.22
  */
 
-namespace FastyBird\ModulesMetadata\Types;
+namespace FastyBird\Metadata\Types;
 
 use Consistence;
 
 /**
  * Trigger condition type
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Types
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>

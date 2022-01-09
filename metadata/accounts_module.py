@@ -30,7 +30,7 @@ class AccountState(ExtendedEnum):
     """
     Account state type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         accounts_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -48,7 +48,7 @@ class IdentityState(ExtendedEnum):
     """
     Account identity state type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         accounts_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>

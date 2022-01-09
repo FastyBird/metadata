@@ -30,7 +30,7 @@ class TriggerType(ExtendedEnum):
     """
     Trigger type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         triggers_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -45,7 +45,7 @@ class ActionType(ExtendedEnum):
     """
     Trigger action type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         triggers_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -60,7 +60,7 @@ class ConditionType(ExtendedEnum):
     """
     Trigger condition type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         triggers_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -77,7 +77,7 @@ class NotificationType(ExtendedEnum):
     """
     Trigger notification type
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         triggers_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
@@ -92,7 +92,7 @@ class ConditionOperator(ExtendedEnum):
     """
     Condition operator
 
-    @package        FastyBird:ModulesMetadata!
+    @package        FastyBird:Metadata!
     @module         triggers_module
 
     @author         Adam Kadlec <adam.kadlec@fastybird.com>

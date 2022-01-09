@@ -6,19 +6,19 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     common
  * @since          0.1.0
  *
  * @date           04.05.20
  */
 
-namespace FastyBird\ModulesMetadata;
+namespace FastyBird\Metadata;
 
 /**
  * Library constants
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     common
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>

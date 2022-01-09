@@ -6,16 +6,16 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Schemas
  * @since          0.1.0
  *
  * @date           24.06.20
  */
 
-namespace FastyBird\ModulesMetadata\Schemas;
+namespace FastyBird\Metadata\Schemas;
 
-use FastyBird\ModulesMetadata\Exceptions;
+use FastyBird\Metadata\Exceptions;
 use Nette;
 use Nette\Utils;
 use Opis\JsonSchema;
@@ -23,7 +23,7 @@ use Opis\JsonSchema;
 /**
  * JSON schema validator
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     Schemas
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>

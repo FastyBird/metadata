@@ -1,34 +1,34 @@
 <?php declare(strict_types = 1);
 
 /**
- * ModulesMetadataExtension.php
+ * MetadataExtension.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     DI
  * @since          0.1.0
  *
  * @date           24.06.20
  */
 
-namespace FastyBird\ModulesMetadata\DI;
+namespace FastyBird\Metadata\DI;
 
-use FastyBird\ModulesMetadata\Loaders;
-use FastyBird\ModulesMetadata\Schemas;
+use FastyBird\Metadata\Loaders;
+use FastyBird\Metadata\Schemas;
 use Nette;
 use Nette\DI;
 
 /**
  * Metadata extension container
  *
- * @package        FastyBird:ModulesMetadata!
+ * @package        FastyBird:Metadata!
  * @subpackage     DI
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-class ModulesMetadataExtension extends DI\CompilerExtension
+class MetadataExtension extends DI\CompilerExtension
 {
 
 	/**
@@ -39,13 +39,13 @@ class ModulesMetadataExtension extends DI\CompilerExtension
 	 */
 	public static function register(
 		Nette\Configurator $config,
-		string $extensionName = 'fbModulesMetadata'
+		string $extensionName = 'fbMetadata'
 	): void {
 		$config->onCompile[] = function (
 			Nette\Configurator $config,
 			DI\Compiler $compiler
 		) use ($extensionName): void {
-			$compiler->addExtension($extensionName, new ModulesMetadataExtension());
+			$compiler->addExtension($extensionName, new MetadataExtension());
 		};
 	}
 
