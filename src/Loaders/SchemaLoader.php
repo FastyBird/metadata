@@ -48,7 +48,7 @@ final class SchemaLoader implements ISchemaLoader
 			return $schema;
 		}
 
-		throw new Exceptions\InvalidArgumentException(sprintf('Schema for routing key: %s is not configured', $routingKey->getValue()));
+		throw new Exceptions\InvalidArgumentException(sprintf('Schema for routing key: %s is not configured', strval($routingKey->getValue())));
 	}
 
 	/**

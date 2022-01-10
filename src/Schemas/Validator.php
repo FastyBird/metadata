@@ -48,7 +48,7 @@ final class Validator implements IValidator
 		$validator = new JsonSchema\Validator();
 
 		try {
-			$jsonSchema = $validator->loader()->loadObjectSchema(Utils\Json::decode($schema));
+			$jsonSchema = $validator->loader()->loadObjectSchema(Utils\Json::decode($schema)); // @phpstan-ignore-line
 
 		} catch (Utils\JsonException $ex) {
 			throw new Exceptions\LogicException(sprintf('Failed to decode schema'), 0, $ex);
@@ -58,7 +58,7 @@ final class Validator implements IValidator
 
 		if ($result->isValid()) {
 			try {
-				return Utils\ArrayHash::from(Utils\Json::decode(Utils\Json::encode($jsonData), Utils\Json::FORCE_ARRAY));
+				return Utils\ArrayHash::from(Utils\Json::decode(Utils\Json::encode($jsonData), Utils\Json::FORCE_ARRAY)); // @phpstan-ignore-line
 
 			} catch (Utils\JsonException $ex) {
 				throw new Exceptions\LogicException(sprintf('Failed to encode input data'));
