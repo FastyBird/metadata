@@ -1,98 +1,98 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "types": {
-      "nullable_string": {
-        "oneOf": [
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "string"
+            "type" : "string"
           }
         ]
       },
-      "nullable_boolean": {
-        "oneOf": [
+      "nullable_boolean" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "boolean"
+            "type" : "boolean"
           }
         ]
       }
     },
-    "type": {
-      "type": "string",
-      "enum": [
+    "type" : {
+      "type" : "string",
+      "enum" : [
         "channel-property",
         "device-property",
         "time",
         "date"
       ]
     },
-    "operator": {
-      "type": "string",
-      "enum": [
+    "operator" : {
+      "type" : "string",
+      "enum" : [
         "eq",
         "above",
         "below"
       ]
     }
   },
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Entity uuid v4 identifier. This identifier is unique"
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "type": {
-      "$ref": "#/definitions/type"
+    "type" : {
+      "$ref" : "#/definitions/type"
     },
-    "enabled": {
-      "type": "boolean",
-      "default": false
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "is_fulfilled": {
-      "$ref": "#/definitions/types/nullable_boolean",
-      "default": null
+    "is_fulfilled" : {
+      "$ref" : "#/definitions/types/nullable_boolean",
+      "default" : null
     },
-    "trigger": {
-      "type": "string",
-      "description": "Trigger unique uuid v4 identifier used across services"
+    "trigger" : {
+      "type" : "string",
+      "description" : "Trigger unique uuid v4 identifier used across services"
     },
-    "owner": {
-      "$ref": "#/definitions/types/nullable_string",
-      "description": "Condition trigger owner uuid v4 identifier"
+    "owner" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Condition trigger owner uuid v4 identifier"
     }
   },
-  "if": {
-    "properties": {
-      "type": {
-        "const": "channel-property"
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "channel-property"
       }
     }
   },
-  "then": {
-    "properties": {
-      "device": {
-        "type": "string"
+  "then" : {
+    "properties" : {
+      "device" : {
+        "type" : "string"
       },
-      "channel": {
-        "type": "string"
+      "channel" : {
+        "type" : "string"
       },
-      "property": {
-        "type": "string"
+      "property" : {
+        "type" : "string"
       },
-      "operand": {
-        "type": "string"
+      "operand" : {
+        "type" : "string"
       },
-      "operator": {
-        "$ref": "#/definitions/operator"
+      "operator" : {
+        "$ref" : "#/definitions/operator"
       }
     },
-    "required": [
+    "required" : [
       "id",
       "type",
       "enabled",
@@ -104,30 +104,30 @@
       "operator"
     ]
   },
-  "else": {
-    "if": {
-      "properties": {
-        "type": {
-          "const": "device-property"
+  "else" : {
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "device-property"
         }
       }
     },
-    "then": {
-      "properties": {
-        "device": {
-          "type": "string"
+    "then" : {
+      "properties" : {
+        "device" : {
+          "type" : "string"
         },
-        "property": {
-          "type": "string"
+        "property" : {
+          "type" : "string"
         },
-        "operand": {
-          "type": "string"
+        "operand" : {
+          "type" : "string"
         },
-        "operator": {
-          "$ref": "#/definitions/operator"
+        "operator" : {
+          "$ref" : "#/definitions/operator"
         }
       },
-      "required": [
+      "required" : [
         "id",
         "type",
         "enabled",
@@ -138,31 +138,31 @@
         "operator"
       ]
     },
-    "else": {
-      "if": {
-        "properties": {
-          "type": {
-            "const": "time"
+    "else" : {
+      "if" : {
+        "properties" : {
+          "type" : {
+            "const" : "time"
           }
         }
       },
-      "then": {
-        "properties": {
-          "time": {
-            "type": "string",
-            "description": "Ful time representation formatted in ATOM"
+      "then" : {
+        "properties" : {
+          "time" : {
+            "type" : "string",
+            "description" : "Ful time representation formatted in ATOM"
           },
-          "days": {
-            "type": "array",
-            "items": {
-              "type": "number",
-              "uniqueItems": true,
-              "minItems": 1
+          "days" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number",
+              "uniqueItems" : true,
+              "minItems" : 1
             },
-            "description": "Days numbers 1 - 7 where 1 is mon and 7 is sun"
+            "description" : "Days numbers 1 - 7 where 1 is mon and 7 is sun"
           }
         },
-        "required": [
+        "required" : [
           "id",
           "type",
           "enabled",
@@ -171,22 +171,22 @@
           "days"
         ]
       },
-      "else": {
-        "if": {
-          "properties": {
-            "type": {
-              "const": "date"
+      "else" : {
+        "if" : {
+          "properties" : {
+            "type" : {
+              "const" : "date"
             }
           }
         },
-        "then": {
-          "properties": {
-            "date": {
-              "type": "string",
-              "description": "Ful date representation formatted in ATOM"
+        "then" : {
+          "properties" : {
+            "date" : {
+              "type" : "string",
+              "description" : "Ful date representation formatted in ATOM"
             }
           },
-          "required": [
+          "required" : [
             "id",
             "type",
             "enabled",
@@ -194,8 +194,8 @@
             "date"
           ]
         },
-        "else": {
-          "required": [
+        "else" : {
+          "required" : [
             "id",
             "type",
             "enabled",

@@ -12,39 +12,39 @@ import minimist from 'minimist';
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs.readFileSync('./.browserslistrc')
-    .toString()
-    .split('\n')
-    .filter((entry) => entry && entry.substring(0, 2) !== 'ie');
+  .toString()
+  .split('\n')
+  .filter((entry) => entry && entry.substring(0, 2) !== 'ie');
 
 const argv = minimist(process.argv.slice(2));
 
 const projectRoot = path.resolve(__dirname, '..');
 
 const baseConfig = {
-    input: 'public/entry.ts',
+  input: 'public/entry.ts',
 };
 
 const basePlugins = {
-    forAll: [
-        alias({
-            resolve: ['.js', '.ts'],
-            entries: {
-                '@': path.resolve(projectRoot, 'public'),
-            },
-        }),
-        eslint(),
-    ],
-    replace: {
-        preventAssignment: true,
-        'process.env.NODE_ENV': JSON.stringify('production'),
-        'process.env.ES_BUILD': JSON.stringify('false'),
-    },
+  forAll: [
+    alias({
+      resolve: ['.js', '.ts'],
+      entries: {
+        '@': path.resolve(projectRoot, 'public'),
+      },
+    }),
+    eslint(),
+  ],
+  replace: {
+    preventAssignment: true,
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    'process.env.ES_BUILD': JSON.stringify('false'),
+  },
 };
 
 const babelConfig = {
-    babelHelpers: 'bundled',
-    exclude: 'node_modules/**',
-    extensions: ['.js', '.ts',],
+  babelHelpers: 'bundled',
+  exclude: 'node_modules/**',
+  extensions: ['.js', '.ts',],
 };
 
 // ESM/UMD/IIFE shared settings: externals
@@ -67,113 +67,113 @@ const globals = {
 const buildFormats = [];
 
 if (!argv.format || argv.format === 'es') {
-    const esConfig = {
-        ...baseConfig,
-        external,
-        output: {
-            file: 'dist/metadata.esm.js',
-            format: 'esm',
-            exports: 'named',
-        },
-        plugins: [
-            replace({
-                ...basePlugins.replace,
-                'process.env.ES_BUILD': JSON.stringify('true'),
-            }),
-            ...basePlugins.forAll,
-            babel({
-                ...babelConfig,
-                presets: [
-                    [
-                        '@babel/preset-env',
-                        {
-                            targets: esbrowserslist,
-                        },
-                    ],
-                ],
-            }),
-            commonjs(),
-        ],
-    };
-    buildFormats.push(esConfig);
-}
-
-if (!argv.format || argv.format === 'cjs') {
-    const umdConfig = {
-        ...baseConfig,
-        external,
-        output: {
-            compact: true,
-            file: 'dist/metadata.ssr.js',
-            format: 'cjs',
-            name: 'Metadata',
-            exports: 'named',
-            globals,
-        },
-        plugins: [
-            replace(basePlugins.replace),
-            ...basePlugins.forAll,
-            babel(babelConfig),
-            commonjs(),
-        ],
-    };
-    buildFormats.push(umdConfig);
-}
-
-if (!argv.format || argv.format === 'iife') {
-    const unpkgConfig = {
-        ...baseConfig,
-        external,
-        output: {
-            compact: true,
-            file: 'dist/metadata.min.js',
-            format: 'iife',
-            name: 'Metadata',
-            exports: 'named',
-            globals,
-        },
-        plugins: [
-            replace(basePlugins.replace),
-            ...basePlugins.forAll,
-            babel(babelConfig),
-            commonjs(),
-            terser({
-                output: {
-                    ecma: 5,
-                },
-            }),
-        ],
-    };
-    buildFormats.push(unpkgConfig);
-}
-
-buildFormats.push({
+  const esConfig = {
     ...baseConfig,
     external,
     output: {
-        file: 'dist/metadata.d.ts',
-        format: 'es',
+      file: 'dist/metadata.esm.js',
+      format: 'esm',
+      exports: 'named',
     },
     plugins: [
-        replace({
-            ...basePlugins.replace,
-            'process.env.ES_BUILD': JSON.stringify('true'),
-        }),
-        ...basePlugins.forAll,
-        babel({
-            ...babelConfig,
-            presets: [
-                [
-                    '@babel/preset-env',
-                    {
-                        targets: esbrowserslist,
-                    },
-                ],
-            ],
-        }),
-        commonjs(),
-        dts(),
+      replace({
+        ...basePlugins.replace,
+        'process.env.ES_BUILD': JSON.stringify('true'),
+      }),
+      ...basePlugins.forAll,
+      babel({
+        ...babelConfig,
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              targets: esbrowserslist,
+            },
+          ],
+        ],
+      }),
+      commonjs(),
     ],
+  };
+  buildFormats.push(esConfig);
+}
+
+if (!argv.format || argv.format === 'cjs') {
+  const umdConfig = {
+    ...baseConfig,
+    external,
+    output: {
+      compact: true,
+      file: 'dist/metadata.ssr.js',
+      format: 'cjs',
+      name: 'Metadata',
+      exports: 'named',
+      globals,
+    },
+    plugins: [
+      replace(basePlugins.replace),
+      ...basePlugins.forAll,
+      babel(babelConfig),
+      commonjs(),
+    ],
+  };
+  buildFormats.push(umdConfig);
+}
+
+if (!argv.format || argv.format === 'iife') {
+  const unpkgConfig = {
+    ...baseConfig,
+    external,
+    output: {
+      compact: true,
+      file: 'dist/metadata.min.js',
+      format: 'iife',
+      name: 'Metadata',
+      exports: 'named',
+      globals,
+    },
+    plugins: [
+      replace(basePlugins.replace),
+      ...basePlugins.forAll,
+      babel(babelConfig),
+      commonjs(),
+      terser({
+        output: {
+          ecma: 5,
+        },
+      }),
+    ],
+  };
+  buildFormats.push(unpkgConfig);
+}
+
+buildFormats.push({
+  ...baseConfig,
+  external,
+  output: {
+    file: 'dist/metadata.d.ts',
+    format: 'es',
+  },
+  plugins: [
+    replace({
+      ...basePlugins.replace,
+      'process.env.ES_BUILD': JSON.stringify('true'),
+    }),
+    ...basePlugins.forAll,
+    babel({
+      ...babelConfig,
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: esbrowserslist,
+          },
+        ],
+      ],
+    }),
+    commonjs(),
+    dts(),
+  ],
 });
 
 // Export config

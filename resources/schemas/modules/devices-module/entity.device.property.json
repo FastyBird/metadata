@@ -1,123 +1,123 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "types": {
-      "nullable_string": {
-        "oneOf": [
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "string"
+            "type" : "string"
           }
         ]
       },
-      "nullable_number": {
-        "oneOf": [
+      "nullable_number" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "number"
+            "type" : "number"
           }
         ]
       },
-      "string_number": {
-        "oneOf": [
+      "string_number" : {
+        "oneOf" : [
           {
-            "type": "string"
+            "type" : "string"
           },
           {
-            "type": "number"
+            "type" : "number"
           }
         ]
       },
-      "nullable_data_type": {
-        "oneOf": [
+      "nullable_data_type" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "$ref": "#/definitions/datatype"
+            "$ref" : "#/definitions/datatype"
           }
         ]
       },
-      "nullable_format": {
-        "oneOf": [
+      "nullable_format" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "type": "string"
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "type" : "string"
             }
           },
           {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "$ref": "#/definitions/types/nullable_string"
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "type" : "array",
+              "uniqueItems" : true,
+              "items" : {
+                "$ref" : "#/definitions/types/nullable_string"
               },
-              "minItems": 3,
-              "maxItems": 3
+              "minItems" : 3,
+              "maxItems" : 3
             }
           },
           {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-              "$ref": "#/definitions/types/nullable_number"
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/types/nullable_number"
             },
-            "minItems": 2,
-            "maxItems": 2
+            "minItems" : 2,
+            "maxItems" : 2
           }
         ]
       },
-      "nullable_invalid": {
-        "oneOf": [
+      "nullable_invalid" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "string"
+            "type" : "string"
           },
           {
-            "type": "number"
+            "type" : "number"
           }
         ]
       },
-      "string_number_boolean_null": {
-        "oneOf": [
+      "string_number_boolean_null" : {
+        "oneOf" : [
           {
-            "type": "string"
+            "type" : "string"
           },
           {
-            "type": "number"
+            "type" : "number"
           },
           {
-            "type": "boolean"
+            "type" : "boolean"
           },
           {
-            "type": "null"
+            "type" : "null"
           }
         ]
       }
     },
-    "type": {
-      "type": "string",
-      "enum": [
+    "type" : {
+      "type" : "string",
+      "enum" : [
         "static",
         "dynamic"
       ]
     },
-    "datatype": {
-      "type": "string",
-      "enum": [
+    "datatype" : {
+      "type" : "string",
+      "enum" : [
         "char",
         "uchar",
         "short",
@@ -134,87 +134,87 @@
       ]
     }
   },
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Entity uuid v4 identifier. This identifier is unique"
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "type": {
-      "$ref": "#/definitions/type"
+    "type" : {
+      "$ref" : "#/definitions/type"
     },
-    "identifier": {
-      "type": "string",
-      "description": "Unique human readable identifier used across services"
+    "identifier" : {
+      "type" : "string",
+      "description" : "Unique human readable identifier used across services"
     },
-    "key": {
-      "type": "string",
-      "description": "Unique pub/sub identifier per each entity"
+    "key" : {
+      "type" : "string",
+      "description" : "Unique pub/sub identifier per each entity"
     },
-    "name": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "name" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "settable": {
-      "type": "boolean",
-      "default": false
+    "settable" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "queryable": {
-      "type": "boolean",
-      "default": false
+    "queryable" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "data_type": {
-      "$ref": "#/definitions/types/nullable_data_type",
-      "default": null
+    "data_type" : {
+      "$ref" : "#/definitions/types/nullable_data_type",
+      "default" : null
     },
-    "unit": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "unit" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "format": {
-      "$ref": "#/definitions/types/nullable_format",
-      "default": null
+    "format" : {
+      "$ref" : "#/definitions/types/nullable_format",
+      "default" : null
     },
-    "invalid": {
-      "$ref": "#/definitions/types/nullable_invalid",
-      "default": null
+    "invalid" : {
+      "$ref" : "#/definitions/types/nullable_invalid",
+      "default" : null
     },
-    "number_of_decimals": {
-      "$ref": "#/definitions/types/nullable_number",
-      "default": null
+    "number_of_decimals" : {
+      "$ref" : "#/definitions/types/nullable_number",
+      "default" : null
     },
-    "device": {
-      "type": "string",
-      "description": "Device unique uuid v4 identifier used across services"
+    "device" : {
+      "type" : "string",
+      "description" : "Device unique uuid v4 identifier used across services"
     },
-    "owner": {
-      "$ref": "#/definitions/types/nullable_string",
-      "description": "Entity owner uuid v4 identifier"
+    "owner" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
-  "if": {
-    "properties": {
-      "type": {
-        "const": "dynamic"
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "dynamic"
       }
     }
   },
-  "then": {
-    "properties": {
-      "actual_value": {
-        "$ref": "#/definitions/types/string_number_boolean_null"
+  "then" : {
+    "properties" : {
+      "actual_value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
       },
-      "previous_value": {
-        "$ref": "#/definitions/types/string_number_boolean_null"
+      "previous_value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
       },
-      "expected_value": {
-        "$ref": "#/definitions/types/string_number_boolean_null"
+      "expected_value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
       },
-      "pending": {
-        "type": "boolean"
+      "pending" : {
+        "type" : "boolean"
       }
     },
-    "required": [
+    "required" : [
       "id",
       "type",
       "identifier",
@@ -229,16 +229,16 @@
       "device"
     ]
   },
-  "else": {
-    "properties": {
-      "value": {
-        "$ref": "#/definitions/types/string_number_boolean_null"
+  "else" : {
+    "properties" : {
+      "value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
       },
-      "default": {
-        "$ref": "#/definitions/types/string_number_boolean_null"
+      "default" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
       }
     },
-    "required": [
+    "required" : [
       "id",
       "type",
       "identifier",

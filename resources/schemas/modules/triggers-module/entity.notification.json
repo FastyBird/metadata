@@ -1,63 +1,63 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "types": {
-      "nullable_string": {
-        "oneOf": [
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "string"
+            "type" : "string"
           }
         ]
       }
     },
-    "type": {
-      "type": "string",
-      "enum": [
+    "type" : {
+      "type" : "string",
+      "enum" : [
         "email",
         "sms"
       ]
     }
   },
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Entity uuid v4 identifier. This identifier is unique"
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "type": {
-      "$ref": "#/definitions/type"
+    "type" : {
+      "$ref" : "#/definitions/type"
     },
-    "enabled": {
-      "type": "boolean",
-      "default": false
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "trigger": {
-      "type": "string",
-      "description": "Trigger unique uuid v4 identifier used across services"
+    "trigger" : {
+      "type" : "string",
+      "description" : "Trigger unique uuid v4 identifier used across services"
     },
-    "owner": {
-      "$ref": "#/definitions/types/nullable_string",
-      "description": "Notification trigger owner uuid v4 identifier"
+    "owner" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Notification trigger owner uuid v4 identifier"
     }
   },
-  "if": {
-    "properties": {
-      "type": {
-        "const": "email"
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "email"
       }
     }
   },
-  "then": {
-    "properties": {
-      "email": {
-        "type": "string",
-        "description": "Valid email address"
+  "then" : {
+    "properties" : {
+      "email" : {
+        "type" : "string",
+        "description" : "Valid email address"
       }
     },
-    "required": [
+    "required" : [
       "id",
       "type",
       "enabled",
@@ -65,22 +65,22 @@
       "email"
     ]
   },
-  "else": {
-    "if": {
-      "properties": {
-        "type": {
-          "const": "sms"
+  "else" : {
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "sms"
         }
       }
     },
-    "then": {
-      "properties": {
-        "phone": {
-          "type": "string",
-          "description": "Internation phone number"
+    "then" : {
+      "properties" : {
+        "phone" : {
+          "type" : "string",
+          "description" : "Internation phone number"
         }
       },
-      "required": [
+      "required" : [
         "id",
         "type",
         "enabled",
@@ -88,8 +88,8 @@
         "phone"
       ]
     },
-    "else": {
-      "required": [
+    "else" : {
+      "required" : [
         "id",
         "type",
         "enabled",

@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "types": {
-      "nullable_string": {
-        "oneOf": [
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "string"
+            "type" : "string"
           }
         ]
       }
     },
-    "type": {
-      "type": "string",
-      "enum": [
+    "type" : {
+      "type" : "string",
+      "enum" : [
         "network",
         "local",
         "virtual",
@@ -23,69 +23,69 @@
       ]
     }
   },
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Entity uuid v4 identifier. This identifier is unique"
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "type": {
-      "$ref": "#/definitions/type"
+    "type" : {
+      "$ref" : "#/definitions/type"
     },
-    "identifier": {
-      "type": "string",
-      "description": "Unique human readable identifier used across services"
+    "identifier" : {
+      "type" : "string",
+      "description" : "Unique human readable identifier used across services"
     },
-    "key": {
-      "type": "string",
-      "description": "Unique pub/sub identifier per each entity"
+    "key" : {
+      "type" : "string",
+      "description" : "Unique pub/sub identifier per each entity"
     },
-    "name": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "name" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "comment": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "comment" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "enabled": {
-      "type": "boolean",
-      "default": false
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "hardware_manufacturer": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "hardware_manufacturer" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "hardware_model": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "hardware_model" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "hardware_version": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "hardware_version" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "hardware_mac_address": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "hardware_mac_address" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "firmware_manufacturer": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "firmware_manufacturer" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "firmware_version": {
-      "$ref": "#/definitions/types/nullable_string",
-      "default": null
+    "firmware_version" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
-    "connector": {
-      "type": "string",
-      "description": "Entity connector uuid v4 identifier"
+    "connector" : {
+      "type" : "string",
+      "description" : "Entity connector uuid v4 identifier"
     },
-    "owner": {
-      "$ref": "#/definitions/types/nullable_string",
-      "description": "Entity owner uuid v4 identifier"
+    "owner" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
-  "required": [
+  "required" : [
     "id",
     "identifier",
     "key",

@@ -1,50 +1,50 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "types": {
-      "nullable_string": {
-        "oneOf": [
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "string"
+            "type" : "string"
           }
         ]
       }
     }
   },
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Entity uuid v4 identifier. This identifier is unique"
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "name": {
-      "type": "string"
+    "name" : {
+      "type" : "string"
     },
-    "description": {
-      "type": "string"
+    "description" : {
+      "type" : "string"
     },
-    "anonymous": {
-      "type": "boolean",
-      "default": false
+    "anonymous" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "authenticated": {
-      "type": "boolean",
-      "default": false
+    "authenticated" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "administrator": {
-      "type": "boolean",
-      "default": false
+    "administrator" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "parent": {
-      "$ref": "#/definitions/types/nullable_string",
-      "description": "Parent role unique uuid v4 identifier used across services",
-      "default": null
+    "parent" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Parent role unique uuid v4 identifier used across services",
+      "default" : null
     }
   },
-  "required": [
+  "required" : [
     "id",
     "name",
     "description",

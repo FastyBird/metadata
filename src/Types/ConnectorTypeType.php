@@ -31,12 +31,12 @@ class ConnectorTypeType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-    public const TYPE_FB_BUS = 'fb-bus';
-    public const TYPE_FB_MQTT = 'fb-mqtt';
-    public const TYPE_SHELLY = 'shelly';
-    public const TYPE_TUYA = 'tuya';
-    public const TYPE_SONOFF = 'sonoff';
-    public const TYPE_MODBUS = 'modbus';
+	public const TYPE_FB_BUS = 'fb-bus';
+	public const TYPE_FB_MQTT = 'fb-mqtt';
+	public const TYPE_SHELLY = 'shelly';
+	public const TYPE_TUYA = 'tuya';
+	public const TYPE_SONOFF = 'sonoff';
+	public const TYPE_MODBUS = 'modbus';
 
 	/**
 	 * @return string

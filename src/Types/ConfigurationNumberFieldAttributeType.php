@@ -31,10 +31,10 @@ class ConfigurationNumberFieldAttributeType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-    public const ATTRIBUTE_MIN = 'min';
-    public const ATTRIBUTE_MAX = 'max';
-    public const ATTRIBUTE_STEP = 'step';
-    public const ATTRIBUTE_DEFAULT = 'default';
+	public const ATTRIBUTE_MIN = 'min';
+	public const ATTRIBUTE_MAX = 'max';
+	public const ATTRIBUTE_STEP = 'step';
+	public const ATTRIBUTE_DEFAULT = 'default';
 
 	/**
 	 * @return string

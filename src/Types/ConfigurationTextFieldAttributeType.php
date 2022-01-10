@@ -31,7 +31,7 @@ class ConfigurationTextFieldAttributeType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-    public const ATTRIBUTE_DEFAULT = 'default';
+	public const ATTRIBUTE_DEFAULT = 'default';
 
 	/**
 	 * @return string

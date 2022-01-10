@@ -31,8 +31,8 @@ class ConfigurationSelectFieldAttributeType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-    public const ATTRIBUTE_VALUES = 'values';
-    public const ATTRIBUTE_DEFAULT = 'default';
+	public const ATTRIBUTE_VALUES = 'values';
+	public const ATTRIBUTE_DEFAULT = 'default';
 
 	/**
 	 * @return string

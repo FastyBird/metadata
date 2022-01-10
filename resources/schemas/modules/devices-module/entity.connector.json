@@ -1,31 +1,31 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "types": {
-      "nullable_string": {
-        "oneOf": [
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "types" : {
+      "nullable_string" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "string"
+            "type" : "string"
           }
         ]
       },
-      "nullable_number": {
-        "oneOf": [
+      "nullable_number" : {
+        "oneOf" : [
           {
-            "type": "null"
+            "type" : "null"
           },
           {
-            "type": "number"
+            "type" : "number"
           }
         ]
       }
     },
-    "type": {
-      "type": "string",
-      "enum": [
+    "type" : {
+      "type" : "string",
+      "enum" : [
         "fb-bus",
         "fb-mqtt",
         "shelly",
@@ -35,54 +35,54 @@
       ]
     }
   },
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Entity uuid v4 identifier. This identifier is unique"
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
-    "type": {
-      "$ref": "#/definitions/type"
+    "type" : {
+      "$ref" : "#/definitions/type"
     },
-    "key": {
-      "type": "string",
-      "description": "Unique pub/sub identifier per each entity"
+    "key" : {
+      "type" : "string",
+      "description" : "Unique pub/sub identifier per each entity"
     },
-    "name": {
-      "type": "string"
+    "name" : {
+      "type" : "string"
     },
-    "enabled": {
-      "type": "boolean",
-      "default": false
+    "enabled" : {
+      "type" : "boolean",
+      "default" : false
     },
-    "owner": {
-      "$ref": "#/definitions/types/nullable_string",
-      "description": "Entity owner uuid v4 identifier"
+    "owner" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
-  "if": {
-    "properties": {
-      "type": {
-        "const": "fb-bus"
+  "if" : {
+    "properties" : {
+      "type" : {
+        "const" : "fb-bus"
       }
     }
   },
-  "then": {
-    "properties": {
-      "address": {
-        "$ref": "#/definitions/types/nullable_number",
-        "default": null
+  "then" : {
+    "properties" : {
+      "address" : {
+        "$ref" : "#/definitions/types/nullable_number",
+        "default" : null
       },
-      "serial_interface": {
-        "$ref": "#/definitions/types/nullable_string",
-        "default": null
+      "serial_interface" : {
+        "$ref" : "#/definitions/types/nullable_string",
+        "default" : null
       },
-      "baud_rate": {
-        "$ref": "#/definitions/types/nullable_number",
-        "default": null
+      "baud_rate" : {
+        "$ref" : "#/definitions/types/nullable_number",
+        "default" : null
       }
     },
-    "required": [
+    "required" : [
       "id",
       "type",
       "key",
@@ -94,34 +94,34 @@
       "owner"
     ]
   },
-  "else": {
-    "if": {
-      "properties": {
-        "type": {
-          "const": "fb-mqtt"
+  "else" : {
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "fb-mqtt"
         }
       }
     },
-    "then": {
-      "properties": {
-        "server": {
-          "$ref": "#/definitions/types/nullable_string",
-          "default": null
+    "then" : {
+      "properties" : {
+        "server" : {
+          "$ref" : "#/definitions/types/nullable_string",
+          "default" : null
         },
-        "port": {
-          "$ref": "#/definitions/types/nullable_number",
-          "default": null
+        "port" : {
+          "$ref" : "#/definitions/types/nullable_number",
+          "default" : null
         },
-        "secured_port": {
-          "$ref": "#/definitions/types/nullable_number",
-          "default": null
+        "secured_port" : {
+          "$ref" : "#/definitions/types/nullable_number",
+          "default" : null
         },
-        "username": {
-          "$ref": "#/definitions/types/nullable_string",
-          "default": null
+        "username" : {
+          "$ref" : "#/definitions/types/nullable_string",
+          "default" : null
         }
       },
-      "required": [
+      "required" : [
         "id",
         "type",
         "key",
@@ -134,8 +134,8 @@
         "owner"
       ]
     },
-    "else": {
-      "required": [
+    "else" : {
+      "required" : [
         "id",
         "type",
         "key",

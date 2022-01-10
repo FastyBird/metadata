@@ -31,10 +31,10 @@ class ConfigurationFieldType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-    public const FIELD_BOOLEAN = 'boolean';
-    public const FIELD_NUMBER = 'number';
-    public const FIELD_SELECT = 'select';
-    public const FIELD_TEXT = 'text';
+	public const FIELD_BOOLEAN = 'boolean';
+	public const FIELD_NUMBER = 'number';
+	public const FIELD_SELECT = 'select';
+	public const FIELD_TEXT = 'text';
 
 	/**
 	 * @return string

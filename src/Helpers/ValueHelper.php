@@ -33,7 +33,7 @@ final class ValueHelper
 	/**
 	 * @param Types\DataTypeType $dataType
 	 * @param bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|null $value
-	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null  $format
+	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null $format
 	 *
 	 * @return bool|float|int|string|DateTime|Types\ButtonPayloadType|Types\SwitchPayloadType|null
 	 */

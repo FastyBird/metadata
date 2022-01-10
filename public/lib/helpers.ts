@@ -73,7 +73,7 @@ export const normalizeValue = (
             return String(value).toLowerCase() === item
           })
 
-          return filtered.length === 1 ? (Array.isArray(filtered[0]) ? filtered[0][0] : filtered[0]) : null
+        return filtered.length === 1 ? (Array.isArray(filtered[0]) ? filtered[0][0] : filtered[0]) : null
       }
 
       return null
@@ -85,7 +85,7 @@ export const normalizeValue = (
       return parse(String(value), 'HH:mm:ssxxx', new Date())
 
     case DataType.DATETIME:
-      return parse(String(value), "yyyy-MM-DD'T'HH:mm:ssxxx", new Date())
+      return parse(String(value), 'yyyy-MM-DD\'T\'HH:mm:ssxxx', new Date())
 
     case DataType.COLOR:
       break

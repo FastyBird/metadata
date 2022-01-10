@@ -12,19 +12,19 @@
           }
         ]
       },
-      "string_number_boolean_null": {
-        "oneOf": [
+      "string_number_boolean_null" : {
+        "oneOf" : [
           {
-            "type": "string"
+            "type" : "string"
           },
           {
-            "type": "number"
+            "type" : "number"
           },
           {
-            "type": "boolean"
+            "type" : "boolean"
           },
           {
-            "type": "null"
+            "type" : "null"
           }
         ]
       }
@@ -116,16 +116,16 @@
           "data_type" : {
             "$ref" : "#/definitions/register_data_type"
           },
-          "actual_value": {
-            "$ref": "#/definitions/types/string_number_boolean_null",
+          "actual_value" : {
+            "$ref" : "#/definitions/types/string_number_boolean_null",
             "default" : null
           },
-          "expected_value": {
-            "$ref": "#/definitions/types/string_number_boolean_null",
+          "expected_value" : {
+            "$ref" : "#/definitions/types/string_number_boolean_null",
             "default" : null
           },
-          "pending": {
-            "type": "boolean",
+          "pending" : {
+            "type" : "boolean",
             "default" : false
           }
         },

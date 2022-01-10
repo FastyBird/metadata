@@ -22,7 +22,9 @@
 
 ## What is FastyBird metadata library?
 
-This is library for [FastyBird](https://www.fastybird.com) ecosystem which is implementing [json schemas](https://json-schema.org) data validation helpers and is central place for application constants.
+This is library for [FastyBird](https://www.fastybird.com) ecosystem which is
+implementing [json schemas](https://json-schema.org) data validation helpers and is central place for application
+constants.
 
 ## Installation
 
@@ -55,4 +57,5 @@ pip install fastybird-metadata
 If you want to place your module here, feel free to create pull request with your updates.
 
 ***
-Homepage [https://www.fastybird.com](https://www.fastybird.com) and repository [https://github.com/FastyBird/metadata](https://github.com/FastyBird/metadata).
+Homepage [https://www.fastybird.com](https://www.fastybird.com) and
+repository [https://github.com/FastyBird/metadata](https://github.com/FastyBird/metadata).

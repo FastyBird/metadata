@@ -1,9 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "method": {
-      "type": "string",
-      "enum": [
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "method" : {
+      "type" : "string",
+      "enum" : [
         "get",
         "post",
         "patch",
@@ -11,11 +11,11 @@
       ]
     }
   },
-  "type": "object",
+  "type" : "object",
   "properties" : {
-    "modules": {
-      "type": "object",
-      "additionalProperties": {
+    "modules" : {
+      "type" : "object",
+      "additionalProperties" : {
         "type" : "array",
         "uniqueItems" : true,
         "items" : {
@@ -73,9 +73,9 @@
         }
       }
     },
-    "plugins": {
-      "type": "object",
-      "additionalProperties": {
+    "plugins" : {
+      "type" : "object",
+      "additionalProperties" : {
         "type" : "array",
         "uniqueItems" : true,
         "items" : {
@@ -89,9 +89,9 @@
         }
       }
     },
-    "connectors": {
-      "type": "object",
-      "additionalProperties": {
+    "connectors" : {
+      "type" : "object",
+      "additionalProperties" : {
         "type" : "array",
         "uniqueItems" : true,
         "items" : {
@@ -106,7 +106,7 @@
       }
     }
   },
-  "required": [
+  "required" : [
     "modules",
     "plugins",
     "connectors"
