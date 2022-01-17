@@ -150,7 +150,13 @@ final class ValueHelper
 					return strtolower(strval($value)) === $item;
 				});
 
-				return count($filtered) === 1 ? (is_array($filtered[0]) ? $filtered[0][0] : $filtered[0]) : null;
+				if (count($filtered) === 1) {
+					$filtered = array_pop($filtered);
+
+					return (is_array($filtered) ? $filtered[0] : $filtered);
+				}
+
+				return null;
 			}
 
 			return null;
