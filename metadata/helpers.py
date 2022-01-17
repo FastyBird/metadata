@@ -158,7 +158,7 @@ def normalize_value(  # pylint: disable=too-many-return-statements,too-many-bran
             return value
 
         try:
-            return datetime.strptime(str(value), r"%Y-%m-%d\T%H:%M:%S%z")
+            return datetime.strptime(str(value), r"%Y-%m-%dT%H:%M:%S%z")
 
         except ValueError:
             return None
