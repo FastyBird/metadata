@@ -153,7 +153,7 @@ final class ValueHelper
 				if (count($filtered) === 1) {
 					$filtered = array_pop($filtered);
 
-					return (is_array($filtered) ? $filtered[0] : $filtered);
+					return is_array($filtered) ? $filtered[0] : $filtered;
 				}
 
 				return null;
