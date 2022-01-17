@@ -18,4 +18,4 @@
 Metadata loader and validator and sets of useful enums
 """
 
-__version__ = "0.25.1"
+__version__ = "0.26.0"
