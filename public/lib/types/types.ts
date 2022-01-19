@@ -1,3 +1,10 @@
+export enum ModulePrefix {
+  MODULE_ACCOUNTS = 'accounts-module',
+  MODULE_DEVICES = 'devices-module',
+  MODULE_TRIGGERS = 'triggers-module',
+  MODULE_UI = 'ui-module',
+}
+
 export enum ModuleOrigin {
   NOT_SPECIFIED = '*',
   MODULE_ACCOUNTS = 'com.fastybird.accounts-module',
@@ -7,26 +14,22 @@ export enum ModuleOrigin {
   MODULE_WEB_UI = 'com.fastybird.web-ui-module',
 }
 
-export enum ModulePrefix {
-  MODULE_ACCOUNTS = 'accounts-module',
-  MODULE_DEVICES = 'devices-module',
-  MODULE_TRIGGERS = 'triggers-module',
-  MODULE_UI = 'ui-module',
-}
-
 export enum PluginOrigin {
   NOT_SPECIFIED = '*',
-  FB_BUS_CONNECTOR_PLUGIN = 'com.fastybird.fb-bus-connector-plugin',
-  FB_MQTT_CONNECTOR_PLUGIN = 'com.fastybird.fb-mqtt-connector-plugin',
-  SHELLY_CONNECTOR_PLUGIN = 'com.fastybird.shelly-connector-plugin',
-  TUYA_CONNECTOR_PLUGIN = 'com.fastybird.tuya-connector-plugin',
-  SONOFF_CONNECTOR_PLUGIN = 'com.fastybird.sonoff-connector-plugin',
-  MODBUS_CONNECTOR_PLUGIN = 'com.fastybird.modbus-connector-plugin',
-  WS_EXCHANGE_PLUGIN = 'com.fastybird.ws-exchange-plugin',
-  REDISDB_EXCHANGE_PLUGIN = 'com.fastybird.redisdb-exchange-plugin',
-  RABBITMQ_EXCHANGE_PLUGIN = 'com.fastybird.rabbitmq-exchange-plugin',
-  REDISDB_STORAGE_PLUGIN = 'com.fastybird.redisdb-storage-plugin',
   COUCHDB_STORAGE_PLUGIN = 'com.fastybird.couchdb-storage-plugin',
+  RABBITMQ_EXCHANGE_PLUGIN = 'com.fastybird.rabbitmq-exchange-plugin',
+  REDISDB_EXCHANGE_PLUGIN = 'com.fastybird.redisdb-exchange-plugin',
+  REDISDB_STORAGE_PLUGIN = 'com.fastybird.redisdb-storage-plugin',
+}
+
+export enum ConnectorOrigin {
+  NOT_SPECIFIED = '*',
+  FB_BUS_CONNECTOR = 'com.fastybird.fb-bus-connector',
+  FB_MQTT_CONNECTOR = 'com.fastybird.fb-mqtt-connector',
+  SHELLY_CONNECTOR = 'com.fastybird.shelly-connector',
+  TUYA_CONNECTOR = 'com.fastybird.tuya-connector',
+  SONOFF_CONNECTOR = 'com.fastybird.sonoff-connector',
+  MODBUS_CONNECTOR = 'com.fastybird.modbus-connector',
 }
 
 export enum DataType {

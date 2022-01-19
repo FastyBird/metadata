@@ -33,7 +33,7 @@ constants.
 The best way to install **fastybird/metadata** is using [Composer](http://getcomposer.org/):
 
 ```sh
-composer require fastybird/fb_metadata
+composer require fastybird/metadata
 ```
 
 ### JS based project:
@@ -41,7 +41,7 @@ composer require fastybird/fb_metadata
 The best way to install **@fastybird/metadata** is using [Yarn](https://yarnpkg.com/):
 
 ```sh
-yarn add @fastybird/fb_metadata
+yarn add @fastybird/metadata
 ```
 
 ### Python based project:
@@ -49,7 +49,7 @@ yarn add @fastybird/fb_metadata
 The best way to install **fastybird-metadata** is using [pip](https://pip.pypa.io/):
 
 ```sh
-pip install fastybird-fb_metadata
+pip install fastybird-metadata
 ```
 
 ## Updating metadata

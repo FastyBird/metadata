@@ -15,7 +15,7 @@
 #     limitations under the License.
 
 """
-JSON schema & fb_metadata loaders
+JSON schema & metadata loaders
 """
 
 # Python base dependencies
@@ -69,7 +69,7 @@ def load_schema_by_routing_key(routing_key: RoutingKey) -> str:
 
 
 def load_metadata() -> Dict[str, Any]:
-    """Load fb_metadata"""
+    """Load metadata"""
     schema_content = get_data_file_content("resources/schemas/application.json")
 
     if schema_content is None:

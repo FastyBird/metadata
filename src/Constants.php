@@ -42,19 +42,17 @@ final class Constants
 	public const MODULE_UI_ORIGIN = 'com.fastybird.ui-module';
 	public const MODULE_WEB_UI_ORIGIN = 'com.fastybird.web-ui-module';
 
-	public const PLUGIN_CONNECTOR_FB_BUS = 'com.fastybird.fb-bus-connector-plugin';
-	public const PLUGIN_CONNECTOR_FB_MQTT = 'com.fastybird.fb-mqtt-connector-plugin';
-	public const PLUGIN_CONNECTOR_SHELLY = 'com.fastybird.shelly-connector-plugin';
-	public const PLUGIN_CONNECTOR_TUYA = 'com.fastybird.tuya-connector-plugin';
-	public const PLUGIN_CONNECTOR_SONOFF = 'com.fastybird.sonoff-connector-plugin';
-	public const PLUGIN_CONNECTOR_MODBUS = 'com.fastybird.modbus-connector-plugin';
+	public const CONNECTOR_FB_BUS = 'com.fastybird.fb-bus-connector';
+	public const CONNECTOR_FB_MQTT = 'com.fastybird.fb-mqtt-connector';
+	public const CONNECTOR_SHELLY = 'com.fastybird.shelly-connector';
+	public const CONNECTOR_TUYA = 'com.fastybird.tuya-connector';
+	public const CONNECTOR_SONOFF = 'com.fastybird.sonoff-connector';
+	public const CONNECTOR_MODBUS = 'com.fastybird.modbus-connector';
 
-	public const PLUGIN_EXCHANGE_WS = 'com.fastybird.ws-exchange-plugin';
-	public const PLUGIN_EXCHANGE_REDISDB = 'com.fastybird.redisdb-exchange-plugin';
-	public const PLUGIN_EXCHANGE_RABBITMQ = 'com.fastybird.rabbitmq-exchange-plugin';
-
-	public const PLUGIN_STORAGE_REDISDB = 'com.fastybird.redisdb-storage-plugin';
 	public const PLUGIN_STORAGE_COUCHDB = 'com.fastybird.couchdb-storage-plugin';
+	public const PLUGIN_EXCHANGE_RABBITMQ = 'com.fastybird.rabbitmq-exchange-plugin';
+	public const PLUGIN_EXCHANGE_REDISDB = 'com.fastybird.redisdb-exchange-plugin';
+	public const PLUGIN_STORAGE_REDISDB = 'com.fastybird.redisdb-storage-plugin';
 
 	/**
 	 * Modules prefixes

@@ -26,6 +26,23 @@ from fb_metadata.enum import ExtendedEnum
 
 
 @unique
+class ModulePrefix(ExtendedEnum):
+    """
+    Module prefix
+
+    @package        FastyBird:Metadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    ACCOUNTS_MODULE: str = "accounts-module"
+    DEVICES_MODULE: str = "devices-module"
+    TRIGGERS_MODULE: str = "triggers-module"
+    UI_MODULE: str = "ui-module"
+
+
+@unique
 class ModuleOrigin(ExtendedEnum):
     """
     Module origin
@@ -45,23 +62,6 @@ class ModuleOrigin(ExtendedEnum):
 
 
 @unique
-class ModulePrefix(ExtendedEnum):
-    """
-    Module prefix
-
-    @package        FastyBird:Metadata!
-    @module         types
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    ACCOUNTS_MODULE: str = "accounts-module"
-    DEVICES_MODULE: str = "devices-module"
-    TRIGGERS_MODULE: str = "triggers-module"
-    UI_MODULE: str = "ui-module"
-
-
-@unique
 class PluginOrigin(ExtendedEnum):
     """
     Plugin origin
@@ -74,20 +74,31 @@ class PluginOrigin(ExtendedEnum):
 
     NOT_SPECIFIED: str = "*"
 
-    FB_BUS_CONNECTOR_PLUGIN: str = "com.fastybird.fb-bus-connector-plugin"
-    FB_MQTT_CONNECTOR_PLUGIN: str = "com.fastybird.fb-mqtt-connector-plugin"
-    SHELLY_CONNECTOR_PLUGIN: str = "com.fastybird.shelly-connector-plugin"
-    TUYA_CONNECTOR_PLUGIN: str = "com.fastybird.tuya-connector-plugin"
-    SONOFF_CONNECTOR_PLUGIN: str = "com.fastybird.sonoff-connector-plugin"
-    MODBUS_CONNECTOR_PLUGIN: str = "com.fastybird.modbus-connector-plugin"
-
-    WS_EXCHANGE_PLUGIN: str = "com.fastybird.ws-exchange-plugin"
-
+    COUCHDB_STORAGE_PLUGIN: str = "com.fastybird.couchdb-storage-plugin"
     REDISDB_EXCHANGE_PLUGIN: str = "com.fastybird.redisdb-exchange-plugin"
+    REDISDB_STORAGE_PLUGIN: str = "com.fastybird.redisdb-storage-plugin"
     RABBITMQ_EXCHANGE_PLUGIN: str = "com.fastybird.rabbitmq-exchange-plugin"
 
-    REDISDB_STORAGE_PLUGIN: str = "com.fastybird.redisdb-storage-plugin"
-    COUCHDB_STORAGE_PLUGIN: str = "com.fastybird.couchdb-storage-plugin"
+
+@unique
+class ConnectorOrigin(ExtendedEnum):
+    """
+    Plugin origin
+
+    @package        FastyBird:Metadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    NOT_SPECIFIED: str = "*"
+
+    FB_BUS_CONNECTOR: str = "com.fastybird.fb-bus-connector"
+    FB_MQTT_CONNECTOR: str = "com.fastybird.fb-mqtt-connector"
+    SHELLY_CONNECTOR: str = "com.fastybird.shelly-connector"
+    TUYA_CONNECTOR: str = "com.fastybird.tuya-connector"
+    SONOFF_CONNECTOR: str = "com.fastybird.sonoff-connector"
+    MODBUS_CONNECTOR: str = "com.fastybird.modbus-connector"
 
 
 @unique
