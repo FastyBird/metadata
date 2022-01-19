@@ -27,7 +27,7 @@ from fastjsonschema import JsonSchemaDefinitionException, JsonSchemaValueExcepti
 from fastjsonschema import compile as json_compile
 
 # Library libs
-from fastybird.metadata.exceptions import (
+from fb_metadata.exceptions import (
     InvalidDataException,
     LogicException,
     MalformedInputException,

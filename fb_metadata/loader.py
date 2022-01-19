@@ -15,7 +15,7 @@
 #     limitations under the License.
 
 """
-JSON schema & metadata loaders
+JSON schema & fb_metadata loaders
 """
 
 # Python base dependencies
@@ -27,7 +27,7 @@ from typing import Any, Dict, Optional
 from pkg_resources import resource_string
 
 # Library libs
-from fastybird.metadata.exceptions import (
+from fb_metadata.exceptions import (
     FileNotFoundException,
     InvalidArgumentException,
     InvalidDataException,
@@ -35,8 +35,8 @@ from fastybird.metadata.exceptions import (
     LogicException,
     MalformedInputException,
 )
-from fastybird.metadata.routing import RoutingKey
-from fastybird.metadata.validator import validate
+from fb_metadata.routing import RoutingKey
+from fb_metadata.validator import validate
 
 
 def load_schema_by_namespace(namespace: str, schema_file: str) -> str:
@@ -69,7 +69,7 @@ def load_schema_by_routing_key(routing_key: RoutingKey) -> str:
 
 
 def load_metadata() -> Dict[str, Any]:
-    """Load metadata"""
+    """Load fb_metadata"""
     schema_content = get_data_file_content("resources/schemas/application.json")
 
     if schema_content is None:

@@ -22,7 +22,7 @@ Sets of enums for Devices Module
 from enum import unique
 
 # Library libs
-from fastybird.metadata.enum import ExtendedEnum
+from fb_metadata.enum import ExtendedEnum
 
 
 @unique

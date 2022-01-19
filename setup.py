@@ -44,7 +44,7 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-VERSION: str = find_version("fastybird/metadata", "__init__.py")
+VERSION: str = find_version("fb_metadata", "__init__.py")
 
 
 setup(
@@ -60,7 +60,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.7",
     packages=find_packages(),
-    package_data={"fastybird.metadata": ["py.typed"]},
+    package_data={"fb_metadata": ["py.typed"]},
     install_requires=[
         "fastjsonschema",
         "fastnumbers",
