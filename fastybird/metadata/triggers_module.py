@@ -22,7 +22,7 @@ Sets of enums for Triggers Module
 from enum import unique
 
 # Library libs
-from metadata.enum import ExtendedEnum
+from fastybird.metadata.enum import ExtendedEnum
 
 
 @unique

@@ -16,8 +16,8 @@
 import unittest
 
 # Library libs
-from metadata.loader import load_schema_by_routing_key
-from metadata.routing import RoutingKey
+from fastybird.metadata.loader import load_schema_by_routing_key
+from fastybird.metadata.routing import RoutingKey
 
 
 class TestLoader(unittest.TestCase):

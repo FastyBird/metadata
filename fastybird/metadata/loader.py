@@ -27,7 +27,7 @@ from typing import Any, Dict, Optional
 from pkg_resources import resource_string
 
 # Library libs
-from metadata.exceptions import (
+from fastybird.metadata.exceptions import (
     FileNotFoundException,
     InvalidArgumentException,
     InvalidDataException,
@@ -35,8 +35,8 @@ from metadata.exceptions import (
     LogicException,
     MalformedInputException,
 )
-from metadata.routing import RoutingKey
-from metadata.validator import validate
+from fastybird.metadata.routing import RoutingKey
+from fastybird.metadata.validator import validate
 
 
 def load_schema_by_namespace(namespace: str, schema_file: str) -> str:

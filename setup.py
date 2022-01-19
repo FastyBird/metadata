@@ -14,7 +14,7 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-# Library dependencies
+# Python base dependencies
 import codecs
 import re
 from setuptools import setup, find_packages
@@ -44,7 +44,7 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-VERSION: str = find_version("metadata", "__init__.py")
+VERSION: str = find_version("fastybird/metadata", "__init__.py")
 
 
 setup(
@@ -60,7 +60,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.7",
     packages=find_packages(),
-    package_data={"metadata": ["py.typed"]},
+    package_data={"fastybird.metadata": ["py.typed"]},
     install_requires=[
         "fastjsonschema",
         "fastnumbers",
