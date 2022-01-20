@@ -22,17 +22,6 @@
           }
         ]
       }
-    },
-    "type" : {
-      "type" : "string",
-      "enum" : [
-        "fb-bus",
-        "fb-mqtt",
-        "shelly",
-        "tuya",
-        "sonoff",
-        "modbus"
-      ]
     }
   },
   "type" : "object",
@@ -42,7 +31,8 @@
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
     "type" : {
-      "$ref" : "#/definitions/type"
+      "type" : "string",
+      "description" : "Connector type identifier"
     },
     "key" : {
       "type" : "string",

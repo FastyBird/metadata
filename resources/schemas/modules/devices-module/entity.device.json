@@ -12,15 +12,6 @@
           }
         ]
       }
-    },
-    "type" : {
-      "type" : "string",
-      "enum" : [
-        "network",
-        "local",
-        "virtual",
-        "homekit"
-      ]
     }
   },
   "type" : "object",
@@ -30,7 +21,8 @@
       "description" : "Entity uuid v4 identifier. This identifier is unique"
     },
     "type" : {
-      "$ref" : "#/definitions/type"
+      "type" : "string",
+      "description" : "Device type, related to device connector"
     },
     "identifier" : {
       "type" : "string",
