@@ -19,11 +19,11 @@ Extended enum type
 """
 
 # Python base dependencies
-from enum import unique
+from enum import Enum, unique
 
 
 @unique
-class ExtendedEnum:
+class ExtendedEnum(Enum):
     """
     Extended enum data type
 

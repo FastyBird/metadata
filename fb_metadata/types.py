@@ -19,7 +19,7 @@ Sets of universal enums for application
 """
 
 # Python base dependencies
-from enum import unique, Enum
+from enum import Enum, unique
 
 # Library libs
 from fb_metadata.enum import ExtendedEnum
