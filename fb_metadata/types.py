@@ -43,8 +43,8 @@ class ModulePrefix(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -67,8 +67,8 @@ class ModuleOrigin(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -91,8 +91,8 @@ class PluginOrigin(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -117,8 +117,8 @@ class ConnectorOrigin(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -151,8 +151,8 @@ class DataType(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -172,8 +172,8 @@ class SwitchPayload(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -197,8 +197,8 @@ class ButtonPayload(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -218,8 +218,8 @@ class ControlName(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -239,8 +239,8 @@ class PropertyAction(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -258,5 +258,5 @@ class ControlAction(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member

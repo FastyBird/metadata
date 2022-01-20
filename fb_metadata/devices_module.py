@@ -41,8 +41,8 @@ class PropertyType(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -79,8 +79,8 @@ class DeviceConnectionState(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -101,8 +101,8 @@ class ConfigurationField(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -120,8 +120,8 @@ class ConfigurationBooleanFieldAttribute(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -142,8 +142,8 @@ class ConfigurationNumberFieldAttribute(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -162,8 +162,8 @@ class ConfigurationSelectFieldAttribute(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -181,8 +181,8 @@ class ConfigurationTextFieldAttribute(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -231,8 +231,8 @@ class DeviceModel(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -254,8 +254,8 @@ class FirmwareManufacturer(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -279,8 +279,8 @@ class HardwareManufacturer(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
 
 
 @unique
@@ -308,5 +308,5 @@ class DevicePropertyName(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member

@@ -169,5 +169,5 @@ class RoutingKey(ExtendedEnum, Enum):
 
     # -----------------------------------------------------------------------------
 
-    def __hash__(self):
-        return hash(self._name_)
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
