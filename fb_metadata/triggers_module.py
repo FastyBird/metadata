@@ -39,6 +39,11 @@ class TriggerType(ExtendedEnum, Enum):
     MANUAL: str = "manual"
     AUTOMATIC: str = "automatic"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ActionType(ExtendedEnum, Enum):
@@ -53,6 +58,11 @@ class ActionType(ExtendedEnum, Enum):
 
     DEVICE_PROPERTY: str = "device-property"
     CHANNEL_PROPERTY: str = "channel-property"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -71,6 +81,11 @@ class ConditionType(ExtendedEnum, Enum):
     TIME: str = "time"
     DATE: str = "date"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class NotificationType(ExtendedEnum, Enum):
@@ -85,6 +100,11 @@ class NotificationType(ExtendedEnum, Enum):
 
     EMAIL: str = "email"
     SMS: str = "sms"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -101,3 +121,8 @@ class ConditionOperator(ExtendedEnum, Enum):
     EQUAL: str = "eq"
     ABOVE: str = "above"
     BELOW: str = "below"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)

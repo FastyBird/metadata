@@ -137,8 +137,3 @@ export enum TriggersModuleRoutes {
 
 export enum UiModuleRoutes {
 }
-
-export enum FbBusConnectorRoutes {
-  DEVICE_REPORTED = 'fb.exchange.connector.reported.device',
-  DEVICE_CREATED = 'fb.exchange.connector.created.device',
-}

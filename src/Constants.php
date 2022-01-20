@@ -214,17 +214,6 @@ final class Constants
 	public const MESSAGE_BUS_TRIGGERS_CONDITIONS_UPDATED_ENTITY_ROUTING_KEY = 'fb.exchange.module.entity.updated.trigger.condition';
 	public const MESSAGE_BUS_TRIGGERS_CONDITIONS_DELETED_ENTITY_ROUTING_KEY = 'fb.exchange.module.entity.deleted.trigger.condition';
 
-	/**
-	 * CONNECTORS
-	 */
-
-	/**
-	 * FB-Bus connector
-	 */
-
-	public const MESSAGE_BUS_FB_BUS_DEVICE_REPORTED_ROUTING_KEY = 'fb.exchange.connector.reported.device';
-	public const MESSAGE_BUS_FB_BUS_DEVICE_CREATED_ROUTING_KEY = 'fb.exchange.connector.created.device';
-
 	/*
 	 * JSON schemas mapping
 	 */

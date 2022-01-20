@@ -41,6 +41,11 @@ class ModulePrefix(ExtendedEnum, Enum):
     TRIGGERS_MODULE: str = "triggers-module"
     UI_MODULE: str = "ui-module"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ModuleOrigin(ExtendedEnum, Enum):
@@ -60,6 +65,11 @@ class ModuleOrigin(ExtendedEnum, Enum):
     UI_MODULE: str = "com.fastybird.ui-module"
     WEB_UI_MODULE: str = "com.fastybird.web-ui-module"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class PluginOrigin(ExtendedEnum, Enum):
@@ -78,6 +88,11 @@ class PluginOrigin(ExtendedEnum, Enum):
     REDISDB_EXCHANGE_PLUGIN: str = "com.fastybird.redisdb-exchange-plugin"
     REDISDB_STORAGE_PLUGIN: str = "com.fastybird.redisdb-storage-plugin"
     RABBITMQ_EXCHANGE_PLUGIN: str = "com.fastybird.rabbitmq-exchange-plugin"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -99,6 +114,11 @@ class ConnectorOrigin(ExtendedEnum, Enum):
     TUYA_CONNECTOR: str = "com.fastybird.tuya-connector"
     SONOFF_CONNECTOR: str = "com.fastybird.sonoff-connector"
     MODBUS_CONNECTOR: str = "com.fastybird.modbus-connector"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -129,6 +149,11 @@ class DataType(ExtendedEnum, Enum):
     BUTTON: str = "button"
     SWITCH: str = "switch"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class SwitchPayload(ExtendedEnum, Enum):
@@ -144,6 +169,11 @@ class SwitchPayload(ExtendedEnum, Enum):
     ON: str = "switch-on"
     OFF: str = "switch-off"
     TOGGLE: str = "switch-toggle"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -165,6 +195,11 @@ class ButtonPayload(ExtendedEnum, Enum):
     LONG_CLICKED: str = "btn-long-clicked"
     EXTRA_LONG_CLICKED: str = "btn-extra-long-clicked"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ControlName(ExtendedEnum, Enum):
@@ -180,6 +215,11 @@ class ControlName(ExtendedEnum, Enum):
     CONFIGURE: str = "configure"
     RESET: str = "reset"
     REBOOT: str = "reboot"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -197,6 +237,11 @@ class PropertyAction(ExtendedEnum, Enum):
     GET: str = "get"
     REPORT: str = "report"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ControlAction(ExtendedEnum, Enum):
@@ -210,3 +255,8 @@ class ControlAction(ExtendedEnum, Enum):
     """
 
     SET: str = "set"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)

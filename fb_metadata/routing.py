@@ -167,8 +167,7 @@ class RoutingKey(ExtendedEnum, Enum):
     TRIGGERS_CONDITIONS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger.condition"
     TRIGGERS_CONDITIONS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger.condition"
 
-    # CONNECTORS
+    # -----------------------------------------------------------------------------
 
-    # FB-Bus connector
-    FB_BUS_DEVICE_REPORTED: str = "fb.exchange.connector.reported.device"
-    FB_BUS_DEVICE_CREATED: str = "fb.exchange.connector.created.device"
+    def __hash__(self):
+        return hash(self._name_)

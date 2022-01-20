@@ -42,6 +42,11 @@ class AccountState(ExtendedEnum, Enum):
     NOT_ACTIVATED: str = "notActivated"
     APPROVAL_WAITING: str = "approvalWaiting"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class IdentityState(ExtendedEnum, Enum):
@@ -58,3 +63,8 @@ class IdentityState(ExtendedEnum, Enum):
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
     INVALID: str = "invalid"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)

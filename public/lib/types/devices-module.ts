@@ -1,21 +1,5 @@
 import { ButtonPayload, DataType, SwitchPayload } from '@/lib/types/types'
 
-export enum ConnectorType {
-  FB_BUS = 'fb-bus',
-  FB_MQTT = 'fb-mqtt',
-  SHELLY = 'shelly',
-  TUYA = 'tuya',
-  SONOFF = 'sonoff',
-  MODBUS = 'modbus',
-}
-
-export enum DeviceType {
-  LOCAL = 'local',
-  NETWORK = 'network',
-  VIRTUAL = 'virtual',
-  HOMEKIT = 'homekit',
-}
-
 export enum PropertyType {
   DYNAMIC = 'dynamic',
   STATIC = 'static',
@@ -131,7 +115,7 @@ export enum DevicePropertyName {
 
 export interface ConnectorEntity {
   id: string
-  type: ConnectorType
+  type: string
   key: string
   name: string
   enabled: boolean
@@ -144,7 +128,7 @@ export interface ConnectorEntity {
   username?: string | null
   owner: string | null
 
-  [k: string]: string | number | boolean | ConnectorType | null | undefined
+  [k: string]: string | number | boolean | null | undefined
 }
 
 export interface ConnectorControlEntity {
@@ -158,7 +142,7 @@ export interface ConnectorControlEntity {
 
 export interface DeviceEntity {
   id: string
-  type: DeviceType
+  type: string
   identifier: string
   key: string
   name: string | null
@@ -173,7 +157,7 @@ export interface DeviceEntity {
   connector: string
   owner: string | null
 
-  [k: string]: string | boolean | DeviceType | HardwareManufacturer | DeviceModel | FirmwareManufacturer | null | undefined
+  [k: string]: string | boolean | HardwareManufacturer | DeviceModel | FirmwareManufacturer | null | undefined
 }
 
 export interface DevicePropertyEntity {

@@ -26,42 +26,6 @@ from fb_metadata.enum import ExtendedEnum
 
 
 @unique
-class ConnectorType(ExtendedEnum, Enum):
-    """
-    Connector type
-
-    @package        FastyBird:Metadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    FB_BUS: str = "fb-bus"
-    FB_MQTT: str = "fb-mqtt"
-    SHELLY: str = "shelly"
-    TUYA: str = "tuya"
-    SONOFF: str = "sonoff"
-    MODBUS: str = "modbus"
-
-
-@unique
-class DeviceType(ExtendedEnum, Enum):
-    """
-    Device type
-
-    @package        FastyBird:Metadata!
-    @module         devices_module
-
-    @author         Adam Kadlec <adam.kadlec@fastybird.com>
-    """
-
-    LOCAL: str = "local"
-    NETWORK: str = "network"
-    VIRTUAL: str = "virtual"
-    HOMEKIT: str = "homekit"
-
-
-@unique
 class PropertyType(ExtendedEnum, Enum):
     """
     Property entity type
@@ -74,6 +38,11 @@ class PropertyType(ExtendedEnum, Enum):
 
     DYNAMIC: str = "dynamic"
     STATIC: str = "static"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -108,6 +77,11 @@ class DeviceConnectionState(ExtendedEnum, Enum):
     # Device is in unknown state
     UNKNOWN: str = "unknown"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ConfigurationField(ExtendedEnum, Enum):
@@ -125,6 +99,11 @@ class ConfigurationField(ExtendedEnum, Enum):
     SELECT: str = "select"
     TEXT: str = "text"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ConfigurationBooleanFieldAttribute(ExtendedEnum, Enum):
@@ -138,6 +117,11 @@ class ConfigurationBooleanFieldAttribute(ExtendedEnum, Enum):
     """
 
     DEFAULT: str = "default"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -156,6 +140,11 @@ class ConfigurationNumberFieldAttribute(ExtendedEnum, Enum):
     STEP: str = "step"
     DEFAULT: str = "default"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ConfigurationSelectFieldAttribute(ExtendedEnum, Enum):
@@ -171,6 +160,11 @@ class ConfigurationSelectFieldAttribute(ExtendedEnum, Enum):
     VALUES: str = "values"
     DEFAULT: str = "default"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class ConfigurationTextFieldAttribute(ExtendedEnum, Enum):
@@ -184,6 +178,11 @@ class ConfigurationTextFieldAttribute(ExtendedEnum, Enum):
     """
 
     DEFAULT: str = "default"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -230,6 +229,11 @@ class DeviceModel(ExtendedEnum, Enum):
     FASTYBIRD_8CH_BUTTONS: str = "8ch_buttons"
     FASTYBIRD_16CH_BUTTONS: str = "16ch_buttons"
 
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
+
 
 @unique
 class FirmwareManufacturer(ExtendedEnum, Enum):
@@ -247,6 +251,11 @@ class FirmwareManufacturer(ExtendedEnum, Enum):
     SHELLY: str = "shelly"
     TUYA: str = "tuya"
     SONOFF: str = "sonoff"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -267,6 +276,11 @@ class HardwareManufacturer(ExtendedEnum, Enum):
     SHELLY: str = "shelly"
     TUYA: str = "tuya"
     SONOFF: str = "sonoff"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
 
 
 @unique
@@ -291,3 +305,8 @@ class DevicePropertyName(ExtendedEnum, Enum):
     IP_ADDRESS: str = "ip-address"
     STATUS_LED: str = "status-led"
     FREE_HEAP: str = "free-heap"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)

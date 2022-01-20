@@ -84,7 +84,7 @@ export enum ControlAction {
   SET = 'set',
 }
 
-export interface ConnectorControlData {
+export interface ConnectorControlAction {
   action: ControlAction
   control: string
   connector: string
@@ -97,7 +97,7 @@ export interface ConnectorControlData {
   [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
-export interface DeviceControlData {
+export interface DeviceControlAction {
   action: ControlAction
   control: string
   device: string
@@ -110,7 +110,7 @@ export interface DeviceControlData {
   [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
-export interface ChannelControlData {
+export interface ChannelControlAction {
   action: ControlAction
   control: string
   device: string
@@ -124,7 +124,7 @@ export interface ChannelControlData {
   [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
-export interface TriggerControlData {
+export interface TriggerControlAction {
   action: ControlAction
   control: string
   trigger: string
@@ -137,7 +137,7 @@ export interface TriggerControlData {
   [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
-export interface DevicePropertyData {
+export interface DevicePropertyAction {
   action: PropertyAction
   device: string
   property: string
@@ -148,7 +148,7 @@ export interface DevicePropertyData {
   [k: string]: string | number | boolean | PropertyAction | ButtonPayload | SwitchPayload | undefined
 }
 
-export interface ChannelPropertyData {
+export interface ChannelPropertyAction {
   action: PropertyAction
   device: string
   channel: string
