@@ -49,3 +49,8 @@ class ExtendedEnum(Enum):
     def __eq__(self, other: object) -> bool:
         """Compare two enums"""
         return str(self) == str(other)
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self):
+        return hash(self._name_)
