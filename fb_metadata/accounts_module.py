@@ -19,14 +19,14 @@ Sets of enums for Accounts Module
 """
 
 # Python base dependencies
-from enum import unique
+from enum import unique, Enum
 
 # Library libs
 from fb_metadata.enum import ExtendedEnum
 
 
 @unique
-class AccountState(ExtendedEnum):
+class AccountState(ExtendedEnum, Enum):
     """
     Account state type
 
@@ -44,7 +44,7 @@ class AccountState(ExtendedEnum):
 
 
 @unique
-class IdentityState(ExtendedEnum):
+class IdentityState(ExtendedEnum, Enum):
     """
     Account identity state type
 

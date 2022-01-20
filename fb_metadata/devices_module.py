@@ -19,14 +19,14 @@ Sets of enums for Devices Module
 """
 
 # Python base dependencies
-from enum import unique
+from enum import unique, Enum
 
 # Library libs
 from fb_metadata.enum import ExtendedEnum
 
 
 @unique
-class ConnectorType(ExtendedEnum):
+class ConnectorType(ExtendedEnum, Enum):
     """
     Connector type
 
@@ -45,7 +45,7 @@ class ConnectorType(ExtendedEnum):
 
 
 @unique
-class DeviceType(ExtendedEnum):
+class DeviceType(ExtendedEnum, Enum):
     """
     Device type
 
@@ -62,7 +62,7 @@ class DeviceType(ExtendedEnum):
 
 
 @unique
-class PropertyType(ExtendedEnum):
+class PropertyType(ExtendedEnum, Enum):
     """
     Property entity type
 
@@ -77,7 +77,7 @@ class PropertyType(ExtendedEnum):
 
 
 @unique
-class DeviceConnectionState(ExtendedEnum):
+class DeviceConnectionState(ExtendedEnum, Enum):
     """
     Device connection state
 
@@ -110,7 +110,7 @@ class DeviceConnectionState(ExtendedEnum):
 
 
 @unique
-class ConfigurationField(ExtendedEnum):
+class ConfigurationField(ExtendedEnum, Enum):
     """
     Configuration fields types
 
@@ -127,7 +127,7 @@ class ConfigurationField(ExtendedEnum):
 
 
 @unique
-class ConfigurationBooleanFieldAttribute(ExtendedEnum):
+class ConfigurationBooleanFieldAttribute(ExtendedEnum, Enum):
     """
     Configuration boolean field attributes
 
@@ -141,7 +141,7 @@ class ConfigurationBooleanFieldAttribute(ExtendedEnum):
 
 
 @unique
-class ConfigurationNumberFieldAttribute(ExtendedEnum):
+class ConfigurationNumberFieldAttribute(ExtendedEnum, Enum):
     """
     Configuration number field attributes
 
@@ -158,7 +158,7 @@ class ConfigurationNumberFieldAttribute(ExtendedEnum):
 
 
 @unique
-class ConfigurationSelectFieldAttribute(ExtendedEnum):
+class ConfigurationSelectFieldAttribute(ExtendedEnum, Enum):
     """
     Configuration select field attributes
 
@@ -173,7 +173,7 @@ class ConfigurationSelectFieldAttribute(ExtendedEnum):
 
 
 @unique
-class ConfigurationTextFieldAttribute(ExtendedEnum):
+class ConfigurationTextFieldAttribute(ExtendedEnum, Enum):
     """
     Configuration text field attributes
 
@@ -187,7 +187,7 @@ class ConfigurationTextFieldAttribute(ExtendedEnum):
 
 
 @unique
-class DeviceModel(ExtendedEnum):
+class DeviceModel(ExtendedEnum, Enum):
     """
     Device known models
 
@@ -232,7 +232,7 @@ class DeviceModel(ExtendedEnum):
 
 
 @unique
-class FirmwareManufacturer(ExtendedEnum):
+class FirmwareManufacturer(ExtendedEnum, Enum):
     """
     Device firmware manufacturer
 
@@ -250,7 +250,7 @@ class FirmwareManufacturer(ExtendedEnum):
 
 
 @unique
-class HardwareManufacturer(ExtendedEnum):
+class HardwareManufacturer(ExtendedEnum, Enum):
     """
     Device hardware manufacturer
 
@@ -270,7 +270,7 @@ class HardwareManufacturer(ExtendedEnum):
 
 
 @unique
-class DevicePropertyName(ExtendedEnum):
+class DevicePropertyName(ExtendedEnum, Enum):
     """
     Device known property name
 

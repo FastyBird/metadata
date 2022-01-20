@@ -19,14 +19,14 @@ Sets of enums for application data exchange routing
 """
 
 # Python base dependencies
-from enum import unique
+from enum import unique, Enum
 
 # Library libs
 from fb_metadata.enum import ExtendedEnum
 
 
 @unique
-class RoutingKey(ExtendedEnum):
+class RoutingKey(ExtendedEnum, Enum):
     """
     Data exchange routing key
 

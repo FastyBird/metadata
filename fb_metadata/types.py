@@ -19,14 +19,14 @@ Sets of universal enums for application
 """
 
 # Python base dependencies
-from enum import unique
+from enum import unique, Enum
 
 # Library libs
 from fb_metadata.enum import ExtendedEnum
 
 
 @unique
-class ModulePrefix(ExtendedEnum):
+class ModulePrefix(ExtendedEnum, Enum):
     """
     Module prefix
 
@@ -43,7 +43,7 @@ class ModulePrefix(ExtendedEnum):
 
 
 @unique
-class ModuleOrigin(ExtendedEnum):
+class ModuleOrigin(ExtendedEnum, Enum):
     """
     Module origin
 
@@ -62,7 +62,7 @@ class ModuleOrigin(ExtendedEnum):
 
 
 @unique
-class PluginOrigin(ExtendedEnum):
+class PluginOrigin(ExtendedEnum, Enum):
     """
     Plugin origin
 
@@ -81,7 +81,7 @@ class PluginOrigin(ExtendedEnum):
 
 
 @unique
-class ConnectorOrigin(ExtendedEnum):
+class ConnectorOrigin(ExtendedEnum, Enum):
     """
     Plugin origin
 
@@ -102,7 +102,7 @@ class ConnectorOrigin(ExtendedEnum):
 
 
 @unique
-class DataType(ExtendedEnum):
+class DataType(ExtendedEnum, Enum):
     """
     Record data type
 
@@ -131,7 +131,7 @@ class DataType(ExtendedEnum):
 
 
 @unique
-class SwitchPayload(ExtendedEnum):
+class SwitchPayload(ExtendedEnum, Enum):
     """
     Switch enum payload
 
@@ -147,7 +147,7 @@ class SwitchPayload(ExtendedEnum):
 
 
 @unique
-class ButtonPayload(ExtendedEnum):
+class ButtonPayload(ExtendedEnum, Enum):
     """
     Switch enum payload
 
@@ -167,7 +167,7 @@ class ButtonPayload(ExtendedEnum):
 
 
 @unique
-class ControlName(ExtendedEnum):
+class ControlName(ExtendedEnum, Enum):
     """
     Known control name
 
@@ -183,7 +183,7 @@ class ControlName(ExtendedEnum):
 
 
 @unique
-class PropertyAction(ExtendedEnum):
+class PropertyAction(ExtendedEnum, Enum):
     """
     Property data action
 
@@ -199,7 +199,7 @@ class PropertyAction(ExtendedEnum):
 
 
 @unique
-class ControlAction(ExtendedEnum):
+class ControlAction(ExtendedEnum, Enum):
     """
     Control data action
 

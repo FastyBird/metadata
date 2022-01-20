@@ -19,14 +19,14 @@ Sets of enums for Triggers Module
 """
 
 # Python base dependencies
-from enum import unique
+from enum import unique, Enum
 
 # Library libs
 from fb_metadata.enum import ExtendedEnum
 
 
 @unique
-class TriggerType(ExtendedEnum):
+class TriggerType(ExtendedEnum, Enum):
     """
     Trigger type
 
@@ -41,7 +41,7 @@ class TriggerType(ExtendedEnum):
 
 
 @unique
-class ActionType(ExtendedEnum):
+class ActionType(ExtendedEnum, Enum):
     """
     Trigger action type
 
@@ -56,7 +56,7 @@ class ActionType(ExtendedEnum):
 
 
 @unique
-class ConditionType(ExtendedEnum):
+class ConditionType(ExtendedEnum, Enum):
     """
     Trigger condition type
 
@@ -73,7 +73,7 @@ class ConditionType(ExtendedEnum):
 
 
 @unique
-class NotificationType(ExtendedEnum):
+class NotificationType(ExtendedEnum, Enum):
     """
     Trigger notification type
 
@@ -88,7 +88,7 @@ class NotificationType(ExtendedEnum):
 
 
 @unique
-class ConditionOperator(ExtendedEnum):
+class ConditionOperator(ExtendedEnum, Enum):
     """
     Condition operator
 
