@@ -148,6 +148,7 @@ class DataType(ExtendedEnum, Enum):
     COLOR: str = "color"
     BUTTON: str = "button"
     SWITCH: str = "switch"
+    UNKNOWN: str = "unknown"
 
     # -----------------------------------------------------------------------------
 

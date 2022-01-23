@@ -49,6 +49,7 @@ export enum DataType {
   COLOR = 'color',
   BUTTON = 'button',
   SWITCH = 'switch',
+  UNKNOWN = 'unknown',
 }
 
 export enum SwitchPayload {

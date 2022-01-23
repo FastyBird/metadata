@@ -47,6 +47,7 @@ class DataTypeType extends Consistence\Enum\Enum
 	public const DATA_TYPE_COLOR = 'color';
 	public const DATA_TYPE_BUTTON = 'button';
 	public const DATA_TYPE_SWITCH = 'switch';
+	public const DATA_TYPE_UNKNOWN = 'unknown';
 
 	/**
 	 * @return string
