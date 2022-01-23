@@ -56,4 +56,4 @@ python_tests:
 	python -m unittest
 
 python_coverage:
-	coverage run --source=fb_metadata -m unittest
+	coverage run --source=fastybird_metadata -m unittest

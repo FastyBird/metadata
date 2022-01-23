@@ -22,7 +22,7 @@ Sets of universal enums for application
 from enum import Enum, unique
 
 # Library libs
-from fb_metadata.enum import ExtendedEnum
+from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique

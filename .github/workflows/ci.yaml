@@ -501,7 +501,7 @@ jobs :
           python-version : ${{ matrix.python }}
 
       - name : "Move resources under into module"
-        run : "mv resources fb_metadata/resources"
+        run : "mv resources fastybird_metadata/resources"
 
       - name : "Extract version"
         uses : "battila7/get-version-action@v2"
@@ -571,7 +571,7 @@ jobs :
           python-version : ${{ matrix.python }}
 
       - name : "Move resources under into module"
-        run : "mv resources fb_metadata/resources"
+        run : "mv resources fastybird_metadata/resources"
 
       - name : "Install dependencies"
         run : |
@@ -601,7 +601,7 @@ jobs :
           python-version : ${{ matrix.python }}
 
       - name : "Move resources under into module"
-        run : "mv resources fb_metadata/resources"
+        run : "mv resources fastybird_metadata/resources"
 
       - name : "Install dependencies"
         run : |

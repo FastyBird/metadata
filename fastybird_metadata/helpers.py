@@ -26,7 +26,7 @@ from typing import List, Optional, Tuple, Union
 from fastnumbers import fast_float, fast_int
 
 # Library libs
-from fb_metadata.types import ButtonPayload, DataType, SwitchPayload
+from fastybird_metadata.types import ButtonPayload, DataType, SwitchPayload
 
 
 def filter_enum_format(

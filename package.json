@@ -1,6 +1,6 @@
 {
   "name" : "@fastybird/metadata",
-  "version" : "0.35.0",
+  "version" : "0.36.0",
   "description" : "FastyBird metadata reader & validator for modules, plugins & etc. used by FastyBird applications",
   "keywords" : [
     "fastybird",

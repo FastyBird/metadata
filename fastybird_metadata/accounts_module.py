@@ -22,7 +22,7 @@ Sets of enums for Accounts Module
 from enum import Enum, unique
 
 # Library libs
-from fb_metadata.enum import ExtendedEnum
+from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique

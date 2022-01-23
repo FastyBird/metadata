@@ -22,7 +22,7 @@ Sets of enums for application data exchange routing
 from enum import Enum, unique
 
 # Library libs
-from fb_metadata.enum import ExtendedEnum
+from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique
