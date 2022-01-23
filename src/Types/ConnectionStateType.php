@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * DeviceConnectionStateType.php
+ * ConnectionStateType.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -25,7 +25,7 @@ use Consistence;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-class DeviceConnectionStateType extends Consistence\Enum\Enum
+class ConnectionStateType extends Consistence\Enum\Enum
 {
 
 	/**

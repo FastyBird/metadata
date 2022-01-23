@@ -5,7 +5,7 @@ export enum PropertyType {
   STATIC = 'static',
 }
 
-export enum DeviceConnectionState {
+export enum ConnectionState {
   CONNECTED = 'connected',
   DISCONNECTED = 'disconnected',
   INIT = 'init',

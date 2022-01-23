@@ -46,7 +46,7 @@ class PropertyType(ExtendedEnum, Enum):
 
 
 @unique
-class DeviceConnectionState(ExtendedEnum, Enum):
+class ConnectionState(ExtendedEnum, Enum):
     """
     Device connection state
 
