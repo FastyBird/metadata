@@ -54,7 +54,7 @@ pip install fastybird-metadata
 
 ## Updating metadata
 
-If you want to place your module here, feel free to create pull request with your updates.
+If you want to place your module, plugin or connector here, feel free to create pull request with your updates.
 
 ***
 Homepage [https://www.fastybird.com](https://www.fastybird.com) and
