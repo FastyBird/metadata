@@ -41,10 +41,8 @@ class RoutingKey(ExtendedEnum, Enum):
     CONNECTOR_ACTION: str = "fb.exchange.action.connector"
     DEVICE_ACTION: str = "fb.exchange.action.device"
     DEVICE_PROPERTY_ACTION: str = "fb.exchange.action.device.property"
-    DEVICE_CONFIGURATION_ACTION: str = "fb.exchange.action.device.configuration"
     CHANNEL_ACTION: str = "fb.exchange.action.channel"
     CHANNEL_PROPERTY_ACTION: str = "fb.exchange.action.channel.property"
-    CHANNEL_CONFIGURATION_ACTION: str = "fb.exchange.action.channel.configuration"
     TRIGGER_ACTION: str = "fb.exchange.action.trigger"
 
     MODULE_MESSAGE: str = "fb.exchange.message.module"
@@ -89,12 +87,6 @@ class RoutingKey(ExtendedEnum, Enum):
     DEVICES_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.property"
     DEVICES_PROPERTY_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.property"
 
-    # Device's configuration
-    DEVICES_CONFIGURATION_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.configuration"
-    DEVICES_CONFIGURATION_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.configuration"
-    DEVICES_CONFIGURATION_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.configuration"
-    DEVICES_CONFIGURATION_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.configuration"
-
     # Device's controls
     DEVICES_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.control"
     DEVICES_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.control"
@@ -112,12 +104,6 @@ class RoutingKey(ExtendedEnum, Enum):
     CHANNELS_PROPERTY_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.property"
     CHANNELS_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.property"
     CHANNELS_PROPERTY_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.property"
-
-    # Channel's configuration
-    CHANNELS_CONFIGURATION_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.configuration"
-    CHANNELS_CONFIGURATION_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.configuration"
-    CHANNELS_CONFIGURATION_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.configuration"
-    CHANNELS_CONFIGURATION_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.configuration"
 
     # Channel's controls
     CHANNELS_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.control"

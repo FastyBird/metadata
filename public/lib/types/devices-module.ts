@@ -18,33 +18,6 @@ export enum ConnectionState {
   UNKNOWN = 'unknown',
 }
 
-export enum ConfigurationField {
-  BOOLEAN = 'boolean',
-  NUMBER = 'number',
-  SELECT = 'select',
-  TEXT = 'text',
-}
-
-export enum ConfigurationBooleanFieldAttribute {
-  DEFAULT = 'default',
-}
-
-export enum ConfigurationNumberFieldAttribute {
-  MIN = 'min',
-  MAX = 'max',
-  STEP = 'step',
-  DEFAULT = 'default',
-}
-
-export enum ConfigurationSelectFieldAttribute {
-  VALUES = 'values',
-  DEFAULT = 'default',
-}
-
-export enum ConfigurationTextFieldAttribute {
-  DEFAULT = 'default',
-}
-
 export enum DeviceModel {
   CUSTOM = 'custom',
 
@@ -184,25 +157,6 @@ export interface DevicePropertyEntity {
   [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
-export interface DeviceConfigurationEntity {
-  id: string
-  identifier: string
-  key: string
-  name: string | null
-  comment: string | null
-  data_type: DataType
-  default: string | number | null
-  value: string | number | null
-  values?: (string | number | boolean)[]
-  min?: number | null
-  max?: number | null
-  step?: number | null
-  device: string
-  owner: string | null
-
-  [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined
-}
-
 export interface DeviceControlEntity {
   id: string
   name: string
@@ -246,25 +200,6 @@ export interface ChannelPropertyEntity {
   owner: string | null
 
   [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
-}
-
-export interface ChannelConfigurationEntity {
-  id: string
-  identifier: string
-  key: string
-  name: string | null
-  comment: string | null
-  data_type: DataType
-  default: string | number | null
-  value: string | number | null
-  values?: (string | number | boolean)[]
-  min?: number | null
-  max?: number | null
-  step?: number | null
-  channel: string
-  owner: string | null
-
-  [k: string]: string | number | (string | number | boolean)[] | DataType | null | undefined
 }
 
 export interface ChannelControlEntity {

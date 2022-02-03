@@ -434,62 +434,6 @@
               ]
             },
             {
-              "name" : "Get device configuration",
-              "path" : "/v1/devices/{device}/configuration",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device configuration row",
-              "path" : "/v1/devices/{device}/configuration/{configuration}",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device configuration row relationship",
-              "path" : "/v1/devices/{device}/configuration/{configuration}/relationships/{relation}",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device hardware info",
-              "path" : "/v1/devices/{device}/hardware",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device hardware info relationship",
-              "path" : "/v1/devices/{device}/hardware/relationships/{relation}",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device firmware info",
-              "path" : "/v1/devices/{device}/firmware",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device firmware info relationship",
-              "path" : "/v1/devices/{device}/firmware/relationships/{relation}",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
               "name" : "Get device channels",
               "path" : "/v1/devices/{device}/channels",
               "method" : "get",
@@ -540,30 +484,6 @@
             {
               "name" : "Get device channel property relationship",
               "path" : "/v1/devices/{device}/channels/{channel}/properties/{property}/relationships/{relation}",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device channel configuration",
-              "path" : "/v1/devices/{device}/channels/{channel}/configuration",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device channel configuration row",
-              "path" : "/v1/devices/{device}/channels/{channel}/configuration/{configuration}",
-              "method" : "get",
-              "headers" : [
-                "authorization"
-              ]
-            },
-            {
-              "name" : "Get device channel configuration row relationship",
-              "path" : "/v1/devices/{device}/channels/{channel}/configuration/{configuration}/relationships/{relation}",
               "method" : "get",
               "headers" : [
                 "authorization"

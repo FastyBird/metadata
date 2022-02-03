@@ -2,10 +2,8 @@ export enum ActionRoutes {
   CONNECTOR = 'fb.exchange.action.connector',
   DEVICE = 'fb.exchange.action.device',
   DEVICE_PROPERTY = 'fb.exchange.action.device.property',
-  DEVICE_CONFIGURATION = 'fb.exchange.action.device.configuration',
   CHANNEL = 'fb.exchange.action.channel',
   CHANNEL_PROPERTY = 'fb.exchange.action.channel.property',
-  CHANNEL_CONFIGURATION = 'fb.exchange.action.channel.configuration',
   TRIGGER = 'fb.exchange.action.trigger',
 }
 
@@ -54,12 +52,6 @@ export enum DevicesModuleRoutes {
   DEVICES_PROPERTY_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.device.property',
   DEVICES_PROPERTY_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.device.property',
 
-  // Device's configuration
-  DEVICES_CONFIGURATION_ENTITY_REPORTED = 'fb.exchange.module.entity.created.device.configuration',
-  DEVICES_CONFIGURATION_ENTITY_CREATED = 'fb.exchange.module.entity.created.device.configuration',
-  DEVICES_CONFIGURATION_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.device.configuration',
-  DEVICES_CONFIGURATION_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.device.configuration',
-
   // Device's control
   DEVICES_CONTROL_ENTITY_REPORTED = 'fb.exchange.module.entity.created.device.control',
   DEVICES_CONTROL_ENTITY_CREATED = 'fb.exchange.module.entity.created.device.control',
@@ -78,19 +70,13 @@ export enum DevicesModuleRoutes {
   CHANNELS_PROPERTY_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.channel.property',
   CHANNELS_PROPERTY_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel.property',
 
-  // Channel's configuration
-  CHANNELS_CONFIGURATION_ENTITY_REPORTED = 'fb.exchange.module.entity.created.channel.configuration',
-  CHANNELS_CONFIGURATION_ENTITY_CREATED = 'fb.exchange.module.entity.created.channel.configuration',
-  CHANNELS_CONFIGURATION_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.channel.configuration',
-  CHANNELS_CONFIGURATION_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel.configuration',
-
   // Channel's control
   CHANNELS_CONTROL_ENTITY_REPORTED = 'fb.exchange.module.entity.created.channel.control',
   CHANNELS_CONTROL_ENTITY_CREATED = 'fb.exchange.module.entity.created.channel.control',
   CHANNELS_CONTROL_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.channel.control',
   CHANNELS_CONTROL_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel.control',
 
-  // Connector's configuration
+  // Connectors
   CONNECTORS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector',
   CONNECTORS_ENTITY_CREATED = 'fb.exchange.module.entity.created.connector',
   CONNECTORS_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.connector',
