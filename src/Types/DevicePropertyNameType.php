@@ -36,9 +36,11 @@ class DevicePropertyNameType extends Consistence\Enum\Enum
 	public const NAME_WIFI = 'wifi';
 	public const NAME_SIGNAL = 'signal';
 	public const NAME_RSSI = 'rssi';
+	public const NAME_SSID = 'ssid';
 	public const NAME_VCC = 'vcc';
 	public const NAME_CPU_LOAD = 'cpu-load';
 	public const NAME_UPTIME = 'uptime';
+	public const NAME_ADDRESS = 'address';
 	public const NAME_IP_ADDRESS = 'ip-address';
 	public const NAME_STATUS_LED = 'status-led';
 	public const NAME_FREE_HEAP = 'free-heap';

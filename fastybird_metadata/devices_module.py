@@ -197,10 +197,12 @@ class DevicePropertyName(ExtendedEnum, Enum):
     WIFI: str = "wifi"
     SIGNAL: str = "signal"
     RSSI: str = "rssi"
+    SSID: str = "ssid"
     VCC: str = "vcc"
     CPU_LOAD: str = "cpu-load"
     UPTIME: str = "uptime"
     IP_ADDRESS: str = "ip-address"
+    ADDRESS: str = "address"
     STATUS_LED: str = "status-led"
     FREE_HEAP: str = "free-heap"
 

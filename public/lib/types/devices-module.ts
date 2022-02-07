@@ -81,6 +81,7 @@ export enum DevicePropertyName {
   VCC = 'vcc',
   CPU_LOAD = 'cpu-load',
   UPTIME = 'uptime',
+  ADDRESS = 'address',
   IP_ADDRESS = 'ip-address',
   STATUS_LED = 'status-led',
   FREE_HEAP = 'free-heap',
