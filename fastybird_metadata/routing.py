@@ -39,6 +39,7 @@ class RoutingKey(ExtendedEnum, Enum):
     # GLOBAL
 
     CONNECTOR_ACTION: str = "fb.exchange.action.connector"
+    CONNECTOR_PROPERTY_ACTION: str = "fb.exchange.action.connector.property"
     DEVICE_ACTION: str = "fb.exchange.action.device"
     DEVICE_PROPERTY_ACTION: str = "fb.exchange.action.device.property"
     CHANNEL_ACTION: str = "fb.exchange.action.channel"

@@ -1,5 +1,6 @@
 export enum ActionRoutes {
   CONNECTOR = 'fb.exchange.action.connector',
+  CONNECTOR_PROPERTY = 'fb.exchange.action.connector.property',
   DEVICE = 'fb.exchange.action.device',
   DEVICE_PROPERTY = 'fb.exchange.action.device.property',
   CHANNEL = 'fb.exchange.action.channel',

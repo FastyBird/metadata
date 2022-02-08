@@ -72,6 +72,7 @@ final class Constants
 	 */
 
 	public const MESSAGE_BUS_CONNECTOR_ACTION_ROUTING_KEY = 'fb.exchange.action.connector';
+	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ACTION_ROUTING_KEY = 'fb.exchange.action.connector.property';
 	public const MESSAGE_BUS_DEVICE_ACTION_ROUTING_KEY = 'fb.exchange.action.device';
 	public const MESSAGE_BUS_DEVICE_PROPERTY_ACTION_ROUTING_KEY = 'fb.exchange.action.device.property';
 	public const MESSAGE_BUS_CHANNEL_ACTION_ROUTING_KEY = 'fb.exchange.action.channel';
@@ -212,6 +213,7 @@ final class Constants
 
 	public const JSON_SCHEMAS_MAPPING = [
 		self::MESSAGE_BUS_CONNECTOR_ACTION_ROUTING_KEY             => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.connector.json',
+		self::MESSAGE_BUS_CONNECTOR_PROPERTY_ACTION_ROUTING_KEY    => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.connector.property.json',
 		self::MESSAGE_BUS_DEVICE_ACTION_ROUTING_KEY                => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.device.json',
 		self::MESSAGE_BUS_DEVICE_PROPERTY_ACTION_ROUTING_KEY       => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.device.property.json',
 		self::MESSAGE_BUS_CHANNEL_ACTION_ROUTING_KEY               => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.channel.json',
