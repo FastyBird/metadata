@@ -40,7 +40,7 @@ from fastybird_metadata.validator import validate
 
 
 def load_schema_by_namespace(namespace: str, schema_file: str) -> str:
-    """Load JSON schema for module origin and routing key"""
+    """Load JSON schema for source and routing key"""
     schema_content = get_data_file_content(
         path.dirname(("resources/schemas" + namespace + "/").replace("/", path.sep)) + path.sep + schema_file
     )

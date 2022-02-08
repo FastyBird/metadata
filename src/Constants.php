@@ -31,28 +31,28 @@ final class Constants
 	public const EXCHANGE_CHANNEL_NAME = 'fb_exchange';
 
 	/**
-	 * App origins
+	 * App sources
 	 */
 
-	public const NOT_SPECIFIED_ORIGIN = '*';
+	public const NOT_SPECIFIED_SOURCE = '*';
 
-	public const MODULE_ACCOUNTS_ORIGIN = 'com.fastybird.accounts-module';
-	public const MODULE_DEVICES_ORIGIN = 'com.fastybird.devices-module';
-	public const MODULE_TRIGGERS_ORIGIN = 'com.fastybird.triggers-module';
-	public const MODULE_UI_ORIGIN = 'com.fastybird.ui-module';
-	public const MODULE_WEB_UI_ORIGIN = 'com.fastybird.web-ui-module';
+	public const MODULE_ACCOUNTS_SOURCE = 'com.fastybird.accounts-module';
+	public const MODULE_DEVICES_SOURCE = 'com.fastybird.devices-module';
+	public const MODULE_TRIGGERS_SOURCE = 'com.fastybird.triggers-module';
+	public const MODULE_UI_SOURCE = 'com.fastybird.ui-module';
+	public const MODULE_WEB_UI_SOURCE = 'com.fastybird.web-ui-module';
 
-	public const CONNECTOR_FB_BUS = 'com.fastybird.fb-bus-connector';
-	public const CONNECTOR_FB_MQTT = 'com.fastybird.fb-mqtt-connector';
-	public const CONNECTOR_SHELLY = 'com.fastybird.shelly-connector';
-	public const CONNECTOR_TUYA = 'com.fastybird.tuya-connector';
-	public const CONNECTOR_SONOFF = 'com.fastybird.sonoff-connector';
-	public const CONNECTOR_MODBUS = 'com.fastybird.modbus-connector';
+	public const CONNECTOR_FB_BUS_SOURCE = 'com.fastybird.fb-bus-connector';
+	public const CONNECTOR_FB_MQTT_SOURCE = 'com.fastybird.fb-mqtt-connector';
+	public const CONNECTOR_SHELLY_SOURCE = 'com.fastybird.shelly-connector';
+	public const CONNECTOR_TUYA_SOURCE = 'com.fastybird.tuya-connector';
+	public const CONNECTOR_SONOFF_SOURCE = 'com.fastybird.sonoff-connector';
+	public const CONNECTOR_MODBUS_SOURCE = 'com.fastybird.modbus-connector';
 
-	public const PLUGIN_STORAGE_COUCHDB = 'com.fastybird.couchdb-storage-plugin';
-	public const PLUGIN_EXCHANGE_RABBITMQ = 'com.fastybird.rabbitmq-exchange-plugin';
-	public const PLUGIN_EXCHANGE_REDISDB = 'com.fastybird.redisdb-exchange-plugin';
-	public const PLUGIN_STORAGE_REDISDB = 'com.fastybird.redisdb-storage-plugin';
+	public const PLUGIN_STORAGE_COUCHDB_SOURCE = 'com.fastybird.couchdb-storage-plugin';
+	public const PLUGIN_EXCHANGE_RABBITMQ_SOURCE = 'com.fastybird.rabbitmq-exchange-plugin';
+	public const PLUGIN_EXCHANGE_REDISDB_SOURCE = 'com.fastybird.redisdb-exchange-plugin';
+	public const PLUGIN_STORAGE_REDISDB_SOURCE = 'com.fastybird.redisdb-storage-plugin';
 
 	/**
 	 * Modules prefixes

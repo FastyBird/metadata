@@ -48,9 +48,9 @@ class ModulePrefix(ExtendedEnum, Enum):
 
 
 @unique
-class ModuleOrigin(ExtendedEnum, Enum):
+class ModuleSource(ExtendedEnum, Enum):
     """
-    Module origin
+    Module source
 
     @package        FastyBird:Metadata!
     @module         types
@@ -72,9 +72,9 @@ class ModuleOrigin(ExtendedEnum, Enum):
 
 
 @unique
-class PluginOrigin(ExtendedEnum, Enum):
+class PluginSource(ExtendedEnum, Enum):
     """
-    Plugin origin
+    Plugin source
 
     @package        FastyBird:Metadata!
     @module         types
@@ -96,9 +96,9 @@ class PluginOrigin(ExtendedEnum, Enum):
 
 
 @unique
-class ConnectorOrigin(ExtendedEnum, Enum):
+class ConnectorSource(ExtendedEnum, Enum):
     """
-    Plugin origin
+    Plugin source
 
     @package        FastyBird:Metadata!
     @module         types

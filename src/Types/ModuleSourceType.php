@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * PluginOriginType.php
+ * ModuleSourceType.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -10,7 +10,7 @@
  * @subpackage     Types
  * @since          0.1.0
  *
- * @date           08.01.22
+ * @date           26.04.21
  */
 
 namespace FastyBird\Metadata\Types;
@@ -19,24 +19,25 @@ use Consistence;
 use FastyBird\Metadata;
 
 /**
- * Modules origins types
+ * Modules sources types
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Types
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-class PluginOriginType extends Consistence\Enum\Enum
+class ModuleSourceType extends Consistence\Enum\Enum
 {
 
 	/**
 	 * Define types
 	 */
-	public const ORIGIN_NOT_SPECIFIED = Metadata\Constants::NOT_SPECIFIED_ORIGIN;
-	public const ORIGIN_PLUGIN_STORAGE_COUCHDB = Metadata\Constants::PLUGIN_STORAGE_COUCHDB;
-	public const ORIGIN_PLUGIN_EXCHANGE_RABBITMQ = Metadata\Constants::PLUGIN_EXCHANGE_RABBITMQ;
-	public const ORIGIN_PLUGIN_EXCHANGE_REDISDB = Metadata\Constants::PLUGIN_EXCHANGE_REDISDB;
-	public const ORIGIN_PLUGIN_STORAGE_REDISDB = Metadata\Constants::PLUGIN_STORAGE_REDISDB;
+	public const SOURCE_NOT_SPECIFIED = Metadata\Constants::NOT_SPECIFIED_SOURCE;
+	public const SOURCE_MODULE_ACCOUNTS = Metadata\Constants::MODULE_ACCOUNTS_SOURCE;
+	public const SOURCE_MODULE_DEVICES = Metadata\Constants::MODULE_DEVICES_SOURCE;
+	public const SOURCE_MODULE_TRIGGERS = Metadata\Constants::MODULE_TRIGGERS_SOURCE;
+	public const SOURCE_MODULE_UI = Metadata\Constants::MODULE_UI_SOURCE;
+	public const SOURCE_MODULE_WEB_UI = Metadata\Constants::MODULE_WEB_UI_SOURCE;
 
 	/**
 	 * @return string

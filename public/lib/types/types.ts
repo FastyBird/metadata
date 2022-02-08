@@ -5,7 +5,7 @@ export enum ModulePrefix {
   MODULE_UI = 'ui-module',
 }
 
-export enum ModuleOrigin {
+export enum ModuleSource {
   NOT_SPECIFIED = '*',
   MODULE_ACCOUNTS = 'com.fastybird.accounts-module',
   MODULE_DEVICES = 'com.fastybird.devices-module',
@@ -14,7 +14,7 @@ export enum ModuleOrigin {
   MODULE_WEB_UI = 'com.fastybird.web-ui-module',
 }
 
-export enum PluginOrigin {
+export enum PluginSource {
   NOT_SPECIFIED = '*',
   COUCHDB_STORAGE_PLUGIN = 'com.fastybird.couchdb-storage-plugin',
   RABBITMQ_EXCHANGE_PLUGIN = 'com.fastybird.rabbitmq-exchange-plugin',
@@ -22,7 +22,7 @@ export enum PluginOrigin {
   REDISDB_STORAGE_PLUGIN = 'com.fastybird.redisdb-storage-plugin',
 }
 
-export enum ConnectorOrigin {
+export enum ConnectorSource {
   NOT_SPECIFIED = '*',
   FB_BUS_CONNECTOR = 'com.fastybird.fb-bus-connector',
   FB_MQTT_CONNECTOR = 'com.fastybird.fb-mqtt-connector',

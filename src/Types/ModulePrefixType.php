@@ -19,7 +19,7 @@ use Consistence;
 use FastyBird\Metadata;
 
 /**
- * Modules origins types
+ * Modules prefixes types
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Types
