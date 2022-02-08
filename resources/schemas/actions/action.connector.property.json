@@ -65,7 +65,7 @@
       "properties" : {
         "expected_value" : {
           "$ref" : "#/definitions/types/string_number_boolean",
-          "description" : "Property value to be written into device"
+          "description" : "Property value to be written into connector"
         }
       },
       "required" : [
@@ -87,7 +87,7 @@
         "properties" : {
           "actual_value" : {
             "$ref" : "#/definitions/types/string_number_boolean",
-            "description" : "Property value stored in device"
+            "description" : "Property value stored in connector"
           },
           "pending" : {
             "type" : "boolean"

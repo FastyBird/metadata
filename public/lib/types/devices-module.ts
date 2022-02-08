@@ -99,7 +99,6 @@ export enum ConnectorPropertyName {
 export interface ConnectorEntity {
   id: string
   type: string
-  key: string
   name: string
   enabled: boolean
   address?: number | null
@@ -118,7 +117,6 @@ export interface ConnectorPropertyEntity {
   id: string
   type: PropertyType
   identifier: string
-  key: string
   name: string | null
   settable: boolean
   queryable: boolean
@@ -151,7 +149,6 @@ export interface DeviceEntity {
   id: string
   type: string
   identifier: string
-  key: string
   name: string | null
   comment: string | null
   enabled: boolean
@@ -171,7 +168,6 @@ export interface DevicePropertyEntity {
   id: string
   type: PropertyType
   identifier: string
-  key: string
   name: string | null
   settable: boolean
   queryable: boolean
@@ -203,7 +199,6 @@ export interface DeviceControlEntity {
 export interface ChannelEntity {
   id: string
   identifier: string
-  key: string
   name: string | null
   comment: string | null
   device: string
@@ -216,7 +211,6 @@ export interface ChannelPropertyEntity {
   id: string
   type: PropertyType
   identifier: string
-  key: string
   name: string | null
   settable: boolean
   queryable: boolean

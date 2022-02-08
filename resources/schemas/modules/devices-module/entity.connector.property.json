@@ -147,10 +147,6 @@
       "type" : "string",
       "description" : "Unique human readable identifier used across services"
     },
-    "key" : {
-      "type" : "string",
-      "description" : "Unique pub/sub identifier per each entity"
-    },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
@@ -185,7 +181,7 @@
     },
     "connector" : {
       "type" : "string",
-      "description" : "Channel unique uuid v4 identifier used across services"
+      "description" : "Connector unique uuid v4 identifier used across services"
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -218,7 +214,6 @@
       "id",
       "type",
       "identifier",
-      "key",
       "settable",
       "queryable",
       "data_type",
@@ -242,7 +237,6 @@
       "id",
       "type",
       "identifier",
-      "key",
       "settable",
       "queryable",
       "data_type",

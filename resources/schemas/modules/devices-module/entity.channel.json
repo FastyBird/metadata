@@ -24,10 +24,6 @@
       "type" : "string",
       "description" : "Unique human readable identifier used across services"
     },
-    "key" : {
-      "type" : "string",
-      "description" : "Unique pub/sub identifier per each entity"
-    },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
@@ -48,7 +44,6 @@
   "required" : [
     "id",
     "identifier",
-    "key",
     "name",
     "comment",
     "device"

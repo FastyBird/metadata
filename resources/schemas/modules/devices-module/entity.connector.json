@@ -34,10 +34,6 @@
       "type" : "string",
       "description" : "Connector type identifier"
     },
-    "key" : {
-      "type" : "string",
-      "description" : "Unique pub/sub identifier per each entity"
-    },
     "name" : {
       "type" : "string"
     },
@@ -75,7 +71,6 @@
     "required" : [
       "id",
       "type",
-      "key",
       "name",
       "enabled",
       "address",
@@ -114,7 +109,6 @@
       "required" : [
         "id",
         "type",
-        "key",
         "name",
         "enabled",
         "server",
@@ -128,7 +122,6 @@
       "required" : [
         "id",
         "type",
-        "key",
         "name",
         "enabled",
         "owner"
