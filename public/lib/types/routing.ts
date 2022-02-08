@@ -82,6 +82,12 @@ export enum DevicesModuleRoutes {
   CONNECTORS_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.connector',
   CONNECTORS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.connector',
 
+  // Connector's properties
+  CONNECTORS_PROPERTY_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector.property',
+  CONNECTORS_PROPERTY_ENTITY_CREATED = 'fb.exchange.module.entity.created.connector.property',
+  CONNECTORS_PROPERTY_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.connector.property',
+  CONNECTORS_PROPERTY_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.connector.property',
+
   // Connector's control
   CONNECTORS_CONTROL_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector.control',
   CONNECTORS_CONTROL_ENTITY_CREATED = 'fb.exchange.module.entity.created.connector.control',

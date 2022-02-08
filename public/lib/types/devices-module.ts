@@ -87,6 +87,15 @@ export enum DevicePropertyName {
   FREE_HEAP = 'free-heap',
 }
 
+export enum ConnectorPropertyName {
+  SERVER = 'server',
+  PORT = 'port',
+  SECURED_PORT = 'secured_port',
+  BAUD_RATE = 'baud_rate',
+  INTERFACE = 'interface',
+  ADDRESS = 'address',
+}
+
 export interface ConnectorEntity {
   id: string
   type: string
@@ -103,6 +112,30 @@ export interface ConnectorEntity {
   owner: string | null
 
   [k: string]: string | number | boolean | null | undefined
+}
+
+export interface ConnectorPropertyEntity {
+  id: string
+  type: PropertyType
+  identifier: string
+  key: string
+  name: string | null
+  settable: boolean
+  queryable: boolean
+  data_type: DataType | null
+  unit: string | null
+  format: string[] | ((string | null)[])[] | (number | null)[] | null
+  invalid: string | number | null
+  number_of_decimals: number | null
+  value?: string | number | boolean | null
+  actual_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+  expected_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+  previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
+  pending?: boolean
+  connector: string
+  owner: string | null
+
+  [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface ConnectorControlEntity {

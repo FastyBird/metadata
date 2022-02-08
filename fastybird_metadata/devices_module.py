@@ -210,3 +210,27 @@ class DevicePropertyName(ExtendedEnum, Enum):
 
     def __hash__(self) -> int:
         return hash(self._name_)  # pylint: disable=no-member
+
+
+@unique
+class ConnectorPropertyName(ExtendedEnum, Enum):
+    """
+    Connector known property name
+
+    @package        FastyBird:Metadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    SERVER: = "server"
+    PORT: = "port"
+    SECURED_PORT: = "secured_port"
+    BAUD_RATE: = "baud_rate"
+    INTERFACE: = "interface"
+    ADDRESS: = "address"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
