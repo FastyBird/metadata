@@ -33,11 +33,11 @@
     },
     "connector" : {
       "type" : "string",
-      "description" : "Connector unique uuid v4 identifier used across services"
+      "description" : "Connector unique uuid v4 identifier"
     },
     "control" : {
       "type" : "string",
-      "description" : "Control unique uuid v4 identifier used across services"
+      "description" : "Control unique uuid v4 identifier"
     },
     "expected_value" : {
       "$ref" : "#/definitions/types/nullable_string_number_boolean"

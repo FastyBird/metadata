@@ -28,14 +28,22 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "type" : {
       "type" : "string",
       "description" : "Connector type identifier"
     },
+    "identifier" : {
+      "type" : "string",
+      "description" : "Unique human readable identifier"
+    },
     "name" : {
       "type" : "string"
+    },
+    "comment" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
     "enabled" : {
       "type" : "boolean",
@@ -46,86 +54,13 @@
       "description" : "Entity owner uuid v4 identifier"
     }
   },
-  "if" : {
-    "properties" : {
-      "type" : {
-        "const" : "fb-bus"
-      }
-    }
-  },
-  "then" : {
-    "properties" : {
-      "address" : {
-        "$ref" : "#/definitions/types/nullable_number",
-        "default" : null
-      },
-      "serial_interface" : {
-        "$ref" : "#/definitions/types/nullable_string",
-        "default" : null
-      },
-      "baud_rate" : {
-        "$ref" : "#/definitions/types/nullable_number",
-        "default" : null
-      }
-    },
-    "required" : [
-      "id",
-      "type",
-      "name",
-      "enabled",
-      "address",
-      "serial_interface",
-      "baud_rate",
-      "owner"
-    ]
-  },
-  "else" : {
-    "if" : {
-      "properties" : {
-        "type" : {
-          "const" : "fb-mqtt"
-        }
-      }
-    },
-    "then" : {
-      "properties" : {
-        "server" : {
-          "$ref" : "#/definitions/types/nullable_string",
-          "default" : null
-        },
-        "port" : {
-          "$ref" : "#/definitions/types/nullable_number",
-          "default" : null
-        },
-        "secured_port" : {
-          "$ref" : "#/definitions/types/nullable_number",
-          "default" : null
-        },
-        "username" : {
-          "$ref" : "#/definitions/types/nullable_string",
-          "default" : null
-        }
-      },
-      "required" : [
-        "id",
-        "type",
-        "name",
-        "enabled",
-        "server",
-        "port",
-        "secured_port",
-        "username",
-        "owner"
-      ]
-    },
-    "else" : {
-      "required" : [
-        "id",
-        "type",
-        "name",
-        "enabled",
-        "owner"
-      ]
-    }
-  }
+  "required" : [
+    "id",
+    "type",
+    "identifier",
+    "name",
+    "comment",
+    "enabled",
+    "owner"
+  ]
 }

@@ -28,7 +28,7 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "first_name" : {
       "type" : "string"

@@ -18,7 +18,7 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "name" : {
       "type" : "string"
@@ -40,7 +40,7 @@
     },
     "parent" : {
       "$ref" : "#/definitions/types/nullable_string",
-      "description" : "Parent role unique uuid v4 identifier used across services",
+      "description" : "Parent role unique uuid v4 identifier",
       "default" : null
     }
   },

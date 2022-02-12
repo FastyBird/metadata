@@ -32,11 +32,11 @@
     },
     "device" : {
       "type" : "string",
-      "description" : "Device unique uuid v4 identifier used across services"
+      "description" : "Device unique uuid v4 identifier"
     },
     "property" : {
       "type" : "string",
-      "description" : "Property unique uuid v4 identifier used across services"
+      "description" : "Device property unique uuid v4 identifier"
     }
   },
   "if" : {
@@ -65,7 +65,7 @@
       "properties" : {
         "expected_value" : {
           "$ref" : "#/definitions/types/string_number_boolean",
-          "description" : "Property value to be written into device"
+          "description" : "Property value to be written into property"
         }
       },
       "required" : [
@@ -87,7 +87,7 @@
         "properties" : {
           "actual_value" : {
             "$ref" : "#/definitions/types/string_number_boolean",
-            "description" : "Property value stored in device"
+            "description" : "Property value stored in property"
           },
           "pending" : {
             "type" : "boolean"

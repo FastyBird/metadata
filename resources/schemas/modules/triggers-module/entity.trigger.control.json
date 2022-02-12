@@ -18,18 +18,18 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "name" : {
       "type" : "string"
     },
     "trigger" : {
       "type" : "string",
-      "description" : "Trigger unique uuid v4 identifier used across services"
+      "description" : "Trigger unique uuid v4 identifier"
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
-      "description" : "Trigger control owner uuid v4 identifier"
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
   "required" : [

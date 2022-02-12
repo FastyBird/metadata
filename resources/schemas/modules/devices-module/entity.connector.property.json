@@ -145,7 +145,7 @@
     },
     "identifier" : {
       "type" : "string",
-      "description" : "Unique human readable identifier used across services"
+      "description" : "Unique human readable identifier"
     },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -181,7 +181,7 @@
     },
     "connector" : {
       "type" : "string",
-      "description" : "Connector unique uuid v4 identifier used across services"
+      "description" : "Connector unique uuid v4 identifier"
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",

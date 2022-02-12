@@ -35,7 +35,7 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "type" : {
       "$ref" : "#/definitions/type"
@@ -57,7 +57,7 @@
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
-      "description" : "Trigger owner uuid v4 identifier"
+      "description" : "Entity owner uuid v4 identifier"
     }
   },
   "if" : {

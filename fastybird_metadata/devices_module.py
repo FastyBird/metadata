@@ -223,6 +223,7 @@ class ConnectorPropertyName(ExtendedEnum, Enum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
+    STATE: str = "state"
     SERVER: str = "server"
     PORT: str = "port"
     SECURED_PORT: str = "secured_port"

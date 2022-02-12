@@ -118,7 +118,7 @@ class RoutingKey(ExtendedEnum, Enum):
     CONNECTORS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector"
     CONNECTORS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector"
 
-    # Channel's properties
+    # Connector's properties
     CONNECTORS_PROPERTY_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector.property"
     CONNECTORS_PROPERTY_ENTITY_CREATED: str = "fb.exchange.module.entity.created.connector.property"
     CONNECTORS_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector.property"

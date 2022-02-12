@@ -18,7 +18,7 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "type" : {
       "type" : "string",
@@ -26,7 +26,7 @@
     },
     "identifier" : {
       "type" : "string",
-      "description" : "Unique human readable identifier used across services"
+      "description" : "Unique human readable identifier"
     },
     "name" : {
       "$ref" : "#/definitions/types/nullable_string",

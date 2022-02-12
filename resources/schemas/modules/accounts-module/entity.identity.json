@@ -15,7 +15,7 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "state" : {
       "$ref" : "#/definitions/state"
@@ -28,7 +28,7 @@
     },
     "account" : {
       "type" : "string",
-      "description" : "Account unique uuid v4 identifier used across services"
+      "description" : "Identity owner account unique uuid v4 identifier"
     }
   },
   "required" : [

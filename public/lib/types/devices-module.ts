@@ -88,6 +88,7 @@ export enum DevicePropertyName {
 }
 
 export enum ConnectorPropertyName {
+  STATE = 'state',
   SERVER = 'server',
   PORT = 'port',
   SECURED_PORT = 'secured_port',
@@ -99,7 +100,9 @@ export enum ConnectorPropertyName {
 export interface ConnectorEntity {
   id: string
   type: string
+  identifier: string
   name: string
+  comment: string | null
   enabled: boolean
   address?: number | null
   serial_interface?: string | null

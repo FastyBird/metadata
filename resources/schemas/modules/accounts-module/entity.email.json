@@ -4,7 +4,7 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "address" : {
       "type" : "string",
@@ -28,7 +28,7 @@
     },
     "account" : {
       "type" : "string",
-      "description" : "Account unique uuid v4 identifier used across services"
+      "description" : "Email owner account unique uuid v4 identifier"
     }
   },
   "required" : [

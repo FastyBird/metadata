@@ -18,14 +18,14 @@
   "properties" : {
     "id" : {
       "type" : "string",
-      "description" : "Entity uuid v4 identifier. This identifier is unique"
+      "description" : "Entity unique uuid v4 identifier"
     },
     "name" : {
       "type" : "string"
     },
     "device" : {
       "type" : "string",
-      "description" : "Device unique uuid v4 identifier used across services"
+      "description" : "Device unique uuid v4 identifier"
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",

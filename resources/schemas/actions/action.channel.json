@@ -33,15 +33,15 @@
     },
     "device" : {
       "type" : "string",
-      "description" : "Device unique uuid v4 identifier used across services"
+      "description" : "Device unique uuid v4 identifier"
     },
     "channel" : {
       "type" : "string",
-      "description" : "Channel unique uuid v4 identifier used across services"
+      "description" : "Channel unique uuid v4 identifier"
     },
     "control" : {
       "type" : "string",
-      "description" : "Control unique uuid v4 identifier used across services"
+      "description" : "Channel control unique uuid v4 identifier"
     },
     "expected_value" : {
       "$ref" : "#/definitions/types/nullable_string_number_boolean"
