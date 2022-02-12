@@ -39,7 +39,8 @@
       "description" : "Unique human readable identifier"
     },
     "name" : {
-      "type" : "string"
+      "$ref" : "#/definitions/types/nullable_string",
+      "default" : null
     },
     "comment" : {
       "$ref" : "#/definitions/types/nullable_string",
