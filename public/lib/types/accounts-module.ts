@@ -24,8 +24,6 @@ export interface AccountEntity {
   email: string
   language: string
   roles: string[]
-
-  [k: string]: string | string[] | AccountState | null
 }
 
 export interface EmailEntity {
@@ -36,8 +34,6 @@ export interface EmailEntity {
   private: boolean
   public: boolean
   account: string
-
-  [k: string]: string | boolean
 }
 
 export interface IdentityEntity {
@@ -46,8 +42,6 @@ export interface IdentityEntity {
   uid: string
   password?: string
   account: string
-
-  [k: string]: string | IdentityState | undefined
 }
 
 export interface RoleEntity {
@@ -58,6 +52,4 @@ export interface RoleEntity {
   authenticated: boolean
   administrator: boolean
   parent: string | null
-
-  [k: string]: string | boolean | null
 }

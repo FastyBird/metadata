@@ -104,16 +104,7 @@ export interface ConnectorEntity {
   name: string
   comment: string | null
   enabled: boolean
-  address?: number | null
-  serial_interface?: string | null
-  baud_rate?: number | null
-  server?: string | null
-  port?: number | null
-  secured_port?: number | null
-  username?: string | null
   owner: string | null
-
-  [k: string]: string | number | boolean | null | undefined
 }
 
 export interface ConnectorPropertyEntity {
@@ -123,7 +114,7 @@ export interface ConnectorPropertyEntity {
   name: string | null
   settable: boolean
   queryable: boolean
-  data_type: DataType | null
+  data_type: DataType
   unit: string | null
   format: string[] | ((string | null)[])[] | (number | null)[] | null
   invalid: string | number | null
@@ -135,8 +126,6 @@ export interface ConnectorPropertyEntity {
   pending?: boolean
   connector: string
   owner: string | null
-
-  [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface ConnectorControlEntity {
@@ -144,8 +133,6 @@ export interface ConnectorControlEntity {
   name: string
   connector: string
   owner: string | null
-
-  [k: string]: string | null
 }
 
 export interface DeviceEntity {
@@ -163,8 +150,6 @@ export interface DeviceEntity {
   firmware_version: string | null
   connector: string
   owner: string | null
-
-  [k: string]: string | boolean | HardwareManufacturer | DeviceModel | FirmwareManufacturer | null | undefined
 }
 
 export interface DevicePropertyEntity {
@@ -174,7 +159,7 @@ export interface DevicePropertyEntity {
   name: string | null
   settable: boolean
   queryable: boolean
-  data_type: DataType | null
+  data_type: DataType
   unit: string | null
   format: string[] | ((string | null)[])[] | (number | null)[] | null
   invalid: string | number | null
@@ -186,8 +171,6 @@ export interface DevicePropertyEntity {
   pending?: boolean
   device: string
   owner: string | null
-
-  [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface DeviceControlEntity {
@@ -195,8 +178,6 @@ export interface DeviceControlEntity {
   name: string
   device: string
   owner: string | null
-
-  [k: string]: string | null
 }
 
 export interface ChannelEntity {
@@ -206,8 +187,6 @@ export interface ChannelEntity {
   comment: string | null
   device: string
   owner: string | null
-
-  [k: string]: string | null
 }
 
 export interface ChannelPropertyEntity {
@@ -217,7 +196,7 @@ export interface ChannelPropertyEntity {
   name: string | null
   settable: boolean
   queryable: boolean
-  data_type: DataType | null
+  data_type: DataType
   unit: string | null
   format: string[] | ((string | null)[])[] | (number | null)[] | null
   invalid: string | number | null
@@ -229,8 +208,6 @@ export interface ChannelPropertyEntity {
   pending?: boolean
   channel: string
   owner: string | null
-
-  [k: string]: string | boolean | number | string[] | ((string | null)[])[] | (number | null)[] | DataType | ButtonPayload | SwitchPayload | null | undefined
 }
 
 export interface ChannelControlEntity {
@@ -238,6 +215,4 @@ export interface ChannelControlEntity {
   name: string
   channel: string
   owner: string | null
-
-  [k: string]: string | null
 }

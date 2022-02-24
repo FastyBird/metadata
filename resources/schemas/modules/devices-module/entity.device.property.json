@@ -160,8 +160,7 @@
       "default" : false
     },
     "data_type" : {
-      "$ref" : "#/definitions/types/nullable_data_type",
-      "default" : null
+      "type" : "string"
     },
     "unit" : {
       "$ref" : "#/definitions/types/nullable_string",

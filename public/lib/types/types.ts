@@ -94,8 +94,6 @@ export interface ConnectorControlAction {
     | string
     | number
     | boolean
-
-  [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
 export interface DeviceControlAction {
@@ -107,8 +105,6 @@ export interface DeviceControlAction {
     | string
     | number
     | boolean
-
-  [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
 export interface ChannelControlAction {
@@ -121,8 +117,6 @@ export interface ChannelControlAction {
     | string
     | number
     | boolean
-
-  [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
 export interface TriggerControlAction {
@@ -134,8 +128,6 @@ export interface TriggerControlAction {
     | string
     | number
     | boolean
-
-  [k: string]: string | number | boolean | ControlAction | null | undefined
 }
 
 export interface DevicePropertyAction {
@@ -145,8 +137,6 @@ export interface DevicePropertyAction {
   expected_value?: string | number | boolean | ButtonPayload | SwitchPayload
   actual_value?: string | number | boolean | ButtonPayload | SwitchPayload
   pending?: boolean
-
-  [k: string]: string | number | boolean | PropertyAction | ButtonPayload | SwitchPayload | undefined
 }
 
 export interface ChannelPropertyAction {
@@ -157,6 +147,4 @@ export interface ChannelPropertyAction {
   expected_value?: string | number | boolean | ButtonPayload | SwitchPayload
   actual_value?: string | number | boolean | ButtonPayload | SwitchPayload
   pending?: boolean
-
-  [k: string]: string | number | boolean | PropertyAction | ButtonPayload | SwitchPayload | undefined
 }

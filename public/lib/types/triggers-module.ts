@@ -35,8 +35,6 @@ export interface TriggerEntity {
   owner: string | null
   is_triggered?: boolean | null
   is_fulfilled?: boolean | null
-
-  [k: string]: string | TriggerType | boolean | null | undefined
 }
 
 export interface TriggerControlEntity {
@@ -44,8 +42,6 @@ export interface TriggerControlEntity {
   name: string
   trigger: string
   owner: string | null
-
-  [k: string]: string | null
 }
 
 export interface ActionEntity {
@@ -59,8 +55,6 @@ export interface ActionEntity {
   value?: string
   owner: string | null
   is_triggered?: boolean | null
-
-  [k: string]: string | ActionType | boolean | null | undefined
 }
 
 export interface ConditionEntity {
@@ -78,8 +72,6 @@ export interface ConditionEntity {
   date?: string
   owner: string | null
   is_fulfilled?: boolean | null
-
-  [k: string]: string | ConditionType | ConditionOperator | boolean | number[] | null | undefined
 }
 
 export interface NotificationEntity {
@@ -90,6 +82,4 @@ export interface NotificationEntity {
   email?: string
   phone?: string
   owner: string | null
-
-  [k: string]: string | NotificationType | boolean | null | undefined
 }

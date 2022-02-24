@@ -39,11 +39,11 @@ class RoutingKey(ExtendedEnum, Enum):
     # GLOBAL
 
     CONNECTOR_ACTION: str = "fb.exchange.action.connector"
-    CONNECTOR_PROPERTY_ACTION: str = "fb.exchange.action.connector.property"
+    CONNECTOR_PROPERTIES_ACTION: str = "fb.exchange.action.connector.property"
     DEVICE_ACTION: str = "fb.exchange.action.device"
-    DEVICE_PROPERTY_ACTION: str = "fb.exchange.action.device.property"
+    DEVICE_PROPERTIES_ACTION: str = "fb.exchange.action.device.property"
     CHANNEL_ACTION: str = "fb.exchange.action.channel"
-    CHANNEL_PROPERTY_ACTION: str = "fb.exchange.action.channel.property"
+    CHANNEL_PROPERTIES_ACTION: str = "fb.exchange.action.channel.property"
     TRIGGER_ACTION: str = "fb.exchange.action.trigger"
 
     MODULE_MESSAGE: str = "fb.exchange.message.module"
@@ -83,16 +83,16 @@ class RoutingKey(ExtendedEnum, Enum):
     DEVICES_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device"
 
     # Device's properties
-    DEVICES_PROPERTY_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.property"
-    DEVICES_PROPERTY_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.property"
-    DEVICES_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.property"
-    DEVICES_PROPERTY_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.property"
+    DEVICES_PROPERTIES_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.property"
+    DEVICES_PROPERTIES_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.property"
+    DEVICES_PROPERTIES_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.property"
+    DEVICES_PROPERTIES_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.property"
 
     # Device's controls
-    DEVICES_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.control"
-    DEVICES_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.control"
-    DEVICES_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.control"
-    DEVICES_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.control"
+    DEVICES_CONTROLS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.control"
+    DEVICES_CONTROLS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.control"
+    DEVICES_CONTROLS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.control"
+    DEVICES_CONTROLS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.control"
 
     # Channels
     CHANNELS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel"
@@ -101,16 +101,16 @@ class RoutingKey(ExtendedEnum, Enum):
     CHANNELS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel"
 
     # Channel's properties
-    CHANNELS_PROPERTY_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.property"
-    CHANNELS_PROPERTY_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.property"
-    CHANNELS_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.property"
-    CHANNELS_PROPERTY_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.property"
+    CHANNELS_PROPERTIES_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.property"
+    CHANNELS_PROPERTIES_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.property"
+    CHANNELS_PROPERTIES_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.property"
+    CHANNELS_PROPERTIES_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.property"
 
     # Channel's controls
-    CHANNELS_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.control"
-    CHANNELS_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.control"
-    CHANNELS_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.control"
-    CHANNELS_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.control"
+    CHANNELS_CONTROLS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel.control"
+    CHANNELS_CONTROLS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel.control"
+    CHANNELS_CONTROLS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.channel.control"
+    CHANNELS_CONTROLS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.channel.control"
 
     # Connectors
     CONNECTORS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector"
@@ -119,16 +119,16 @@ class RoutingKey(ExtendedEnum, Enum):
     CONNECTORS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector"
 
     # Connector's properties
-    CONNECTORS_PROPERTY_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector.property"
-    CONNECTORS_PROPERTY_ENTITY_CREATED: str = "fb.exchange.module.entity.created.connector.property"
-    CONNECTORS_PROPERTY_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector.property"
-    CONNECTORS_PROPERTY_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector.property"
+    CONNECTORS_PROPERTIES_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector.property"
+    CONNECTORS_PROPERTIES_ENTITY_CREATED: str = "fb.exchange.module.entity.created.connector.property"
+    CONNECTORS_PROPERTIES_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector.property"
+    CONNECTORS_PROPERTIES_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector.property"
 
     # Connector's control
-    CONNECTORS_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector.control"
-    CONNECTORS_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.connector.control"
-    CONNECTORS_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector.control"
-    CONNECTORS_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector.control"
+    CONNECTORS_CONTROLS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.connector.control"
+    CONNECTORS_CONTROLS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.connector.control"
+    CONNECTORS_CONTROLS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.connector.control"
+    CONNECTORS_CONTROLS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.connector.control"
 
     # Triggers
     TRIGGERS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger"
@@ -137,10 +137,10 @@ class RoutingKey(ExtendedEnum, Enum):
     TRIGGERS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger"
 
     # Trigger's controls
-    TRIGGERS_CONTROL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger.control"
-    TRIGGERS_CONTROL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.trigger.control"
-    TRIGGERS_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger.control"
-    TRIGGERS_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger.control"
+    TRIGGERS_CONTROLS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger.control"
+    TRIGGERS_CONTROLS_ENTITY_CREATED: str = "fb.exchange.module.entity.created.trigger.control"
+    TRIGGERS_CONTROLS_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.trigger.control"
+    TRIGGERS_CONTROLS_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.trigger.control"
 
     # Trigger's actions
     TRIGGERS_ACTIONS_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.trigger.action"

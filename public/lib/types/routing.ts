@@ -48,16 +48,16 @@ export enum DevicesModuleRoutes {
   DEVICES_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.device',
 
   // Device's properties
-  DEVICES_PROPERTY_ENTITY_REPORTED = 'fb.exchange.module.entity.created.device.property',
-  DEVICES_PROPERTY_ENTITY_CREATED = 'fb.exchange.module.entity.created.device.property',
-  DEVICES_PROPERTY_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.device.property',
-  DEVICES_PROPERTY_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.device.property',
+  DEVICES_PROPERTIES_ENTITY_REPORTED = 'fb.exchange.module.entity.created.device.property',
+  DEVICES_PROPERTIES_ENTITY_CREATED = 'fb.exchange.module.entity.created.device.property',
+  DEVICES_PROPERTIES_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.device.property',
+  DEVICES_PROPERTIES_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.device.property',
 
   // Device's control
-  DEVICES_CONTROL_ENTITY_REPORTED = 'fb.exchange.module.entity.created.device.control',
-  DEVICES_CONTROL_ENTITY_CREATED = 'fb.exchange.module.entity.created.device.control',
-  DEVICES_CONTROL_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.device.control',
-  DEVICES_CONTROL_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.device.control',
+  DEVICES_CONTROLS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.device.control',
+  DEVICES_CONTROLS_ENTITY_CREATED = 'fb.exchange.module.entity.created.device.control',
+  DEVICES_CONTROLS_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.device.control',
+  DEVICES_CONTROLS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.device.control',
 
   // Channels
   CHANNELS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.channel',
@@ -66,16 +66,16 @@ export enum DevicesModuleRoutes {
   CHANNELS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel',
 
   // Channel's properties
-  CHANNELS_PROPERTY_ENTITY_REPORTED = 'fb.exchange.module.entity.created.channel.property',
-  CHANNELS_PROPERTY_ENTITY_CREATED = 'fb.exchange.module.entity.created.channel.property',
-  CHANNELS_PROPERTY_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.channel.property',
-  CHANNELS_PROPERTY_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel.property',
+  CHANNELS_PROPERTIES_ENTITY_REPORTED = 'fb.exchange.module.entity.created.channel.property',
+  CHANNELS_PROPERTIES_ENTITY_CREATED = 'fb.exchange.module.entity.created.channel.property',
+  CHANNELS_PROPERTIES_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.channel.property',
+  CHANNELS_PROPERTIES_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel.property',
 
   // Channel's control
-  CHANNELS_CONTROL_ENTITY_REPORTED = 'fb.exchange.module.entity.created.channel.control',
-  CHANNELS_CONTROL_ENTITY_CREATED = 'fb.exchange.module.entity.created.channel.control',
-  CHANNELS_CONTROL_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.channel.control',
-  CHANNELS_CONTROL_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel.control',
+  CHANNELS_CONTROLS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.channel.control',
+  CHANNELS_CONTROLS_ENTITY_CREATED = 'fb.exchange.module.entity.created.channel.control',
+  CHANNELS_CONTROLS_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.channel.control',
+  CHANNELS_CONTROLS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.channel.control',
 
   // Connectors
   CONNECTORS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector',
@@ -84,16 +84,16 @@ export enum DevicesModuleRoutes {
   CONNECTORS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.connector',
 
   // Connector's properties
-  CONNECTORS_PROPERTY_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector.property',
-  CONNECTORS_PROPERTY_ENTITY_CREATED = 'fb.exchange.module.entity.created.connector.property',
-  CONNECTORS_PROPERTY_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.connector.property',
-  CONNECTORS_PROPERTY_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.connector.property',
+  CONNECTORS_PROPERTIES_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector.property',
+  CONNECTORS_PROPERTIES_ENTITY_CREATED = 'fb.exchange.module.entity.created.connector.property',
+  CONNECTORS_PROPERTIES_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.connector.property',
+  CONNECTORS_PROPERTIES_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.connector.property',
 
   // Connector's control
-  CONNECTORS_CONTROL_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector.control',
-  CONNECTORS_CONTROL_ENTITY_CREATED = 'fb.exchange.module.entity.created.connector.control',
-  CONNECTORS_CONTROL_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.connector.control',
-  CONNECTORS_CONTROL_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.connector.control',
+  CONNECTORS_CONTROLS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.connector.control',
+  CONNECTORS_CONTROLS_ENTITY_CREATED = 'fb.exchange.module.entity.created.connector.control',
+  CONNECTORS_CONTROLS_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.connector.control',
+  CONNECTORS_CONTROLS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.connector.control',
 }
 
 export enum TriggersModuleRoutes {
@@ -104,10 +104,10 @@ export enum TriggersModuleRoutes {
   TRIGGERS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.trigger',
 
   // Trigger's control
-  TRIGGERS_CONTROL_ENTITY_REPORTED = 'fb.exchange.module.entity.created.trigger.control',
-  TRIGGERS_CONTROL_ENTITY_CREATED = 'fb.exchange.module.entity.created.trigger.control',
-  TRIGGERS_CONTROL_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.trigger.control',
-  TRIGGERS_CONTROL_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.trigger.control',
+  TRIGGERS_CONTROLS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.trigger.control',
+  TRIGGERS_CONTROLS_ENTITY_CREATED = 'fb.exchange.module.entity.created.trigger.control',
+  TRIGGERS_CONTROLS_ENTITY_UPDATED = 'fb.exchange.module.entity.updated.trigger.control',
+  TRIGGERS_CONTROLS_ENTITY_DELETED = 'fb.exchange.module.entity.deleted.trigger.control',
 
   // Actions
   ACTIONS_ENTITY_REPORTED = 'fb.exchange.module.entity.created.trigger.action',
