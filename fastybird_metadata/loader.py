@@ -100,7 +100,9 @@ def get_data_file_content(filename: str) -> Optional[str]:
 
 JSON_SCHEMAS_MAPPING = {
     RoutingKey(RoutingKey.CONNECTOR_ACTION).value: "resources/schemas/actions/action.connector.json",
-    RoutingKey(RoutingKey.CONNECTOR_PROPERTIES_ACTION).value: "resources/schemas/actions/action.connector.property.json",
+    RoutingKey(
+        RoutingKey.CONNECTOR_PROPERTIES_ACTION
+    ).value: "resources/schemas/actions/action.connector.property.json",
     RoutingKey(RoutingKey.DEVICE_ACTION).value: "resources/schemas/actions/action.device.json",
     RoutingKey(RoutingKey.DEVICE_PROPERTIES_ACTION).value: "resources/schemas/actions/action.device.property.json",
     RoutingKey(RoutingKey.CHANNEL_ACTION).value: "resources/schemas/actions/action.channel.json",
