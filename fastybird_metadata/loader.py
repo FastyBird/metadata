@@ -100,9 +100,7 @@ def get_data_file_content(filename: str) -> Optional[str]:
 
 JSON_SCHEMAS_MAPPING = {
     RoutingKey(RoutingKey.CONNECTOR_ACTION).value: "resources/schemas/actions/action.connector.json",
-    RoutingKey(
-        RoutingKey.CONNECTOR_PROPERTY_ACTION
-    ).value: "resources/schemas/actions/action.connector.property.json",
+    RoutingKey(RoutingKey.CONNECTOR_PROPERTY_ACTION).value: "resources/schemas/actions/action.connector.property.json",
     RoutingKey(RoutingKey.DEVICE_ACTION).value: "resources/schemas/actions/action.device.json",
     RoutingKey(RoutingKey.DEVICE_PROPERTY_ACTION).value: "resources/schemas/actions/action.device.property.json",
     RoutingKey(RoutingKey.CHANNEL_ACTION).value: "resources/schemas/actions/action.channel.json",
@@ -171,15 +169,9 @@ JSON_SCHEMAS_MAPPING = {
     RoutingKey(
         RoutingKey.CHANNEL_ENTITY_REPORTED
     ).value: "resources/schemas/modules/devices-module/entity.channel.json",
-    RoutingKey(
-        RoutingKey.CHANNEL_ENTITY_CREATED
-    ).value: "resources/schemas/modules/devices-module/entity.channel.json",
-    RoutingKey(
-        RoutingKey.CHANNEL_ENTITY_UPDATED
-    ).value: "resources/schemas/modules/devices-module/entity.channel.json",
-    RoutingKey(
-        RoutingKey.CHANNEL_ENTITY_DELETED
-    ).value: "resources/schemas/modules/devices-module/entity.channel.json",
+    RoutingKey(RoutingKey.CHANNEL_ENTITY_CREATED).value: "resources/schemas/modules/devices-module/entity.channel.json",
+    RoutingKey(RoutingKey.CHANNEL_ENTITY_UPDATED).value: "resources/schemas/modules/devices-module/entity.channel.json",
+    RoutingKey(RoutingKey.CHANNEL_ENTITY_DELETED).value: "resources/schemas/modules/devices-module/entity.channel.json",
     RoutingKey(
         RoutingKey.CHANNEL_PROPERTY_ENTITY_REPORTED
     ).value: "resources/schemas/modules/devices-module/entity.channel.property.json",
