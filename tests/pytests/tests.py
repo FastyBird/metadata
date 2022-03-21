@@ -30,7 +30,7 @@ class TestLoader(unittest.TestCase):
 
     def test_load_entity_schema(self):
         loaded_schema = load_schema_by_routing_key(
-            RoutingKey(RoutingKey.CHANNELS_ENTITY_REPORTED),
+            RoutingKey(RoutingKey.CHANNEL_ENTITY_REPORTED),
         )
 
         self.assertTrue(isinstance(loaded_schema, str))
