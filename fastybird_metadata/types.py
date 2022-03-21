@@ -19,14 +19,14 @@ Sets of universal enums for application
 """
 
 # Python base dependencies
-from enum import Enum, unique
+from enum import unique
 
 # Library libs
 from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique
-class ModulePrefix(ExtendedEnum, Enum):
+class ModulePrefix(ExtendedEnum):
     """
     Module prefix
 
@@ -48,7 +48,7 @@ class ModulePrefix(ExtendedEnum, Enum):
 
 
 @unique
-class ModuleSource(ExtendedEnum, Enum):
+class ModuleSource(ExtendedEnum):
     """
     Module source
 
@@ -72,7 +72,7 @@ class ModuleSource(ExtendedEnum, Enum):
 
 
 @unique
-class PluginSource(ExtendedEnum, Enum):
+class PluginSource(ExtendedEnum):
     """
     Plugin source
 
@@ -96,7 +96,7 @@ class PluginSource(ExtendedEnum, Enum):
 
 
 @unique
-class ConnectorSource(ExtendedEnum, Enum):
+class ConnectorSource(ExtendedEnum):
     """
     Plugin source
 
@@ -122,7 +122,7 @@ class ConnectorSource(ExtendedEnum, Enum):
 
 
 @unique
-class DataType(ExtendedEnum, Enum):
+class DataType(ExtendedEnum):
     """
     Record data type
 
@@ -157,7 +157,7 @@ class DataType(ExtendedEnum, Enum):
 
 
 @unique
-class SwitchPayload(ExtendedEnum, Enum):
+class SwitchPayload(ExtendedEnum):
     """
     Switch enum payload
 
@@ -178,7 +178,7 @@ class SwitchPayload(ExtendedEnum, Enum):
 
 
 @unique
-class ButtonPayload(ExtendedEnum, Enum):
+class ButtonPayload(ExtendedEnum):
     """
     Switch enum payload
 
@@ -203,7 +203,7 @@ class ButtonPayload(ExtendedEnum, Enum):
 
 
 @unique
-class ControlName(ExtendedEnum, Enum):
+class ControlName(ExtendedEnum):
     """
     Known control name
 
@@ -224,7 +224,7 @@ class ControlName(ExtendedEnum, Enum):
 
 
 @unique
-class PropertyAction(ExtendedEnum, Enum):
+class PropertyAction(ExtendedEnum):
     """
     Property data action
 
@@ -245,7 +245,7 @@ class PropertyAction(ExtendedEnum, Enum):
 
 
 @unique
-class ControlAction(ExtendedEnum, Enum):
+class ControlAction(ExtendedEnum):
     """
     Control data action
 

@@ -19,14 +19,14 @@ Sets of enums for application data exchange routing
 """
 
 # Python base dependencies
-from enum import Enum, unique
+from enum import unique
 
 # Library libs
 from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique
-class RoutingKey(ExtendedEnum, Enum):
+class RoutingKey(ExtendedEnum):
     """
     Data exchange routing key
 

@@ -19,14 +19,14 @@ Sets of enums for Devices Module
 """
 
 # Python base dependencies
-from enum import Enum, unique
+from enum import unique
 
 # Library libs
 from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique
-class PropertyType(ExtendedEnum, Enum):
+class PropertyType(ExtendedEnum):
     """
     Property entity type
 
@@ -46,7 +46,7 @@ class PropertyType(ExtendedEnum, Enum):
 
 
 @unique
-class ConnectionState(ExtendedEnum, Enum):
+class ConnectionState(ExtendedEnum):
     """
     Device connection state
 
@@ -84,7 +84,7 @@ class ConnectionState(ExtendedEnum, Enum):
 
 
 @unique
-class DeviceModel(ExtendedEnum, Enum):
+class DeviceModel(ExtendedEnum):
     """
     Device known models
 
@@ -134,7 +134,7 @@ class DeviceModel(ExtendedEnum, Enum):
 
 
 @unique
-class FirmwareManufacturer(ExtendedEnum, Enum):
+class FirmwareManufacturer(ExtendedEnum):
     """
     Device firmware manufacturer
 
@@ -157,7 +157,7 @@ class FirmwareManufacturer(ExtendedEnum, Enum):
 
 
 @unique
-class HardwareManufacturer(ExtendedEnum, Enum):
+class HardwareManufacturer(ExtendedEnum):
     """
     Device hardware manufacturer
 
@@ -182,7 +182,7 @@ class HardwareManufacturer(ExtendedEnum, Enum):
 
 
 @unique
-class DevicePropertyName(ExtendedEnum, Enum):
+class DevicePropertyName(ExtendedEnum):
     """
     Device known property name
 
@@ -213,7 +213,7 @@ class DevicePropertyName(ExtendedEnum, Enum):
 
 
 @unique
-class ConnectorPropertyName(ExtendedEnum, Enum):
+class ConnectorPropertyName(ExtendedEnum):
     """
     Connector known property name
 

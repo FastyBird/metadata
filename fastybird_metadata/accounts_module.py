@@ -19,14 +19,14 @@ Sets of enums for Accounts Module
 """
 
 # Python base dependencies
-from enum import Enum, unique
+from enum import unique
 
 # Library libs
 from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique
-class AccountState(ExtendedEnum, Enum):
+class AccountState(ExtendedEnum):
     """
     Account state type
 
@@ -49,7 +49,7 @@ class AccountState(ExtendedEnum, Enum):
 
 
 @unique
-class IdentityState(ExtendedEnum, Enum):
+class IdentityState(ExtendedEnum):
     """
     Account identity state type
 

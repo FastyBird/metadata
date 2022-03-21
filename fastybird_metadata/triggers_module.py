@@ -19,14 +19,14 @@ Sets of enums for Triggers Module
 """
 
 # Python base dependencies
-from enum import Enum, unique
+from enum import unique
 
 # Library libs
 from fastybird_metadata.enum import ExtendedEnum
 
 
 @unique
-class TriggerType(ExtendedEnum, Enum):
+class TriggerType(ExtendedEnum):
     """
     Trigger type
 
@@ -46,7 +46,7 @@ class TriggerType(ExtendedEnum, Enum):
 
 
 @unique
-class ActionType(ExtendedEnum, Enum):
+class ActionType(ExtendedEnum):
     """
     Trigger action type
 
@@ -66,7 +66,7 @@ class ActionType(ExtendedEnum, Enum):
 
 
 @unique
-class ConditionType(ExtendedEnum, Enum):
+class ConditionType(ExtendedEnum):
     """
     Trigger condition type
 
@@ -88,7 +88,7 @@ class ConditionType(ExtendedEnum, Enum):
 
 
 @unique
-class NotificationType(ExtendedEnum, Enum):
+class NotificationType(ExtendedEnum):
     """
     Trigger notification type
 
@@ -108,7 +108,7 @@ class NotificationType(ExtendedEnum, Enum):
 
 
 @unique
-class ConditionOperator(ExtendedEnum, Enum):
+class ConditionOperator(ExtendedEnum):
     """
     Condition operator
 
