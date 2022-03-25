@@ -68,6 +68,22 @@
       "type" : "string",
       "description" : "Entity connector uuid v4 identifier"
     },
+    "parents" : {
+      "type" : "array",
+      "uniqueItems" : true,
+      "items" : {
+        "type" : "string"
+      },
+      "description" : "Entity parents uuid v4 identifiers"
+    },
+    "children" : {
+      "type" : "array",
+      "uniqueItems" : true,
+      "items" : {
+        "type" : "string"
+      },
+      "description" : "Entity children uuid v4 identifiers"
+    },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
       "description" : "Entity owner uuid v4 identifier"
@@ -85,6 +101,8 @@
     "hardware_mac_address",
     "firmware_manufacturer",
     "firmware_version",
-    "connector"
+    "connector",
+    "parents",
+    "children"
   ]
 }

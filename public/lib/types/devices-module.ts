@@ -149,6 +149,8 @@ export interface DeviceEntity {
   firmware_manufacturer: FirmwareManufacturer | string
   firmware_version: string | null
   connector: string
+  parents: string[]
+  children: string[]
   owner: string | null
 }
 
@@ -170,6 +172,7 @@ export interface DevicePropertyEntity {
   previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
   pending?: boolean
   device: string
+  children: string[]
   owner: string | null
 }
 
@@ -207,6 +210,7 @@ export interface ChannelPropertyEntity {
   previous_value?: string | number | boolean | ButtonPayload | SwitchPayload | null
   pending?: boolean
   channel: string
+  children: string[]
   owner: string | null
 }
 

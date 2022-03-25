@@ -182,6 +182,14 @@
       "type" : "string",
       "description" : "Device unique uuid v4 identifier"
     },
+    "children" : {
+      "type" : "array",
+      "uniqueItems" : true,
+      "items" : {
+        "type" : "string"
+      },
+      "description" : "Entity children uuid v4 identifiers"
+    },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
       "description" : "Entity owner uuid v4 identifier"
@@ -220,7 +228,8 @@
       "format",
       "invalid",
       "number_of_decimals",
-      "device"
+      "device",
+      "children"
     ]
   },
   "else" : {
@@ -245,7 +254,8 @@
       "number_of_decimals",
       "value",
       "default",
-      "device"
+      "device",
+      "children"
     ]
   }
 }
