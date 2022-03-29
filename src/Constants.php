@@ -48,6 +48,9 @@ final class Constants
 	public const CONNECTOR_TUYA_SOURCE = 'com.fastybird.tuya-connector';
 	public const CONNECTOR_SONOFF_SOURCE = 'com.fastybird.sonoff-connector';
 	public const CONNECTOR_MODBUS_SOURCE = 'com.fastybird.modbus-connector';
+	public const CONNECTOR_HOMEKIT_SOURCE = 'com.fastybird.homekit-connector';
+	public const CONNECTOR_ITEAD_SOURCE = 'com.fastybird.itead-connector';
+	public const CONNECTOR_VIRTUAL_SOURCE = 'com.fastybird.virtual-connector';
 
 	public const PLUGIN_STORAGE_COUCHDB_SOURCE = 'com.fastybird.couchdb-storage-plugin';
 	public const PLUGIN_EXCHANGE_RABBITMQ_SOURCE = 'com.fastybird.rabbitmq-exchange-plugin';

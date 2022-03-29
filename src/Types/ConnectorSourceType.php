@@ -39,6 +39,9 @@ class ConnectorSourceType extends Consistence\Enum\Enum
 	public const SOURCE_CONNECTOR_TUYA = Metadata\Constants::CONNECTOR_TUYA_SOURCE;
 	public const SOURCE_CONNECTOR_SONOFF = Metadata\Constants::CONNECTOR_SONOFF_SOURCE;
 	public const SOURCE_CONNECTOR_MODBUS = Metadata\Constants::CONNECTOR_MODBUS_SOURCE;
+	public const SOURCE_CONNECTOR_HOMEKIT = Metadata\Constants::CONNECTOR_HOMEKIT_SOURCE;
+	public const SOURCE_CONNECTOR_ITEAD = Metadata\Constants::CONNECTOR_ITEAD_SOURCE;
+	public const SOURCE_CONNECTOR_VIRTUAL = Metadata\Constants::CONNECTOR_VIRTUAL_SOURCE;
 
 	/**
 	 * @return string

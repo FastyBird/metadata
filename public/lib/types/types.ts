@@ -30,6 +30,9 @@ export enum ConnectorSource {
   TUYA_CONNECTOR = 'com.fastybird.tuya-connector',
   SONOFF_CONNECTOR = 'com.fastybird.sonoff-connector',
   MODBUS_CONNECTOR = 'com.fastybird.modbus-connector',
+  HOMEKIT_CONNECTOR = 'com.fastybird.homekit-connector',
+  ITEAD_CONNECTOR = 'com.fastybird.itead-connector',
+  VIRTUAL_CONNECTOR = 'com.fastybird.virtual-connector',
 }
 
 export enum DataType {

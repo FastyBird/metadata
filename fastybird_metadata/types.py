@@ -114,6 +114,9 @@ class ConnectorSource(ExtendedEnum):
     TUYA_CONNECTOR: str = "com.fastybird.tuya-connector"
     SONOFF_CONNECTOR: str = "com.fastybird.sonoff-connector"
     MODBUS_CONNECTOR: str = "com.fastybird.modbus-connector"
+    HOMEKIT_CONNECTOR: str = "com.fastybird.homekit-connector"
+    ITEAD_CONNECTOR: str = "com.fastybird.itead-connector"
+    VIRTUAL_CONNECTOR: str = "com.fastybird.virtual-connector"
 
     # -----------------------------------------------------------------------------
 
