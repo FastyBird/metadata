@@ -112,7 +112,8 @@
       "type" : "string",
       "enum" : [
         "static",
-        "dynamic"
+        "dynamic",
+        "mapped"
       ]
     },
     "datatype" : {

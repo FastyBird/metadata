@@ -33,6 +33,7 @@ class PropertyTypeType extends Consistence\Enum\Enum
 	 */
 	public const TYPE_STATIC = 'static';
 	public const TYPE_DYNAMIC = 'dynamic';
+	public const TYPE_MAPPED = 'mapped';
 
 	/**
 	 * @return string

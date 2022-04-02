@@ -38,6 +38,7 @@ class PropertyType(ExtendedEnum):
 
     DYNAMIC: str = "dynamic"
     STATIC: str = "static"
+    MAPPED: str = "mapped"
 
     # -----------------------------------------------------------------------------
 

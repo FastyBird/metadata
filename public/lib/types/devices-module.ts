@@ -3,6 +3,7 @@ import { ButtonPayload, DataType, SwitchPayload } from '@/lib/types/types'
 export enum PropertyType {
   DYNAMIC = 'dynamic',
   STATIC = 'static',
+  MAPPED = 'mapped',
 }
 
 export enum ConnectionState {

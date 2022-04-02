@@ -112,7 +112,8 @@
       "type" : "string",
       "enum" : [
         "static",
-        "dynamic"
+        "dynamic",
+        "mapped"
       ]
     },
     "datatype" : {
@@ -233,29 +234,74 @@
     ]
   },
   "else" : {
-    "properties" : {
-      "value" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
-      },
-      "default" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "dynamic"
+        }
       }
     },
-    "required" : [
-      "id",
-      "type",
-      "identifier",
-      "settable",
-      "queryable",
-      "data_type",
-      "unit",
-      "format",
-      "invalid",
-      "number_of_decimals",
-      "value",
-      "default",
-      "channel",
-      "children"
-    ]
+    "then" : {
+      "properties" : {
+        "value" : {
+          "$ref" : "#/definitions/types/string_number_boolean_null"
+        },
+        "default" : {
+          "$ref" : "#/definitions/types/string_number_boolean_null"
+        }
+      },
+      "required" : [
+        "id",
+        "type",
+        "identifier",
+        "settable",
+        "queryable",
+        "data_type",
+        "unit",
+        "format",
+        "invalid",
+        "number_of_decimals",
+        "value",
+        "default",
+        "channel",
+        "children"
+      ]
+    },
+    "else" : {
+      "properties" : {
+        "actual_value" : {
+          "$ref" : "#/definitions/types/string_number_boolean_null"
+        },
+        "previous_value" : {
+          "$ref" : "#/definitions/types/string_number_boolean_null"
+        },
+        "expected_value" : {
+          "$ref" : "#/definitions/types/string_number_boolean_null"
+        },
+        "pending" : {
+          "type" : "boolean"
+        },
+        "value" : {
+          "$ref" : "#/definitions/types/string_number_boolean_null"
+        },
+        "default" : {
+          "$ref" : "#/definitions/types/string_number_boolean_null"
+        }
+      },
+      "required" : [
+        "id",
+        "type",
+        "identifier",
+        "settable",
+        "queryable",
+        "data_type",
+        "unit",
+        "format",
+        "invalid",
+        "number_of_decimals",
+        "channel",
+        "children"
+      ]
+    }
   }
 }
