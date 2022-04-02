@@ -59,7 +59,6 @@
             "uniqueItems" : true,
             "items" : {
               "type" : "array",
-              "uniqueItems" : true,
               "items" : {
                 "$ref" : "#/definitions/types/nullable_string"
               },
