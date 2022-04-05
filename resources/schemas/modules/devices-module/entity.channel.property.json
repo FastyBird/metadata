@@ -215,6 +215,9 @@
       },
       "pending" : {
         "type" : "boolean"
+      },
+      "valid" : {
+        "type" : "boolean"
       }
     },
     "required" : [
@@ -236,7 +239,7 @@
     "if" : {
       "properties" : {
         "type" : {
-          "const" : "dynamic"
+          "const" : "static"
         }
       }
     },
@@ -278,6 +281,9 @@
           "$ref" : "#/definitions/types/string_number_boolean_null"
         },
         "pending" : {
+          "type" : "boolean"
+        },
+        "valid" : {
           "type" : "boolean"
         },
         "value" : {

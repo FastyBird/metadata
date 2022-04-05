@@ -206,6 +206,9 @@
       },
       "pending" : {
         "type" : "boolean"
+      },
+      "valid" : {
+        "type" : "boolean"
       }
     },
     "required" : [
@@ -223,73 +226,29 @@
     ]
   },
   "else" : {
-    "if" : {
-      "properties" : {
-        "type" : {
-          "const" : "dynamic"
-        }
+    "properties" : {
+      "value" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
+      },
+      "default" : {
+        "$ref" : "#/definitions/types/string_number_boolean_null"
       }
     },
-    "then" : {
-      "properties" : {
-        "value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
-        },
-        "default" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
-        }
-      },
-      "required" : [
-        "id",
-        "type",
-        "identifier",
-        "settable",
-        "queryable",
-        "data_type",
-        "unit",
-        "format",
-        "invalid",
-        "number_of_decimals",
-        "value",
-        "default",
-        "connector"
-      ]
-    },
-    "else" : {
-      "properties" : {
-        "actual_value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
-        },
-        "previous_value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
-        },
-        "expected_value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
-        },
-        "pending" : {
-          "type" : "boolean"
-        },
-        "value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
-        },
-        "default" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
-        }
-      },
-      "required" : [
-        "id",
-        "type",
-        "identifier",
-        "settable",
-        "queryable",
-        "data_type",
-        "unit",
-        "format",
-        "invalid",
-        "number_of_decimals",
-        "channel",
-        "children"
-      ]
-    }
+    "required" : [
+      "id",
+      "type",
+      "identifier",
+      "settable",
+      "queryable",
+      "data_type",
+      "unit",
+      "format",
+      "invalid",
+      "number_of_decimals",
+      "value",
+      "default",
+      "device",
+      "children"
+    ]
   }
 }
