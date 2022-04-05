@@ -265,7 +265,7 @@
         "number_of_decimals",
         "value",
         "default",
-        "channel",
+        "device",
         "children"
       ]
     },
@@ -304,7 +304,7 @@
         "format",
         "invalid",
         "number_of_decimals",
-        "channel",
+        "device",
         "children"
       ]
     }
