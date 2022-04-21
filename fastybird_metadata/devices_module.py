@@ -147,6 +147,7 @@ class FirmwareManufacturer(ExtendedEnum):
 
     GENERIC: str = "generic"
     FASTYBIRD: str = "fastybird"
+    ITEAD = "itead"
     SHELLY: str = "shelly"
     TUYA: str = "tuya"
     SONOFF: str = "sonoff"
@@ -211,6 +212,26 @@ class DevicePropertyName(ExtendedEnum):
 
     def __hash__(self) -> int:
         return hash(self._name_)  # pylint: disable=no-member
+
+
+@unique
+class DeviceAttributeName(ExtendedEnum):
+    """
+    Device known attribute name
+
+    @package        FastyBird:Metadata!
+    @module         devices_module
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    HARDWARE_MANUFACTURER: str = "hardware_manufacturer"
+    HARDWARE_MODEL: str = "hardware_model"
+    HARDWARE_VERSION: str = "hardware_version"
+    HARDWARE_MAC_ADDRESS: str = "hardware_mac_address"
+    FIRMWARE_MANUFACTURER: str = "firmware_manufacturer"
+    FIRMWARE_NAME: str = "firmware_name"
+    FIRMWARE_VERSION: str = "firmware_version"
 
 
 @unique

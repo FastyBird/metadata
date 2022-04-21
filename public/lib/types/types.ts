@@ -74,6 +74,7 @@ export enum ButtonPayload {
 export enum ControlName {
   CONFIGURE = 'configure',
   RESET = 'reset',
+  FACTORY_RESET = 'factory-reset',
   REBOOT = 'reboot',
   TRIGGER = 'trigger',
 }

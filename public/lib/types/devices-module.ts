@@ -57,6 +57,7 @@ export enum DeviceModel {
 export enum FirmwareManufacturer {
   GENERIC = 'generic',
   FASTYBIRD = 'fastybird',
+  ITEAD = 'itead',
   SHELLY = 'shelly',
   TUYA = 'tuya',
   SONOFF = 'sonoff',
@@ -86,6 +87,16 @@ export enum DevicePropertyName {
   IP_ADDRESS = 'ip-address',
   STATUS_LED = 'status-led',
   FREE_HEAP = 'free-heap',
+}
+
+export enum DeviceAttributeName {
+  HARDWARE_MANUFACTURER = "hardware_manufacturer",
+  HARDWARE_MODEL = "hardware_model",
+  HARDWARE_VERSION = "hardware_version",
+  HARDWARE_MAC_ADDRESS = "hardware_mac_address",
+  FIRMWARE_MANUFACTURER = "firmware_manufacturer",
+  FIRMWARE_NAME = "firmware_name",
+  FIRMWARE_VERSION = "firmware_version",
 }
 
 export enum ConnectorPropertyName {
@@ -142,17 +153,17 @@ export interface DeviceEntity {
   identifier: string
   name: string | null
   comment: string | null
-  enabled: boolean
-  hardware_manufacturer: HardwareManufacturer | string
-  hardware_model: DeviceModel | string
-  hardware_version: string | null
-  hardware_mac_address: string | null
-  firmware_manufacturer: FirmwareManufacturer | string
-  firmware_version: string | null
   connector: string
   parents: string[]
   children: string[]
   owner: string | null
+}
+
+export interface DeviceAttributeEntity {
+  id: string
+  identifier: string
+  name: string | null
+  content: string | null
 }
 
 export interface DevicePropertyEntity {

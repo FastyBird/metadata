@@ -29,7 +29,7 @@ class DevicePropertyNameType extends Consistence\Enum\Enum
 {
 
 	/**
-	 * Define device states
+	 * Define device properties names
 	 */
 	public const NAME_STATE = 'state';
 	public const NAME_BATTERY = 'battery';

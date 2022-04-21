@@ -29,7 +29,7 @@ class ConnectorPropertyNameType extends Consistence\Enum\Enum
 {
 
 	/**
-	 * Define device states
+	 * Define connector properties names
 	 */
 	public const NAME_STATE = 'state';
 	public const NAME_SERVER = 'server';

@@ -218,7 +218,9 @@ class ControlName(ExtendedEnum):
 
     CONFIGURE: str = "configure"
     RESET: str = "reset"
+    FACTORY_RESET: str = "factory-reset"
     REBOOT: str = "reboot"
+    TRIGGER: str = "trigger"
 
     # -----------------------------------------------------------------------------
 
