@@ -36,10 +36,6 @@
       "$ref" : "#/definitions/types/nullable_string",
       "default" : null
     },
-    "enabled" : {
-      "type" : "boolean",
-      "default" : false
-    },
     "connector" : {
       "type" : "string",
       "description" : "Entity connector uuid v4 identifier"
@@ -70,7 +66,6 @@
     "identifier",
     "name",
     "comment",
-    "enabled",
     "connector",
     "parents",
     "children"
