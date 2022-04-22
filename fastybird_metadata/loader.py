@@ -167,6 +167,18 @@ JSON_SCHEMAS_MAPPING = {
         RoutingKey.DEVICE_CONTROL_ENTITY_DELETED
     ).value: "resources/schemas/modules/devices-module/entity.device.control.json",
     RoutingKey(
+        RoutingKey.DEVICE_ATTRIBUTE_ENTITY_REPORTED
+    ).value: "resources/schemas/modules/devices-module/entity.device.attribute.json",
+    RoutingKey(
+        RoutingKey.DEVICE_ATTRIBUTE_ENTITY_CREATED
+    ).value: "resources/schemas/modules/devices-module/entity.device.attribute.json",
+    RoutingKey(
+        RoutingKey.DEVICE_ATTRIBUTE_ENTITY_UPDATED
+    ).value: "resources/schemas/modules/devices-module/entity.device.attribute.json",
+    RoutingKey(
+        RoutingKey.DEVICE_ATTRIBUTE_ENTITY_DELETED
+    ).value: "resources/schemas/modules/devices-module/entity.device.attribute.json",
+    RoutingKey(
         RoutingKey.CHANNEL_ENTITY_REPORTED
     ).value: "resources/schemas/modules/devices-module/entity.channel.json",
     RoutingKey(RoutingKey.CHANNEL_ENTITY_CREATED).value: "resources/schemas/modules/devices-module/entity.channel.json",

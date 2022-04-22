@@ -94,6 +94,12 @@ class RoutingKey(ExtendedEnum):
     DEVICE_CONTROL_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.control"
     DEVICE_CONTROL_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.control"
 
+    # Device's attributes
+    DEVICE_ATTRIBUTE_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.device.attribute"
+    DEVICE_ATTRIBUTE_ENTITY_CREATED: str = "fb.exchange.module.entity.created.device.attribute"
+    DEVICE_ATTRIBUTE_ENTITY_UPDATED: str = "fb.exchange.module.entity.updated.device.attribute"
+    DEVICE_ATTRIBUTE_ENTITY_DELETED: str = "fb.exchange.module.entity.deleted.device.attribute"
+
     # Channels
     CHANNEL_ENTITY_REPORTED: str = "fb.exchange.module.entity.reported.channel"
     CHANNEL_ENTITY_CREATED: str = "fb.exchange.module.entity.created.channel"
