@@ -92,11 +92,43 @@
     ]
   },
   "else" : {
-    "required" : [
-      "id",
-      "type",
-      "enabled",
-      "trigger"
-    ]
+    "if" : {
+      "properties" : {
+        "type" : {
+          "const" : "device-property"
+        }
+      }
+    },
+    "then" : {
+      "properties" : {
+        "device" : {
+          "type" : "string"
+        },
+        "property" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string",
+          "description" : "Value to be sent to the device"
+        }
+      },
+      "required" : [
+        "id",
+        "type",
+        "enabled",
+        "trigger",
+        "device",
+        "property",
+        "value"
+      ]
+    },
+    "else" : {
+      "required" : [
+        "id",
+        "type",
+        "enabled",
+        "trigger"
+      ]
+    }
   }
 }

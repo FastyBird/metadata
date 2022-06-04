@@ -140,6 +140,11 @@
       "type" : "string",
       "description" : "Entity unique uuid v4 identifier"
     },
+    "parent" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Entity parent unique uuid v4 identifier",
+      "default" : null
+    },
     "type" : {
       "$ref" : "#/definitions/type"
     },
@@ -188,7 +193,8 @@
       "items" : {
         "type" : "string"
       },
-      "description" : "Entity children uuid v4 identifiers"
+      "description" : "Entity children uuid v4 identifiers",
+      "default" : []
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -231,8 +237,7 @@
       "format",
       "invalid",
       "number_of_decimals",
-      "device",
-      "children"
+      "device"
     ]
   },
   "else" : {
@@ -265,8 +270,7 @@
         "number_of_decimals",
         "value",
         "default",
-        "device",
-        "children"
+        "device"
       ]
     },
     "else" : {
@@ -304,8 +308,7 @@
         "format",
         "invalid",
         "number_of_decimals",
-        "device",
-        "children"
+        "device"
       ]
     }
   }

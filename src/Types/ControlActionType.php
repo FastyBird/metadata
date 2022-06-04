@@ -18,7 +18,7 @@ namespace FastyBird\Metadata\Types;
 use Consistence;
 
 /**
- * Property action
+ * Control action
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Types

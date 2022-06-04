@@ -46,7 +46,8 @@
       "items" : {
         "type" : "string"
       },
-      "description" : "Entity parents uuid v4 identifiers"
+      "description" : "Entity parents uuid v4 identifiers",
+      "default" : []
     },
     "children" : {
       "type" : "array",
@@ -54,7 +55,8 @@
       "items" : {
         "type" : "string"
       },
-      "description" : "Entity children uuid v4 identifiers"
+      "description" : "Entity children uuid v4 identifiers",
+      "default" : []
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -66,8 +68,6 @@
     "identifier",
     "name",
     "comment",
-    "connector",
-    "parents",
-    "children"
+    "connector"
   ]
 }

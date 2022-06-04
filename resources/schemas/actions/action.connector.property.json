@@ -97,7 +97,8 @@
           "action",
           "connector",
           "property",
-          "actual_value"
+          "actual_value",
+          "pending"
         ]
       }
     }

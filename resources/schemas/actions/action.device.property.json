@@ -97,7 +97,8 @@
           "action",
           "device",
           "property",
-          "actual_value"
+          "actual_value",
+          "pending"
         ]
       }
     }

@@ -140,6 +140,11 @@
       "type" : "string",
       "description" : "Entity unique uuid v4 identifier"
     },
+    "parent" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Entity parent unique uuid v4 identifier",
+      "default" : null
+    },
     "type" : {
       "$ref" : "#/definitions/type"
     },
@@ -188,7 +193,8 @@
       "items" : {
         "type" : "string"
       },
-      "description" : "Entity children uuid v4 identifiers"
+      "description" : "Entity children uuid v4 identifiers",
+      "default" : []
     },
     "owner" : {
       "$ref" : "#/definitions/types/nullable_string",
@@ -214,10 +220,12 @@
         "$ref" : "#/definitions/types/string_number_boolean_null"
       },
       "pending" : {
-        "type" : "boolean"
+        "type" : "boolean",
+        "default" : false
       },
       "valid" : {
-        "type" : "boolean"
+        "type" : "boolean",
+        "default" : false
       }
     },
     "required" : [
@@ -231,8 +239,7 @@
       "format",
       "invalid",
       "number_of_decimals",
-      "channel",
-      "children"
+      "channel"
     ]
   },
   "else" : {
@@ -246,10 +253,12 @@
     "then" : {
       "properties" : {
         "value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "$ref" : "#/definitions/types/string_number_boolean_null",
+          "default" : null
         },
         "default" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "$ref" : "#/definitions/types/string_number_boolean_null",
+          "default" : null
         }
       },
       "required" : [
@@ -265,8 +274,7 @@
         "number_of_decimals",
         "value",
         "default",
-        "channel",
-        "children"
+        "channel"
       ]
     },
     "else" : {
@@ -304,8 +312,7 @@
         "format",
         "invalid",
         "number_of_decimals",
-        "channel",
-        "children"
+        "channel"
       ]
     }
   }

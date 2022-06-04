@@ -23,7 +23,7 @@
     "uid" : {
       "type" : "string"
     },
-    "password" : {
+    "hash" : {
       "type" : "string"
     },
     "account" : {

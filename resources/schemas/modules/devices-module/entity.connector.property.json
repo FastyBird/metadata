@@ -247,8 +247,7 @@
       "number_of_decimals",
       "value",
       "default",
-      "device",
-      "children"
+      "device"
     ]
   }
 }

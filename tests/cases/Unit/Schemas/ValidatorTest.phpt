@@ -4,10 +4,10 @@ namespace Tests\Cases;
 
 use FastyBird\Metadata\Schemas;
 use Nette\Utils;
-use Ninjify\Nunjuck\TestCase\BaseTestCase;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../bootstrap.php';
+require_once __DIR__ . '/../BaseTestCase.php';
 
 /**
  * @testCase

@@ -164,6 +164,8 @@ export interface DeviceAttributeEntity {
   identifier: string
   name: string | null
   content: string | null
+  device: string
+  owner: string | null
 }
 
 export interface DevicePropertyEntity {

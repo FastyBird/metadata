@@ -104,7 +104,8 @@
           "device",
           "channel",
           "property",
-          "actual_value"
+          "actual_value",
+          "pending"
         ]
       }
     }
