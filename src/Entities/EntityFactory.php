@@ -144,7 +144,9 @@ abstract class EntityFactory
 			return [];
 		}
 
-		return array_combine($keys, (array) $data);
+		$converted = array_combine($keys, (array) $data);
+
+		return $converted !== false ? $converted : [];
 	}
 
 	/**
