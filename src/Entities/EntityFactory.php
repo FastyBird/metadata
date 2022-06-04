@@ -146,7 +146,7 @@ abstract class EntityFactory
 
 		$converted = array_combine($keys, (array) $data);
 
-		return $converted !== false ? $converted : []; // @phpstan-ignore-line
+		return $converted !== false ? $converted : [];
 	}
 
 	/**

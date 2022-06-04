@@ -1,2 +1,10 @@
 parameters:
 	level: max
+
+	ignoreErrors:
+		-
+			message: '#Else branch is unreachable because ternary operator condition is always true.#'
+			path: src/Entities/EntityFactory.php
+		-
+			message: '#Strict comparison using !== between array and false will always evaluate to true.#'
+			path: src/Entities/EntityFactory.php
