@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\TriggersModule;
 
+use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Types;
 use Ramsey\Uuid;
 
@@ -26,8 +27,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-abstract class ActionEntity implements IActionEntity
+abstract class ActionEntity implements IActionEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -49,13 +52,15 @@ abstract class ActionEntity implements IActionEntity
 		string $trigger,
 		string $type,
 		bool $enabled,
-		?bool $isTriggered = null
+		?bool $isTriggered = null,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->trigger = Uuid\Uuid::fromString($trigger);
 		$this->type = Types\TriggerActionTypeType::get($type);
 		$this->enabled = $enabled;
 		$this->triggered = $isTriggered;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -109,6 +114,7 @@ abstract class ActionEntity implements IActionEntity
 			'type'         => $this->getType()->getValue(),
 			'enabled'      => $this->isEnabled(),
 			'is_triggered' => $this->isTriggered(),
+			'owner'        => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

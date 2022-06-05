@@ -45,9 +45,10 @@ final class DevicePropertyActionEntity extends ActionEntity implements IDevicePr
 		string $device,
 		string $property,
 		string $value,
-		?bool $isTriggered = null
+		?bool $isTriggered = null,
+		?string $owner = null
 	) {
-		parent::__construct($id, $trigger, $type, $enabled, $isTriggered);
+		parent::__construct($id, $trigger, $type, $enabled, $isTriggered, $owner);
 
 		$this->device = Uuid\Uuid::fromString($device);
 		$this->property = Uuid\Uuid::fromString($property);

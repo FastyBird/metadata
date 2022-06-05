@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use FastyBird\Metadata\Entities;
 use Ramsey\Uuid;
 
 /**
@@ -25,8 +26,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class DeviceAttributeEntity implements IDeviceAttributeEntity
+final class DeviceAttributeEntity implements IDeviceAttributeEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -48,13 +51,15 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 		string $device,
 		string $identifier,
 		?string $name,
-		?string $content
+		?string $content,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->device = Uuid\Uuid::fromString($device);
 		$this->identifier = $identifier;
 		$this->name = $name;
 		$this->content = $content;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -108,6 +113,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 			'identifier' => $this->getIdentifier(),
 			'name'       => $this->getName(),
 			'content'    => $this->getContent(),
+			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

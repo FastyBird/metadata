@@ -66,6 +66,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	 * @param bool|null $valid
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -85,9 +86,10 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 		?bool $pending,
 		?bool $valid,
 		$value,
-		$default
+		$default,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $owner);
 
 		$this->actualValue = $actualValue;
 		$this->previousValue = $previousValue;

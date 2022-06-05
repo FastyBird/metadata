@@ -58,6 +58,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	 * @param string|int|float|bool|null $expectedValue
 	 * @param bool|null $pending
 	 * @param bool|null $valid
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -75,9 +76,10 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 		$previousValue,
 		$expectedValue,
 		?bool $pending,
-		?bool $valid
+		?bool $valid,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $owner);
 
 		$this->actualValue = $actualValue;
 		$this->previousValue = $previousValue;

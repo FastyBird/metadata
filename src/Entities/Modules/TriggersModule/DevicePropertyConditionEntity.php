@@ -50,9 +50,10 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 		string $property,
 		string $operand,
 		string $operator,
-		?bool $isFulfilled = null
+		?bool $isFulfilled = null,
+		?string $owner = null
 	) {
-		parent::__construct($id, $trigger, $type, $enabled, $isFulfilled);
+		parent::__construct($id, $trigger, $type, $enabled, $isFulfilled, $owner);
 
 		$this->device = Uuid\Uuid::fromString($device);
 		$this->property = Uuid\Uuid::fromString($property);

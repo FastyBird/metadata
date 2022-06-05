@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use FastyBird\Metadata\Entities;
 use Ramsey\Uuid;
 
 /**
@@ -25,8 +26,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class ChannelEntity implements IChannelEntity
+final class ChannelEntity implements IChannelEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -48,13 +51,15 @@ final class ChannelEntity implements IChannelEntity
 		string $identifier,
 		string $device,
 		?string $name = null,
-		?string $comment = null
+		?string $comment = null,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->identifier = $identifier;
 		$this->name = $name;
 		$this->comment = $comment;
 		$this->device = Uuid\Uuid::fromString($device);
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -108,6 +113,7 @@ final class ChannelEntity implements IChannelEntity
 			'name'       => $this->getName(),
 			'comment'    => $this->getComment(),
 			'device'     => $this->getDevice()->toString(),
+			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

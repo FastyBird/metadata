@@ -48,6 +48,7 @@ final class DeviceStaticPropertyEntity extends StaticPropertyEntity implements I
 	 * @param string $device
 	 * @param string|null $parent
 	 * @param string[]|Utils\ArrayHash $children
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -65,9 +66,10 @@ final class DeviceStaticPropertyEntity extends StaticPropertyEntity implements I
 		$default,
 		string $device,
 		?string $parent,
-		$children
+		$children,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default, $owner);
 
 		$this->device = Uuid\Uuid::fromString($device);
 		$this->parent = $parent !== null ? Uuid\Uuid::fromString($parent) : null;

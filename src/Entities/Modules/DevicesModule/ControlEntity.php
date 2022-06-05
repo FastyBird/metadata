@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use FastyBird\Metadata\Entities;
 use Ramsey\Uuid;
 
 /**
@@ -25,8 +26,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-abstract class ControlEntity implements IControlEntity
+abstract class ControlEntity implements IControlEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -36,10 +39,12 @@ abstract class ControlEntity implements IControlEntity
 
 	public function __construct(
 		string $id,
-		string $name
+		string $name,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->name = $name;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -64,8 +69,9 @@ abstract class ControlEntity implements IControlEntity
 	public function toArray(): array
 	{
 		return [
-			'id'   => $this->getId()->toString(),
-			'name' => $this->getName(),
+			'id'    => $this->getId()->toString(),
+			'name'  => $this->getName(),
+			'owner' => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\TriggersModule;
 
+use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Types;
 use Ramsey\Uuid;
 
@@ -26,8 +27,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-abstract class ConditionEntity implements IConditionEntity
+abstract class ConditionEntity implements IConditionEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -49,13 +52,15 @@ abstract class ConditionEntity implements IConditionEntity
 		string $trigger,
 		string $type,
 		bool $enabled,
-		?bool $isFulfilled = null
+		?bool $isFulfilled = null,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->trigger = Uuid\Uuid::fromString($trigger);
 		$this->type = Types\TriggerConditionTypeType::get($type);
 		$this->enabled = $enabled;
 		$this->fulfilled = $isFulfilled;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -109,6 +114,7 @@ abstract class ConditionEntity implements IConditionEntity
 			'type'         => $this->getType()->getValue(),
 			'enabled'      => $this->isEnabled(),
 			'is_fulfilled' => $this->isFulfilled(),
+			'owner'        => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use FastyBird\Metadata\Entities;
 use Ramsey\Uuid;
 
 /**
@@ -25,8 +26,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class ConnectorEntity implements IConnectorEntity
+final class ConnectorEntity implements IConnectorEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -52,7 +55,8 @@ final class ConnectorEntity implements IConnectorEntity
 		string $identifier,
 		?string $name = null,
 		?string $comment = null,
-		bool $enabled = false
+		bool $enabled = false,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->type = $type;
@@ -60,6 +64,7 @@ final class ConnectorEntity implements IConnectorEntity
 		$this->name = $name;
 		$this->comment = $comment;
 		$this->enabled = $enabled;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -122,6 +127,7 @@ final class ConnectorEntity implements IConnectorEntity
 			'name'       => $this->getName(),
 			'comment'    => $this->getComment(),
 			'enabled'    => $this->isEnabled(),
+			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

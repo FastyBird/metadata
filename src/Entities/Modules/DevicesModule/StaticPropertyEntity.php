@@ -46,6 +46,7 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 	 * @param int|null $numberOfDecimals
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -60,9 +61,10 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 		$invalid,
 		?int $numberOfDecimals,
 		$value,
-		$default
+		$default,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $owner);
 
 		$this->value = $value;
 		$this->default = $default;

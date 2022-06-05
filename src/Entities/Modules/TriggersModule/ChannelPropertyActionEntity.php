@@ -49,9 +49,10 @@ final class ChannelPropertyActionEntity extends ActionEntity implements IChannel
 		string $channel,
 		string $property,
 		string $value,
-		?bool $isTriggered = null
+		?bool $isTriggered = null,
+		?string $owner = null
 	) {
-		parent::__construct($id, $trigger, $type, $enabled, $isTriggered);
+		parent::__construct($id, $trigger, $type, $enabled, $isTriggered, $owner);
 
 		$this->device = Uuid\Uuid::fromString($device);
 		$this->channel = Uuid\Uuid::fromString($channel);

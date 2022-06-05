@@ -53,6 +53,7 @@ final class DeviceMappedPropertyEntity extends MappedPropertyEntity implements I
 	 * @param bool|null $valid
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -75,9 +76,10 @@ final class DeviceMappedPropertyEntity extends MappedPropertyEntity implements I
 		?bool $pending = null,
 		?bool $valid = null,
 		$value = null,
-		$default = null
+		$default = null,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid, $value, $default);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid, $value, $default, $owner);
 
 		$this->device = Uuid\Uuid::fromString($device);
 		$this->parent = $parent !== null ? Uuid\Uuid::fromString($parent) : null;

@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Types;
 use Ramsey\Uuid;
 
@@ -26,8 +27,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-abstract class PropertyEntity implements IPropertyEntity
+abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -74,6 +77,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null $format
 	 * @param string|int|float|null $invalid
 	 * @param int|null $numberOfDecimals
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -86,7 +90,8 @@ abstract class PropertyEntity implements IPropertyEntity
 		?string $unit,
 		?array $format,
 		$invalid,
-		?int $numberOfDecimals
+		?int $numberOfDecimals,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->type = Types\PropertyTypeType::get($type);
@@ -99,6 +104,7 @@ abstract class PropertyEntity implements IPropertyEntity
 		$this->format = $format;
 		$this->invalid = $invalid;
 		$this->numberOfDecimals = $numberOfDecimals;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -206,6 +212,7 @@ abstract class PropertyEntity implements IPropertyEntity
 			'format'             => $this->getFormat(),
 			'invalid'            => $this->getInvalid(),
 			'number_of_decimals' => $this->getNumberOfDecimals(),
+			'owner'              => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

@@ -34,9 +34,10 @@ final class DeviceControlEntity extends ControlEntity implements IDeviceControlE
 	public function __construct(
 		string $id,
 		string $device,
-		string $name
+		string $name,
+		?string $owner = null
 	) {
-		parent::__construct($id, $name);
+		parent::__construct($id, $name, $owner);
 
 		$this->device = Uuid\Uuid::fromString($device);
 	}

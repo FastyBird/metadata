@@ -34,9 +34,10 @@ final class EmailNotificationEntity extends NotificationEntity implements IEmail
 		string $trigger,
 		string $type,
 		bool $enabled,
-		string $email
+		string $email,
+		?string $owner = null
 	) {
-		parent::__construct($id, $trigger, $type, $enabled);
+		parent::__construct($id, $trigger, $type, $enabled, $owner);
 
 		$this->email = $email;
 	}

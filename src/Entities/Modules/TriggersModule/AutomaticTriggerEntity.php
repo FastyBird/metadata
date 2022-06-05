@@ -36,9 +36,10 @@ final class AutomaticTriggerEntity extends TriggerEntity implements IAutomaticTr
 		bool $enabled,
 		?string $comment = null,
 		?bool $isTriggered = null,
-		?bool $isFulfilled = null
+		?bool $isFulfilled = null,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $name, $enabled, $comment, $isTriggered);
+		parent::__construct($id, $type, $name, $enabled, $comment, $isTriggered, $owner);
 
 		$this->fulfilled = $isFulfilled;
 	}

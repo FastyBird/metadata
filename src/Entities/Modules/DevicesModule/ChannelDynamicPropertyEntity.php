@@ -51,6 +51,7 @@ final class ChannelDynamicPropertyEntity extends DynamicPropertyEntity implement
 	 * @param string $channel
 	 * @param string|null $parent
 	 * @param string[]|Utils\ArrayHash $children
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -71,9 +72,10 @@ final class ChannelDynamicPropertyEntity extends DynamicPropertyEntity implement
 		?bool $valid,
 		string $channel,
 		?string $parent,
-		$children
+		$children,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid, $owner);
 
 		$this->channel = Uuid\Uuid::fromString($channel);
 		$this->parent = $parent !== null ? Uuid\Uuid::fromString($parent) : null;

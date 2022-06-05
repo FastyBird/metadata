@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\TriggersModule;
 
+use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Types;
 use Ramsey\Uuid;
 
@@ -26,8 +27,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-abstract class NotificationEntity implements INotificationEntity
+abstract class NotificationEntity implements INotificationEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -45,12 +48,14 @@ abstract class NotificationEntity implements INotificationEntity
 		string $id,
 		string $trigger,
 		string $type,
-		bool $enabled
+		bool $enabled,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->trigger = Uuid\Uuid::fromString($trigger);
 		$this->type = Types\TriggerNotificationTypeType::get($type);
 		$this->enabled = $enabled;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -95,6 +100,7 @@ abstract class NotificationEntity implements INotificationEntity
 			'trigger' => $this->getTrigger()->toString(),
 			'type'    => $this->getType()->getValue(),
 			'enabled' => $this->isEnabled(),
+			'owner'   => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

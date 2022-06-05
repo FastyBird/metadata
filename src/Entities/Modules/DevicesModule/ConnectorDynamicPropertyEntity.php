@@ -48,6 +48,7 @@ final class ConnectorDynamicPropertyEntity extends DynamicPropertyEntity impleme
 	 * @param bool|null $pending
 	 * @param bool|null $valid
 	 * @param string $connector
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -66,9 +67,10 @@ final class ConnectorDynamicPropertyEntity extends DynamicPropertyEntity impleme
 		$expectedValue,
 		?bool $pending,
 		?bool $valid,
-		string $connector
+		string $connector,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid, $owner);
 
 		$this->connector = Uuid\Uuid::fromString($connector);
 	}

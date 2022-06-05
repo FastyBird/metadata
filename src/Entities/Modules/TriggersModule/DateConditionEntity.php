@@ -39,9 +39,10 @@ final class DateConditionEntity extends ConditionEntity implements IDateConditio
 		string $type,
 		bool $enabled,
 		string $date,
-		?bool $isFulfilled = null
+		?bool $isFulfilled = null,
+		?string $owner = null
 	) {
-		parent::__construct($id, $trigger, $type, $enabled, $isFulfilled);
+		parent::__construct($id, $trigger, $type, $enabled, $isFulfilled, $owner);
 
 		$date = Utils\DateTime::createFromFormat(DateTimeInterface::ATOM, $date);
 

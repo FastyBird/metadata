@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use FastyBird\Metadata\Entities;
 use Nette\Utils;
 use Ramsey\Uuid;
 
@@ -26,8 +27,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class DeviceEntity implements IDeviceEntity
+final class DeviceEntity implements IDeviceEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -62,6 +65,7 @@ final class DeviceEntity implements IDeviceEntity
 	 * @param string[]|Utils\ArrayHash $children
 	 * @param string|null $name
 	 * @param string|null $comment
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -71,7 +75,8 @@ final class DeviceEntity implements IDeviceEntity
 		$parents,
 		$children,
 		?string $name = null,
-		?string $comment = null
+		?string $comment = null,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->type = $type;
@@ -85,6 +90,7 @@ final class DeviceEntity implements IDeviceEntity
 		$this->children = array_map(function (string $item): Uuid\UuidInterface {
 			return Uuid\Uuid::fromString($item);
 		}, (array) $children);
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -169,6 +175,7 @@ final class DeviceEntity implements IDeviceEntity
 			'children'   => array_map(function (Uuid\UuidInterface $child): string {
 				return $child->toString();
 			}, $this->getChildren()),
+			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

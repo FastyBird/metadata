@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\TriggersModule;
 
+use FastyBird\Metadata\Entities;
 use Ramsey\Uuid;
 
 /**
@@ -25,8 +26,10 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class TriggerControlEntity implements ITriggerControlEntity
+final class TriggerControlEntity implements ITriggerControlEntity, Entities\IOwner
 {
+
+	use Entities\TOwner;
 
 	/** @var Uuid\UuidInterface */
 	private Uuid\UuidInterface $id;
@@ -40,11 +43,13 @@ final class TriggerControlEntity implements ITriggerControlEntity
 	public function __construct(
 		string $id,
 		string $trigger,
-		string $name
+		string $name,
+		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->trigger = Uuid\Uuid::fromString($trigger);
 		$this->name = $name;
+		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
 	}
 
 	/**
@@ -80,6 +85,7 @@ final class TriggerControlEntity implements ITriggerControlEntity
 			'id'      => $this->getId()->toString(),
 			'trigger' => $this->getTrigger()->toString(),
 			'name'    => $this->getName(),
+			'owner'   => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
 		];
 	}
 

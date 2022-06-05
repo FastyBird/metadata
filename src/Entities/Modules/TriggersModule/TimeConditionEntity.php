@@ -44,6 +44,7 @@ final class TimeConditionEntity extends ConditionEntity implements ITimeConditio
 	 * @param string $time
 	 * @param int[] $days
 	 * @param bool|null $isFulfilled
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -52,9 +53,10 @@ final class TimeConditionEntity extends ConditionEntity implements ITimeConditio
 		bool $enabled,
 		string $time,
 		array $days,
-		?bool $isFulfilled = null
+		?bool $isFulfilled = null,
+		?string $owner = null
 	) {
-		parent::__construct($id, $trigger, $type, $enabled, $isFulfilled);
+		parent::__construct($id, $trigger, $type, $enabled, $isFulfilled, $owner);
 
 		$time = Utils\DateTime::createFromFormat(DateTimeInterface::ATOM, $time);
 

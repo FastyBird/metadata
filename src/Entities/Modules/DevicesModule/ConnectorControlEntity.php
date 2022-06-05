@@ -34,9 +34,10 @@ final class ConnectorControlEntity extends ControlEntity implements IConnectorCo
 	public function __construct(
 		string $id,
 		string $connector,
-		string $name
+		string $name,
+		?string $owner = null
 	) {
-		parent::__construct($id, $name);
+		parent::__construct($id, $name, $owner);
 
 		$this->connector = Uuid\Uuid::fromString($connector);
 	}

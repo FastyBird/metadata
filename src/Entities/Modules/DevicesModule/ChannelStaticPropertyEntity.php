@@ -48,6 +48,7 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 	 * @param string $channel
 	 * @param string|null $parent
 	 * @param string[]|Utils\ArrayHash $children
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -65,9 +66,10 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 		$default,
 		string $channel,
 		?string $parent,
-		$children
+		$children,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default, $owner);
 
 		$this->channel = Uuid\Uuid::fromString($channel);
 		$this->parent = $parent !== null ? Uuid\Uuid::fromString($parent) : null;

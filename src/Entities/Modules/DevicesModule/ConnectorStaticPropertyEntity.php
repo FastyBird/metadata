@@ -45,6 +45,7 @@ final class ConnectorStaticPropertyEntity extends StaticPropertyEntity implement
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
 	 * @param string $connector
+	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
@@ -60,9 +61,10 @@ final class ConnectorStaticPropertyEntity extends StaticPropertyEntity implement
 		?int $numberOfDecimals,
 		$value,
 		$default,
-		string $connector
+		string $connector,
+		?string $owner = null
 	) {
-		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default);
+		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default, $owner);
 
 		$this->connector = Uuid\Uuid::fromString($connector);
 	}

@@ -34,9 +34,10 @@ final class ChannelControlEntity extends ControlEntity implements IChannelContro
 	public function __construct(
 		string $id,
 		string $channel,
-		string $name
+		string $name,
+		?string $owner = null
 	) {
-		parent::__construct($id, $name);
+		parent::__construct($id, $name, $owner);
 
 		$this->channel = Uuid\Uuid::fromString($channel);
 	}
