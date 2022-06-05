@@ -27,7 +27,7 @@ final class AutomaticTriggerEntity extends TriggerEntity implements IAutomaticTr
 {
 
 	/** @var bool|null */
-	private ?bool $isFulfilled;
+	private ?bool $fulfilled;
 
 	public function __construct(
 		string $id,
@@ -40,7 +40,7 @@ final class AutomaticTriggerEntity extends TriggerEntity implements IAutomaticTr
 	) {
 		parent::__construct($id, $type, $name, $enabled, $comment, $isTriggered);
 
-		$this->isFulfilled = $isFulfilled;
+		$this->fulfilled = $isFulfilled;
 	}
 
 	/**
@@ -48,7 +48,17 @@ final class AutomaticTriggerEntity extends TriggerEntity implements IAutomaticTr
 	 */
 	public function isFulfilled(): ?bool
 	{
-		return $this->isFulfilled;
+		return $this->fulfilled;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'is_fulfilled' => $this->isFulfilled(),
+		]);
 	}
 
 }

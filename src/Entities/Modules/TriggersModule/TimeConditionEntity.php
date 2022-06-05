@@ -84,4 +84,15 @@ final class TimeConditionEntity extends ConditionEntity implements ITimeConditio
 		return $this->days;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'time' => $this->getTime()->format(DateTimeInterface::ATOM),
+			'days' => $this->getDays(),
+		]);
+	}
+
 }

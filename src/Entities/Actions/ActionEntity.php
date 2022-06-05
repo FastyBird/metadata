@@ -79,4 +79,16 @@ abstract class ActionEntity implements IActionEntity
 		return $this->expectedValue;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'action'         => $this->getAction()->getValue(),
+			'control'        => $this->getControl()->toString(),
+			'expected_value' => $this->getExpectedValue(),
+		];
+	}
+
 }

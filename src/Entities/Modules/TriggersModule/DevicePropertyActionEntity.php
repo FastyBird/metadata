@@ -78,4 +78,16 @@ final class DevicePropertyActionEntity extends ActionEntity implements IDevicePr
 		return $this->value;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'device'   => $this->getDevice()->toString(),
+			'property' => $this->getProperty()->toString(),
+			'value'    => $this->getValue(),
+		]);
+	}
+
 }

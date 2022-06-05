@@ -151,4 +151,25 @@ final class DeviceEntity implements IDeviceEntity
 		return $this->children;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'         => $this->getId()->toString(),
+			'type'       => $this->getType(),
+			'identifier' => $this->getIdentifier(),
+			'name'       => $this->getName(),
+			'comment'    => $this->getComment(),
+			'connector'  => $this->getConnector()->toString(),
+			'parents'    => array_map(function (Uuid\UuidInterface $parent): string {
+				return $parent->toString();
+			}, $this->getParents()),
+			'children'   => array_map(function (Uuid\UuidInterface $child): string {
+				return $child->toString();
+			}, $this->getChildren()),
+		];
+	}
+
 }

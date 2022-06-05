@@ -49,4 +49,14 @@ final class EmailNotificationEntity extends NotificationEntity implements IEmail
 		return $this->email;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'email' => $this->getEmail(),
+		]);
+	}
+
 }

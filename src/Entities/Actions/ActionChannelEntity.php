@@ -70,4 +70,15 @@ final class ActionChannelEntity extends ActionEntity implements IActionChannelEn
 		return $this->channel;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'device'  => $this->getDevice()->toString(),
+			'channel' => $this->getChannel()->toString(),
+		]);
+	}
+
 }

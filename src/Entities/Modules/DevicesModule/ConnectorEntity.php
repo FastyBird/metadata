@@ -110,4 +110,19 @@ final class ConnectorEntity implements IConnectorEntity
 		return $this->enabled;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'         => $this->getId()->toString(),
+			'type'       => $this->getType(),
+			'identifier' => $this->getIdentifier(),
+			'name'       => $this->getName(),
+			'comment'    => $this->getComment(),
+			'enabled'    => $this->isEnabled(),
+		];
+	}
+
 }

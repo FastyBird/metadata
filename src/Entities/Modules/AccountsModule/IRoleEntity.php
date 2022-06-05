@@ -42,7 +42,7 @@ interface IRoleEntity extends Entities\IEntity
 	/**
 	 * @return string
 	 */
-	public function getDescription(): string;
+	public function getComment(): string;
 
 	/**
 	 * @return bool

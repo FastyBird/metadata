@@ -42,7 +42,7 @@ abstract class ConditionEntity implements IConditionEntity
 	private bool $enabled;
 
 	/** @var bool|null */
-	private ?bool $isFulfilled;
+	private ?bool $fulfilled;
 
 	public function __construct(
 		string $id,
@@ -55,7 +55,7 @@ abstract class ConditionEntity implements IConditionEntity
 		$this->trigger = Uuid\Uuid::fromString($trigger);
 		$this->type = Types\TriggerConditionTypeType::get($type);
 		$this->enabled = $enabled;
-		$this->isFulfilled = $isFulfilled;
+		$this->fulfilled = $isFulfilled;
 	}
 
 	/**
@@ -95,7 +95,21 @@ abstract class ConditionEntity implements IConditionEntity
 	 */
 	public function isFulfilled(): ?bool
 	{
-		return $this->isFulfilled;
+		return $this->fulfilled;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'           => $this->getId()->toString(),
+			'trigger'      => $this->getTrigger()->toString(),
+			'type'         => $this->getType()->getValue(),
+			'enabled'      => $this->isEnabled(),
+			'is_fulfilled' => $this->isFulfilled(),
+		];
 	}
 
 }

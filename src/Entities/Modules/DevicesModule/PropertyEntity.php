@@ -189,4 +189,24 @@ abstract class PropertyEntity implements IPropertyEntity
 		return $this->numberOfDecimals;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'                 => $this->getId()->toString(),
+			'type'               => $this->getType()->getValue(),
+			'identifier'         => $this->getIdentifier(),
+			'name'               => $this->getName(),
+			'queryable'          => $this->isQueryable(),
+			'settable'           => $this->isSettable(),
+			'data_type'          => $this->getDataType()->getValue(),
+			'unit'               => $this->getUnit(),
+			'format'             => $this->getFormat(),
+			'invalid'            => $this->getInvalid(),
+			'number_of_decimals' => $this->getNumberOfDecimals(),
+		];
+	}
+
 }

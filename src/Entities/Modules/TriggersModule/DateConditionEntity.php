@@ -61,4 +61,14 @@ final class DateConditionEntity extends ConditionEntity implements IDateConditio
 		return $this->date;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'date' => $this->getDate()->format(DateTimeInterface::ATOM),
+		]);
+	}
+
 }

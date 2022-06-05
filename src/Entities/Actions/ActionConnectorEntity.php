@@ -56,4 +56,14 @@ final class ActionConnectorEntity extends ActionEntity implements IActionConnect
 		return $this->connector;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'connector' => $this->getConnector()->toString(),
+		]);
+	}
+
 }

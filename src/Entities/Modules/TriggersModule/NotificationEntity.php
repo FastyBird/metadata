@@ -85,4 +85,17 @@ abstract class NotificationEntity implements INotificationEntity
 		return $this->enabled;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'      => $this->getId()->toString(),
+			'trigger' => $this->getTrigger()->toString(),
+			'type'    => $this->getType()->getValue(),
+			'enabled' => $this->isEnabled(),
+		];
+	}
+
 }

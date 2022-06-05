@@ -23,7 +23,7 @@
     "name" : {
       "type" : "string"
     },
-    "description" : {
+    "comment" : {
       "type" : "string"
     },
     "anonymous" : {
@@ -47,7 +47,7 @@
   "required" : [
     "id",
     "name",
-    "description",
+    "comment",
     "anonymous",
     "authenticated",
     "administrator",

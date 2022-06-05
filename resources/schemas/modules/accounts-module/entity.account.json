@@ -65,6 +65,20 @@
       "items" : {
         "type" : "string"
       }
+    },
+    "parent" : {
+      "$ref" : "#/definitions/types/nullable_string",
+      "description" : "Entity parent unique uuid v4 identifier",
+      "default" : null
+    },
+    "children" : {
+      "type" : "array",
+      "uniqueItems" : true,
+      "items" : {
+        "type" : "string"
+      },
+      "description" : "Entity children uuid v4 identifiers",
+      "default" : []
     }
   },
   "required" : [

@@ -97,4 +97,18 @@ final class ChannelEntity implements IChannelEntity
 		return $this->device;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'         => $this->getId()->toString(),
+			'identifier' => $this->getIdentifier(),
+			'name'       => $this->getName(),
+			'comment'    => $this->getComment(),
+			'device'     => $this->getDevice()->toString(),
+		];
+	}
+
 }

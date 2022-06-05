@@ -42,7 +42,7 @@ abstract class ActionEntity implements IActionEntity
 	private bool $enabled;
 
 	/** @var bool|null */
-	private ?bool $isTriggered;
+	private ?bool $triggered;
 
 	public function __construct(
 		string $id,
@@ -55,7 +55,7 @@ abstract class ActionEntity implements IActionEntity
 		$this->trigger = Uuid\Uuid::fromString($trigger);
 		$this->type = Types\TriggerActionTypeType::get($type);
 		$this->enabled = $enabled;
-		$this->isTriggered = $isTriggered;
+		$this->triggered = $isTriggered;
 	}
 
 	/**
@@ -95,7 +95,21 @@ abstract class ActionEntity implements IActionEntity
 	 */
 	public function isTriggered(): ?bool
 	{
-		return $this->isTriggered;
+		return $this->triggered;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'           => $this->getId()->toString(),
+			'trigger'      => $this->getTrigger()->toString(),
+			'type'         => $this->getType()->getValue(),
+			'enabled'      => $this->isEnabled(),
+			'is_triggered' => $this->isTriggered(),
+		];
 	}
 
 }

@@ -49,4 +49,14 @@ final class ConnectorControlEntity extends ControlEntity implements IConnectorCo
 		return $this->connector;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'connector' => $this->getConnector(),
+		]);
+	}
+
 }

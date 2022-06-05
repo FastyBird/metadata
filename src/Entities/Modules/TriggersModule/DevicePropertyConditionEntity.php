@@ -92,4 +92,17 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 		return $this->operator;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'device'   => $this->getDevice()->toString(),
+			'property' => $this->getProperty()->toString(),
+			'operand'  => $this->getOperand(),
+			'operator' => $this->getOperator()->getValue(),
+		]);
+	}
+
 }

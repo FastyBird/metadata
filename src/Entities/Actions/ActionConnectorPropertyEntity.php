@@ -60,4 +60,14 @@ final class ActionConnectorPropertyEntity extends ActionPropertyEntity implement
 		return $this->connector;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'connector' => $this->getConnector()->toString(),
+		]);
+	}
+
 }

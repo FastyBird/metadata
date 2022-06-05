@@ -61,6 +61,12 @@ final class AccountEntity implements IAccountEntity
 	/** @var string[] */
 	private array $roles;
 
+	/** @var Uuid\UuidInterface|null */
+	protected ?Uuid\UuidInterface $parent;
+
+	/** @var Uuid\UuidInterface[] */
+	protected array $children;
+
 	/**
 	 * @param string $id
 	 * @param string $firstName
@@ -71,7 +77,9 @@ final class AccountEntity implements IAccountEntity
 	 * @param string|null $email
 	 * @param string|null $registered
 	 * @param string|null $lastVisit
-	 * @param string[] $roles
+	 * @param Array<int, string>|Utils\ArrayHash $roles
+	 * @param string|null $parent
+	 * @param Array<int, string>|Utils\ArrayHash $children
 	 */
 	public function __construct(
 		string $id,
@@ -83,7 +91,9 @@ final class AccountEntity implements IAccountEntity
 		?string $email = null,
 		?string $registered = null,
 		?string $lastVisit = null,
-		array $roles = []
+		$roles = [],
+		?string $parent = null,
+		$children = []
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->firstName = $firstName;
@@ -92,7 +102,7 @@ final class AccountEntity implements IAccountEntity
 		$this->email = $email;
 		$this->language = $language;
 		$this->state = Types\AccountStateType::get($state);
-		$this->roles = $roles;
+		$this->roles = (array) $roles;
 
 		if ($registered !== null) {
 			$registered = Utils\DateTime::createFromFormat(DateTimeInterface::ATOM, $registered);
@@ -109,6 +119,11 @@ final class AccountEntity implements IAccountEntity
 				$this->lastVisit = $lastVisit;
 			}
 		}
+
+		$this->parent = $parent !== null ? Uuid\Uuid::fromString($parent) : null;
+		$this->children = array_map(function (string $item): Uuid\UuidInterface {
+			return Uuid\Uuid::fromString($item);
+		}, (array) $children);
 	}
 
 	/**
@@ -189,6 +204,27 @@ final class AccountEntity implements IAccountEntity
 	public function getRoles(): array
 	{
 		return $this->roles;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'          => $this->getId()->toString(),
+			'first_name'  => $this->getFirstName(),
+			'last_name'   => $this->getLastName(),
+			'middle_name' => $this->getMiddleName(),
+			'email'       => $this->getEmail(),
+			'state'       => $this->getState()->getValue(),
+			'language'    => $this->getLanguage(),
+			'registered'  => $this->getRegistered() !== null ? $this->getRegistered()
+				->format(DateTimeInterface::ATOM) : null,
+			'last_visit'  => $this->getLastVisit() !== null ? $this->getLastVisit()
+				->format(DateTimeInterface::ATOM) : null,
+			'roles'       => $this->getRoles(),
+		];
 	}
 
 }

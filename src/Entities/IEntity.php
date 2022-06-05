@@ -26,4 +26,9 @@ namespace FastyBird\Metadata\Entities;
 interface IEntity
 {
 
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function toArray(): array;
+
 }

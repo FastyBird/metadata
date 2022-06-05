@@ -54,4 +54,14 @@ final class SmsNotificationEntity extends NotificationEntity implements ISmsNoti
 		$this->phone = $phone;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'phone' => $this->getPhone()->getInternationalNumber(),
+		]);
+	}
+
 }

@@ -93,4 +93,17 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 		return $this->expectedValue;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'action'         => $this->getAction()->getValue(),
+			'trigger'        => $this->getTrigger()->toString(),
+			'control'        => $this->getControl()->toString(),
+			'expected_value' => $this->getExpectedValue(),
+		];
+	}
+
 }

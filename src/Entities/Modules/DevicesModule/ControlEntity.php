@@ -58,4 +58,15 @@ abstract class ControlEntity implements IControlEntity
 		return $this->name;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'   => $this->getId()->toString(),
+			'name' => $this->getName(),
+		];
+	}
+
 }

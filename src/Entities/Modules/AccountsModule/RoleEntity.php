@@ -35,7 +35,7 @@ final class RoleEntity implements IRoleEntity
 	private string $name;
 
 	/** @var string */
-	private string $description;
+	private string $comment;
 
 	/** @var bool */
 	private bool $anonymous;
@@ -52,7 +52,7 @@ final class RoleEntity implements IRoleEntity
 	public function __construct(
 		string $id,
 		string $name,
-		string $description,
+		string $comment,
 		bool $anonymous,
 		bool $authenticated,
 		bool $administrator,
@@ -60,7 +60,7 @@ final class RoleEntity implements IRoleEntity
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->name = $name;
-		$this->description = $description;
+		$this->comment = $comment;
 		$this->anonymous = $anonymous;
 		$this->authenticated = $authenticated;
 		$this->administrator = $administrator;
@@ -86,9 +86,9 @@ final class RoleEntity implements IRoleEntity
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getDescription(): string
+	public function getComment(): string
 	{
-		return $this->description;
+		return $this->comment;
 	}
 
 	/**
@@ -121,6 +121,22 @@ final class RoleEntity implements IRoleEntity
 	public function getParent(): ?Uuid\UuidInterface
 	{
 		return $this->parent;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'            => $this->getId()->toString(),
+			'name'          => $this->getName(),
+			'comment'       => $this->getComment(),
+			'anonymous'     => $this->isAnonymous(),
+			'authenticated' => $this->isAuthenticated(),
+			'administrator' => $this->isAdministrator(),
+			'parent'        => $this->getParent(),
+		];
 	}
 
 }

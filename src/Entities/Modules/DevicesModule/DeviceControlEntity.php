@@ -49,4 +49,14 @@ final class DeviceControlEntity extends ControlEntity implements IDeviceControlE
 		return $this->device;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'device' => $this->getDevice()->toString(),
+		]);
+	}
+
 }

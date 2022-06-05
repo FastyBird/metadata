@@ -97,4 +97,18 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 		return $this->content;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'         => $this->getId()->toString(),
+			'device'     => $this->getDevice()->toString(),
+			'identifier' => $this->getIdentifier(),
+			'name'       => $this->getName(),
+			'content'    => $this->getContent(),
+		];
+	}
+
 }

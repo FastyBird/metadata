@@ -98,4 +98,18 @@ final class IdentityEntity implements IIdentityEntity
 		return $this->hash;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'      => $this->getId()->toString(),
+			'account' => $this->getAccount()->toString(),
+			'state'   => $this->getState()->getValue(),
+			'uid'     => $this->getUid(),
+			'hash'    => $this->getHash(),
+		];
+	}
+
 }

@@ -123,4 +123,20 @@ final class EmailEntity implements IEmailEntity
 		return $this->public;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'       => $this->getId()->toString(),
+			'account'  => $this->getAccount()->toString(),
+			'address'  => $this->getAddress(),
+			'default'  => $this->isDefault(),
+			'verified' => $this->isVerified(),
+			'private'  => $this->isPrivate(),
+			'public'   => $this->isPublic(),
+		];
+	}
+
 }

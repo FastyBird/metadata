@@ -89,7 +89,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	 */
 	public function getExpectedValue()
 	{
-		if (!$this->action->equalsValue(Types\PropertyActionType::ACTION_SET)) {
+		if (!$this->getAction()->equalsValue(Types\PropertyActionType::ACTION_SET)) {
 			throw new Exceptions\InvalidStateException(
 				sprintf('Expected value is available only for action: %s', Types\PropertyActionType::ACTION_SET)
 			);
@@ -103,9 +103,9 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	 */
 	public function getActualValue()
 	{
-		if (!$this->action->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
+		if (!$this->getAction()->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
 			throw new Exceptions\InvalidStateException(
-				sprintf('Expected value is available only for action: %s', Types\PropertyActionType::ACTION_SET)
+				sprintf('Expected value is available only for action: %s', Types\PropertyActionType::ACTION_REPORT)
 			);
 		}
 
@@ -117,13 +117,39 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	 */
 	public function isPending(): bool
 	{
-		if (!$this->action->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
+		if (!$this->getAction()->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
 			throw new Exceptions\InvalidStateException(
-				sprintf('Expected value is available only for action: %s', Types\PropertyActionType::ACTION_SET)
+				sprintf('Expected value is available only for action: %s', Types\PropertyActionType::ACTION_REPORT)
 			);
 		}
 
 		return $this->pending;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		$data = [
+			'action'   => $this->getAction()->getValue(),
+			'property' => $this->getProperty()->toString(),
+		];
+
+		if ($this->getAction()->equalsValue(Types\PropertyActionType::ACTION_SET)) {
+			$data = array_merge($data, [
+				'expected_value' => $this->getExpectedValue(),
+			]);
+		}
+
+		if ($this->getAction()->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
+			$data = array_merge($data, [
+				'actual_value' => $this->getExpectedValue(),
+				'pending'      => $this->isPending(),
+			]);
+		}
+
+		return $data;
 	}
 
 }

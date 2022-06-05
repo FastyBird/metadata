@@ -77,4 +77,14 @@ final class ConnectorMappedPropertyEntity extends MappedPropertyEntity implement
 		$this->connector = Uuid\Uuid::fromString($connector);
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'connector' => $this->getConnector(),
+		]);
+	}
+
 }

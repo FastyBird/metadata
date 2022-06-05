@@ -76,4 +76,18 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 		}, (array) $children);
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'channel'  => $this->getChannel()->toString(),
+			'parent'   => $this->getParent() !== null ? $this->getParent()->toString() : null,
+			'children' => array_map(function (Uuid\UuidInterface $child): string {
+				return $child->toString();
+			}, $this->getChildren()),
+		]);
+	}
+
 }

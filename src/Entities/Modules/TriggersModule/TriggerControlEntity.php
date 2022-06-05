@@ -71,4 +71,16 @@ final class TriggerControlEntity implements ITriggerControlEntity
 		return $this->name;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'      => $this->getId()->toString(),
+			'trigger' => $this->getTrigger()->toString(),
+			'name'    => $this->getName(),
+		];
+	}
+
 }

@@ -126,4 +126,18 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 		return $this->valid;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'actual_value'   => $this->getActualValue(),
+			'previous_value' => $this->getPreviousValue(),
+			'expected_value' => $this->getExpectedValue(),
+			'pending'        => $this->isPending(),
+			'valid'          => $this->isValid(),
+		]);
+	}
+
 }

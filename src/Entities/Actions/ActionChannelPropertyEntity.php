@@ -74,4 +74,15 @@ final class ActionChannelPropertyEntity extends ActionPropertyEntity implements 
 		return $this->channel;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'device'  => $this->getDevice()->toString(),
+			'channel' => $this->getChannel()->toString(),
+		]);
+	}
+
 }

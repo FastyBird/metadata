@@ -45,7 +45,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	private bool $enabled;
 
 	/** @var bool|null */
-	private ?bool $isTriggered;
+	private ?bool $triggered;
 
 	public function __construct(
 		string $id,
@@ -60,7 +60,7 @@ abstract class TriggerEntity implements ITriggerEntity
 		$this->name = $name;
 		$this->comment = $comment;
 		$this->enabled = $enabled;
-		$this->isTriggered = $isTriggered;
+		$this->triggered = $isTriggered;
 	}
 
 	/**
@@ -108,7 +108,22 @@ abstract class TriggerEntity implements ITriggerEntity
 	 */
 	public function isTriggered(): ?bool
 	{
-		return $this->isTriggered;
+		return $this->triggered;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return [
+			'id'           => $this->getId()->toString(),
+			'type'         => $this->getType()->getValue(),
+			'name'         => $this->getName(),
+			'comment'      => $this->getComment(),
+			'enabled'      => $this->isEnabled(),
+			'is_triggered' => $this->isTriggered(),
+		];
 	}
 
 }

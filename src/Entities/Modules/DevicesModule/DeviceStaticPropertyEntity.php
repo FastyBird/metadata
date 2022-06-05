@@ -76,4 +76,18 @@ final class DeviceStaticPropertyEntity extends StaticPropertyEntity implements I
 		}, (array) $children);
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'device'  => $this->getDevice()->toString(),
+			'parent'   => $this->getParent() !== null ? $this->getParent()->toString() : null,
+			'children' => array_map(function (Uuid\UuidInterface $child): string {
+				return $child->toString();
+			}, $this->getChildren()),
+		]);
+	}
+
 }

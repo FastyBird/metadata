@@ -105,4 +105,18 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 		return $this->operator;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toArray(): array
+	{
+		return array_merge(parent::toArray(), [
+			'device'   => $this->getDevice()->toString(),
+			'channel'  => $this->getChannel()->toString(),
+			'property' => $this->getProperty()->toString(),
+			'operand'  => $this->getOperand(),
+			'operator' => $this->getOperator()->getValue(),
+		]);
+	}
+
 }
