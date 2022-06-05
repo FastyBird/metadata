@@ -51,7 +51,7 @@ class MetadataExtension extends DI\CompilerExtension
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function loadConfiguration(): void
 	{

@@ -42,7 +42,7 @@ final class ChannelControlEntity extends ControlEntity implements IChannelContro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getChannel(): Uuid\UuidInterface
 	{
@@ -50,13 +50,21 @@ final class ChannelControlEntity extends ControlEntity implements IChannelContro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'channel' => $this->getChannel()->toString(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

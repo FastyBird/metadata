@@ -100,7 +100,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getActualValue()
 	{
@@ -108,7 +108,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getPreviousValue()
 	{
@@ -116,7 +116,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getExpectedValue()
 	{
@@ -124,7 +124,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isPending(): ?bool
 	{
@@ -132,7 +132,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isValid(): ?bool
 	{
@@ -140,7 +140,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getValue()
 	{
@@ -148,7 +148,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDefault()
 	{
@@ -156,7 +156,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

@@ -66,7 +66,7 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -74,7 +74,7 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getChannel(): Uuid\UuidInterface
 	{
@@ -82,7 +82,7 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getProperty(): Uuid\UuidInterface
 	{
@@ -90,7 +90,7 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getOperand(): string
 	{
@@ -98,7 +98,7 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getOperator(): Types\TriggerConditionOperatorType
 	{
@@ -106,7 +106,7 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -117,6 +117,14 @@ final class ChannelPropertyConditionEntity extends ConditionEntity implements IC
 			'operand'  => $this->getOperand(),
 			'operator' => $this->getOperator()->getValue(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

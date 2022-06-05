@@ -63,7 +63,7 @@ final class ConnectorEntity implements IConnectorEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -71,7 +71,7 @@ final class ConnectorEntity implements IConnectorEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getType(): string
 	{
@@ -79,7 +79,7 @@ final class ConnectorEntity implements IConnectorEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getIdentifier(): string
 	{
@@ -87,7 +87,7 @@ final class ConnectorEntity implements IConnectorEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): ?string
 	{
@@ -95,7 +95,7 @@ final class ConnectorEntity implements IConnectorEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getComment(): ?string
 	{
@@ -103,7 +103,7 @@ final class ConnectorEntity implements IConnectorEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isEnabled(): bool
 	{
@@ -111,7 +111,7 @@ final class ConnectorEntity implements IConnectorEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -123,6 +123,14 @@ final class ConnectorEntity implements IConnectorEntity
 			'comment'    => $this->getComment(),
 			'enabled'    => $this->isEnabled(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

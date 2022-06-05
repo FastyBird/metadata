@@ -53,7 +53,7 @@ final class ActionConnectorPropertyEntity extends ActionPropertyEntity implement
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getConnector(): Uuid\UuidInterface
 	{
@@ -61,13 +61,21 @@ final class ActionConnectorPropertyEntity extends ActionPropertyEntity implement
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'connector' => $this->getConnector()->toString(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

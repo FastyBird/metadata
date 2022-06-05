@@ -55,7 +55,7 @@ final class DevicePropertyActionEntity extends ActionEntity implements IDevicePr
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -63,7 +63,7 @@ final class DevicePropertyActionEntity extends ActionEntity implements IDevicePr
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getProperty(): Uuid\UuidInterface
 	{
@@ -71,7 +71,7 @@ final class DevicePropertyActionEntity extends ActionEntity implements IDevicePr
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getValue(): string
 	{
@@ -79,7 +79,7 @@ final class DevicePropertyActionEntity extends ActionEntity implements IDevicePr
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -88,6 +88,14 @@ final class DevicePropertyActionEntity extends ActionEntity implements IDevicePr
 			'property' => $this->getProperty()->toString(),
 			'value'    => $this->getValue(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

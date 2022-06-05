@@ -53,7 +53,7 @@ final class ActionDevicePropertyEntity extends ActionPropertyEntity implements I
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -61,13 +61,21 @@ final class ActionDevicePropertyEntity extends ActionPropertyEntity implements I
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'device' => $this->getDevice()->toString(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

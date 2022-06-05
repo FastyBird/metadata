@@ -87,7 +87,7 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -98,6 +98,14 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 				return $child->toString();
 			}, $this->getChildren()),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

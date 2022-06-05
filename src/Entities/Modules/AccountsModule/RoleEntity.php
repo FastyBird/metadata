@@ -68,7 +68,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -76,7 +76,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): string
 	{
@@ -84,7 +84,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getComment(): string
 	{
@@ -92,7 +92,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isAnonymous(): bool
 	{
@@ -100,7 +100,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isAuthenticated(): bool
 	{
@@ -108,7 +108,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isAdministrator(): bool
 	{
@@ -116,7 +116,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getParent(): ?Uuid\UuidInterface
 	{
@@ -124,7 +124,7 @@ final class RoleEntity implements IRoleEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -137,6 +137,14 @@ final class RoleEntity implements IRoleEntity
 			'administrator' => $this->isAdministrator(),
 			'parent'        => $this->getParent(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

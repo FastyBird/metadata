@@ -42,7 +42,7 @@ final class ConnectorControlEntity extends ControlEntity implements IConnectorCo
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getConnector(): Uuid\UuidInterface
 	{
@@ -50,13 +50,21 @@ final class ConnectorControlEntity extends ControlEntity implements IConnectorCo
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'connector' => $this->getConnector(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

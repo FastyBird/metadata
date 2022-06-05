@@ -44,7 +44,7 @@ final class AutomaticTriggerEntity extends TriggerEntity implements IAutomaticTr
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isFulfilled(): ?bool
 	{
@@ -52,13 +52,21 @@ final class AutomaticTriggerEntity extends TriggerEntity implements IAutomaticTr
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'is_fulfilled' => $this->isFulfilled(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

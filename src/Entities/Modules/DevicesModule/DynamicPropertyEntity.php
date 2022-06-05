@@ -87,7 +87,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getActualValue()
 	{
@@ -95,7 +95,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getPreviousValue()
 	{
@@ -103,7 +103,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getExpectedValue()
 	{
@@ -111,7 +111,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isPending(): ?bool
 	{
@@ -119,7 +119,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isValid(): ?bool
 	{
@@ -127,7 +127,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -138,6 +138,14 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 			'pending'        => $this->isPending(),
 			'valid'          => $this->isValid(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

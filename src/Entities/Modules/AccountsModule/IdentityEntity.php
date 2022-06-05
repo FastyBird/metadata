@@ -59,7 +59,7 @@ final class IdentityEntity implements IIdentityEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -67,7 +67,7 @@ final class IdentityEntity implements IIdentityEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getAccount(): Uuid\UuidInterface
 	{
@@ -75,7 +75,7 @@ final class IdentityEntity implements IIdentityEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getState(): Types\IdentityStateType
 	{
@@ -83,7 +83,7 @@ final class IdentityEntity implements IIdentityEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getUid(): string
 	{
@@ -91,7 +91,7 @@ final class IdentityEntity implements IIdentityEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getHash(): ?string
 	{
@@ -99,7 +99,7 @@ final class IdentityEntity implements IIdentityEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -110,6 +110,14 @@ final class IdentityEntity implements IIdentityEntity
 			'uid'     => $this->getUid(),
 			'hash'    => $this->getHash(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

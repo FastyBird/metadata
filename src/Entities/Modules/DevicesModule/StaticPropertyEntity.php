@@ -69,7 +69,7 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getValue()
 	{
@@ -77,7 +77,7 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDefault()
 	{
@@ -85,7 +85,7 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

@@ -42,7 +42,7 @@ final class DeviceControlEntity extends ControlEntity implements IDeviceControlE
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -50,13 +50,21 @@ final class DeviceControlEntity extends ControlEntity implements IDeviceControlE
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'device' => $this->getDevice()->toString(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

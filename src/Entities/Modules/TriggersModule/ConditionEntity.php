@@ -59,7 +59,7 @@ abstract class ConditionEntity implements IConditionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -67,7 +67,7 @@ abstract class ConditionEntity implements IConditionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getTrigger(): Uuid\UuidInterface
 	{
@@ -75,7 +75,7 @@ abstract class ConditionEntity implements IConditionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getType(): Types\TriggerConditionTypeType
 	{
@@ -83,7 +83,7 @@ abstract class ConditionEntity implements IConditionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isEnabled(): bool
 	{
@@ -91,7 +91,7 @@ abstract class ConditionEntity implements IConditionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isFulfilled(): ?bool
 	{
@@ -99,7 +99,7 @@ abstract class ConditionEntity implements IConditionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

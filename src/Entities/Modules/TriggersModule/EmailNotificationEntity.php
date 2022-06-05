@@ -42,7 +42,7 @@ final class EmailNotificationEntity extends NotificationEntity implements IEmail
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getEmail(): string
 	{
@@ -50,13 +50,21 @@ final class EmailNotificationEntity extends NotificationEntity implements IEmail
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'email' => $this->getEmail(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

@@ -26,4 +26,12 @@ namespace FastyBird\Metadata\Entities\Modules\TriggersModule;
 final class ManualTriggerEntity extends TriggerEntity implements IManualTriggerEntity
 {
 
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
+	}
+
 }

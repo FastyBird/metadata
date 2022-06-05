@@ -59,7 +59,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -67,7 +67,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getTrigger(): Uuid\UuidInterface
 	{
@@ -75,7 +75,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getType(): Types\TriggerActionTypeType
 	{
@@ -83,7 +83,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isEnabled(): bool
 	{
@@ -91,7 +91,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isTriggered(): ?bool
 	{
@@ -99,7 +99,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

@@ -87,7 +87,7 @@ final class DeviceMappedPropertyEntity extends MappedPropertyEntity implements I
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -98,6 +98,14 @@ final class DeviceMappedPropertyEntity extends MappedPropertyEntity implements I
 				return $child->toString();
 			}, $this->getChildren()),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

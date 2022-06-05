@@ -68,7 +68,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -76,7 +76,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getAccount(): Uuid\UuidInterface
 	{
@@ -84,7 +84,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getAddress(): string
 	{
@@ -92,7 +92,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isDefault(): bool
 	{
@@ -100,7 +100,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isVerified(): bool
 	{
@@ -108,7 +108,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isPrivate(): bool
 	{
@@ -116,7 +116,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isPublic(): bool
 	{
@@ -124,7 +124,7 @@ final class EmailEntity implements IEmailEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -137,6 +137,14 @@ final class EmailEntity implements IEmailEntity
 			'private'  => $this->isPrivate(),
 			'public'   => $this->isPublic(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

@@ -56,7 +56,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getAction(): Types\ControlActionType
 	{
@@ -64,7 +64,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getControl(): Uuid\UuidInterface
 	{
@@ -72,7 +72,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getExpectedValue()
 	{
@@ -80,7 +80,7 @@ abstract class ActionEntity implements IActionEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

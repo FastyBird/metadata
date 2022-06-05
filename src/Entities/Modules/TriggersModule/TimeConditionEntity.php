@@ -69,7 +69,7 @@ final class TimeConditionEntity extends ConditionEntity implements ITimeConditio
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getTime(): DateTimeInterface
 	{
@@ -77,7 +77,7 @@ final class TimeConditionEntity extends ConditionEntity implements ITimeConditio
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDays(): array
 	{
@@ -85,7 +85,7 @@ final class TimeConditionEntity extends ConditionEntity implements ITimeConditio
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -93,6 +93,14 @@ final class TimeConditionEntity extends ConditionEntity implements ITimeConditio
 			'time' => $this->getTime()->format(DateTimeInterface::ATOM),
 			'days' => $this->getDays(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

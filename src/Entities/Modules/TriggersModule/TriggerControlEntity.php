@@ -48,7 +48,7 @@ final class TriggerControlEntity implements ITriggerControlEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -56,7 +56,7 @@ final class TriggerControlEntity implements ITriggerControlEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getTrigger(): Uuid\UuidInterface
 	{
@@ -64,7 +64,7 @@ final class TriggerControlEntity implements ITriggerControlEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): string
 	{
@@ -72,7 +72,7 @@ final class TriggerControlEntity implements ITriggerControlEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -81,6 +81,14 @@ final class TriggerControlEntity implements ITriggerControlEntity
 			'trigger' => $this->getTrigger()->toString(),
 			'name'    => $this->getName(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

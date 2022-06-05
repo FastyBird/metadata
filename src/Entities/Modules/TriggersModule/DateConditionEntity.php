@@ -54,7 +54,7 @@ final class DateConditionEntity extends ConditionEntity implements IDateConditio
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDate(): DateTimeInterface
 	{
@@ -62,13 +62,21 @@ final class DateConditionEntity extends ConditionEntity implements IDateConditio
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'date' => $this->getDate()->format(DateTimeInterface::ATOM),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

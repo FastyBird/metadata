@@ -102,7 +102,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -110,7 +110,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getType(): Types\PropertyTypeType
 	{
@@ -118,7 +118,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getIdentifier(): string
 	{
@@ -126,7 +126,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): ?string
 	{
@@ -134,7 +134,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isSettable(): bool
 	{
@@ -142,7 +142,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isQueryable(): bool
 	{
@@ -150,7 +150,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDataType(): Types\DataTypeType
 	{
@@ -158,7 +158,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getUnit(): ?string
 	{
@@ -166,7 +166,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getFormat(): ?array
 	{
@@ -174,7 +174,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getInvalid()
 	{
@@ -182,7 +182,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getNumberOfDecimals(): ?int
 	{
@@ -190,7 +190,7 @@ abstract class PropertyEntity implements IPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

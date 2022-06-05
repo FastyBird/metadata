@@ -127,7 +127,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -135,7 +135,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getFirstName(): string
 	{
@@ -143,7 +143,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getLastName(): string
 	{
@@ -151,7 +151,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getMiddleName(): ?string
 	{
@@ -159,7 +159,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getEmail(): ?string
 	{
@@ -167,7 +167,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getState(): Types\AccountStateType
 	{
@@ -175,7 +175,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getLanguage(): string
 	{
@@ -183,7 +183,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getRegistered(): ?DateTimeInterface
 	{
@@ -191,7 +191,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getLastVisit(): ?DateTimeInterface
 	{
@@ -199,7 +199,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getRoles(): array
 	{
@@ -207,7 +207,7 @@ final class AccountEntity implements IAccountEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -225,6 +225,14 @@ final class AccountEntity implements IAccountEntity
 				->format(DateTimeInterface::ATOM) : null,
 			'roles'       => $this->getRoles(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

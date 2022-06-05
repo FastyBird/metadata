@@ -54,7 +54,7 @@ abstract class NotificationEntity implements INotificationEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -62,7 +62,7 @@ abstract class NotificationEntity implements INotificationEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getTrigger(): Uuid\UuidInterface
 	{
@@ -70,7 +70,7 @@ abstract class NotificationEntity implements INotificationEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getType(): Types\TriggerNotificationTypeType
 	{
@@ -78,7 +78,7 @@ abstract class NotificationEntity implements INotificationEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isEnabled(): bool
 	{
@@ -86,7 +86,7 @@ abstract class NotificationEntity implements INotificationEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

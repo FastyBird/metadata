@@ -33,7 +33,7 @@ final class SmsNotificationEntity extends NotificationEntity implements ISmsNoti
 	private ?PhoneEntities\Phone $phone = null;
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getPhone(): PhoneEntities\Phone
 	{
@@ -55,13 +55,21 @@ final class SmsNotificationEntity extends NotificationEntity implements ISmsNoti
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'phone' => $this->getPhone()->getInternationalNumber(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

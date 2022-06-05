@@ -77,7 +77,7 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -88,6 +88,14 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 				return $child->toString();
 			}, $this->getChildren()),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

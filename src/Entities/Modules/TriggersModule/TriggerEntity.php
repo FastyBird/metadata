@@ -64,7 +64,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -72,7 +72,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getType(): Types\TriggerTypeType
 	{
@@ -80,7 +80,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): string
 	{
@@ -88,7 +88,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getComment(): ?string
 	{
@@ -96,7 +96,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isEnabled(): bool
 	{
@@ -104,7 +104,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isTriggered(): ?bool
 	{
@@ -112,7 +112,7 @@ abstract class TriggerEntity implements ITriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

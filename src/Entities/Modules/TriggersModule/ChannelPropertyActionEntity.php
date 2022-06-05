@@ -60,7 +60,7 @@ final class ChannelPropertyActionEntity extends ActionEntity implements IChannel
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -68,7 +68,7 @@ final class ChannelPropertyActionEntity extends ActionEntity implements IChannel
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getChannel(): Uuid\UuidInterface
 	{
@@ -76,7 +76,7 @@ final class ChannelPropertyActionEntity extends ActionEntity implements IChannel
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getProperty(): Uuid\UuidInterface
 	{
@@ -84,7 +84,7 @@ final class ChannelPropertyActionEntity extends ActionEntity implements IChannel
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getValue(): string
 	{
@@ -92,7 +92,7 @@ final class ChannelPropertyActionEntity extends ActionEntity implements IChannel
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -102,6 +102,14 @@ final class ChannelPropertyActionEntity extends ActionEntity implements IChannel
 			'property' => $this->getProperty()->toString(),
 			'value'    => $this->getValue(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

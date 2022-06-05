@@ -69,7 +69,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getAction(): Types\PropertyActionType
 	{
@@ -77,7 +77,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getProperty(): Uuid\UuidInterface
 	{
@@ -85,7 +85,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getExpectedValue()
 	{
@@ -99,7 +99,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getActualValue()
 	{
@@ -113,7 +113,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function isPending(): bool
 	{
@@ -127,7 +127,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

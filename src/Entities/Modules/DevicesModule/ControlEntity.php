@@ -43,7 +43,7 @@ abstract class ControlEntity implements IControlEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -51,7 +51,7 @@ abstract class ControlEntity implements IControlEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): string
 	{
@@ -59,7 +59,7 @@ abstract class ControlEntity implements IControlEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{

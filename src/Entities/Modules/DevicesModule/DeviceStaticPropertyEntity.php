@@ -77,7 +77,7 @@ final class DeviceStaticPropertyEntity extends StaticPropertyEntity implements I
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -88,6 +88,14 @@ final class DeviceStaticPropertyEntity extends StaticPropertyEntity implements I
 				return $child->toString();
 			}, $this->getChildren()),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

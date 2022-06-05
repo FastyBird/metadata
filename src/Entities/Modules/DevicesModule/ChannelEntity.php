@@ -58,7 +58,7 @@ final class ChannelEntity implements IChannelEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -66,7 +66,7 @@ final class ChannelEntity implements IChannelEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getIdentifier(): string
 	{
@@ -74,7 +74,7 @@ final class ChannelEntity implements IChannelEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): ?string
 	{
@@ -82,7 +82,7 @@ final class ChannelEntity implements IChannelEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getComment(): ?string
 	{
@@ -90,7 +90,7 @@ final class ChannelEntity implements IChannelEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -98,7 +98,7 @@ final class ChannelEntity implements IChannelEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -109,6 +109,14 @@ final class ChannelEntity implements IChannelEntity
 			'comment'    => $this->getComment(),
 			'device'     => $this->getDevice()->toString(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

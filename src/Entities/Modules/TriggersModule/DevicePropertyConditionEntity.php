@@ -61,7 +61,7 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -69,7 +69,7 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getProperty(): Uuid\UuidInterface
 	{
@@ -77,7 +77,7 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getOperand(): string
 	{
@@ -85,7 +85,7 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getOperator(): Types\TriggerConditionOperatorType
 	{
@@ -93,7 +93,7 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -103,6 +103,14 @@ final class DevicePropertyConditionEntity extends ConditionEntity implements IDe
 			'operand'  => $this->getOperand(),
 			'operator' => $this->getOperator()->getValue(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

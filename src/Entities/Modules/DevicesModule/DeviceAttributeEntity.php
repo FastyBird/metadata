@@ -58,7 +58,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -66,7 +66,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -74,7 +74,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getIdentifier(): string
 	{
@@ -82,7 +82,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): ?string
 	{
@@ -90,7 +90,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getContent(): ?string
 	{
@@ -98,7 +98,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -109,6 +109,14 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity
 			'name'       => $this->getName(),
 			'content'    => $this->getContent(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

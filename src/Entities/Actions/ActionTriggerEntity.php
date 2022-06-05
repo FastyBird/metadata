@@ -62,7 +62,7 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getAction(): Types\TriggerActionType
 	{
@@ -70,7 +70,7 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getTrigger(): Uuid\UuidInterface
 	{
@@ -78,7 +78,7 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getControl(): Uuid\UuidInterface
 	{
@@ -86,7 +86,7 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getExpectedValue()
 	{
@@ -94,7 +94,7 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -104,6 +104,14 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 			'control'        => $this->getControl()->toString(),
 			'expected_value' => $this->getExpectedValue(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

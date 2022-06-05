@@ -83,7 +83,7 @@ final class ChannelDynamicPropertyEntity extends DynamicPropertyEntity implement
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -94,6 +94,14 @@ final class ChannelDynamicPropertyEntity extends DynamicPropertyEntity implement
 				return $child->toString();
 			}, $this->getChildren()),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

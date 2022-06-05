@@ -55,7 +55,7 @@ final class ActionChannelEntity extends ActionEntity implements IActionChannelEn
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getDevice(): Uuid\UuidInterface
 	{
@@ -63,7 +63,7 @@ final class ActionChannelEntity extends ActionEntity implements IActionChannelEn
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getChannel(): Uuid\UuidInterface
 	{
@@ -71,7 +71,7 @@ final class ActionChannelEntity extends ActionEntity implements IActionChannelEn
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -79,6 +79,14 @@ final class ActionChannelEntity extends ActionEntity implements IActionChannelEn
 			'device'  => $this->getDevice()->toString(),
 			'channel' => $this->getChannel()->toString(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

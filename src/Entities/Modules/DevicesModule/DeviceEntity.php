@@ -88,7 +88,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getId(): Uuid\UuidInterface
 	{
@@ -96,7 +96,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getType(): string
 	{
@@ -104,7 +104,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getIdentifier(): string
 	{
@@ -112,7 +112,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getName(): ?string
 	{
@@ -120,7 +120,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getComment(): ?string
 	{
@@ -128,7 +128,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getConnector(): Uuid\UuidInterface
 	{
@@ -136,7 +136,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getParents(): array
 	{
@@ -144,7 +144,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function getChildren(): array
 	{
@@ -152,7 +152,7 @@ final class DeviceEntity implements IDeviceEntity
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * {@inheritDoc}
 	 */
 	public function toArray(): array
 	{
@@ -170,6 +170,14 @@ final class DeviceEntity implements IDeviceEntity
 				return $child->toString();
 			}, $this->getChildren()),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }
