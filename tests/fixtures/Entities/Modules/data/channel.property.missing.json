@@ -5,7 +5,6 @@
   "name": null,
   "settable": true,
   "queryable": false,
-  "data_type": "int",
   "unit": "%",
   "format": null,
   "invalid": 99,
