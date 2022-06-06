@@ -42,12 +42,12 @@ final class ConnectorDynamicPropertyEntity extends DynamicPropertyEntity impleme
 	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null $format
 	 * @param string|int|float|null $invalid
 	 * @param int|null $numberOfDecimals
-	 * @param string|int|float|bool|null $actualValue
-	 * @param string|int|float|bool|null $previousValue
-	 * @param string|int|float|bool|null $expectedValue
 	 * @param bool|null $pending
 	 * @param bool|null $valid
 	 * @param string $connector
+	 * @param string|int|float|bool|null $actualValue
+	 * @param string|int|float|bool|null $previousValue
+	 * @param string|int|float|bool|null $expectedValue
 	 * @param string|null $owner
 	 */
 	public function __construct(
@@ -62,12 +62,12 @@ final class ConnectorDynamicPropertyEntity extends DynamicPropertyEntity impleme
 		?array $format,
 		$invalid,
 		?int $numberOfDecimals,
-		$actualValue,
-		$previousValue,
-		$expectedValue,
 		?bool $pending,
 		?bool $valid,
 		string $connector,
+		$actualValue = null,
+		$previousValue = null,
+		$expectedValue = null,
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid, $owner);

@@ -55,8 +55,11 @@ abstract class EntityFactory
 
 		try {
 			$decoded = $this->convertKeys($data);
-			$decoded = Utils\Json::decode(Utils\Json::encode($decoded));
+			$decoded = Utils\Json::decode(Utils\Json::encode($decoded), Utils\Json::FORCE_ARRAY);
 
+			if (is_array($decoded)) {
+				$decoded = $this->convertToObject($decoded);
+			}
 		} catch (Utils\JsonException $ex) {
 			throw new Exceptions\InvalidArgumentException('Provided entity content is not valid JSON.');
 		}
@@ -260,6 +263,22 @@ abstract class EntityFactory
 		}
 
 		return null;
+	}
+
+	/**
+	 * @param Array<string, mixed> $array
+	 *
+	 * @return stdClass
+	 */
+	private function convertToObject(array $array): stdClass
+	{
+		$converted = new stdClass();
+
+		foreach ($array as $key => $value) {
+			$converted->{$key} = $value;
+		}
+
+		return $converted;
 	}
 
 }

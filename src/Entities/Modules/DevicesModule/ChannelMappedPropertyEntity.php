@@ -44,8 +44,6 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 	 * @param string|int|float|null $invalid
 	 * @param int|null $numberOfDecimals
 	 * @param string $channel
-	 * @param string|null $parent
-	 * @param string[]|Utils\ArrayHash $children
 	 * @param string|int|float|bool|null $actualValue
 	 * @param string|int|float|bool|null $previousValue
 	 * @param string|int|float|bool|null $expectedValue
@@ -53,6 +51,8 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 	 * @param bool|null $valid
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
+	 * @param string|null $parent
+	 * @param Array<int, string>|Utils\ArrayHash $children
 	 * @param string|null $owner
 	 */
 	public function __construct(
@@ -68,8 +68,6 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 		$invalid,
 		?int $numberOfDecimals,
 		string $channel,
-		?string $parent,
-		$children,
 		$actualValue = null,
 		$previousValue = null,
 		$expectedValue = null,
@@ -77,6 +75,8 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 		?bool $valid = null,
 		$value = null,
 		$default = null,
+		?string $parent = null,
+		$children = [],
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid, $value, $default, $owner);
