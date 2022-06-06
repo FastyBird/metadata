@@ -2,6 +2,7 @@
 
 namespace Tests\Cases;
 
+use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use Tester\Assert;
@@ -20,6 +21,8 @@ final class ExtensionTest extends BaseTestCase
 		Assert::notNull($this->container->getByType(Loaders\SchemaLoader::class));
 		Assert::notNull($this->container->getByType(Loaders\MetadataLoader::class));
 		Assert::notNull($this->container->getByType(Schemas\Validator::class));
+
+		Assert::notNull($this->container->getByType(Entities\GlobalEntityFactory::class));
 	}
 
 }
