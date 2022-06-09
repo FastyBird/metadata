@@ -94,7 +94,7 @@ final class NotificationEntityFactory extends Entities\EntityFactory
 
 			if ($entity instanceof SmsNotificationEntity) {
 				if ($phone !== null) {
-					$entity->setPhone($this->phone->parse($phone));
+					$entity->setPhone($this->phone->parse(strval($phone)));
 
 				} else {
 					throw new Exceptions\InvalidStateException('Entity could not be created');
