@@ -82,10 +82,23 @@ final class NotificationEntityFactory extends Entities\EntityFactory
 			$entity = $this->build(EmailNotificationEntity::class, $validated);
 
 		} elseif ($type->equalsValue(Types\TriggerNotificationTypeType::TYPE_SMS)) {
+			$phone = null;
+
+			if ($validated->offsetExists('phone')) {
+				$phone = $validated->offsetGet('phone');
+
+				$validated->offsetUnset('phone');
+			}
+
 			$entity = $this->build(SmsNotificationEntity::class, $validated);
 
 			if ($entity instanceof SmsNotificationEntity) {
-				$entity->setPhone($this->phone->parse(strval($validated->offsetGet('phone'))));
+				if ($phone !== null) {
+					$entity->setPhone($this->phone->parse($phone));
+
+				} else {
+					throw new Exceptions\InvalidStateException('Entity could not be created');
+				}
 			}
 		} else {
 			throw new Exceptions\InvalidArgumentException('Provided data and routing key is for unsupported notification type');
