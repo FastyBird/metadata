@@ -18,17 +18,16 @@ final class ChannelPropertyEntityTest extends BaseTestCase
 
 	/**
 	 * @param string $data
-	 * @param Types\RoutingKeyType $routingKey
 	 * @param string $class
 	 *
 	 * @dataProvider ./../../../../fixtures/Entities/Modules/channel.property.php
 	 */
-	public function testCreateEntity(string $data, Types\RoutingKeyType $routingKey, string $class): void
+	public function testCreateEntity(string $data, string $class): void
 	{
 		/** @var Entities\Modules\DevicesModule\ChannelPropertyEntityFactory $factory */
 		$factory = $this->container->getByType(Entities\Modules\DevicesModule\ChannelPropertyEntityFactory::class);
 
-		$entity = $factory->create($data, $routingKey);
+		$entity = $factory->create($data);
 
 		Assert::true($entity instanceof $class);
 		Assert::type(Uuid\UuidInterface::class, $entity->getChannel());
@@ -36,18 +35,17 @@ final class ChannelPropertyEntityTest extends BaseTestCase
 
 	/**
 	 * @param string $data
-	 * @param Types\RoutingKeyType $routingKey
 	 *
 	 * @dataProvider ./../../../../fixtures/Entities/Modules/channel.property.invalid.php
 	 *
 	 * @throws FastyBird\Metadata\Exceptions\IException
 	 */
-	public function testCreateEntityInvalid(string $data, Types\RoutingKeyType $routingKey): void
+	public function testCreateEntityInvalid(string $data): void
 	{
 		/** @var Entities\Modules\DevicesModule\ChannelPropertyEntityFactory $factory */
 		$factory = $this->container->getByType(Entities\Modules\DevicesModule\ChannelPropertyEntityFactory::class);
 
-		$factory->create($data, $routingKey);
+		$factory->create($data);
 	}
 
 }

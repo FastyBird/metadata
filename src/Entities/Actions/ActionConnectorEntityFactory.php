@@ -19,7 +19,6 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
-use FastyBird\Metadata\Types;
 
 /**
  * Connector action entity factory
@@ -55,7 +54,7 @@ final class ActionConnectorEntityFactory extends Entities\EntityFactory
 	 */
 	public function create(string $data): IActionConnectorEntity
 	{
-		$schema = $this->loader->loadByRoutingKey(Types\RoutingKeyType::get(Types\RoutingKeyType::ROUTE_CONNECTOR_ACTION));
+		$schema = $this->loader->loadByNamespace('schemas/actions', 'action.connector.json');
 
 		$validated = $this->validator->validate($data, $schema);
 

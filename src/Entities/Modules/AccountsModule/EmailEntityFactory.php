@@ -19,7 +19,6 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
-use FastyBird\Metadata\Types;
 
 /**
  * Email entity factory
@@ -48,24 +47,14 @@ final class EmailEntityFactory extends Entities\EntityFactory
 
 	/**
 	 * @param string $data
-	 * @param Types\RoutingKeyType $routingKey
 	 *
 	 * @return IEmailEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data, Types\RoutingKeyType $routingKey): IEmailEntity
+	public function create(string $data): IEmailEntity
 	{
-		if (
-			!$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_EMAIL_ENTITY_CREATED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_EMAIL_ENTITY_UPDATED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_EMAIL_ENTITY_DELETED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_EMAIL_ENTITY_REPORTED)
-		) {
-			throw new Exceptions\InvalidArgumentException(sprintf('Provided routing key: %s is not valid for this factory', strval($routingKey->getValue())));
-		}
-
-		$schema = $this->loader->loadByRoutingKey($routingKey);
+		$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.email.json');
 
 		$validated = $this->validator->validate($data, $schema);
 

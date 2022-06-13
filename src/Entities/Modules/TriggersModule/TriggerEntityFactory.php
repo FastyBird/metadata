@@ -48,24 +48,14 @@ final class TriggerEntityFactory extends Entities\EntityFactory
 
 	/**
 	 * @param string $data
-	 * @param Types\RoutingKeyType $routingKey
 	 *
 	 * @return ITriggerEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data, Types\RoutingKeyType $routingKey): ITriggerEntity
+	public function create(string $data): ITriggerEntity
 	{
-		if (
-			!$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_TRIGGER_ENTITY_CREATED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_TRIGGER_ENTITY_UPDATED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_TRIGGER_ENTITY_DELETED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_TRIGGER_ENTITY_REPORTED)
-		) {
-			throw new Exceptions\InvalidArgumentException(sprintf('Provided routing key: %s is not valid for this factory', strval($routingKey->getValue())));
-		}
-
-		$schema = $this->loader->loadByRoutingKey($routingKey);
+		$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.trigger.json');
 
 		$validated = $this->validator->validate($data, $schema);
 

@@ -19,7 +19,6 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
-use FastyBird\Metadata\Types;
 
 /**
  * Channel property action entity factory
@@ -55,7 +54,7 @@ final class ActionChannelPropertyEntityFactory extends Entities\EntityFactory
 	 */
 	public function create(string $data): IActionChannelPropertyEntity
 	{
-		$schema = $this->loader->loadByRoutingKey(Types\RoutingKeyType::get(Types\RoutingKeyType::ROUTE_CHANNEL_PROPERTY_ACTION));
+		$schema = $this->loader->loadByNamespace('schemas/actions', 'action.channel.property.json');
 
 		$validated = $this->validator->validate($data, $schema);
 

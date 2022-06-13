@@ -19,7 +19,6 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
-use FastyBird\Metadata\Types;
 
 /**
  * Role entity factory
@@ -48,24 +47,14 @@ final class RoleEntityFactory extends Entities\EntityFactory
 
 	/**
 	 * @param string $data
-	 * @param Types\RoutingKeyType $routingKey
 	 *
 	 * @return IRoleEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data, Types\RoutingKeyType $routingKey): IRoleEntity
+	public function create(string $data): IRoleEntity
 	{
-		if (
-			!$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_ROLE_ENTITY_CREATED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_ROLE_ENTITY_UPDATED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_ROLE_ENTITY_DELETED)
-			&& !$routingKey->equalsValue(Types\RoutingKeyType::ROUTE_ROLE_ENTITY_REPORTED)
-		) {
-			throw new Exceptions\InvalidArgumentException(sprintf('Provided routing key: %s is not valid for this factory', strval($routingKey->getValue())));
-		}
-
-		$schema = $this->loader->loadByRoutingKey($routingKey);
+		$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.role.json');
 
 		$validated = $this->validator->validate($data, $schema);
 
