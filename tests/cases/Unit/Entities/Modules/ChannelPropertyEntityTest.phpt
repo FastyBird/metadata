@@ -3,7 +3,6 @@
 namespace Tests\Cases;
 
 use FastyBird\Metadata\Entities;
-use FastyBird\Metadata\Types;
 use Ramsey\Uuid;
 use Tester\Assert;
 
