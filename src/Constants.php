@@ -86,6 +86,13 @@ final class Constants
 	public const MESSAGE_BUS_PLUGIN_MESSAGE_ROUTING_KEY = 'fb.exchange.message.plugin';
 	public const MESSAGE_BUS_CONNECTOR_MESSAGE_ROUTING_KEY = 'fb.exchange.message.connector';
 
+	public const MESSAGE_BUS_ENTITY_PREFIX_KEY = 'fb.exchange.module.entity';
+
+	public const MESSAGE_BUS_ENTITY_REPORTED_KEY = 'reported';
+	public const MESSAGE_BUS_ENTITY_CREATED_KEY = 'created';
+	public const MESSAGE_BUS_ENTITY_UPDATED_KEY = 'updated';
+	public const MESSAGE_BUS_ENTITY_DELETED_KEY = 'deleted';
+
 	/**
 	 * MODULES
 	 */
