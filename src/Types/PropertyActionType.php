@@ -33,7 +33,6 @@ class PropertyActionType extends Consistence\Enum\Enum
 	 */
 	public const ACTION_SET = 'set';
 	public const ACTION_GET = 'get';
-	public const ACTION_REPORT = 'report';
 
 	/**
 	 * @return string

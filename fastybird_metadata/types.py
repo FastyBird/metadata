@@ -241,7 +241,6 @@ class PropertyAction(ExtendedEnum):
 
     SET: str = "set"
     GET: str = "get"
-    REPORT: str = "report"
 
     # -----------------------------------------------------------------------------
 

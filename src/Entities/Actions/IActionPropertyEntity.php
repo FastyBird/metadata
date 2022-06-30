@@ -45,14 +45,4 @@ interface IActionPropertyEntity extends Entities\IEntity
 	 */
 	public function getExpectedValue();
 
-	/**
-	 * @return bool|float|int|string|null
-	 */
-	public function getActualValue();
-
-	/**
-	 * @return bool
-	 */
-	public function isPending(): bool;
-
 }

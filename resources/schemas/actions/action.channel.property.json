@@ -20,8 +20,7 @@
       "type" : "string",
       "enum" : [
         "get",
-        "set",
-        "report"
+        "set"
       ]
     }
   },
@@ -80,34 +79,6 @@
         "property",
         "expected_value"
       ]
-    },
-    "else" : {
-      "if" : {
-        "properties" : {
-          "action" : {
-            "const" : "report"
-          }
-        }
-      },
-      "then" : {
-        "properties" : {
-          "actual_value" : {
-            "$ref" : "#/definitions/types/string_number_boolean",
-            "description" : "Property value stored in property"
-          },
-          "pending" : {
-            "type" : "boolean"
-          }
-        },
-        "required" : [
-          "action",
-          "device",
-          "channel",
-          "property",
-          "actual_value",
-          "pending"
-        ]
-      }
     }
   }
 }

@@ -36,18 +36,14 @@ final class ActionConnectorPropertyEntity extends ActionPropertyEntity implement
 	 * @param string $connector
 	 * @param string $property
 	 * @param string|int|float|bool|null $expectedValue
-	 * @param string|int|float|bool|null $actualValue
-	 * @param bool $pending
 	 */
 	public function __construct(
 		string $action,
 		string $connector,
 		string $property,
-		$expectedValue = null,
-		$actualValue = null,
-		bool $pending = false
+		$expectedValue = null
 	) {
-		parent::__construct($action, $property, $expectedValue, $actualValue, $pending);
+		parent::__construct($action, $property, $expectedValue);
 
 		$this->connector = Uuid\Uuid::fromString($connector);
 	}

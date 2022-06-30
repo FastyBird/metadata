@@ -39,33 +39,21 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	/** @var string|int|float|bool|null */
 	protected $expectedValue;
 
-	/** @var string|int|float|bool|null */
-	protected $actualValue;
-
-	/** @var bool */
-	protected bool $pending;
-
 	/**
 	 * @param string $action
 	 * @param string $property
 	 * @param string|int|float|bool|null $expectedValue
-	 * @param string|int|float|bool|null $actualValue
-	 * @param bool $pending
 	 */
 	public function __construct(
 		string $action,
 		string $property,
-		$expectedValue = null,
-		$actualValue = null,
-		bool $pending = false
+		$expectedValue = null
 	) {
 		$this->action = Types\PropertyActionType::get($action);
 
 		$this->property = Uuid\Uuid::fromString($property);
 
 		$this->expectedValue = $expectedValue;
-		$this->actualValue = $actualValue;
-		$this->pending = $pending;
 	}
 
 	/**
@@ -101,34 +89,6 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getActualValue()
-	{
-		if (!$this->getAction()->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
-			throw new Exceptions\InvalidStateException(
-				sprintf('Expected value is available only for action: %s', Types\PropertyActionType::ACTION_REPORT)
-			);
-		}
-
-		return $this->actualValue;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function isPending(): bool
-	{
-		if (!$this->getAction()->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
-			throw new Exceptions\InvalidStateException(
-				sprintf('Expected value is available only for action: %s', Types\PropertyActionType::ACTION_REPORT)
-			);
-		}
-
-		return $this->pending;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function toArray(): array
 	{
 		$data = [
@@ -139,13 +99,6 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 		if ($this->getAction()->equalsValue(Types\PropertyActionType::ACTION_SET)) {
 			$data = array_merge($data, [
 				'expected_value' => $this->getExpectedValue(),
-			]);
-		}
-
-		if ($this->getAction()->equalsValue(Types\PropertyActionType::ACTION_REPORT)) {
-			$data = array_merge($data, [
-				'actual_value' => $this->getExpectedValue(),
-				'pending'      => $this->isPending(),
 			]);
 		}
 
