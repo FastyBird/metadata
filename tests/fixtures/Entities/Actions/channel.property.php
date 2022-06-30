@@ -11,8 +11,4 @@ return [
 		file_get_contents(__DIR__ . '/data/channel.property.set.json'),
 		Entities\Actions\ActionChannelPropertyEntity::class,
 	],
-	'report' => [
-		file_get_contents(__DIR__ . '/data/channel.property.report.json'),
-		Entities\Actions\ActionChannelPropertyEntity::class,
-	],
 ];
