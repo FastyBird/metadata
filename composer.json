@@ -40,7 +40,7 @@
   "minimum-stability" : "stable",
 
   "require" : {
-    "php": ">=7.4.0|>=8.0.0",
+    "php": ">=8.0.0|>=8.1.0",
     "ipub/doctrine-consistence": "^0.4",
     "ipub/phone": "^2.3",
     "nette/bootstrap": "^3.1",
