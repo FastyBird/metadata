@@ -77,9 +77,9 @@ final class AccountEntity implements IAccountEntity
 	 * @param string|null $email
 	 * @param string|null $registered
 	 * @param string|null $lastVisit
-	 * @param Array<int, string>|Utils\ArrayHash $roles
+	 * @param Array<int, string>|Utils\ArrayHash<string> $roles
 	 * @param string|null $parent
-	 * @param Array<int, string>|Utils\ArrayHash $children
+	 * @param Array<int, string>|Utils\ArrayHash<string> $children
 	 */
 	public function __construct(
 		string $id,
@@ -91,9 +91,9 @@ final class AccountEntity implements IAccountEntity
 		?string $email = null,
 		?string $registered = null,
 		?string $lastVisit = null,
-		$roles = [],
+		array|Utils\ArrayHash $roles = [],
 		?string $parent = null,
-		$children = []
+		array|Utils\ArrayHash $children = []
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->firstName = $firstName;
@@ -219,10 +219,8 @@ final class AccountEntity implements IAccountEntity
 			'email'       => $this->getEmail(),
 			'state'       => $this->getState()->getValue(),
 			'language'    => $this->getLanguage(),
-			'registered'  => $this->getRegistered() !== null ? $this->getRegistered()
-				->format(DateTimeInterface::ATOM) : null,
-			'last_visit'  => $this->getLastVisit() !== null ? $this->getLastVisit()
-				->format(DateTimeInterface::ATOM) : null,
+			'registered'  => $this->getRegistered()?->format(DateTimeInterface::ATOM),
+			'last_visit'  => $this->getLastVisit()?->format(DateTimeInterface::ATOM),
 			'roles'       => $this->getRoles(),
 		];
 	}

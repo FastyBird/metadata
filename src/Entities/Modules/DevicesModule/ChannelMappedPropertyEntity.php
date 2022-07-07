@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use Exception;
 use Nette\Utils;
 use Ramsey\Uuid;
 
@@ -33,6 +34,7 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 
 	/**
 	 * @param string $id
+	 * @param string $channel
 	 * @param string $type
 	 * @param string $identifier
 	 * @param string|null $name
@@ -43,40 +45,39 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null $format
 	 * @param string|int|float|null $invalid
 	 * @param int|null $numberOfDecimals
-	 * @param string $channel
 	 * @param string|int|float|bool|null $actualValue
 	 * @param string|int|float|bool|null $previousValue
 	 * @param string|int|float|bool|null $expectedValue
-	 * @param bool|null $pending
+	 * @param bool|string|null $pending
 	 * @param bool|null $valid
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
 	 * @param string|null $parent
-	 * @param Array<int, string>|Utils\ArrayHash $children
+	 * @param Array<int, string>|Utils\ArrayHash<string> $children
 	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
+		string $channel,
 		string $type,
 		string $identifier,
 		?string $name,
 		bool $settable,
 		bool $queryable,
 		string $dataType,
-		?string $unit,
-		?array $format,
-		$invalid,
-		?int $numberOfDecimals,
-		string $channel,
-		$actualValue = null,
-		$previousValue = null,
-		$expectedValue = null,
-		?bool $pending = null,
+		?string $unit = null,
+		?array $format = null,
+		string|int|float|null $invalid = null,
+		?int $numberOfDecimals = null,
+		float|bool|int|string|null $actualValue = null,
+		float|bool|int|string|null $previousValue = null,
+		float|bool|int|string|null $expectedValue = null,
+		bool|string|null $pending = null,
 		?bool $valid = null,
-		$value = null,
-		$default = null,
+		float|bool|int|string|null $value = null,
+		float|bool|int|string|null $default = null,
 		?string $parent = null,
-		$children = [],
+		array|Utils\ArrayHash $children = [],
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $actualValue, $previousValue, $expectedValue, $pending, $valid, $value, $default, $owner);
@@ -90,12 +91,14 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @throws Exception
 	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
 			'channel'  => $this->getChannel()->toString(),
-			'parent'   => $this->getParent() !== null ? $this->getParent()->toString() : null,
+			'parent'   => $this->getParent()?->toString(),
 			'children' => array_map(function (Uuid\UuidInterface $child): string {
 				return $child->toString();
 			}, $this->getChildren()),
@@ -104,6 +107,8 @@ final class ChannelMappedPropertyEntity extends MappedPropertyEntity implements 
 
 	/**
 	 * @return Array<string, mixed>
+	 *
+	 * @throws Exception
 	 */
 	public function __serialize(): array
 	{

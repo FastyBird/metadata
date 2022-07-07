@@ -114,7 +114,7 @@ abstract class ConditionEntity implements IConditionEntity, Entities\IOwner
 			'type'         => $this->getType()->getValue(),
 			'enabled'      => $this->isEnabled(),
 			'is_fulfilled' => $this->isFulfilled(),
-			'owner'        => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'        => $this->getOwner()?->toString(),
 		];
 	}
 

@@ -15,6 +15,10 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use DateTimeInterface;
+use Exception;
+use Nette\Utils;
+
 /**
  * Dynamic property entity
  *
@@ -27,16 +31,16 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 {
 
 	/** @var string|int|float|bool|null */
-	private $actualValue;
+	private string|int|bool|null|float $actualValue;
 
 	/** @var string|int|float|bool|null */
-	private $previousValue;
+	private string|int|bool|null|float $previousValue;
 
 	/** @var string|int|float|bool|null */
-	private $expectedValue;
+	private string|int|bool|null|float $expectedValue;
 
-	/** @var bool|null */
-	private ?bool $pending;
+	/** @var bool|string|null */
+	private string|bool|null $pending;
 
 	/** @var bool|null */
 	private ?bool $valid;
@@ -54,9 +58,9 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	 * @param string|int|float|null $invalid
 	 * @param int|null $numberOfDecimals
 	 * @param string|int|float|bool|null $actualValue
-	 * @param string|int|float|bool|null $previousValue
-	 * @param string|int|float|bool|null $expectedValue
-	 * @param bool|null $pending
+	 * @param float|bool|int|string|null $previousValue
+	 * @param float|bool|int|string|null $expectedValue
+	 * @param bool|string|null $pending
 	 * @param bool|null $valid
 	 * @param string|null $owner
 	 */
@@ -68,15 +72,15 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 		bool $settable,
 		bool $queryable,
 		string $dataType,
-		?string $unit,
-		?array $format,
-		$invalid,
-		?int $numberOfDecimals,
-		$actualValue,
-		$previousValue,
-		$expectedValue,
-		?bool $pending,
-		?bool $valid,
+		?string $unit = null,
+		?array $format = null,
+		string|int|float|null $invalid = null,
+		?int $numberOfDecimals = null,
+		float|bool|int|string|null $actualValue = null,
+		float|bool|int|string|null $previousValue = null,
+		float|bool|int|string|null $expectedValue = null,
+		bool|string|null $pending = null,
+		?bool $valid = null,
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $owner);
@@ -91,7 +95,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getActualValue()
+	public function getActualValue(): float|bool|int|string|null
 	{
 		return $this->actualValue;
 	}
@@ -99,7 +103,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getPreviousValue()
+	public function getPreviousValue(): float|bool|int|string|null
 	{
 		return $this->previousValue;
 	}
@@ -107,9 +111,24 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getExpectedValue()
+	public function getExpectedValue(): float|bool|int|string|null
 	{
 		return $this->expectedValue;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @throws Exception
+	 */
+	public function getPending(): bool|string|null
+	{
+		if (is_string($this->pending)) {
+			$pending = Utils\DateTime::from($this->pending);
+			return $pending->format(DateTimeInterface::ATOM);
+		}
+
+		return $this->pending;
 	}
 
 	/**
@@ -117,7 +136,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	 */
 	public function isPending(): ?bool
 	{
-		return $this->pending;
+		return $this->pending !== null;
 	}
 
 	/**
@@ -130,6 +149,8 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @throws Exception
 	 */
 	public function toArray(): array
 	{
@@ -137,13 +158,15 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 			'actual_value'   => $this->getActualValue(),
 			'previous_value' => $this->getPreviousValue(),
 			'expected_value' => $this->getExpectedValue(),
-			'pending'        => $this->isPending(),
+			'pending'        => $this->getPending(),
 			'valid'          => $this->isValid(),
 		]);
 	}
 
 	/**
 	 * @return Array<string, mixed>
+	 *
+	 * @throws Exception
 	 */
 	public function __serialize(): array
 	{

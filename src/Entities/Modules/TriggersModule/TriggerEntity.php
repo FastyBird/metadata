@@ -128,7 +128,7 @@ abstract class TriggerEntity implements ITriggerEntity, Entities\IOwner
 			'comment'      => $this->getComment(),
 			'enabled'      => $this->isEnabled(),
 			'is_triggered' => $this->isTriggered(),
-			'owner'        => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'        => $this->getOwner()?->toString(),
 		];
 	}
 

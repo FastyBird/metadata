@@ -33,6 +33,7 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 
 	/**
 	 * @param string $id
+	 * @param string $channel
 	 * @param string $type
 	 * @param string $identifier
 	 * @param string|null $name
@@ -45,28 +46,27 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 	 * @param int|null $numberOfDecimals
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
-	 * @param string $channel
 	 * @param string|null $parent
-	 * @param Array<int, string>|Utils\ArrayHash $children
+	 * @param Array<int, string>|Utils\ArrayHash<string> $children
 	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
+		string $channel,
 		string $type,
 		string $identifier,
 		?string $name,
 		bool $settable,
 		bool $queryable,
 		string $dataType,
-		?string $unit,
-		?array $format,
-		$invalid,
-		?int $numberOfDecimals,
-		$value,
-		$default,
-		string $channel,
+		?string $unit = null,
+		?array $format = null,
+		string|int|float|null $invalid = null,
+		?int $numberOfDecimals = null,
+		float|bool|int|string|null $value = null,
+		float|bool|int|string|null $default = null,
 		?string $parent = null,
-		$children = [],
+		array|Utils\ArrayHash $children = [],
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default, $owner);
@@ -85,7 +85,7 @@ final class ChannelStaticPropertyEntity extends StaticPropertyEntity implements 
 	{
 		return array_merge(parent::toArray(), [
 			'channel'  => $this->getChannel()->toString(),
-			'parent'   => $this->getParent() !== null ? $this->getParent()->toString() : null,
+			'parent'   => $this->getParent()?->toString(),
 			'children' => array_map(function (Uuid\UuidInterface $child): string {
 				return $child->toString();
 			}, $this->getChildren()),

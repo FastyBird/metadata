@@ -22,6 +22,16 @@
           }
         ]
       },
+      "nullable_boolean" : {
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "boolean"
+          }
+        ]
+      },
       "string_number" : {
         "oneOf" : [
           {
@@ -97,6 +107,19 @@
           },
           {
             "type" : "number"
+          },
+          {
+            "type" : "boolean"
+          },
+          {
+            "type" : "null"
+          }
+        ]
+      },
+      "string_boolean_null" : {
+        "oneOf" : [
+          {
+            "type" : "string"
           },
           {
             "type" : "boolean"
@@ -220,12 +243,10 @@
         "$ref" : "#/definitions/types/string_number_boolean_null"
       },
       "pending" : {
-        "type" : "boolean",
-        "default" : false
+        "$ref" : "#/definitions/types/string_boolean_null"
       },
       "valid" : {
-        "type" : "boolean",
-        "default" : false
+        "$ref" : "#/definitions/types/nullable_boolean"
       }
     },
     "required" : [
@@ -289,10 +310,10 @@
           "$ref" : "#/definitions/types/string_number_boolean_null"
         },
         "pending" : {
-          "type" : "boolean"
+          "$ref" : "#/definitions/types/string_boolean_null"
         },
         "valid" : {
-          "type" : "boolean"
+          "$ref" : "#/definitions/types/nullable_boolean"
         },
         "value" : {
           "$ref" : "#/definitions/types/string_number_boolean_null"

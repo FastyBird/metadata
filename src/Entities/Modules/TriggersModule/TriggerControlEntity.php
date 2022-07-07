@@ -85,7 +85,7 @@ final class TriggerControlEntity implements ITriggerControlEntity, Entities\IOwn
 			'id'      => $this->getId()->toString(),
 			'trigger' => $this->getTrigger()->toString(),
 			'name'    => $this->getName(),
-			'owner'   => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'   => $this->getOwner()?->toString(),
 		];
 	}
 

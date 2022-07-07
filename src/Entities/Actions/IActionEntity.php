@@ -43,6 +43,6 @@ interface IActionEntity extends Entities\IEntity
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getExpectedValue();
+	public function getExpectedValue(): float|bool|int|string|null;
 
 }

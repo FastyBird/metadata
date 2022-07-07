@@ -39,14 +39,14 @@ final class ActionChannelEntity extends ActionEntity implements IActionChannelEn
 	 * @param string $device
 	 * @param string $channel
 	 * @param string $control
-	 * @param string|int|float|bool|null $expectedValue
+	 * @param float|bool|int|string|null $expectedValue
 	 */
 	public function __construct(
 		string $action,
 		string $device,
 		string $channel,
 		string $control,
-		$expectedValue = null
+		float|bool|int|string|null $expectedValue = null
 	) {
 		parent::__construct($action, $control, $expectedValue);
 

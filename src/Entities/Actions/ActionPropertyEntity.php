@@ -37,17 +37,17 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	protected Uuid\UuidInterface $property;
 
 	/** @var string|int|float|bool|null */
-	protected $expectedValue;
+	protected string|int|bool|null|float $expectedValue;
 
 	/**
 	 * @param string $action
 	 * @param string $property
-	 * @param string|int|float|bool|null $expectedValue
+	 * @param float|bool|int|string|null $expectedValue
 	 */
 	public function __construct(
 		string $action,
 		string $property,
-		$expectedValue = null
+		float|bool|int|string|null $expectedValue = null
 	) {
 		$this->action = Types\PropertyActionType::get($action);
 
@@ -75,7 +75,7 @@ abstract class ActionPropertyEntity implements IActionPropertyEntity
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getExpectedValue()
+	public function getExpectedValue(): float|bool|int|string|null
 	{
 		if (!$this->getAction()->equalsValue(Types\PropertyActionType::ACTION_SET)) {
 			throw new Exceptions\InvalidStateException(

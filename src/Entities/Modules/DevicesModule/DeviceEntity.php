@@ -61,8 +61,8 @@ final class DeviceEntity implements IDeviceEntity, Entities\IOwner
 	 * @param string $type
 	 * @param string $identifier
 	 * @param string $connector
-	 * @param string[]|Utils\ArrayHash $parents
-	 * @param string[]|Utils\ArrayHash $children
+	 * @param string[]|Utils\ArrayHash<string> $parents
+	 * @param string[]|Utils\ArrayHash<string> $children
 	 * @param string|null $name
 	 * @param string|null $comment
 	 * @param string|null $owner
@@ -72,8 +72,8 @@ final class DeviceEntity implements IDeviceEntity, Entities\IOwner
 		string $type,
 		string $identifier,
 		string $connector,
-		$parents,
-		$children,
+		array|Utils\ArrayHash $parents,
+		array|Utils\ArrayHash $children,
 		?string $name = null,
 		?string $comment = null,
 		?string $owner = null
@@ -175,7 +175,7 @@ final class DeviceEntity implements IDeviceEntity, Entities\IOwner
 			'children'   => array_map(function (Uuid\UuidInterface $child): string {
 				return $child->toString();
 			}, $this->getChildren()),
-			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'      => $this->getOwner()?->toString(),
 		];
 	}
 

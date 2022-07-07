@@ -29,11 +29,11 @@ interface IStaticPropertyEntity extends IPropertyEntity
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getValue();
+	public function getValue(): float|bool|int|string|null;
 
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getDefault();
+	public function getDefault(): float|bool|int|string|null;
 
 }

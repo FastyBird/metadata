@@ -114,7 +114,7 @@ abstract class ActionEntity implements IActionEntity, Entities\IOwner
 			'type'         => $this->getType()->getValue(),
 			'enabled'      => $this->isEnabled(),
 			'is_triggered' => $this->isTriggered(),
-			'owner'        => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'        => $this->getOwner()?->toString(),
 		];
 	}
 

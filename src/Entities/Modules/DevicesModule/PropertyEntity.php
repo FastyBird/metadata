@@ -60,7 +60,7 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 	private ?array $format;
 
 	/** @var string|int|float|null */
-	private $invalid;
+	private string|int|null|float $invalid;
 
 	/** @var int|null */
 	private ?int $numberOfDecimals;
@@ -75,7 +75,7 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 	 * @param string $dataType
 	 * @param string|null $unit
 	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null $format
-	 * @param string|int|float|null $invalid
+	 * @param float|int|string|null $invalid
 	 * @param int|null $numberOfDecimals
 	 * @param string|null $owner
 	 */
@@ -87,10 +87,10 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 		bool $settable,
 		bool $queryable,
 		string $dataType,
-		?string $unit,
-		?array $format,
-		$invalid,
-		?int $numberOfDecimals,
+		?string $unit = null,
+		?array $format = null,
+		float|int|string|null $invalid = null,
+		?int $numberOfDecimals = null,
 		?string $owner = null
 	) {
 		$this->id = Uuid\Uuid::fromString($id);
@@ -182,7 +182,7 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getInvalid()
+	public function getInvalid(): float|int|string|null
 	{
 		return $this->invalid;
 	}
@@ -212,8 +212,16 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 			'format'             => $this->getFormat(),
 			'invalid'            => $this->getInvalid(),
 			'number_of_decimals' => $this->getNumberOfDecimals(),
-			'owner'              => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'              => $this->getOwner()?->toString(),
 		];
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

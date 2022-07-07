@@ -15,6 +15,10 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use DateTimeInterface;
+use Exception;
+use Nette\Utils;
+
 /**
  * Mapped property entity
  *
@@ -27,25 +31,25 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 {
 
 	/** @var string|int|float|bool|null */
-	private $actualValue;
+	private string|int|bool|null|float $actualValue;
 
 	/** @var string|int|float|bool|null */
-	private $previousValue;
+	private string|int|bool|null|float $previousValue;
 
 	/** @var string|int|float|bool|null */
-	private $expectedValue;
+	private string|int|bool|null|float $expectedValue;
 
-	/** @var bool|null */
-	private ?bool $pending;
+	/** @var bool|string|null */
+	private string|bool|null $pending;
 
 	/** @var bool|null */
 	private ?bool $valid;
 
 	/** @var string|int|float|bool|null */
-	private $value;
+	private string|int|bool|null|float $value;
 
 	/** @var string|int|float|bool|null */
-	private $default;
+	private string|int|bool|null|float $default;
 
 	/**
 	 * @param string $id
@@ -76,17 +80,17 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 		bool $settable,
 		bool $queryable,
 		string $dataType,
-		?string $unit,
-		?array $format,
-		$invalid,
-		?int $numberOfDecimals,
-		$actualValue,
-		$previousValue,
-		$expectedValue,
-		?bool $pending,
-		?bool $valid,
-		$value,
-		$default,
+		?string $unit = null,
+		?array $format = null,
+		string|int|float|null $invalid = null,
+		?int $numberOfDecimals = null,
+		float|bool|int|string|null $actualValue = null,
+		float|bool|int|string|null $previousValue = null,
+		float|bool|int|string|null $expectedValue = null,
+		bool|string|null $pending = null,
+		?bool $valid = null,
+		float|bool|int|string|null $value = null,
+		float|bool|int|string|null $default = null,
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $owner);
@@ -104,7 +108,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getActualValue()
+	public function getActualValue(): float|bool|int|string|null
 	{
 		return $this->actualValue;
 	}
@@ -112,7 +116,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getPreviousValue()
+	public function getPreviousValue(): float|bool|int|string|null
 	{
 		return $this->previousValue;
 	}
@@ -120,9 +124,24 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getExpectedValue()
+	public function getExpectedValue(): float|bool|int|string|null
 	{
 		return $this->expectedValue;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @throws Exception
+	 */
+	public function getPending(): bool|string|null
+	{
+		if (is_string($this->pending)) {
+			$pending = Utils\DateTime::from($this->pending);
+			return $pending->format(DateTimeInterface::ATOM);
+		}
+
+		return $this->pending;
 	}
 
 	/**
@@ -130,7 +149,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	 */
 	public function isPending(): ?bool
 	{
-		return $this->pending;
+		return $this->pending !== null;
 	}
 
 	/**
@@ -144,7 +163,7 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getValue()
+	public function getValue(): float|bool|int|string|null
 	{
 		return $this->value;
 	}
@@ -152,13 +171,15 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getDefault()
+	public function getDefault(): float|bool|int|string|null
 	{
 		return $this->default;
 	}
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @throws Exception
 	 */
 	public function toArray(): array
 	{
@@ -166,11 +187,21 @@ abstract class MappedPropertyEntity extends PropertyEntity implements IMappedPro
 			'actual_value'   => $this->getActualValue(),
 			'previous_value' => $this->getPreviousValue(),
 			'expected_value' => $this->getExpectedValue(),
-			'pending'        => $this->isPending(),
+			'pending'        => $this->getPending(),
 			'valid'          => $this->isValid(),
 			'value'          => $this->getValue(),
 			'default'        => $this->getDefault(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 *
+	 * @throws Exception
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

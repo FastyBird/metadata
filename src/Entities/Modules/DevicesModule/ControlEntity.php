@@ -71,7 +71,7 @@ abstract class ControlEntity implements IControlEntity, Entities\IOwner
 		return [
 			'id'    => $this->getId()->toString(),
 			'name'  => $this->getName(),
-			'owner' => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner' => $this->getOwner()?->toString(),
 		];
 	}
 

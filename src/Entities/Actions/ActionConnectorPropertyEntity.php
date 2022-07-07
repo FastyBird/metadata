@@ -35,13 +35,13 @@ final class ActionConnectorPropertyEntity extends ActionPropertyEntity implement
 	 * @param string $action
 	 * @param string $connector
 	 * @param string $property
-	 * @param string|int|float|bool|null $expectedValue
+	 * @param float|bool|int|string|null $expectedValue
 	 */
 	public function __construct(
 		string $action,
 		string $connector,
 		string $property,
-		$expectedValue = null
+		float|bool|int|string|null $expectedValue = null
 	) {
 		parent::__construct($action, $property, $expectedValue);
 

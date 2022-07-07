@@ -100,7 +100,7 @@ abstract class NotificationEntity implements INotificationEntity, Entities\IOwne
 			'trigger' => $this->getTrigger()->toString(),
 			'type'    => $this->getType()->getValue(),
 			'enabled' => $this->isEnabled(),
-			'owner'   => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'   => $this->getOwner()?->toString(),
 		];
 	}
 

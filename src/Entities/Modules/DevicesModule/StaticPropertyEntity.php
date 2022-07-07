@@ -27,10 +27,10 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 {
 
 	/** @var string|int|float|bool|null */
-	private $value;
+	private string|int|bool|null|float $value;
 
 	/** @var string|int|float|bool|null */
-	private $default;
+	private string|int|bool|null|float $default;
 
 	/**
 	 * @param string $id
@@ -56,12 +56,12 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 		bool $settable,
 		bool $queryable,
 		string $dataType,
-		?string $unit,
-		?array $format,
-		$invalid,
-		?int $numberOfDecimals,
-		$value,
-		$default,
+		?string $unit = null,
+		?array $format = null,
+		string|int|float|null $invalid = null,
+		?int $numberOfDecimals = null,
+		float|bool|int|string|null $value = null,
+		float|bool|int|string|null $default = null,
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $owner);
@@ -73,7 +73,7 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getValue()
+	public function getValue(): float|bool|int|string|null
 	{
 		return $this->value;
 	}
@@ -81,7 +81,7 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getDefault()
+	public function getDefault(): float|bool|int|string|null
 	{
 		return $this->default;
 	}
@@ -95,6 +95,14 @@ abstract class StaticPropertyEntity extends PropertyEntity implements IStaticPro
 			'value'   => $this->getValue(),
 			'default' => $this->getDefault(),
 		]);
+	}
+
+	/**
+	 * @return Array<string, mixed>
+	 */
+	public function __serialize(): array
+	{
+		return $this->toArray();
 	}
 
 }

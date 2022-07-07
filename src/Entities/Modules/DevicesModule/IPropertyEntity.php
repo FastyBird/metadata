@@ -78,7 +78,7 @@ interface IPropertyEntity extends Entities\IEntity
 	/**
 	 * @return float|int|string|null
 	 */
-	public function getInvalid();
+	public function getInvalid(): float|int|string|null;
 
 	/**
 	 * @return int|null

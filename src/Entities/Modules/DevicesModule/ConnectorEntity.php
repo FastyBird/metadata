@@ -127,7 +127,7 @@ final class ConnectorEntity implements IConnectorEntity, Entities\IOwner
 			'name'       => $this->getName(),
 			'comment'    => $this->getComment(),
 			'enabled'    => $this->isEnabled(),
-			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'      => $this->getOwner()?->toString(),
 		];
 	}
 

@@ -113,7 +113,7 @@ final class ChannelEntity implements IChannelEntity, Entities\IOwner
 			'name'       => $this->getName(),
 			'comment'    => $this->getComment(),
 			'device'     => $this->getDevice()->toString(),
-			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'      => $this->getOwner()?->toString(),
 		];
 	}
 

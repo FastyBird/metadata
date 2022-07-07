@@ -113,7 +113,7 @@ final class DeviceAttributeEntity implements IDeviceAttributeEntity, Entities\IO
 			'identifier' => $this->getIdentifier(),
 			'name'       => $this->getName(),
 			'content'    => $this->getContent(),
-			'owner'      => $this->getOwner() !== null ? $this->getOwner()->toString() : null,
+			'owner'      => $this->getOwner()?->toString(),
 		];
 	}
 

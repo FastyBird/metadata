@@ -29,17 +29,22 @@ interface IMappedPropertyEntity extends IPropertyEntity
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getActualValue();
+	public function getActualValue(): float|bool|int|string|null;
 
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getPreviousValue();
+	public function getPreviousValue(): float|bool|int|string|null;
 
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getExpectedValue();
+	public function getExpectedValue(): float|bool|int|string|null;
+
+	/**
+	 * @return bool|string|null
+	 */
+	public function getPending(): bool|string|null;
 
 	/**
 	 * @return bool|null
@@ -54,11 +59,11 @@ interface IMappedPropertyEntity extends IPropertyEntity
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getValue();
+	public function getValue(): float|bool|int|string|null;
 
 	/**
 	 * @return bool|float|int|string|null
 	 */
-	public function getDefault();
+	public function getDefault(): float|bool|int|string|null;
 
 }

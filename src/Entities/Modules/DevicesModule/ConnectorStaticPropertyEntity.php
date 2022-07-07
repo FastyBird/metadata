@@ -32,6 +32,7 @@ final class ConnectorStaticPropertyEntity extends StaticPropertyEntity implement
 
 	/**
 	 * @param string $id
+	 * @param string $connector
 	 * @param string $type
 	 * @param string $identifier
 	 * @param string|null $name
@@ -44,24 +45,23 @@ final class ConnectorStaticPropertyEntity extends StaticPropertyEntity implement
 	 * @param int|null $numberOfDecimals
 	 * @param string|int|float|bool|null $value
 	 * @param string|int|float|bool|null $default
-	 * @param string $connector
 	 * @param string|null $owner
 	 */
 	public function __construct(
 		string $id,
+		string $connector,
 		string $type,
 		string $identifier,
 		?string $name,
 		bool $settable,
 		bool $queryable,
 		string $dataType,
-		?string $unit,
-		?array $format,
-		$invalid,
-		?int $numberOfDecimals,
-		$value,
-		$default,
-		string $connector,
+		?string $unit = null,
+		?array $format = null,
+		string|int|float|null $invalid = null,
+		?int $numberOfDecimals = null,
+		float|bool|int|string|null $value = null,
+		float|bool|int|string|null $default = null,
 		?string $owner = null
 	) {
 		parent::__construct($id, $type, $identifier, $name, $settable, $queryable, $dataType, $unit, $format, $invalid, $numberOfDecimals, $value, $default, $owner);

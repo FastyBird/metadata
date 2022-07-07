@@ -35,13 +35,13 @@ final class ActionConnectorEntity extends ActionEntity implements IActionConnect
 	 * @param string $action
 	 * @param string $connector
 	 * @param string $control
-	 * @param string|int|float|bool|null $expectedValue
+	 * @param float|bool|int|string|null $expectedValue
 	 */
 	public function __construct(
 		string $action,
 		string $connector,
 		string $control,
-		$expectedValue = null
+		float|bool|int|string|null $expectedValue = null
 	) {
 		parent::__construct($action, $control, $expectedValue);
 

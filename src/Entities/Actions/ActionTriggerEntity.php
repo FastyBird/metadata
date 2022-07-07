@@ -39,19 +39,19 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 	private Uuid\UuidInterface $control;
 
 	/** @var string|int|float|bool|null */
-	private $expectedValue;
+	private string|int|bool|null|float $expectedValue;
 
 	/**
 	 * @param string $action
 	 * @param string $trigger
 	 * @param string $control
-	 * @param string|int|float|bool|null $expectedValue
+	 * @param float|bool|int|string|null $expectedValue
 	 */
 	public function __construct(
 		string $action,
 		string $trigger,
 		string $control,
-		$expectedValue = null
+		float|bool|int|string|null $expectedValue = null
 	) {
 		$this->action = Types\TriggerActionType::get($action);
 
@@ -88,7 +88,7 @@ final class ActionTriggerEntity implements IActionTriggerEntity
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getExpectedValue()
+	public function getExpectedValue(): float|bool|int|string|null
 	{
 		return $this->expectedValue;
 	}
