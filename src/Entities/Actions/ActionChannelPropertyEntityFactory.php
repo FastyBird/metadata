@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Channel property action entity factory
@@ -46,19 +47,24 @@ final class ActionChannelPropertyEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IActionChannelPropertyEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IActionChannelPropertyEntity
+	public function create(string|array|Utils\ArrayHash $data): IActionChannelPropertyEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/actions', 'action.channel.property.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.channel.property.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(ActionChannelPropertyEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(ActionChannelPropertyEntity::class, $data);
 
 		if ($entity instanceof ActionChannelPropertyEntity) {
 			return $entity;

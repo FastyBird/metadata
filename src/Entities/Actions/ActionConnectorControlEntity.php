@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * ActionConnectorEntity.php
+ * ActionConnectorControlEntity.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -18,14 +18,14 @@ namespace FastyBird\Metadata\Entities\Actions;
 use Ramsey\Uuid;
 
 /**
- * Connector action entity
+ * Connector control action entity
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class ActionConnectorEntity extends ActionEntity implements IActionConnectorEntity
+final class ActionConnectorControlEntity extends ActionEntity implements IActionConnectorControlEntity
 {
 
 	/** @var Uuid\UuidInterface */

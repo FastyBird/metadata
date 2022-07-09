@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Control entity factory
@@ -46,19 +47,24 @@ final class TriggerControlEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return ITriggerControlEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): ITriggerControlEntity
+	public function create(string|array|Utils\ArrayHash $data): ITriggerControlEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.trigger.control.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.trigger.control.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(TriggerControlEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(TriggerControlEntity::class, $data);
 
 		if ($entity instanceof TriggerControlEntity) {
 			return $entity;

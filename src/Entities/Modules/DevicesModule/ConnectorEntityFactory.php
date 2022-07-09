@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Connector entity factory
@@ -46,19 +47,24 @@ final class ConnectorEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IConnectorEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IConnectorEntity
+	public function create(string|array|Utils\ArrayHash $data): IConnectorEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.connector.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.connector.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(ConnectorEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(ConnectorEntity::class, $data);
 
 		if ($entity instanceof ConnectorEntity) {
 			return $entity;

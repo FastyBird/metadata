@@ -33,6 +33,9 @@ final class Validator implements IValidator
 
 	use Nette\SmartObject;
 
+	/** @var Array<string, JsonSchema\Schema>  */
+	private array $schemas = [];
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -47,14 +50,16 @@ final class Validator implements IValidator
 
 		$validator = new JsonSchema\Validator();
 
-		try {
-			$jsonSchema = $validator->loader()->loadObjectSchema(Utils\Json::decode($schema)); // @phpstan-ignore-line
+		if (!array_key_exists(md5($schema), $this->schemas)) {
+			try {
+				$this->schemas[md5($schema)] = $validator->loader()->loadObjectSchema(Utils\Json::decode($schema)); // @phpstan-ignore-line
 
-		} catch (Utils\JsonException $ex) {
-			throw new Exceptions\LogicException(sprintf('Failed to decode schema'), 0, $ex);
+			} catch (Utils\JsonException $ex) {
+				throw new Exceptions\LogicException(sprintf('Failed to decode schema'), 0, $ex);
+			}
 		}
 
-		$result = $validator->validate($jsonData, $jsonSchema);
+		$result = $validator->validate($jsonData, $this->schemas[md5($schema)]);
 
 		if ($result->isValid()) {
 			try {

@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use FastyBird\Metadata\Types;
+use Nette\Utils;
 
 /**
  * Action entity factory
@@ -47,25 +48,30 @@ final class ActionEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IActionEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IActionEntity
+	public function create(string|array|Utils\ArrayHash $data): IActionEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.action.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.action.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$type = Types\TriggerActionTypeType::get($validated->offsetGet('type'));
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$type = Types\TriggerActionTypeType::get($data->offsetGet('type'));
 
 		if ($type->equalsValue(Types\TriggerActionTypeType::TYPE_DEVICE_PROPERTY)) {
-			$entity = $this->build(DevicePropertyActionEntity::class, $validated);
+			$entity = $this->build(DevicePropertyActionEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\TriggerActionTypeType::TYPE_CHANNEL_PROPERTY)) {
-			$entity = $this->build(ChannelPropertyActionEntity::class, $validated);
+			$entity = $this->build(ChannelPropertyActionEntity::class, $data);
 
 		} else {
 			throw new Exceptions\InvalidArgumentException('Provided data and routing key is for unsupported action type');

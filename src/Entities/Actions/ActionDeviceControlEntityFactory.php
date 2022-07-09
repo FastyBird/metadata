@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * ActionChannelEntityFactory.php
+ * ActionDeviceControlEntityFactory.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -10,7 +10,7 @@
  * @subpackage     Entities
  * @since          0.57.0
  *
- * @date           31.05.22
+ * @date           01.06.22
  */
 
 namespace FastyBird\Metadata\Entities\Actions;
@@ -19,16 +19,17 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
- * Channel action entity factory
+ * Device control action entity factory
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class ActionChannelEntityFactory extends Entities\EntityFactory
+final class ActionDeviceControlEntityFactory extends Entities\EntityFactory
 {
 
 	/** @var Loaders\SchemaLoader */
@@ -46,21 +47,26 @@ final class ActionChannelEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
-	 * @return IActionChannelEntity
+	 * @return IActionDeviceControlEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IActionChannelEntity
+	public function create(string|array|Utils\ArrayHash $data): IActionDeviceControlEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/actions', 'action.channel.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.device.control.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(ActionChannelEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
 
-		if ($entity instanceof ActionChannelEntity) {
+		$entity = $this->build(ActionDeviceControlEntity::class, $data);
+
+		if ($entity instanceof ActionDeviceControlEntity) {
 			return $entity;
 		}
 

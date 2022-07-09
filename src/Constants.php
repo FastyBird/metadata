@@ -74,13 +74,13 @@ final class Constants
 	 * Global
 	 */
 
-	public const MESSAGE_BUS_CONNECTOR_ACTION_ROUTING_KEY = 'fb.exchange.action.connector';
+	public const MESSAGE_BUS_CONNECTOR_CONTROL_ACTION_ROUTING_KEY = 'fb.exchange.action.connector.control';
 	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ACTION_ROUTING_KEY = 'fb.exchange.action.connector.property';
-	public const MESSAGE_BUS_DEVICE_ACTION_ROUTING_KEY = 'fb.exchange.action.device';
+	public const MESSAGE_BUS_DEVICE_CONTROL_ACTION_ROUTING_KEY = 'fb.exchange.action.device.control';
 	public const MESSAGE_BUS_DEVICE_PROPERTY_ACTION_ROUTING_KEY = 'fb.exchange.action.device.property';
-	public const MESSAGE_BUS_CHANNEL_ACTION_ROUTING_KEY = 'fb.exchange.action.channel';
+	public const MESSAGE_BUS_CHANNEL_CONTROL_ACTION_ROUTING_KEY = 'fb.exchange.action.channel.control';
 	public const MESSAGE_BUS_CHANNEL_PROPERTY_ACTION_ROUTING_KEY = 'fb.exchange.action.channel.property';
-	public const MESSAGE_BUS_TRIGGER_ACTION_ROUTING_KEY = 'fb.exchange.action.trigger';
+	public const MESSAGE_BUS_TRIGGER_CONTROL_ACTION_ROUTING_KEY = 'fb.exchange.action.trigger.control';
 
 	public const MESSAGE_BUS_MODULE_MESSAGE_ROUTING_KEY = 'fb.exchange.message.module';
 	public const MESSAGE_BUS_PLUGIN_MESSAGE_ROUTING_KEY = 'fb.exchange.message.plugin';
@@ -228,13 +228,13 @@ final class Constants
 	 */
 
 	public const JSON_SCHEMAS_MAPPING = [
-		self::MESSAGE_BUS_CONNECTOR_ACTION_ROUTING_KEY             => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.connector.json',
+		self::MESSAGE_BUS_CONNECTOR_CONTROL_ACTION_ROUTING_KEY     => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.connector.control.json',
 		self::MESSAGE_BUS_CONNECTOR_PROPERTY_ACTION_ROUTING_KEY    => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.connector.property.json',
-		self::MESSAGE_BUS_DEVICE_ACTION_ROUTING_KEY                => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.device.json',
+		self::MESSAGE_BUS_DEVICE_CONTROL_ACTION_ROUTING_KEY        => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.device.control.json',
 		self::MESSAGE_BUS_DEVICE_PROPERTY_ACTION_ROUTING_KEY       => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.device.property.json',
-		self::MESSAGE_BUS_CHANNEL_ACTION_ROUTING_KEY               => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.channel.json',
+		self::MESSAGE_BUS_CHANNEL_CONTROL_ACTION_ROUTING_KEY       => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.channel.control.json',
 		self::MESSAGE_BUS_CHANNEL_PROPERTY_ACTION_ROUTING_KEY      => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.channel.property.json',
-		self::MESSAGE_BUS_TRIGGER_ACTION_ROUTING_KEY               => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.trigger.json',
+		self::MESSAGE_BUS_TRIGGER_CONTROL_ACTION_ROUTING_KEY       => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'actions' . DIRECTORY_SEPARATOR . 'action.trigger.control.json',
 
 		self::MESSAGE_BUS_ACCOUNT_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.account.json',
 		self::MESSAGE_BUS_ACCOUNT_ENTITY_CREATED_ROUTING_KEY  => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . 'accounts-module' . DIRECTORY_SEPARATOR . 'entity.account.json',

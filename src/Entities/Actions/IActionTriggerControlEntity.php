@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * ActionTriggerEntity.php
+ * IActionTriggerControlEntity.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -20,14 +20,14 @@ use FastyBird\Metadata\Types;
 use Ramsey\Uuid;
 
 /**
- * Trigger action entity interface
+ * Trigger control action entity interface
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-interface IActionTriggerEntity extends Entities\IEntity
+interface IActionTriggerControlEntity extends Entities\IEntity
 {
 
 	/**

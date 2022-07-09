@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use FastyBird\Metadata\Types;
+use Nette\Utils;
 
 /**
  * Trigger entity factory
@@ -47,25 +48,30 @@ final class TriggerEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return ITriggerEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): ITriggerEntity
+	public function create(string|array|Utils\ArrayHash $data): ITriggerEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.trigger.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.trigger.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$type = Types\TriggerTypeType::get($validated->offsetGet('type'));
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$type = Types\TriggerTypeType::get($data->offsetGet('type'));
 
 		if ($type->equalsValue(Types\TriggerTypeType::TYPE_MANUAL)) {
-			$entity = $this->build(ManualTriggerEntity::class, $validated);
+			$entity = $this->build(ManualTriggerEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\TriggerTypeType::TYPE_AUTOMATIC)) {
-			$entity = $this->build(AutomaticTriggerEntity::class, $validated);
+			$entity = $this->build(AutomaticTriggerEntity::class, $data);
 
 		} else {
 			throw new Exceptions\InvalidArgumentException('Provided data and routing key is for unsupported trigger type');

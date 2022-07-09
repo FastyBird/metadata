@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use FastyBird\Metadata\Types;
+use Nette\Utils;
 
 /**
  * Device property entity factory
@@ -47,28 +48,33 @@ final class DevicePropertyEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IPropertyEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IPropertyEntity
+	public function create(string|array|Utils\ArrayHash $data): IPropertyEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.device.property.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.device.property.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$type = Types\PropertyTypeType::get($validated->offsetGet('type'));
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$type = Types\PropertyTypeType::get($data->offsetGet('type'));
 
 		if ($type->equalsValue(Types\PropertyTypeType::TYPE_DYNAMIC)) {
-			$entity = $this->build(DeviceDynamicPropertyEntity::class, $validated);
+			$entity = $this->build(DeviceDynamicPropertyEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\PropertyTypeType::TYPE_STATIC)) {
-			$entity = $this->build(DeviceStaticPropertyEntity::class, $validated);
+			$entity = $this->build(DeviceStaticPropertyEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\PropertyTypeType::TYPE_MAPPED)) {
-			$entity = $this->build(DeviceMappedPropertyEntity::class, $validated);
+			$entity = $this->build(DeviceMappedPropertyEntity::class, $data);
 
 		} else {
 			throw new Exceptions\InvalidArgumentException('Provided data and routing key is for unsupported property type');

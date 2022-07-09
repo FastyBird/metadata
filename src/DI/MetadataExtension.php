@@ -68,25 +68,25 @@ class MetadataExtension extends DI\CompilerExtension
 
 		// Entity factories
 		$builder->addDefinition('entity.factory.actions.connector.action', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Actions\ActionConnectorEntityFactory::class);
+			->setType(Entities\Actions\ActionConnectorControlEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.connector.property.action', new DI\Definitions\ServiceDefinition())
 			->setType(Entities\Actions\ActionConnectorPropertyEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.device.action', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Actions\ActionDeviceEntityFactory::class);
+			->setType(Entities\Actions\ActionDeviceControlEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.device.property.action', new DI\Definitions\ServiceDefinition())
 			->setType(Entities\Actions\ActionDevicePropertyEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.channel.action', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Actions\ActionChannelEntityFactory::class);
+			->setType(Entities\Actions\ActionChannelControlEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.channel.property.action', new DI\Definitions\ServiceDefinition())
 			->setType(Entities\Actions\ActionChannelPropertyEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.trigger.action', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Actions\ActionTriggerEntityFactory::class);
+			->setType(Entities\Actions\ActionTriggerControlEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.accountsModule.account', new DI\Definitions\ServiceDefinition())
 			->setType(Entities\Modules\AccountsModule\AccountEntityFactory::class);

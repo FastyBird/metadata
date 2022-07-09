@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * ActionChannelEntity.php
+ * IActionDeviceEntity.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -18,24 +18,19 @@ namespace FastyBird\Metadata\Entities\Actions;
 use Ramsey\Uuid;
 
 /**
- * Channel action entity interface
+ * Device action entity interface
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-interface IActionChannelEntity extends IActionEntity
+interface IActionDeviceControlEntity extends IActionEntity
 {
 
 	/**
 	 * @return Uuid\UuidInterface
 	 */
 	public function getDevice(): Uuid\UuidInterface;
-
-	/**
-	 * @return Uuid\UuidInterface
-	 */
-	public function getChannel(): Uuid\UuidInterface;
 
 }

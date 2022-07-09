@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * ActionConnectorEntityFactory.php
+ * ActionChannelControlEntityFactory.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -10,7 +10,7 @@
  * @subpackage     Entities
  * @since          0.57.0
  *
- * @date           01.06.22
+ * @date           31.05.22
  */
 
 namespace FastyBird\Metadata\Entities\Actions;
@@ -19,16 +19,17 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
- * Connector action entity factory
+ * Channel control action entity factory
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class ActionConnectorEntityFactory extends Entities\EntityFactory
+final class ActionChannelControlEntityFactory extends Entities\EntityFactory
 {
 
 	/** @var Loaders\SchemaLoader */
@@ -46,21 +47,26 @@ final class ActionConnectorEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
-	 * @return IActionConnectorEntity
+	 * @return IActionChannelControlEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IActionConnectorEntity
+	public function create(string|array|Utils\ArrayHash $data): IActionChannelControlEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/actions', 'action.connector.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.channel.control.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(ActionConnectorEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
 
-		if ($entity instanceof ActionConnectorEntity) {
+		$entity = $this->build(ActionChannelControlEntity::class, $data);
+
+		if ($entity instanceof ActionChannelControlEntity) {
 			return $entity;
 		}
 

@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Control entity factory
@@ -46,19 +47,24 @@ final class DeviceControlEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IDeviceControlEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IDeviceControlEntity
+	public function create(string|array|Utils\ArrayHash $data): IDeviceControlEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.device.control.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.device.control.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(DeviceControlEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(DeviceControlEntity::class, $data);
 
 		if ($entity instanceof DeviceControlEntity) {
 			return $entity;

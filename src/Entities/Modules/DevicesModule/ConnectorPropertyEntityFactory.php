@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use FastyBird\Metadata\Types;
+use Nette\Utils;
 
 /**
  * Connector property entity factory
@@ -47,28 +48,33 @@ final class ConnectorPropertyEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IPropertyEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IPropertyEntity
+	public function create(string|array|Utils\ArrayHash $data): IPropertyEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.connector.property.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/devices-module', 'entity.connector.property.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$type = Types\PropertyTypeType::get($validated->offsetGet('type'));
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$type = Types\PropertyTypeType::get($data->offsetGet('type'));
 
 		if ($type->equalsValue(Types\PropertyTypeType::TYPE_DYNAMIC)) {
-			$entity = $this->build(ConnectorDynamicPropertyEntity::class, $validated);
+			$entity = $this->build(ConnectorDynamicPropertyEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\PropertyTypeType::TYPE_STATIC)) {
-			$entity = $this->build(ConnectorStaticPropertyEntity::class, $validated);
+			$entity = $this->build(ConnectorStaticPropertyEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\PropertyTypeType::TYPE_MAPPED)) {
-			$entity = $this->build(ConnectorMappedPropertyEntity::class, $validated);
+			$entity = $this->build(ConnectorMappedPropertyEntity::class, $data);
 
 		} else {
 			throw new Exceptions\InvalidArgumentException('Provided data and routing key is for unsupported property type');

@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * ActionDeviceEntityFactory.php
+ * ActionTriggerControlEntityFactory.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -19,16 +19,17 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
- * Device action entity factory
+ * Trigger control action entity factory
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class ActionDeviceEntityFactory extends Entities\EntityFactory
+final class ActionTriggerControlEntityFactory extends Entities\EntityFactory
 {
 
 	/** @var Loaders\SchemaLoader */
@@ -46,21 +47,26 @@ final class ActionDeviceEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
-	 * @return IActionDeviceEntity
+	 * @return IActionTriggerControlEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IActionDeviceEntity
+	public function create(string|array|Utils\ArrayHash $data): IActionTriggerControlEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/actions', 'action.device.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.trigger.control.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(ActionDeviceEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
 
-		if ($entity instanceof ActionDeviceEntity) {
+		$entity = $this->build(ActionTriggerControlEntity::class, $data);
+
+		if ($entity instanceof ActionTriggerControlEntity) {
 			return $entity;
 		}
 

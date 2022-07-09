@@ -38,13 +38,13 @@ class RoutingKey(ExtendedEnum):
 
     # GLOBAL
 
-    CONNECTOR_ACTION: str = "fb.exchange.action.connector"
+    CONNECTOR_CONTROL_ACTION: str = "fb.exchange.action.connector.control"
     CONNECTOR_PROPERTY_ACTION: str = "fb.exchange.action.connector.property"
-    DEVICE_ACTION: str = "fb.exchange.action.device"
+    DEVICE_CONTROL_ACTION: str = "fb.exchange.action.device.control"
     DEVICE_PROPERTY_ACTION: str = "fb.exchange.action.device.property"
-    CHANNEL_ACTION: str = "fb.exchange.action.channel"
+    CHANNEL_CONTROL_ACTION: str = "fb.exchange.action.channel.control"
     CHANNEL_PROPERTY_ACTION: str = "fb.exchange.action.channel.property"
-    TRIGGER_ACTION: str = "fb.exchange.action.trigger"
+    TRIGGER_CONTROL_ACTION: str = "fb.exchange.action.trigger.control"
 
     MODULE_MESSAGE: str = "fb.exchange.message.module"
     PLUGIN_MESSAGE: str = "fb.exchange.message.plugin"

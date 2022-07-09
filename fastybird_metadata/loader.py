@@ -99,13 +99,13 @@ def get_data_file_content(filename: str) -> Optional[str]:
 
 
 JSON_SCHEMAS_MAPPING = {
-    RoutingKey(RoutingKey.CONNECTOR_ACTION).value: "resources/schemas/actions/action.connector.json",
+    RoutingKey(RoutingKey.CONNECTOR_CONTROL_ACTION).value: "resources/schemas/actions/action.connector.control.json",
     RoutingKey(RoutingKey.CONNECTOR_PROPERTY_ACTION).value: "resources/schemas/actions/action.connector.property.json",
-    RoutingKey(RoutingKey.DEVICE_ACTION).value: "resources/schemas/actions/action.device.json",
+    RoutingKey(RoutingKey.DEVICE_CONTROL_ACTION).value: "resources/schemas/actions/action.device.control.json",
     RoutingKey(RoutingKey.DEVICE_PROPERTY_ACTION).value: "resources/schemas/actions/action.device.property.json",
-    RoutingKey(RoutingKey.CHANNEL_ACTION).value: "resources/schemas/actions/action.channel.json",
+    RoutingKey(RoutingKey.CHANNEL_CONTROL_ACTION).value: "resources/schemas/actions/action.channel.control.json",
     RoutingKey(RoutingKey.CHANNEL_PROPERTY_ACTION).value: "resources/schemas/actions/action.channel.property.json",
-    RoutingKey(RoutingKey.TRIGGER_ACTION).value: "resources/schemas/actions/action.trigger.json",
+    RoutingKey(RoutingKey.TRIGGER_CONTROL_ACTION).value: "resources/schemas/actions/action.trigger.control.json",
     RoutingKey(
         RoutingKey.ACCOUNT_ENTITY_REPORTED
     ).value: "resources/schemas/modules/accounts-module/entity.account.json",

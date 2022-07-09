@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Connector property action entity factory
@@ -46,19 +47,24 @@ final class ActionConnectorPropertyEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IActionConnectorPropertyEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IActionConnectorPropertyEntity
+	public function create(string|array|Utils\ArrayHash $data): IActionConnectorPropertyEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/actions', 'action.connector.property.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.connector.property.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(ActionConnectorPropertyEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(ActionConnectorPropertyEntity::class, $data);
 
 		if ($entity instanceof ActionConnectorPropertyEntity) {
 			return $entity;

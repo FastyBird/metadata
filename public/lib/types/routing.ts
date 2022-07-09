@@ -1,11 +1,11 @@
 export enum ActionRoutes {
-  CONNECTOR = 'fb.exchange.action.connector',
+  CONNECTOR_CONTROL = 'fb.exchange.action.connector.control',
   CONNECTOR_PROPERTY = 'fb.exchange.action.connector.property',
-  DEVICE = 'fb.exchange.action.device',
+  DEVICE_CONTROL = 'fb.exchange.action.device.control',
   DEVICE_PROPERTY = 'fb.exchange.action.device.property',
-  CHANNEL = 'fb.exchange.action.channel',
+  CHANNEL_CONTROL = 'fb.exchange.action.channel.control',
   CHANNEL_PROPERTY = 'fb.exchange.action.channel.property',
-  TRIGGER = 'fb.exchange.action.trigger',
+  TRIGGER_CONTROL = 'fb.exchange.action.trigger.control',
 }
 
 export enum MessageRoutes {

@@ -21,6 +21,7 @@ use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use FastyBird\Metadata\Types;
 use IPub\Phone;
+use Nette\Utils;
 
 /**
  * Notification entity factory
@@ -54,33 +55,38 @@ final class NotificationEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return INotificationEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): INotificationEntity
+	public function create(string|array|Utils\ArrayHash $data): INotificationEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.notification.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.notification.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$type = Types\TriggerNotificationTypeType::get($validated->offsetGet('type'));
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$type = Types\TriggerNotificationTypeType::get($data->offsetGet('type'));
 
 		if ($type->equalsValue(Types\TriggerNotificationTypeType::TYPE_EMAIL)) {
-			$entity = $this->build(EmailNotificationEntity::class, $validated);
+			$entity = $this->build(EmailNotificationEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\TriggerNotificationTypeType::TYPE_SMS)) {
 			$phone = null;
 
-			if ($validated->offsetExists('phone')) {
-				$phone = $validated->offsetGet('phone');
+			if ($data->offsetExists('phone')) {
+				$phone = $data->offsetGet('phone');
 
-				$validated->offsetUnset('phone');
+				$data->offsetUnset('phone');
 			}
 
-			$entity = $this->build(SmsNotificationEntity::class, $validated);
+			$entity = $this->build(SmsNotificationEntity::class, $data);
 
 			if ($entity instanceof SmsNotificationEntity) {
 				if ($phone !== null) {

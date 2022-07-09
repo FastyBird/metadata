@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Role entity factory
@@ -46,19 +47,24 @@ final class RoleEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IRoleEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IRoleEntity
+	public function create(string|array|Utils\ArrayHash $data): IRoleEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.role.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.role.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(RoleEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(RoleEntity::class, $data);
 
 		if ($entity instanceof RoleEntity) {
 			return $entity;

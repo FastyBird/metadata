@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Email entity factory
@@ -46,19 +47,24 @@ final class EmailEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IEmailEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IEmailEntity
+	public function create(string|array|Utils\ArrayHash $data): IEmailEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.email.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.email.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(EmailEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(EmailEntity::class, $data);
 
 		if ($entity instanceof EmailEntity) {
 			return $entity;

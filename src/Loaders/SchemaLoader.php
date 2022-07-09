@@ -30,6 +30,12 @@ use FastyBird\Metadata\Types;
 final class SchemaLoader implements ISchemaLoader
 {
 
+	/** @var Array<string, string>  */
+	private array $byRoutingKey = [];
+
+	/** @var Array<string, string>  */
+	private array $byNamespace = [];
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -38,12 +44,18 @@ final class SchemaLoader implements ISchemaLoader
 	 */
 	public function loadByRoutingKey(Types\RoutingKeyType $routingKey): string
 	{
-		if (isset(Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()])) {
+		if (array_key_exists(strval($routingKey->getValue()), Metadata\Constants::JSON_SCHEMAS_MAPPING)) {
+			if (array_key_exists(Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()], $this->byRoutingKey)) {
+				return $this->byRoutingKey[Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]];
+			}
+
 			$schema = file_get_contents(Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]);
 
 			if ($schema === false) {
 				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
 			}
+
+			$this->byRoutingKey[Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]] = $schema;
 
 			return $schema;
 		}
@@ -59,6 +71,10 @@ final class SchemaLoader implements ISchemaLoader
 	 */
 	public function loadByNamespace(string $namespace, string $schemaFile): string
 	{
+		if (array_key_exists($namespace . $schemaFile, $this->byNamespace)) {
+			return $this->byNamespace[$namespace . $schemaFile];
+		}
+
 		$filePath = Metadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR . $schemaFile;
 
 		if (file_exists($filePath)) {
@@ -67,6 +83,8 @@ final class SchemaLoader implements ISchemaLoader
 			if ($schema === false) {
 				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
 			}
+
+			$this->byNamespace[$namespace . $schemaFile] = $schema;
 
 			return $schema;
 		}

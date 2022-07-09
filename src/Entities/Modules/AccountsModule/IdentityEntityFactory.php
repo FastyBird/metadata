@@ -19,6 +19,7 @@ use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use Nette\Utils;
 
 /**
  * Identity entity factory
@@ -46,19 +47,24 @@ final class IdentityEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IIdentityEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IIdentityEntity
+	public function create(string|array|Utils\ArrayHash $data): IIdentityEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.identity.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/accounts-module', 'entity.identity.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$entity = $this->build(IdentityEntity::class, $validated);
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$entity = $this->build(IdentityEntity::class, $data);
 
 		if ($entity instanceof IdentityEntity) {
 			return $entity;

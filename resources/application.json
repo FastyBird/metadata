@@ -358,7 +358,8 @@
             "fb.exchange.action.device.*",
             "fb.exchange.action.channel",
             "fb.exchange.action.channel.*",
-            "fb.exchange.action.connector"
+            "fb.exchange.action.connector",
+            "fb.exchange.action.connector.*"
           ],
           "routes" : [
             {

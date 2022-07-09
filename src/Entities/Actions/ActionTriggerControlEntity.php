@@ -19,14 +19,14 @@ use FastyBird\Metadata\Types;
 use Ramsey\Uuid;
 
 /**
- * Trigger action entity
+ * Trigger control action entity
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class ActionTriggerEntity implements IActionTriggerEntity
+final class ActionTriggerControlEntity implements IActionTriggerControlEntity
 {
 
 	/** @var Types\TriggerActionType */

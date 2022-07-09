@@ -22,16 +22,6 @@
           }
         ]
       },
-      "nullable_boolean" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "boolean"
-          }
-        ]
-      },
       "string_number" : {
         "oneOf" : [
           {
@@ -39,16 +29,6 @@
           },
           {
             "type" : "number"
-          }
-        ]
-      },
-      "nullable_data_type" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "$ref" : "#/definitions/datatype"
           }
         ]
       },
@@ -97,35 +77,6 @@
           },
           {
             "type" : "number"
-          }
-        ]
-      },
-      "string_number_boolean_null" : {
-        "oneOf" : [
-          {
-            "type" : "string"
-          },
-          {
-            "type" : "number"
-          },
-          {
-            "type" : "boolean"
-          },
-          {
-            "type" : "null"
-          }
-        ]
-      },
-      "string_boolean_null" : {
-        "oneOf" : [
-          {
-            "type" : "string"
-          },
-          {
-            "type" : "boolean"
-          },
-          {
-            "type" : "null"
           }
         ]
       }
@@ -234,19 +185,75 @@
   "then" : {
     "properties" : {
       "actual_value" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
+        "oneOf" : [
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "number"
+          },
+          {
+            "type" : "boolean"
+          },
+          {
+            "type" : "null"
+          }
+        ]
       },
       "previous_value" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
+        "oneOf" : [
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "number"
+          },
+          {
+            "type" : "boolean"
+          },
+          {
+            "type" : "null"
+          }
+        ]
       },
       "expected_value" : {
-        "$ref" : "#/definitions/types/string_number_boolean_null"
+        "oneOf" : [
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "number"
+          },
+          {
+            "type" : "boolean"
+          },
+          {
+            "type" : "null"
+          }
+        ]
       },
       "pending" : {
-        "$ref" : "#/definitions/types/string_boolean_null"
+        "oneOf" : [
+          {
+            "type" : "string"
+          },
+          {
+            "type" : "boolean"
+          },
+          {
+            "type" : "null"
+          }
+        ]
       },
       "valid" : {
-        "$ref" : "#/definitions/types/nullable_boolean"
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "boolean"
+          }
+        ]
       }
     },
     "required" : [
@@ -274,10 +281,36 @@
     "then" : {
       "properties" : {
         "value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "number"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         },
         "default" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "number"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         }
       },
       "required" : [
@@ -299,25 +332,107 @@
     "else" : {
       "properties" : {
         "actual_value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "number"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         },
         "previous_value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "number"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         },
         "expected_value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "number"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         },
         "pending" : {
-          "$ref" : "#/definitions/types/string_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         },
         "valid" : {
-          "$ref" : "#/definitions/types/nullable_boolean"
+          "oneOf" : [
+            {
+              "type" : "null"
+            },
+            {
+              "type" : "boolean"
+            }
+          ]
         },
         "value" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "number"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         },
         "default" : {
-          "$ref" : "#/definitions/types/string_number_boolean_null"
+          "oneOf" : [
+            {
+              "type" : "string"
+            },
+            {
+              "type" : "number"
+            },
+            {
+              "type" : "boolean"
+            },
+            {
+              "type" : "null"
+            }
+          ]
         }
       },
       "required" : [

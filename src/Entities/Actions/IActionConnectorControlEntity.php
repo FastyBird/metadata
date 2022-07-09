@@ -25,7 +25,7 @@ use Ramsey\Uuid;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-interface IActionConnectorEntity extends IActionEntity
+interface IActionConnectorControlEntity extends IActionEntity
 {
 
 	/**

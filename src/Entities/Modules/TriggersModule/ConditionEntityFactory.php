@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use FastyBird\Metadata\Types;
+use Nette\Utils;
 
 /**
  * Condition entity factory
@@ -47,31 +48,36 @@ final class ConditionEntityFactory extends Entities\EntityFactory
 	}
 
 	/**
-	 * @param string $data
+	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @return IConditionEntity
 	 *
 	 * @throws Exceptions\FileNotFoundException
 	 */
-	public function create(string $data): IConditionEntity
+	public function create(string|array|Utils\ArrayHash $data): IConditionEntity
 	{
-		$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.condition.json');
+		if (is_string($data)) {
+			$schema = $this->loader->loadByNamespace('schemas/modules/triggers-module', 'entity.condition.json');
 
-		$validated = $this->validator->validate($data, $schema);
+			$data = $this->validator->validate($data, $schema);
 
-		$type = Types\TriggerConditionTypeType::get($validated->offsetGet('type'));
+		} elseif (!$data instanceof Utils\ArrayHash) {
+			$data = Utils\ArrayHash::from($data);
+		}
+
+		$type = Types\TriggerConditionTypeType::get($data->offsetGet('type'));
 
 		if ($type->equalsValue(Types\TriggerConditionTypeType::TYPE_DEVICE_PROPERTY)) {
-			$entity = $this->build(DevicePropertyConditionEntity::class, $validated);
+			$entity = $this->build(DevicePropertyConditionEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\TriggerConditionTypeType::TYPE_CHANNEL_PROPERTY)) {
-			$entity = $this->build(ChannelPropertyConditionEntity::class, $validated);
+			$entity = $this->build(ChannelPropertyConditionEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\TriggerConditionTypeType::TYPE_TIME)) {
-			$entity = $this->build(TimeConditionEntity::class, $validated);
+			$entity = $this->build(TimeConditionEntity::class, $data);
 
 		} elseif ($type->equalsValue(Types\TriggerConditionTypeType::TYPE_DATE)) {
-			$entity = $this->build(DateConditionEntity::class, $validated);
+			$entity = $this->build(DateConditionEntity::class, $data);
 
 		} else {
 			throw new Exceptions\InvalidArgumentException('Provided data and routing key is for unsupported condition type');

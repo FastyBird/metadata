@@ -70,7 +70,14 @@
   "then" : {
     "properties" : {
       "is_fulfilled" : {
-        "$ref" : "#/definitions/types/nullable_boolean",
+        "oneOf" : [
+          {
+            "type" : "null"
+          },
+          {
+            "type" : "boolean"
+          }
+        ],
         "default" : null
       }
     },

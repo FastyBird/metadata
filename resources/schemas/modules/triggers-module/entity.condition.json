@@ -31,14 +31,6 @@
         "time",
         "date"
       ]
-    },
-    "operator" : {
-      "type" : "string",
-      "enum" : [
-        "eq",
-        "above",
-        "below"
-      ]
     }
   },
   "type" : "object",
@@ -89,7 +81,12 @@
         "type" : "string"
       },
       "operator" : {
-        "$ref" : "#/definitions/operator"
+        "type" : "string",
+        "enum" : [
+          "eq",
+          "above",
+          "below"
+        ]
       }
     },
     "required" : [
@@ -124,7 +121,12 @@
           "type" : "string"
         },
         "operator" : {
-          "$ref" : "#/definitions/operator"
+          "type" : "string",
+          "enum" : [
+            "eq",
+            "above",
+            "below"
+          ]
         }
       },
       "required" : [
