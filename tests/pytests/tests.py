@@ -23,7 +23,7 @@ from fastybird_metadata.routing import RoutingKey
 class TestLoader(unittest.TestCase):
     def test_load_action_schema(self):
         loaded_schema = load_schema_by_routing_key(
-            RoutingKey(RoutingKey.CHANNEL_ACTION),
+            RoutingKey(RoutingKey.CHANNEL_CONTROL_ACTION),
         )
 
         self.assertTrue(isinstance(loaded_schema, str))
