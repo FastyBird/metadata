@@ -1,27 +1,10 @@
 {
   "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
-      "nullable_string" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "string"
-          }
-        ]
-      },
-      "nullable_boolean" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "boolean"
-          }
-        ]
-      }
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity unique uuid v4 identifier"
     },
     "type" : {
       "type" : "string",
@@ -31,23 +14,20 @@
         "time",
         "date"
       ]
-    }
-  },
-  "type" : "object",
-  "properties" : {
-    "id" : {
-      "type" : "string",
-      "description" : "Entity unique uuid v4 identifier"
-    },
-    "type" : {
-      "$ref" : "#/definitions/type"
     },
     "enabled" : {
       "type" : "boolean",
       "default" : false
     },
     "is_fulfilled" : {
-      "$ref" : "#/definitions/types/nullable_boolean",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "boolean"
+        }
+      ],
       "default" : null
     },
     "trigger" : {
@@ -55,7 +35,14 @@
       "description" : "Trigger unique uuid v4 identifier"
     },
     "owner" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "description" : "Entity owner uuid v4 identifier"
     }
   },

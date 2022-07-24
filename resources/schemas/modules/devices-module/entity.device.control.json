@@ -1,19 +1,5 @@
 {
   "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
-      "nullable_string" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "string"
-          }
-        ]
-      }
-    }
-  },
   "type" : "object",
   "properties" : {
     "id" : {
@@ -28,7 +14,14 @@
       "description" : "Device unique uuid v4 identifier"
     },
     "owner" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "description" : "Entity owner uuid v4 identifier"
     }
   },

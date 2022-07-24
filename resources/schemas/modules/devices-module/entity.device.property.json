@@ -1,85 +1,22 @@
 {
   "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
-      "nullable_string" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "string"
-          }
-        ]
-      },
-      "nullable_number" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "number"
-          }
-        ]
-      },
-      "string_number" : {
-        "oneOf" : [
-          {
-            "type" : "string"
-          },
-          {
-            "type" : "number"
-          }
-        ]
-      },
-      "nullable_format" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "array",
-            "uniqueItems" : true,
-            "items" : {
-              "type" : "string"
-            }
-          },
-          {
-            "type" : "array",
-            "uniqueItems" : true,
-            "items" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/types/nullable_string"
-              },
-              "minItems" : 3,
-              "maxItems" : 3
-            }
-          },
-          {
-            "type" : "array",
-            "uniqueItems" : true,
-            "items" : {
-              "$ref" : "#/definitions/types/nullable_number"
-            },
-            "minItems" : 2,
-            "maxItems" : 2
-          }
-        ]
-      },
-      "nullable_invalid" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "string"
-          },
-          {
-            "type" : "number"
-          }
-        ]
-      }
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "description" : "Entity unique uuid v4 identifier"
+    },
+    "parent" : {
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
+      "description" : "Entity parent unique uuid v4 identifier",
+      "default" : null
     },
     "type" : {
       "type" : "string",
@@ -89,7 +26,30 @@
         "mapped"
       ]
     },
-    "datatype" : {
+    "identifier" : {
+      "type" : "string",
+      "description" : "Unique human readable identifier"
+    },
+    "name" : {
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
+      "default" : null
+    },
+    "settable" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "queryable" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "data_type" : {
       "type" : "string",
       "enum" : [
         "char",
@@ -106,55 +66,91 @@
         "button",
         "switch"
       ]
-    }
-  },
-  "type" : "object",
-  "properties" : {
-    "id" : {
-      "type" : "string",
-      "description" : "Entity unique uuid v4 identifier"
-    },
-    "parent" : {
-      "$ref" : "#/definitions/types/nullable_string",
-      "description" : "Entity parent unique uuid v4 identifier",
-      "default" : null
-    },
-    "type" : {
-      "$ref" : "#/definitions/type"
-    },
-    "identifier" : {
-      "type" : "string",
-      "description" : "Unique human readable identifier"
-    },
-    "name" : {
-      "$ref" : "#/definitions/types/nullable_string",
-      "default" : null
-    },
-    "settable" : {
-      "type" : "boolean",
-      "default" : false
-    },
-    "queryable" : {
-      "type" : "boolean",
-      "default" : false
-    },
-    "data_type" : {
-      "type" : "string"
     },
     "unit" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "default" : null
     },
     "format" : {
-      "$ref" : "#/definitions/types/nullable_format",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "type" : "string"
+          }
+        },
+        {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "oneOf" : [
+                {
+                  "type" : "null"
+                },
+                {
+                  "type" : "string"
+                }
+              ]
+            },
+            "minItems" : 3,
+            "maxItems" : 3
+          }
+        },
+        {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "oneOf" : [
+              {
+                "type" : "null"
+              },
+              {
+                "type" : "number"
+              }
+            ]
+          },
+          "minItems" : 2,
+          "maxItems" : 2
+        }
+      ],
       "default" : null
     },
     "invalid" : {
-      "$ref" : "#/definitions/types/nullable_invalid",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        },
+        {
+          "type" : "number"
+        }
+      ],
       "default" : null
     },
     "number_of_decimals" : {
-      "$ref" : "#/definitions/types/nullable_number",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "number"
+        }
+      ],
       "default" : null
     },
     "device" : {
@@ -171,7 +167,14 @@
       "default" : []
     },
     "owner" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "description" : "Entity owner uuid v4 identifier"
     }
   },

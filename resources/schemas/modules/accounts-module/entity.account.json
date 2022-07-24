@@ -1,29 +1,5 @@
 {
   "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
-      "nullable_string" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "string"
-          }
-        ]
-      }
-    },
-    "state" : {
-      "type" : "string",
-      "enum" : [
-        "active",
-        "blocked",
-        "deleted",
-        "notActivated",
-        "approvalWaiting"
-      ]
-    }
-  },
   "type" : "object",
   "properties" : {
     "id" : {
@@ -37,25 +13,60 @@
       "type" : "string"
     },
     "middle_name" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "default" : null
     },
     "email" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "default" : null
     },
     "language" : {
       "type" : "string"
     },
     "state" : {
-      "$ref" : "#/definitions/state"
+      "type" : "string",
+      "enum" : [
+        "active",
+        "blocked",
+        "deleted",
+        "notActivated",
+        "approvalWaiting"
+      ]
     },
     "registered" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "default" : null
     },
     "last_visit" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "default" : null
     },
     "roles" : {
@@ -67,7 +78,14 @@
       }
     },
     "parent" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "description" : "Entity parent unique uuid v4 identifier",
       "default" : null
     },

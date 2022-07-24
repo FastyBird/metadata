@@ -1,36 +1,5 @@
 {
   "$schema" : "http://json-schema.org/draft-07/schema#",
-  "definitions" : {
-    "types" : {
-      "nullable_string" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "string"
-          }
-        ]
-      },
-      "nullable_boolean" : {
-        "oneOf" : [
-          {
-            "type" : "null"
-          },
-          {
-            "type" : "boolean"
-          }
-        ]
-      }
-    },
-    "type" : {
-      "type" : "string",
-      "enum" : [
-        "manual",
-        "automatic"
-      ]
-    }
-  },
   "type" : "object",
   "properties" : {
     "id" : {
@@ -38,13 +7,24 @@
       "description" : "Entity unique uuid v4 identifier"
     },
     "type" : {
-      "$ref" : "#/definitions/type"
+      "type" : "string",
+      "enum" : [
+        "manual",
+        "automatic"
+      ]
     },
     "name" : {
       "type" : "string"
     },
     "comment" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "default" : null
     },
     "enabled" : {
@@ -52,11 +32,25 @@
       "default" : false
     },
     "is_triggered" : {
-      "$ref" : "#/definitions/types/nullable_boolean",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "boolean"
+        }
+      ],
       "default" : null
     },
     "owner" : {
-      "$ref" : "#/definitions/types/nullable_string",
+      "oneOf" : [
+        {
+          "type" : "null"
+        },
+        {
+          "type" : "string"
+        }
+      ],
       "description" : "Entity owner uuid v4 identifier"
     }
   },
