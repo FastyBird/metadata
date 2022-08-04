@@ -160,6 +160,37 @@ class DataType(ExtendedEnum):
 
 
 @unique
+class DataTypeShort(ExtendedEnum):
+    """
+    Record short data type
+
+    @package        FastyBird:Metadata!
+    @module         types
+
+    @author         Adam Kadlec <adam.kadlec@fastybird.com>
+    """
+
+    CHAR: str = "i8"
+    UCHAR: str = "u8"
+    SHORT: str = "i16"
+    USHORT: str = "u16"
+    INT: str = "i32"
+    UINT: str = "u32"
+    FLOAT: str = "f"
+    BOOLEAN: str = "b"
+    STRING: str = "s"
+    ENUM: str = "e"
+    DATE: str = "d"
+    TIME: str = "t"
+    DATETIME: str = "dt"
+
+    # -----------------------------------------------------------------------------
+
+    def __hash__(self) -> int:
+        return hash(self._name_)  # pylint: disable=no-member
+
+
+@unique
 class SwitchPayload(ExtendedEnum):
     """
     Switch enum payload

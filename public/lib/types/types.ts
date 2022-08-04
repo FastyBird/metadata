@@ -55,6 +55,22 @@ export enum DataType {
   UNKNOWN = 'unknown',
 }
 
+export enum ShortDataType {
+  CHAR = 'i8',
+  UCHAR = 'u8',
+  SHORT = 'i16',
+  USHORT = 'u16',
+  INT = 'i32',
+  UINT = 'u32',
+  FLOAT = 'f',
+  BOOLEAN = 'b',
+  STRING = 's',
+  ENUM = 'e',
+  DATE = 'd',
+  TIME = 't',
+  DATETIME = 'dt',
+}
+
 export enum SwitchPayload {
   ON = 'switch-on',
   OFF = 'switch-off',
