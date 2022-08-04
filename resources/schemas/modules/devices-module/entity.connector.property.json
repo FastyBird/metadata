@@ -64,7 +64,8 @@
         "enum",
         "color",
         "button",
-        "switch"
+        "switch",
+        "unknown"
       ]
     },
     "unit" : {
