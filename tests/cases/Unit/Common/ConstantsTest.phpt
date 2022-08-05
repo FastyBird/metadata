@@ -3,7 +3,6 @@
 namespace Tests\Cases;
 
 use FastyBird\Metadata;
-use FastyBird\Metadata\ValueObjects;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../bootstrap.php';
