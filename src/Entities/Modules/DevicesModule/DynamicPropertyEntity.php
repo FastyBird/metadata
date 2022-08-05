@@ -54,7 +54,7 @@ abstract class DynamicPropertyEntity extends PropertyEntity implements IDynamicP
 	 * @param bool $queryable
 	 * @param string $dataType
 	 * @param string|null $unit
-	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null $format
+	 * @param Array<int, string>|Array<int, string|int|float|Array<int, string|int|float>|null>|Array<int, Array<int, string|Array<int, string|int|float|bool>|null>>|null $format
 	 * @param string|int|float|null $invalid
 	 * @param int|null $numberOfDecimals
 	 * @param string|int|float|bool|null $actualValue

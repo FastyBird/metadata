@@ -18,10 +18,11 @@ final class ChannelPropertyEntityTest extends BaseTestCase
 	/**
 	 * @param string $data
 	 * @param string $class
+	 * @param array $fixture
 	 *
 	 * @dataProvider ./../../../../fixtures/Entities/Modules/channel.property.php
 	 */
-	public function testCreateEntity(string $data, string $class): void
+	public function testCreateEntity(string $data, string $class, array $fixture): void
 	{
 		/** @var Entities\Modules\DevicesModule\ChannelPropertyEntityFactory $factory */
 		$factory = $this->container->getByType(Entities\Modules\DevicesModule\ChannelPropertyEntityFactory::class);
@@ -30,6 +31,7 @@ final class ChannelPropertyEntityTest extends BaseTestCase
 
 		Assert::true($entity instanceof $class);
 		Assert::type(Uuid\UuidInterface::class, $entity->getChannel());
+		Assert::equal($fixture, $entity->toArray());
 	}
 
 	/**

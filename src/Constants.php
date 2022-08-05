@@ -332,4 +332,12 @@ final class Constants
 		self::MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_DELETED_ROUTING_KEY  => self::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . 'triggers-module' . DIRECTORY_SEPARATOR . 'entity.condition.json',
 	];
 
+	/**
+	 * Value format
+	 */
+
+	public const VALUE_FORMAT_STRING_ENUM = '/^(?:[a-zA-Z](?:[a-zA-Z0-9]-?_?)*)(?:\,(?:[a-zA-Z](?:[a-zA-Z0-9]-?_?)*))*(?:,)?$/';
+	public const VALUE_FORMAT_NUMBER_RANGE = '/^(?:(?:(i8|u8|i16|u16|i32|u32|f)\|)?([0-9.])*)(?:\:(?:(?:(i8|u8|i16|u16|i32|u32|f)\|)?[0-9.]*)){1}$/';
+	public const VALUE_FORMAT_COMBINED_ENUM = '/^(?:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*)(?:\:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*){2}(?:,(?:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*)(?:\:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*){2})*$/';
+
 }

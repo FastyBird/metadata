@@ -17,6 +17,7 @@ namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
 use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Types;
+use FastyBird\Metadata\ValueObjects;
 use Ramsey\Uuid;
 
 /**
@@ -71,9 +72,9 @@ interface IPropertyEntity extends Entities\IEntity
 	public function getUnit(): ?string;
 
 	/**
-	 * @return Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null
+	 * @return ValueObjects\StringEnumFormat|ValueObjects\NumberRangeFormat|ValueObjects\CombinedEnumFormat|null
 	 */
-	public function getFormat(): ?array;
+	public function getFormat(): ValueObjects\StringEnumFormat|ValueObjects\NumberRangeFormat|ValueObjects\CombinedEnumFormat|null;
 
 	/**
 	 * @return float|int|string|null

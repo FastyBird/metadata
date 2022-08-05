@@ -44,6 +44,8 @@ class DataTypeShortType extends Consistence\Enum\Enum
 	public const DATA_TYPE_DATE = 'd';
 	public const DATA_TYPE_TIME = 't';
 	public const DATA_TYPE_DATETIME = 'dt';
+	public const DATA_TYPE_BUTTON = 'btn';
+	public const DATA_TYPE_SWITCH = 'sw';
 
 	/**
 	 * @return string

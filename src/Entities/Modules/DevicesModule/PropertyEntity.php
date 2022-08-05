@@ -15,8 +15,10 @@
 
 namespace FastyBird\Metadata\Entities\Modules\DevicesModule;
 
+use FastyBird\Metadata;
 use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Types;
+use FastyBird\Metadata\ValueObjects;
 use Ramsey\Uuid;
 
 /**
@@ -56,8 +58,8 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 	/** @var string|null */
 	private ?string $unit;
 
-	/** @var Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null */
-	private ?array $format;
+	/** @var ValueObjects\StringEnumFormat|ValueObjects\NumberRangeFormat|ValueObjects\CombinedEnumFormat|null */
+	private ValueObjects\StringEnumFormat|ValueObjects\NumberRangeFormat|ValueObjects\CombinedEnumFormat|null $format;
 
 	/** @var string|int|float|null */
 	private string|int|null|float $invalid;
@@ -74,7 +76,7 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 	 * @param bool $queryable
 	 * @param string $dataType
 	 * @param string|null $unit
-	 * @param Array<string>|Array<Array<string|null>>|Array<int|null>|Array<float|null>|null $format
+	 * @param Array<int, string>|Array<int, string|int|float|Array<int, string|int|float>|null>|Array<int, Array<int, string|Array<int, string|int|float|bool>|null>>|null $format
 	 * @param float|int|string|null $invalid
 	 * @param int|null $numberOfDecimals
 	 * @param string|null $owner
@@ -101,10 +103,11 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 		$this->queryable = $queryable;
 		$this->dataType = Types\DataTypeType::get($dataType);
 		$this->unit = $unit;
-		$this->format = $format;
 		$this->invalid = $invalid;
 		$this->numberOfDecimals = $numberOfDecimals;
 		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;
+
+		$this->format = $this->buildFormat($format);
 	}
 
 	/**
@@ -174,7 +177,7 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getFormat(): ?array
+	public function getFormat(): ValueObjects\StringEnumFormat|ValueObjects\NumberRangeFormat|ValueObjects\CombinedEnumFormat|null
 	{
 		return $this->format;
 	}
@@ -209,7 +212,7 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 			'settable'           => $this->isSettable(),
 			'data_type'          => $this->getDataType()->getValue(),
 			'unit'               => $this->getUnit(),
-			'format'             => $this->getFormat(),
+			'format'             => $this->getFormat()?->toArray(),
 			'invalid'            => $this->getInvalid(),
 			'number_of_decimals' => $this->getNumberOfDecimals(),
 			'owner'              => $this->getOwner()?->toString(),
@@ -222,6 +225,70 @@ abstract class PropertyEntity implements IPropertyEntity, Entities\IOwner
 	public function __serialize(): array
 	{
 		return $this->toArray();
+	}
+
+	/**
+	 * @param Array<int, string>|Array<int, string|int|float|Array<int, string|int|float>|null>|Array<int, Array<int, string|Array<int, string|int|float|bool>|null>>|null $format
+	 *
+	 * @return ValueObjects\StringEnumFormat|ValueObjects\NumberRangeFormat|ValueObjects\CombinedEnumFormat|null
+	 */
+	private function buildFormat(
+		?array $format
+	): ValueObjects\StringEnumFormat|ValueObjects\NumberRangeFormat|ValueObjects\CombinedEnumFormat|null {
+		if ($format === null) {
+			return null;
+		}
+
+		if (
+			in_array($this->dataType->getValue(), [
+				Types\DataTypeType::DATA_TYPE_CHAR,
+				Types\DataTypeType::DATA_TYPE_UCHAR,
+				Types\DataTypeType::DATA_TYPE_SHORT,
+				Types\DataTypeType::DATA_TYPE_USHORT,
+				Types\DataTypeType::DATA_TYPE_INT,
+				Types\DataTypeType::DATA_TYPE_UINT,
+				Types\DataTypeType::DATA_TYPE_FLOAT,
+			], true)
+		) {
+			$format = implode(':', array_map(function ($item): string {
+				if (is_array($item)) {
+					return implode('|', array_map(function ($part): string|int|float {
+						return is_array($part) ? strval($part) : $part;
+					}, $item));
+				}
+
+				return strval($item);
+			}, $format));
+
+			if (preg_match(Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE, $format) === 1) {
+				return new ValueObjects\NumberRangeFormat($format);
+			}
+		} elseif (
+			in_array($this->dataType->getValue(), [
+				Types\DataTypeType::DATA_TYPE_ENUM,
+				Types\DataTypeType::DATA_TYPE_BUTTON,
+				Types\DataTypeType::DATA_TYPE_SWITCH,
+			], true)
+		) {
+			$format = implode(',', array_map(function ($item): string {
+				if (is_array($item)) {
+					return (is_array($item[0]) ? implode('|', $item[0]) : $item[0])
+						. ':' . (is_array($item[1]) ? implode('|', $item[1]) : ($item[1] ?? ''))
+						. (isset($item[2]) ? (':' . (is_array($item[2]) ? implode('|', $item[2]) : ($item[2] ?? ''))) : '');
+				}
+
+				return strval($item);
+			}, $format));
+
+			if (preg_match(Metadata\Constants::VALUE_FORMAT_STRING_ENUM, $format) === 1) {
+				return new ValueObjects\StringEnumFormat($format);
+
+			} elseif (preg_match(Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM, $format) === 1) {
+				return new ValueObjects\CombinedEnumFormat($format);
+			}
+		}
+
+		return null;
 	}
 
 }

@@ -7,7 +7,13 @@
   "queryable": false,
   "data_type": "int",
   "unit": "%",
-  "format": null,
+  "format": [
+    [
+      "u8",
+      10.5
+    ],
+    50
+  ],
   "invalid": 99,
   "number_of_decimals": 0,
   "channel": "247fd6b5-8466-4323-81de-cec3e315015a",
