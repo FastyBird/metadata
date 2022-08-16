@@ -337,7 +337,7 @@ final class Constants
 	 */
 
 	public const VALUE_FORMAT_STRING_ENUM = '/^(?:[a-zA-Z](?:[a-zA-Z0-9]-?_?)*)(?:\,(?:[a-zA-Z](?:[a-zA-Z0-9]-?_?)*))*(?:,)?$/';
-	public const VALUE_FORMAT_NUMBER_RANGE = '/^(?:(?:(i8|u8|i16|u16|i32|u32|f)\|)?([0-9.])*)(?:\:(?:(?:(i8|u8|i16|u16|i32|u32|f)\|)?[0-9.]*)){1}$/';
-	public const VALUE_FORMAT_COMBINED_ENUM = '/^(?:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*)(?:\:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*){2}(?:,(?:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*)(?:\:(?:(i8|u8|i16|u16|i32|u32|f|b|s|btn|sw)\|)?(?:[a-zA-Z0-9]-?_?)*){2})*$/';
+	public const VALUE_FORMAT_NUMBER_RANGE = '/^(?:(?:(?:i8|u8|i16|u16|i32|u32|f){1}\|)?(?:(?:\-)?(?:\d)*(?:.(?:\d)+)?))?(?:\:(?:(?:(?:i8|u8|i16|u16|i32|u32|f){1}\|)?(?:\d)*(?:.(?:\d)+)?)){1}$/';
+	public const VALUE_FORMAT_COMBINED_ENUM = '/^(?:(?:(?:i8|u8|i16|u16|i32|u32|f|b|s|btn|sw){1}\|)?(?:[a-zA-Z0-9]-?_?)*)(?:\:(?:(?:i8|u8|i16|u16|i32|u32|f|b|s|btn|sw){1}\|)?(?:[a-zA-Z0-9]-?_?)*){2}(?:,(?:(?:(?:i8|u8|i16|u16|i32|u32|f|b|s|btn|sw){1}\|)?(?:[a-zA-Z0-9]-?_?)*)(?:\:(?:(?:i8|u8|i16|u16|i32|u32|f|b|s|btn|sw){1}\|)?(?:[a-zA-Z0-9]-?_?)*){2})*$/';
 
 }
