@@ -66,17 +66,17 @@ return [
 			'unit'               => null,
 			'format'             => [
 				[
-					['sw', 'switch-on'],
+					['sw', 'switch_on'],
 					'1000',
 					['s', 'on'],
 				],
 				[
-					['sw', 'switch-off'],
+					['sw', 'switch_off'],
 					'2000',
 					['s', 'off'],
 				],
 				[
-					['sw', 'switch-toggle'],
+					['sw', 'switch_toggle'],
 					null,
 					['s', 'toggle'],
 				],
@@ -84,8 +84,8 @@ return [
 			'invalid'            => 99,
 			'number_of_decimals' => null,
 			'owner'              => null,
-			'actual_value'       => 'switch-on',
-			'previous_value'     => 'switch-off',
+			'actual_value'       => 'switch_on',
+			'previous_value'     => 'switch_off',
 			'expected_value'     => null,
 			'pending'            => false,
 			'valid'              => true,

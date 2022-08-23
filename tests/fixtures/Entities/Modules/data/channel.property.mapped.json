@@ -11,7 +11,7 @@
     [
       [
         "sw",
-        "switch-on"
+        "switch_on"
       ],
       "1000",
       [
@@ -22,7 +22,7 @@
     [
       [
         "sw",
-        "switch-off"
+        "switch_off"
       ],
       "2000",
       [
@@ -33,7 +33,7 @@
     [
       [
         "sw",
-        "switch-toggle"
+        "switch_toggle"
       ],
       null,
       [
@@ -45,8 +45,8 @@
   "invalid" : 99,
   "number_of_decimals" : null,
   "channel" : "247fd6b5-8466-4323-81de-cec3e315015a",
-  "actual_value" : "switch-on",
-  "previous_value" : "switch-off",
+  "actual_value" : "switch_on",
+  "previous_value" : "switch_off",
   "expected_value" : null,
   "pending" : false,
   "valid" : true,

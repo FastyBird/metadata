@@ -109,7 +109,7 @@ final class ConstantsTest extends BaseTestCase
 		// Valid
 		Assert::same(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'one::,sw|switch-on:1000:s|on,sw|switch-off:2000:s|off'
+			'one::,sw|switch_on:1000:s|on,sw|switch_off:2000:s|off'
 		));
 		Assert::same(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
@@ -117,21 +117,21 @@ final class ConstantsTest extends BaseTestCase
 		));
 		Assert::same(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw|switch-on:1000:s|on,sw|switch-off:2000:s|off'
+			'sw|switch_on:1000:s|on,sw|switch_off:2000:s|off'
 		));
 		Assert::same(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw|switch-on:u8|10:s|on,sw|switch-off:u8|20:s|off'
+			'sw|switch_on:u8|10:s|on,sw|switch_off:u8|20:s|off'
 		));
 
 		// Invalid
 		Assert::same(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw|switch-on:u10|10:s|on,sw|switch-off:u8|20:s|off'
+			'sw|switch_on:u10|10:s|on,sw|switch_off:u8|20:s|off'
 		));
 		Assert::same(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw,sw|switch-off:u8|20:s|off'
+			'sw,sw|switch_off:u8|20:s|off'
 		));
 	}
 
