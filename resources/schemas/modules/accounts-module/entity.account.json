@@ -43,8 +43,8 @@
         "active",
         "blocked",
         "deleted",
-        "notActivated",
-        "approvalWaiting"
+        "not_activated",
+        "approval_waiting"
       ]
     },
     "registered" : {
