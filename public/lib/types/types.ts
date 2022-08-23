@@ -72,25 +72,25 @@ export enum ShortDataType {
 }
 
 export enum SwitchPayload {
-  ON = 'switch-on',
-  OFF = 'switch-off',
-  TOGGLE = 'switch-toggle',
+  ON = 'switch_on',
+  OFF = 'switch_off',
+  TOGGLE = 'switch_toggle',
 }
 
 export enum ButtonPayload {
-  PRESSED = 'btn-pressed',
-  RELEASED = 'btn-released',
-  CLICKED = 'btn-clicked',
-  DOUBLE_CLICKED = 'btn-double-clicked',
-  TRIPLE_CLICKED = 'btn-triple-clicked',
-  LONG_CLICKED = 'btn-long-clicked',
-  EXTRA_LONG_CLICKED = 'btn-extra-long-clicked',
+  PRESSED = 'btn_pressed',
+  RELEASED = 'btn_released',
+  CLICKED = 'btn_clicked',
+  DOUBLE_CLICKED = 'btn_double_clicked',
+  TRIPLE_CLICKED = 'btn_triple_clicked',
+  LONG_CLICKED = 'btn_long_clicked',
+  EXTRA_LONG_CLICKED = 'btn_extra_long_clicked',
 }
 
 export enum ControlName {
   CONFIGURE = 'configure',
   RESET = 'reset',
-  FACTORY_RESET = 'factory-reset',
+  FACTORY_RESET = 'factory_reset',
   REBOOT = 'reboot',
   TRIGGER = 'trigger',
 }

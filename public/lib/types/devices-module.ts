@@ -73,7 +73,7 @@ export enum HardwareManufacturer {
   SONOFF = 'sonoff',
 }
 
-export enum DevicePropertyName {
+export enum DevicePropertyIdentifier {
   STATE = 'state',
   BATTERY = 'battery',
   WIFI = 'wifi',
@@ -81,15 +81,15 @@ export enum DevicePropertyName {
   SSID = 'ssid',
   RSSI = 'rssi',
   VCC = 'vcc',
-  CPU_LOAD = 'cpu-load',
+  CPU_LOAD = 'cpu_load',
   UPTIME = 'uptime',
   ADDRESS = 'address',
-  IP_ADDRESS = 'ip-address',
-  STATUS_LED = 'status-led',
-  FREE_HEAP = 'free-heap',
+  IP_ADDRESS = 'ip_address',
+  STATUS_LED = 'status_led',
+  FREE_HEAP = 'free_heap',
 }
 
-export enum DeviceAttributeName {
+export enum DeviceAttributeIdentifier {
   HARDWARE_MANUFACTURER = "hardware_manufacturer",
   HARDWARE_MODEL = "hardware_model",
   HARDWARE_VERSION = "hardware_version",
@@ -99,7 +99,7 @@ export enum DeviceAttributeName {
   FIRMWARE_VERSION = "firmware_version",
 }
 
-export enum ConnectorPropertyName {
+export enum ConnectorPropertyIdentifier {
   STATE = 'state',
   SERVER = 'server',
   PORT = 'port',

@@ -31,8 +31,8 @@ class TriggerConditionTypeType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-	public const TYPE_DEVICE_PROPERTY = 'device-property';
-	public const TYPE_CHANNEL_PROPERTY = 'channel-property';
+	public const TYPE_DEVICE_PROPERTY = 'device_property';
+	public const TYPE_CHANNEL_PROPERTY = 'channel_property';
 	public const TYPE_TIME = 'time';
 	public const TYPE_DATE = 'date';
 

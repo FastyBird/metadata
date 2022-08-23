@@ -39,8 +39,8 @@ class AccountState(ExtendedEnum):
     ACTIVE: str = "active"
     BLOCKED: str = "blocked"
     DELETED: str = "deleted"
-    NOT_ACTIVATED: str = "notActivated"
-    APPROVAL_WAITING: str = "approvalWaiting"
+    NOT_ACTIVATED: str = "not_activated"
+    APPROVAL_WAITING: str = "approval_waiting"
 
     # -----------------------------------------------------------------------------
 

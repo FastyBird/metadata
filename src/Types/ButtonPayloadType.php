@@ -31,13 +31,13 @@ class ButtonPayloadType extends Consistence\Enum\Enum
 	/**
 	 * Define types
 	 */
-	public const PAYLOAD_PRESSED = 'btn-pressed';
-	public const PAYLOAD_RELEASED = 'btn-released';
-	public const PAYLOAD_CLICKED = 'btn-clicked';
-	public const PAYLOAD_DOUBLE_CLICKED = 'btn-double-clicked';
-	public const PAYLOAD_TRIPLE_CLICKED = 'btn-triple-clicked';
-	public const PAYLOAD_LONG_CLICKED = 'btn-long-clicked';
-	public const PAYLOAD_EXTRA_LONG_CLICKED = 'btn-extra-long-clicked';
+	public const PAYLOAD_PRESSED = 'btn_pressed';
+	public const PAYLOAD_RELEASED = 'btn_released';
+	public const PAYLOAD_CLICKED = 'btn_clicked';
+	public const PAYLOAD_DOUBLE_CLICKED = 'btn_double_clicked';
+	public const PAYLOAD_TRIPLE_CLICKED = 'btn_triple_clicked';
+	public const PAYLOAD_LONG_CLICKED = 'btn_long-clicked';
+	public const PAYLOAD_EXTRA_LONG_CLICKED = 'btn_extra_long_clicked';
 
 	/**
 	 * @return string

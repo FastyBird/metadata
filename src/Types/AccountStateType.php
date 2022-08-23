@@ -34,8 +34,8 @@ class AccountStateType extends Consistence\Enum\Enum
 	public const STATE_ACTIVE = 'active';
 	public const STATE_BLOCKED = 'blocked';
 	public const STATE_DELETED = 'deleted';
-	public const STATE_NOT_ACTIVATED = 'notActivated';
-	public const STATE_APPROVAL_WAITING = 'approvalWaiting';
+	public const STATE_NOT_ACTIVATED = 'not_activated';
+	public const STATE_APPROVAL_WAITING = 'approval_waiting';
 
 	/**
 	 * List of allowed states

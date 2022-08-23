@@ -33,7 +33,7 @@ class ControlNameType extends Consistence\Enum\Enum
 	 */
 	public const NAME_CONFIGURE = 'configure';
 	public const NAME_RESET = 'reset';
-	public const NAME_FACTORY_RESET = 'factory-reset';
+	public const NAME_FACTORY_RESET = 'factory_reset';
 	public const NAME_REBOOT = 'reboot';
 	public const NAME_TRIGGER = 'trigger';
 

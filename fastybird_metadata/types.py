@@ -201,9 +201,9 @@ class SwitchPayload(ExtendedEnum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
-    ON: str = "switch-on"
-    OFF: str = "switch-off"
-    TOGGLE: str = "switch-toggle"
+    ON: str = "switch_on"
+    OFF: str = "switch_off"
+    TOGGLE: str = "switch_toggle"
 
     # -----------------------------------------------------------------------------
 
@@ -222,13 +222,13 @@ class ButtonPayload(ExtendedEnum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
-    PRESSED: str = "btn-pressed"
-    RELEASED: str = "btn-released"
-    CLICKED: str = "btn-clicked"
-    DOUBLE_CLICKED: str = "btn-double-clicked"
-    TRIPLE_CLICKED: str = "btn-triple-clicked"
-    LONG_CLICKED: str = "btn-long-clicked"
-    EXTRA_LONG_CLICKED: str = "btn-extra-long-clicked"
+    PRESSED: str = "btn_pressed"
+    RELEASED: str = "btn_released"
+    CLICKED: str = "btn_clicked"
+    DOUBLE_CLICKED: str = "btn_double_clicked"
+    TRIPLE_CLICKED: str = "btn_triple_clicked"
+    LONG_CLICKED: str = "btn_long_clicked"
+    EXTRA_LONG_CLICKED: str = "btn_extra_long_clicked"
 
     # -----------------------------------------------------------------------------
 
@@ -249,7 +249,7 @@ class ControlName(ExtendedEnum):
 
     CONFIGURE: str = "configure"
     RESET: str = "reset"
-    FACTORY_RESET: str = "factory-reset"
+    FACTORY_RESET: str = "factory_reset"
     REBOOT: str = "reboot"
     TRIGGER: str = "trigger"
 

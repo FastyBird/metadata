@@ -9,8 +9,8 @@
     "type" : {
       "type" : "string",
       "enum" : [
-        "channel-property",
-        "device-property",
+        "channel_property",
+        "device_property",
         "time",
         "date"
       ]
@@ -49,7 +49,7 @@
   "if" : {
     "properties" : {
       "type" : {
-        "const" : "channel-property"
+        "const" : "channel_property"
       }
     }
   },
@@ -92,7 +92,7 @@
     "if" : {
       "properties" : {
         "type" : {
-          "const" : "device-property"
+          "const" : "device_property"
         }
       }
     },

@@ -56,8 +56,8 @@ class ActionType(ExtendedEnum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
-    DEVICE_PROPERTY: str = "device-property"
-    CHANNEL_PROPERTY: str = "channel-property"
+    DEVICE_PROPERTY: str = "device_property"
+    CHANNEL_PROPERTY: str = "channel_property"
 
     # -----------------------------------------------------------------------------
 
@@ -76,8 +76,8 @@ class ConditionType(ExtendedEnum):
     @author         Adam Kadlec <adam.kadlec@fastybird.com>
     """
 
-    DEVICE_PROPERTY: str = "device-property"
-    CHANNEL_PROPERTY: str = "channel-property"
+    DEVICE_PROPERTY: str = "device_property"
+    CHANNEL_PROPERTY: str = "channel_property"
     TIME: str = "time"
     DATE: str = "date"
 

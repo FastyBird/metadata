@@ -2,8 +2,8 @@ export enum AccountState {
   ACTIVE = 'active',
   BLOCKED = 'blocked',
   DELETED = 'deleted',
-  NOT_ACTIVATED = 'notActivated',
-  APPROVAL_WAITING = 'approvalWaiting',
+  NOT_ACTIVATED = 'not_activated',
+  APPROVAL_WAITING = 'approval_waiting',
 }
 
 export enum IdentityState {

@@ -184,9 +184,9 @@ class HardwareManufacturer(ExtendedEnum):
 
 
 @unique
-class DevicePropertyName(ExtendedEnum):
+class DevicePropertyIdentifier(ExtendedEnum):
     """
-    Device known property name
+    Device known property identifier
 
     @package        FastyBird:Metadata!
     @module         devices_module
@@ -201,12 +201,12 @@ class DevicePropertyName(ExtendedEnum):
     RSSI: str = "rssi"
     SSID: str = "ssid"
     VCC: str = "vcc"
-    CPU_LOAD: str = "cpu-load"
+    CPU_LOAD: str = "cpu_load"
     UPTIME: str = "uptime"
-    IP_ADDRESS: str = "ip-address"
+    IP_ADDRESS: str = "ip_address"
     ADDRESS: str = "address"
-    STATUS_LED: str = "status-led"
-    FREE_HEAP: str = "free-heap"
+    STATUS_LED: str = "status_led"
+    FREE_HEAP: str = "free_heap"
 
     # -----------------------------------------------------------------------------
 
@@ -215,9 +215,9 @@ class DevicePropertyName(ExtendedEnum):
 
 
 @unique
-class DeviceAttributeName(ExtendedEnum):
+class DeviceAttributeIdentifier(ExtendedEnum):
     """
-    Device known attribute name
+    Device known attribute identifier
 
     @package        FastyBird:Metadata!
     @module         devices_module
@@ -235,9 +235,9 @@ class DeviceAttributeName(ExtendedEnum):
 
 
 @unique
-class ConnectorPropertyName(ExtendedEnum):
+class ConnectorPropertyIdentifier(ExtendedEnum):
     """
-    Connector known property name
+    Connector known property identifier
 
     @package        FastyBird:Metadata!
     @module         devices_module
