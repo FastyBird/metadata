@@ -3,12 +3,12 @@
 use FastyBird\Metadata\Entities;
 
 return [
-	'get'    => [
+	'get' => [
 		file_get_contents(__DIR__ . '/data/channel.property.get.json'),
-		Entities\Actions\ActionChannelPropertyEntity::class,
+		Entities\Actions\ActionChannelProperty::class,
 	],
-	'set'    => [
+	'set' => [
 		file_get_contents(__DIR__ . '/data/channel.property.set.json'),
-		Entities\Actions\ActionChannelPropertyEntity::class,
+		Entities\Actions\ActionChannelProperty::class,
 	],
 ];

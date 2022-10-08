@@ -16,6 +16,14 @@
 namespace FastyBird\Metadata\ValueObjects;
 
 use Nette;
+use function array_filter;
+use function array_map;
+use function array_values;
+use function explode;
+use function implode;
+use function is_string;
+use function strval;
+use function trim;
 
 /**
  * String enum value format
@@ -38,39 +46,32 @@ final class StringEnumFormat
 	 */
 	public function __construct(string|array $items)
 	{
-		if (is_string($items)) {
-			$parts = explode(',', $items);
+		$parts = is_string($items) ? explode(',', $items) : $items;
 
-		} else {
-			$parts = $items;
-		}
-
-		$this->items = array_values(array_filter(array_map(function (mixed $item): string {
-			return trim(strval($item));
-		}, $parts), function (string $item): bool {
-			return $item !== '';
-		}));
+		$this->items = array_values(
+			array_filter(
+				array_map(static fn (mixed $item): string => trim(strval($item)), $parts),
+				static fn (string $item): bool => $item !== '',
+			),
+		);
 	}
 
 	/**
-	 * @return string[]
+	 * @return array<string>
 	 */
-	public function getItems(): mixed
+	public function getItems(): array
 	{
 		return $this->items;
 	}
 
 	/**
-	 * @return string[]
+	 * @return array<string>
 	 */
 	public function toArray(): array
 	{
 		return $this->getItems();
 	}
 
-	/**
-	 * @return string
-	 */
 	public function __toString(): string
 	{
 		return implode(',', $this->toArray());

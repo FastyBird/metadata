@@ -3,47 +3,47 @@
 use Nette\Utils;
 
 return [
-	'one'   => [
+	'one' => [
 		Utils\Json::encode([
-			'attributeOne'   => 'String value',
-			'attributeTwo'   => 20,
+			'attributeOne' => 'String value',
+			'attributeTwo' => 20,
 			'attributeThree' => false,
-			'attributeFour'  => null,
+			'attributeFour' => null,
 		]),
 		file_get_contents(__DIR__ . '/validator.schema.json'),
 		[
-			'attributeOne'   => 'String value',
-			'attributeTwo'   => 20,
+			'attributeOne' => 'String value',
+			'attributeTwo' => 20,
 			'attributeThree' => false,
-			'attributeFour'  => null,
+			'attributeFour' => null,
 		],
 	],
-	'two'   => [
+	'two' => [
 		Utils\Json::encode([
 			'attributeOne' => 'String value',
 			'attributeTwo' => 20,
 		]),
 		file_get_contents(__DIR__ . '/validator.schema.json'),
 		[
-			'attributeOne'   => 'String value',
-			'attributeTwo'   => 20,
+			'attributeOne' => 'String value',
+			'attributeTwo' => 20,
 			'attributeThree' => true,
-			'attributeFour'  => null,
+			'attributeFour' => null,
 		],
 	],
 	'three' => [
 		Utils\Json::encode([
-			'attributeOne'   => 'String value',
-			'attributeTwo'   => 2.2,
+			'attributeOne' => 'String value',
+			'attributeTwo' => 2.2,
 			'attributeThree' => false,
-			'attributeFour'  => 'String content',
+			'attributeFour' => 'String content',
 		]),
 		file_get_contents(__DIR__ . '/validator.schema.json'),
 		[
-			'attributeOne'   => 'String value',
-			'attributeTwo'   => 2.2,
+			'attributeOne' => 'String value',
+			'attributeTwo' => 2.2,
 			'attributeThree' => false,
-			'attributeFour'  => 'String content',
+			'attributeFour' => 'String content',
 		],
 	],
 ];

@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use Nette\Utils;
+use function is_string;
 
 /**
  * Device control action entity factory
@@ -32,28 +33,19 @@ use Nette\Utils;
 final class ActionDeviceControlEntityFactory extends Entities\EntityFactory
 {
 
-	/** @var Loaders\SchemaLoader */
-	private Loaders\SchemaLoader $loader;
-
-	/** @var Schemas\Validator */
-	private Schemas\Validator $validator;
-
 	public function __construct(
-		Loaders\SchemaLoader $loader,
-		Schemas\Validator $validator
-	) {
-		$this->loader = $loader;
-		$this->validator = $validator;
+		private Loaders\SchemaLoader $loader,
+		private Schemas\Validator $validator,
+	)
+	{
 	}
 
 	/**
 	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
-	 * @return IActionDeviceControlEntity
-	 *
-	 * @throws Exceptions\FileNotFoundException
+	 * @throws Exceptions\FileNotFound
 	 */
-	public function create(string|array|Utils\ArrayHash $data): IActionDeviceControlEntity
+	public function create(string|array|Utils\ArrayHash $data): ActionDeviceControl
 	{
 		if (is_string($data)) {
 			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.device.control.json');
@@ -64,13 +56,13 @@ final class ActionDeviceControlEntityFactory extends Entities\EntityFactory
 			$data = Utils\ArrayHash::from($data);
 		}
 
-		$entity = $this->build(ActionDeviceControlEntity::class, $data);
+		$entity = $this->build(ActionDeviceControl::class, $data);
 
-		if ($entity instanceof ActionDeviceControlEntity) {
+		if ($entity instanceof ActionDeviceControl) {
 			return $entity;
 		}
 
-		throw new Exceptions\InvalidStateException('Entity could not be created');
+		throw new Exceptions\InvalidState('Entity could not be created');
 	}
 
 }

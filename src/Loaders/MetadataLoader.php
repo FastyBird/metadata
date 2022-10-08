@@ -19,6 +19,8 @@ use FastyBird\Metadata;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Schemas;
 use Nette\Utils;
+use function file_get_contents;
+use const DIRECTORY_SEPARATOR;
 
 /**
  * Metadata loader
@@ -28,22 +30,15 @@ use Nette\Utils;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class MetadataLoader implements IMetadataLoader
+final class MetadataLoader
 {
 
-	/** @var Schemas\IValidator */
-	private Schemas\IValidator $jsonValidator;
-
-	public function __construct(
-		Schemas\IValidator $jsonValidator
-	) {
-		$this->jsonValidator = $jsonValidator;
+	public function __construct(private Schemas\Validator $jsonValidator)
+	{
 	}
 
 	/**
-	 * {@inheritDoc}
-	 *
-	 * @throws Exceptions\FileNotFoundException
+	 * @throws Exceptions\FileNotFound
 	 */
 	public function load(): Utils\ArrayHash
 	{
@@ -54,19 +49,16 @@ final class MetadataLoader implements IMetadataLoader
 		$schema = file_get_contents($schema);
 
 		if ($schema === false) {
-			throw new Exceptions\FileNotFoundException('Schema could not be loaded');
+			throw new Exceptions\FileNotFound('Schema could not be loaded');
 		}
 
 		$metadata = file_get_contents($metadata);
 
 		if ($metadata === false) {
-			throw new Exceptions\FileNotFoundException('Metadata could not be loaded');
+			throw new Exceptions\FileNotFound('Metadata could not be loaded');
 		}
 
-		return $this->jsonValidator->validate(
-			$metadata,
-			$schema
-		);
+		return $this->jsonValidator->validate($metadata, $schema);
 	}
 
 }

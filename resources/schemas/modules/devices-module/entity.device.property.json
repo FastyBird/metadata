@@ -21,7 +21,7 @@
     "type" : {
       "type" : "string",
       "enum" : [
-        "static",
+        "variable",
         "dynamic",
         "mapped"
       ]
@@ -332,7 +332,7 @@
     "if" : {
       "properties" : {
         "type" : {
-          "const" : "static"
+          "const" : "variable"
         }
       }
     },

@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use Nette\Utils;
+use function is_string;
 
 /**
  * Connector control action entity factory
@@ -32,28 +33,19 @@ use Nette\Utils;
 final class ActionConnectorControlEntityFactory extends Entities\EntityFactory
 {
 
-	/** @var Loaders\SchemaLoader */
-	private Loaders\SchemaLoader $loader;
-
-	/** @var Schemas\Validator */
-	private Schemas\Validator $validator;
-
 	public function __construct(
-		Loaders\SchemaLoader $loader,
-		Schemas\Validator $validator
-	) {
-		$this->loader = $loader;
-		$this->validator = $validator;
+		private Loaders\SchemaLoader $loader,
+		private Schemas\Validator $validator,
+	)
+	{
 	}
 
 	/**
 	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
-	 * @return IActionConnectorControlEntity
-	 *
-	 * @throws Exceptions\FileNotFoundException
+	 * @throws Exceptions\FileNotFound
 	 */
-	public function create(string|array|Utils\ArrayHash $data): IActionConnectorControlEntity
+	public function create(string|array|Utils\ArrayHash $data): ActionConnectorControl
 	{
 		if (is_string($data)) {
 			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.connector.control.json');
@@ -64,13 +56,13 @@ final class ActionConnectorControlEntityFactory extends Entities\EntityFactory
 			$data = Utils\ArrayHash::from($data);
 		}
 
-		$entity = $this->build(ActionConnectorControlEntity::class, $data);
+		$entity = $this->build(ActionConnectorControl::class, $data);
 
-		if ($entity instanceof ActionConnectorControlEntity) {
+		if ($entity instanceof ActionConnectorControl) {
 			return $entity;
 		}
 
-		throw new Exceptions\InvalidStateException('Entity could not be created');
+		throw new Exceptions\InvalidState('Entity could not be created');
 	}
 
 }

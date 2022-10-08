@@ -27,6 +27,22 @@ use ReflectionType;
 use Reflector;
 use stdClass;
 use Throwable;
+use function array_combine;
+use function array_keys;
+use function array_merge;
+use function call_user_func_array;
+use function class_exists;
+use function get_object_vars;
+use function in_array;
+use function is_array;
+use function is_callable;
+use function method_exists;
+use function preg_replace_callback;
+use function property_exists;
+use function strtolower;
+use function strtoupper;
+use function trim;
+use function ucfirst;
 
 /**
  * Data entity factory
@@ -39,18 +55,10 @@ use Throwable;
 abstract class EntityFactory
 {
 
-	/**
-	 * @param string $entityClass
-	 * @param Utils\ArrayHash $data
-	 *
-	 * @return IEntity
-	 */
-	protected function build(
-		string $entityClass,
-		Utils\ArrayHash $data
-	): IEntity {
+	protected function build(string $entityClass, Utils\ArrayHash $data): Entity
+	{
 		if (!class_exists($entityClass)) {
-			throw new Exceptions\InvalidStateException('Entity could not be created');
+			throw new Exceptions\InvalidState('Entity could not be created');
 		}
 
 		try {
@@ -61,11 +69,11 @@ abstract class EntityFactory
 				$decoded = $this->convertToObject($decoded);
 			}
 		} catch (Utils\JsonException $ex) {
-			throw new Exceptions\InvalidArgumentException('Provided entity content is not valid JSON.');
+			throw new Exceptions\InvalidArgument('Provided entity content is not valid JSON.');
 		}
 
 		if (!$decoded instanceof stdClass) {
-			throw new Exceptions\InvalidStateException('Data for entity could not be prepared');
+			throw new Exceptions\InvalidState('Data for entity could not be prepared');
 		}
 
 		try {
@@ -73,13 +81,13 @@ abstract class EntityFactory
 
 			$constructor = $rc->getConstructor();
 
-			if ($constructor !== null) {
-				$entity = $rc->newInstanceArgs($this->autowireArguments($constructor, $decoded));
-			} else {
-				$entity = new $entityClass();
-			}
+			$entity = $constructor !== null
+				? $rc->newInstanceArgs(
+					$this->autowireArguments($constructor, $decoded),
+				)
+				: new $entityClass();
 		} catch (Throwable $ex) {
-			throw new Exceptions\InvalidStateException('Entity could not be created', 0, $ex);
+			throw new Exceptions\InvalidState('Entity could not be created', 0, $ex);
 		}
 
 		$properties = $this->getProperties($rc);
@@ -116,32 +124,31 @@ abstract class EntityFactory
 							call_user_func_array($callback, [$value]);
 						}
 					}
-				} catch (ReflectionException $ex) {
+				} catch (ReflectionException) {
 					continue;
-
 				} catch (Throwable $ex) {
-					throw new Exceptions\InvalidStateException('Entity could not be created', 0, $ex);
+					throw new Exceptions\InvalidState('Entity could not be created', 0, $ex);
 				}
 			}
 		}
 
-		if ($entity instanceof IEntity) {
+		if ($entity instanceof Entity) {
 			return $entity;
 		}
 
-		throw new Exceptions\InvalidStateException('Entity could not be created');
+		throw new Exceptions\InvalidState('Entity could not be created');
 	}
 
 	/**
-	 * @param Utils\ArrayHash $data
-	 *
 	 * @return Array<string, mixed>
 	 */
 	protected function convertKeys(Utils\ArrayHash $data): array
 	{
-		$keys = preg_replace_callback('/_(.)/', function (array $m): string {
-			return strtoupper($m[1]);
-		}, array_keys((array) $data));
+		$keys = preg_replace_callback(
+			'/_(.)/',
+			static fn (array $m): string => strtoupper($m[1]),
+			array_keys((array) $data),
+		);
 
 		if ($keys === null) {
 			return [];
@@ -155,15 +162,13 @@ abstract class EntityFactory
 	/**
 	 * This method was inspired by same method in Nette framework
 	 *
-	 * @param ReflectionMethod $method
-	 * @param stdClass $decoded
-	 *
-	 * @return mixed[]
+	 * @return array<mixed>
 	 */
 	private function autowireArguments(
 		ReflectionMethod $method,
-		stdClass $decoded
-	): array {
+		stdClass $decoded,
+	): array
+	{
 		$res = [];
 
 		foreach ($method->getParameters() as $num => $parameter) {
@@ -197,11 +202,9 @@ abstract class EntityFactory
 	}
 
 	/**
-	 * @param ReflectionParameter $param
-	 *
 	 * @return string|NULL
 	 */
-	private function getParameterType(ReflectionParameter $param): ?string
+	private function getParameterType(ReflectionParameter $param): string|null
 	{
 		if ($param->hasType()) {
 			$rt = $param->getType();
@@ -209,7 +212,9 @@ abstract class EntityFactory
 			if ($rt instanceof ReflectionType && method_exists($rt, 'getName')) {
 				$type = $rt->getName();
 
-				return strtolower($type) === 'self' && $param->getDeclaringClass() !== null ? $param->getDeclaringClass()
+				return strtolower(
+					$type,
+				) === 'self' && $param->getDeclaringClass() !== null ? $param->getDeclaringClass()
 					->getName() : $type;
 			}
 		}
@@ -218,9 +223,7 @@ abstract class EntityFactory
 	}
 
 	/**
-	 * @param Reflector $rc
-	 *
-	 * @return ReflectionProperty[]
+	 * @return array<ReflectionProperty>
 	 */
 	private function getProperties(Reflector $rc): array
 	{
@@ -242,12 +245,9 @@ abstract class EntityFactory
 	}
 
 	/**
-	 * @param ReflectionProperty $rp
-	 * @param string $name
-	 *
 	 * @return string|NULL
 	 */
-	private function parseAnnotation(ReflectionProperty $rp, string $name): ?string
+	private function parseAnnotation(ReflectionProperty $rp, string $name): string|null
 	{
 		if ($rp->getDocComment() === false) {
 			return null;
@@ -267,8 +267,6 @@ abstract class EntityFactory
 
 	/**
 	 * @param Array<string, mixed> $array
-	 *
-	 * @return stdClass
 	 */
 	private function convertToObject(array $array): stdClass
 	{

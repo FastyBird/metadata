@@ -18,6 +18,13 @@ namespace FastyBird\Metadata\Loaders;
 use FastyBird\Metadata;
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Types;
+use function array_key_exists;
+use function file_exists;
+use function file_get_contents;
+use function sprintf;
+use function str_replace;
+use function strval;
+use const DIRECTORY_SEPARATOR;
 
 /**
  * JSON schema loader
@@ -27,7 +34,7 @@ use FastyBird\Metadata\Types;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class SchemaLoader implements ISchemaLoader
+final class SchemaLoader
 {
 
 	/** @var Array<string, string>  */
@@ -37,22 +44,23 @@ final class SchemaLoader implements ISchemaLoader
 	private array $byNamespace = [];
 
 	/**
-	 * {@inheritDoc}
-	 *
-	 * @throws Exceptions\FileNotFoundException
-	 * @throws Exceptions\InvalidArgumentException
+	 * @throws Exceptions\FileNotFound
+	 * @throws Exceptions\InvalidArgument
 	 */
-	public function loadByRoutingKey(Types\RoutingKeyType $routingKey): string
+	public function loadByRoutingKey(Types\RoutingKey $routingKey): string
 	{
 		if (array_key_exists(strval($routingKey->getValue()), Metadata\Constants::JSON_SCHEMAS_MAPPING)) {
-			if (array_key_exists(Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()], $this->byRoutingKey)) {
+			if (array_key_exists(
+				Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()],
+				$this->byRoutingKey,
+			)) {
 				return $this->byRoutingKey[Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]];
 			}
 
 			$schema = file_get_contents(Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]);
 
 			if ($schema === false) {
-				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
+				throw new Exceptions\FileNotFound('Schema could not be loaded');
 			}
 
 			$this->byRoutingKey[Metadata\Constants::JSON_SCHEMAS_MAPPING[$routingKey->getValue()]] = $schema;
@@ -60,14 +68,14 @@ final class SchemaLoader implements ISchemaLoader
 			return $schema;
 		}
 
-		throw new Exceptions\InvalidArgumentException(sprintf('Schema for routing key: %s is not configured', strval($routingKey->getValue())));
+		throw new Exceptions\InvalidArgument(
+			sprintf('Schema for routing key: %s is not configured', strval($routingKey->getValue())),
+		);
 	}
 
 	/**
-	 * {@inheritDoc}
-	 *
-	 * @throws Exceptions\FileNotFoundException
-	 * @throws Exceptions\InvalidArgumentException
+	 * @throws Exceptions\FileNotFound
+	 * @throws Exceptions\InvalidArgument
 	 */
 	public function loadByNamespace(string $namespace, string $schemaFile): string
 	{
@@ -75,13 +83,17 @@ final class SchemaLoader implements ISchemaLoader
 			return $this->byNamespace[$namespace . $schemaFile];
 		}
 
-		$filePath = Metadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR . $schemaFile;
+		$filePath = Metadata\Constants::RESOURCES_FOLDER . DIRECTORY_SEPARATOR . str_replace(
+			'/',
+			DIRECTORY_SEPARATOR,
+			$namespace,
+		) . DIRECTORY_SEPARATOR . $schemaFile;
 
 		if (file_exists($filePath)) {
 			$schema = file_get_contents($filePath);
 
 			if ($schema === false) {
-				throw new Exceptions\FileNotFoundException('Schema could not be loaded');
+				throw new Exceptions\FileNotFound('Schema could not be loaded');
 			}
 
 			$this->byNamespace[$namespace . $schemaFile] = $schema;
@@ -89,7 +101,9 @@ final class SchemaLoader implements ISchemaLoader
 			return $schema;
 		}
 
-		throw new Exceptions\InvalidArgumentException(sprintf('Schema for namespace: %s and file: %s is not configured', $namespace, $schemaFile));
+		throw new Exceptions\InvalidArgument(
+			sprintf('Schema for namespace: %s and file: %s is not configured', $namespace, $schemaFile),
+		);
 	}
 
 }

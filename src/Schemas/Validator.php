@@ -19,6 +19,10 @@ use FastyBird\Metadata\Exceptions;
 use Nette;
 use Nette\Utils;
 use Opis\JsonSchema;
+use function array_key_exists;
+use function count;
+use function md5;
+use function sprintf;
 
 /**
  * JSON schema validator
@@ -28,7 +32,7 @@ use Opis\JsonSchema;
  *
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  */
-final class Validator implements IValidator
+final class Validator
 {
 
 	use Nette\SmartObject;
@@ -36,26 +40,25 @@ final class Validator implements IValidator
 	/** @var Array<string, JsonSchema\Schema>  */
 	private array $schemas = [];
 
-	/**
-	 * {@inheritDoc}
-	 */
 	public function validate(string $data, string $schema): Utils\ArrayHash
 	{
 		try {
 			$jsonData = Utils\Json::decode($data);
 
 		} catch (Utils\JsonException $ex) {
-			throw new Exceptions\MalformedInputException('Failed to decode input data', 0, $ex);
+			throw new Exceptions\MalformedInput('Failed to decode input data', 0, $ex);
 		}
 
 		$validator = new JsonSchema\Validator();
 
 		if (!array_key_exists(md5($schema), $this->schemas)) {
 			try {
-				$this->schemas[md5($schema)] = $validator->loader()->loadObjectSchema(Utils\Json::decode($schema)); // @phpstan-ignore-line
+				$this->schemas[md5($schema)] = $validator->loader()->loadObjectSchema(
+					(object) Utils\Json::decode($schema),
+				);
 
 			} catch (Utils\JsonException $ex) {
-				throw new Exceptions\LogicException(sprintf('Failed to decode schema'), 0, $ex);
+				throw new Exceptions\Logic(sprintf('Failed to decode schema'), 0, $ex);
 			}
 		}
 
@@ -63,10 +66,11 @@ final class Validator implements IValidator
 
 		if ($result->isValid()) {
 			try {
-				return Utils\ArrayHash::from(Utils\Json::decode(Utils\Json::encode($jsonData), Utils\Json::FORCE_ARRAY)); // @phpstan-ignore-line
-
-			} catch (Utils\JsonException $ex) {
-				throw new Exceptions\LogicException(sprintf('Failed to encode input data'));
+				return Utils\ArrayHash::from(
+					(array) Utils\Json::decode(Utils\Json::encode($jsonData), Utils\Json::FORCE_ARRAY),
+				);
+			} catch (Utils\JsonException) {
+				throw new Exceptions\Logic(sprintf('Failed to encode input data'));
 			}
 		} else {
 			$messages = [];
@@ -97,14 +101,14 @@ final class Validator implements IValidator
 
 					$formattedError = Utils\Json::encode($errorInfo);
 
-				} catch (Utils\JsonException $ex) {
+				} catch (Utils\JsonException) {
 					$formattedError = 'Invalid data';
 				}
 
 				$messages[] = sprintf('%s', $formattedError);
 			}
 
-			throw new Exceptions\InvalidDataException($messages);
+			throw new Exceptions\InvalidData($messages);
 		}
 	}
 

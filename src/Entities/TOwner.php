@@ -28,13 +28,9 @@ use Ramsey\Uuid;
 trait TOwner
 {
 
-	/** @var Uuid\UuidInterface|null */
-	protected ?Uuid\UuidInterface $owner;
+	protected Uuid\UuidInterface|null $owner;
 
-	/**
-	 * @return Uuid\UuidInterface|null
-	 */
-	public function getOwner(): ?Uuid\UuidInterface
+	public function getOwner(): Uuid\UuidInterface|null
 	{
 		return $this->owner;
 	}

@@ -20,6 +20,7 @@ use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
 use Nette\Utils;
+use function is_string;
 
 /**
  * Trigger control action entity factory
@@ -32,28 +33,19 @@ use Nette\Utils;
 final class ActionTriggerControlEntityFactory extends Entities\EntityFactory
 {
 
-	/** @var Loaders\SchemaLoader */
-	private Loaders\SchemaLoader $loader;
-
-	/** @var Schemas\Validator */
-	private Schemas\Validator $validator;
-
 	public function __construct(
-		Loaders\SchemaLoader $loader,
-		Schemas\Validator $validator
-	) {
-		$this->loader = $loader;
-		$this->validator = $validator;
+		private Loaders\SchemaLoader $loader,
+		private Schemas\Validator $validator,
+	)
+	{
 	}
 
 	/**
 	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
-	 * @return IActionTriggerControlEntity
-	 *
-	 * @throws Exceptions\FileNotFoundException
+	 * @throws Exceptions\FileNotFound
 	 */
-	public function create(string|array|Utils\ArrayHash $data): IActionTriggerControlEntity
+	public function create(string|array|Utils\ArrayHash $data): ActionTriggerControl
 	{
 		if (is_string($data)) {
 			$schema = $this->loader->loadByNamespace('schemas/actions', 'action.trigger.control.json');
@@ -64,13 +56,13 @@ final class ActionTriggerControlEntityFactory extends Entities\EntityFactory
 			$data = Utils\ArrayHash::from($data);
 		}
 
-		$entity = $this->build(ActionTriggerControlEntity::class, $data);
+		$entity = $this->build(ActionTriggerControl::class, $data);
 
-		if ($entity instanceof ActionTriggerControlEntity) {
+		if ($entity instanceof ActionTriggerControl) {
 			return $entity;
 		}
 
-		throw new Exceptions\InvalidStateException('Entity could not be created');
+		throw new Exceptions\InvalidState('Entity could not be created');
 	}
 
 }

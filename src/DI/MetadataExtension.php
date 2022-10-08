@@ -32,27 +32,19 @@ use Nette\DI;
 class MetadataExtension extends DI\CompilerExtension
 {
 
-	/**
-	 * @param Nette\Configurator $config
-	 * @param string $extensionName
-	 *
-	 * @return void
-	 */
 	public static function register(
 		Nette\Configurator $config,
-		string $extensionName = 'fbMetadata'
-	): void {
-		$config->onCompile[] = function (
+		string $extensionName = 'fbMetadata',
+	): void
+	{
+		$config->onCompile[] = static function (
 			Nette\Configurator $config,
-			DI\Compiler $compiler
+			DI\Compiler $compiler,
 		) use ($extensionName): void {
 			$compiler->addExtension($extensionName, new MetadataExtension());
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	public function loadConfiguration(): void
 	{
 		$builder = $this->getContainerBuilder();
@@ -70,7 +62,10 @@ class MetadataExtension extends DI\CompilerExtension
 		$builder->addDefinition('entity.factory.actions.connector.action', new DI\Definitions\ServiceDefinition())
 			->setType(Entities\Actions\ActionConnectorControlEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.actions.connector.property.action', new DI\Definitions\ServiceDefinition())
+		$builder->addDefinition(
+			'entity.factory.actions.connector.property.action',
+			new DI\Definitions\ServiceDefinition(),
+		)
 			->setType(Entities\Actions\ActionConnectorPropertyEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.device.action', new DI\Definitions\ServiceDefinition())
@@ -82,68 +77,107 @@ class MetadataExtension extends DI\CompilerExtension
 		$builder->addDefinition('entity.factory.actions.channel.action', new DI\Definitions\ServiceDefinition())
 			->setType(Entities\Actions\ActionChannelControlEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.actions.channel.property.action', new DI\Definitions\ServiceDefinition())
+		$builder->addDefinition(
+			'entity.factory.actions.channel.property.action',
+			new DI\Definitions\ServiceDefinition(),
+		)
 			->setType(Entities\Actions\ActionChannelPropertyEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.actions.trigger.action', new DI\Definitions\ServiceDefinition())
 			->setType(Entities\Actions\ActionTriggerControlEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.accountsModule.account', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\AccountsModule\AccountEntityFactory::class);
+			->setType(Entities\AccountsModule\AccountEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.accountsModule.email', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\AccountsModule\EmailEntityFactory::class);
+			->setType(Entities\AccountsModule\EmailEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.accountsModule.identity', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\AccountsModule\IdentityEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.accountsModule.identity',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\AccountsModule\IdentityEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.accountsModule.role', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\AccountsModule\RoleEntityFactory::class);
+			->setType(Entities\AccountsModule\RoleEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.triggersModule.action', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\TriggersModule\ActionEntityFactory::class);
+			->setType(Entities\TriggersModule\ActionEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.triggersModule.condition', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\TriggersModule\ConditionEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.triggersModule.condition',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\TriggersModule\ConditionEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.triggersModule.notification', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\TriggersModule\NotificationEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.triggersModule.notification',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\TriggersModule\NotificationEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.triggersModule.triggerControl', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\TriggersModule\TriggerControlEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.triggersModule.triggerControl',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\TriggersModule\TriggerControlEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.triggersModule.trigger', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\TriggersModule\TriggerEntityFactory::class);
+			->setType(Entities\TriggersModule\TriggerEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.connector', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\ConnectorEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.connector',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\ConnectorEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.connector.control', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\ConnectorControlEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.connector.control',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\ConnectorControlEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.connector.property', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\ConnectorPropertyEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.connector.property',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\ConnectorPropertyEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.devicesModule.device', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\DeviceEntityFactory::class);
+			->setType(Entities\DevicesModule\DeviceEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.device.control', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\DeviceControlEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.device.control',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\DeviceControlEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.device.property', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\DevicePropertyEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.device.property',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\DevicePropertyEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.device.attribute', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\DeviceAttributeEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.device.attribute',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\DeviceAttributeEntityFactory::class);
 
 		$builder->addDefinition('entity.factory.modules.devicesModule.channel', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\ChannelEntityFactory::class);
+			->setType(Entities\DevicesModule\ChannelEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.channel.control', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\ChannelControlEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.channel.control',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\ChannelControlEntityFactory::class);
 
-		$builder->addDefinition('entity.factory.modules.devicesModule.channel.property', new DI\Definitions\ServiceDefinition())
-			->setType(Entities\Modules\DevicesModule\ChannelPropertyEntityFactory::class);
+		$builder->addDefinition(
+			'entity.factory.modules.devicesModule.channel.property',
+			new DI\Definitions\ServiceDefinition(),
+		)
+			->setType(Entities\DevicesModule\ChannelPropertyEntityFactory::class);
 	}
 
 }

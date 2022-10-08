@@ -33,6 +33,7 @@ export enum ConnectorSource {
   HOMEKIT_CONNECTOR = 'com.fastybird.homekit-connector',
   ITEAD_CONNECTOR = 'com.fastybird.itead-connector',
   VIRTUAL_CONNECTOR = 'com.fastybird.virtual-connector',
+  TERMINAL_CONNECTOR = 'com.fastybird.terminal-connector',
 }
 
 export enum DataType {

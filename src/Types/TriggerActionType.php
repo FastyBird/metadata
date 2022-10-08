@@ -8,17 +8,18 @@
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
  * @package        FastyBird:Metadata!
  * @subpackage     Entities
- * @since          0.57.0
+ * @since          0.22.0
  *
- * @date           01.06.22
+ * @date           08.01.22
  */
 
 namespace FastyBird\Metadata\Types;
 
 use Consistence;
+use function strval;
 
 /**
- * Trigger action
+ * Trigger action type
  *
  * @package        FastyBird:Metadata!
  * @subpackage     Types
@@ -29,13 +30,12 @@ class TriggerActionType extends Consistence\Enum\Enum
 {
 
 	/**
-	 * Define actions
+	 * Define types
 	 */
-	public const ACTION_SET = 'set';
+	public const TYPE_DEVICE_PROPERTY = 'device_property';
 
-	/**
-	 * @return string
-	 */
+	public const TYPE_CHANNEL_PROPERTY = 'channel_property';
+
 	public function __toString(): string
 	{
 		return strval(self::getValue());
