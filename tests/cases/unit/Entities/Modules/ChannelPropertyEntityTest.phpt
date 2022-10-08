@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases;
+namespace Tests\Cases\Unit;
 
 use FastyBird\Metadata\Entities;
 use Ramsey\Uuid;
 use Tester\Assert;
 
-require_once __DIR__ . '/../../../bootstrap.php';
+require_once __DIR__ . '/../../../../bootstrap.php';
 require_once __DIR__ . '/../../BaseTestCase.php';
 
 /**
@@ -20,7 +20,7 @@ final class ChannelPropertyEntityTest extends BaseTestCase
 	 * @param string $class
 	 * @param array $fixture
 	 *
-	 * @dataProvider ./../../../fixtures/Entities/Modules/channel.property.php
+	 * @dataProvider ./../../../../fixtures/Entities/Modules/channel.property.php
 	 */
 	public function testCreateEntity(string $data, string $class, array $fixture): void
 	{
@@ -37,7 +37,7 @@ final class ChannelPropertyEntityTest extends BaseTestCase
 	/**
 	 * @param string $data
 	 *
-	 * @dataProvider ./../../../fixtures/Entities/Modules/channel.property.invalid.php
+	 * @dataProvider ./../../../../fixtures/Entities/Modules/channel.property.invalid.php
 	 *
 	 * @throws FastyBird\Metadata\Exceptions\Exception
 	 */

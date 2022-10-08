@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases;
+namespace Tests\Cases\Unit;
 
 use FastyBird\Metadata\Types;
 use FastyBird\Metadata\ValueObjects;
 use Tester\Assert;
 
-require_once __DIR__ . '/../../bootstrap.php';
+require_once __DIR__ . '/../../../bootstrap.php';
 require_once __DIR__ . '/../BaseTestCase.php';
 
 /**

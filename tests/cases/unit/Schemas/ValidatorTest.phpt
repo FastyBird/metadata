@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases;
+namespace Tests\Cases\Unit;
 
 use FastyBird\Metadata\Schemas;
 use Nette\Utils;
 use Tester\Assert;
 
-require_once __DIR__ . '/../../bootstrap.php';
+require_once __DIR__ . '/../../../bootstrap.php';
 require_once __DIR__ . '/../BaseTestCase.php';
 
 /**
@@ -20,7 +20,7 @@ final class ValidatorTest extends BaseTestCase
 	 * @param string $schema
 	 * @param mixed[] $expected
 	 *
-	 * @dataProvider ./../../fixtures/Schemas/validateValidData.php
+	 * @dataProvider ./../../../fixtures/Schemas/validateValidData.php
 	 */
 	public function testValidateValidInput(
 		string $data,
@@ -42,7 +42,7 @@ final class ValidatorTest extends BaseTestCase
 	 * @param string $data
 	 * @param string $schema
 	 *
-	 * @dataProvider ./../../fixtures/Schemas/validateInvalidData.php
+	 * @dataProvider ./../../../fixtures/Schemas/validateInvalidData.php
 	 *
 	 * @throws FastyBird\Metadata\Exceptions\InvalidData
 	 */
