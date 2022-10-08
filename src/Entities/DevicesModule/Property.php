@@ -56,15 +56,15 @@ abstract class Property implements Entities\Entity, Entities\Owner
 	public function __construct(
 		string $id,
 		string $type,
-		private string $identifier,
-		private string|null $name,
-		private bool $settable,
-		private bool $queryable,
+		private readonly string $identifier,
+		private readonly string|null $name,
+		private readonly bool $settable,
+		private readonly bool $queryable,
 		string $dataType,
-		private string|null $unit = null,
+		private readonly string|null $unit = null,
 		array|null $format = null,
 		float|int|string|null $invalid = null,
-		private int|null $numberOfDecimals = null,
+		private readonly int|null $numberOfDecimals = null,
 		string|null $owner = null,
 	)
 	{

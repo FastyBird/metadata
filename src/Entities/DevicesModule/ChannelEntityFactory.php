@@ -34,8 +34,8 @@ final class ChannelEntityFactory extends Entities\EntityFactory
 {
 
 	public function __construct(
-		private Loaders\SchemaLoader $loader,
-		private Schemas\Validator $validator,
+		private readonly Loaders\SchemaLoader $loader,
+		private readonly Schemas\Validator $validator,
 	)
 	{
 	}

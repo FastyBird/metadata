@@ -69,7 +69,7 @@ abstract class EntityFactory
 				$decoded = $this->convertToObject($decoded);
 			}
 		} catch (Utils\JsonException $ex) {
-			throw new Exceptions\InvalidArgument('Provided entity content is not valid JSON.');
+			throw new Exceptions\InvalidArgument('Provided entity content is not valid JSON', $ex->getCode(), $ex);
 		}
 
 		if (!$decoded instanceof stdClass) {
@@ -154,9 +154,7 @@ abstract class EntityFactory
 			return [];
 		}
 
-		$converted = array_combine($keys, (array) $data);
-
-		return $converted !== false ? $converted : [];
+		return array_combine($keys, (array) $data);
 	}
 
 	/**
@@ -202,7 +200,7 @@ abstract class EntityFactory
 	}
 
 	/**
-	 * @return string|NULL
+	 * @phpstan-return string|NULL
 	 */
 	private function getParameterType(ReflectionParameter $param): string|null
 	{
@@ -245,7 +243,7 @@ abstract class EntityFactory
 	}
 
 	/**
-	 * @return string|NULL
+	 * @phpstan-return string|NULL
 	 */
 	private function parseAnnotation(ReflectionProperty $rp, string $name): string|null
 	{

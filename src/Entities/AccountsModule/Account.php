@@ -55,12 +55,12 @@ final class Account implements Entities\Entity
 	 */
 	public function __construct(
 		string $id,
-		private string $firstName,
-		private string $lastName,
-		private string $language,
+		private readonly string $firstName,
+		private readonly string $lastName,
+		private readonly string $language,
 		string $state,
-		private string|null $middleName = null,
-		private string|null $email = null,
+		private readonly string|null $middleName = null,
+		private readonly string|null $email = null,
 		string|null $registered = null,
 		string|null $lastVisit = null,
 		array|Utils\ArrayHash $roles = [],

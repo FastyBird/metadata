@@ -41,9 +41,9 @@ abstract class Trigger implements Entities\Entity, Entities\Owner
 	public function __construct(
 		string $id,
 		string $type,
-		private string $name,
-		private bool $enabled,
-		private string|null $comment = null,
+		private readonly string $name,
+		private readonly bool $enabled,
+		private readonly string|null $comment = null,
 		bool|null $isTriggered = null,
 		string|null $owner = null,
 	)

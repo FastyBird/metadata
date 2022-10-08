@@ -40,8 +40,8 @@ final class Identity implements Entities\Entity
 		string $id,
 		string $account,
 		string $state,
-		private string $uid,
-		private string|null $hash = null,
+		private readonly string $uid,
+		private readonly string|null $hash = null,
 	)
 	{
 		$this->id = Uuid\Uuid::fromString($id);

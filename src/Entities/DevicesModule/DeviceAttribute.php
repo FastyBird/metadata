@@ -38,9 +38,9 @@ final class DeviceAttribute implements Entities\Entity, Entities\Owner
 	public function __construct(
 		string $id,
 		string $device,
-		private string $identifier,
-		private string|null $name,
-		private string|null $content,
+		private readonly string $identifier,
+		private readonly string|null $name,
+		private readonly string|null $content,
 		string|null $owner = null,
 	)
 	{

@@ -33,7 +33,7 @@ final class EmailNotification extends Notification
 		string $trigger,
 		string $type,
 		bool $enabled,
-		private string $email,
+		private readonly string $email,
 		string|null $owner = null,
 	)
 	{

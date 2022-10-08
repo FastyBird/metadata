@@ -35,11 +35,11 @@ final class Connector implements Entities\Entity, Entities\Owner
 
 	public function __construct(
 		string $id,
-		private string $type,
-		private string $identifier,
-		private string|null $name = null,
-		private string|null $comment = null,
-		private bool $enabled = false,
+		private readonly string $type,
+		private readonly string $identifier,
+		private readonly string|null $name = null,
+		private readonly string|null $comment = null,
+		private readonly bool $enabled = false,
 		string|null $owner = null,
 	)
 	{

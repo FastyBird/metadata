@@ -59,7 +59,7 @@ abstract class DynamicProperty extends Property
 		float|bool|int|string|null $previousValue = null,
 		float|bool|int|string|null $expectedValue = null,
 		bool|string|null $pending = null,
-		private bool|null $valid = null,
+		private readonly bool|null $valid = null,
 		string|null $owner = null,
 	)
 	{

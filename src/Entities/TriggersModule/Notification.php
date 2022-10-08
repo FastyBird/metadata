@@ -42,7 +42,7 @@ abstract class Notification implements Entities\Entity, Entities\Owner
 		string $id,
 		string $trigger,
 		string $type,
-		private bool $enabled,
+		private readonly bool $enabled,
 		string|null $owner = null,
 	)
 	{

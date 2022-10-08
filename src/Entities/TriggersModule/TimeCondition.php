@@ -42,7 +42,7 @@ final class TimeCondition extends Condition
 		string $type,
 		bool $enabled,
 		string $time,
-		private array $days,
+		private readonly array $days,
 		bool|null $isFulfilled = null,
 		string|null $owner = null,
 	)

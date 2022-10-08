@@ -33,7 +33,7 @@ abstract class Control implements Entities\Entity, Entities\Owner
 
 	private Uuid\UuidInterface $id;
 
-	public function __construct(string $id, private string $name, string|null $owner = null)
+	public function __construct(string $id, private readonly string $name, string|null $owner = null)
 	{
 		$this->id = Uuid\Uuid::fromString($id);
 		$this->owner = $owner !== null ? Uuid\Uuid::fromString($owner) : null;

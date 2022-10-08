@@ -25,7 +25,7 @@ class InvalidData extends RuntimeException implements Exception
 	/**
 	 * @param array<string> $messages
 	 */
-	public function __construct(private array $messages, int $code = 0, Throwable|null $previous = null)
+	public function __construct(private readonly array $messages, int $code = 0, Throwable|null $previous = null)
 	{
 		$message = implode(' ', $messages);
 

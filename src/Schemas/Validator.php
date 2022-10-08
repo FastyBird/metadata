@@ -58,7 +58,7 @@ final class Validator
 				);
 
 			} catch (Utils\JsonException $ex) {
-				throw new Exceptions\Logic(sprintf('Failed to decode schema'), 0, $ex);
+				throw new Exceptions\Logic('Failed to decode schema', $ex->getCode(), $ex);
 			}
 		}
 
@@ -69,8 +69,8 @@ final class Validator
 				return Utils\ArrayHash::from(
 					(array) Utils\Json::decode(Utils\Json::encode($jsonData), Utils\Json::FORCE_ARRAY),
 				);
-			} catch (Utils\JsonException) {
-				throw new Exceptions\Logic(sprintf('Failed to encode input data'));
+			} catch (Utils\JsonException $ex) {
+				throw new Exceptions\Logic('Failed to encode input data', $ex->getCode(), $ex);
 			}
 		} else {
 			$messages = [];

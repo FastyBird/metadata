@@ -33,7 +33,7 @@ use const DIRECTORY_SEPARATOR;
 final class MetadataLoader
 {
 
-	public function __construct(private Schemas\Validator $jsonValidator)
+	public function __construct(private readonly Schemas\Validator $jsonValidator)
 	{
 	}
 

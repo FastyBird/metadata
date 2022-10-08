@@ -36,11 +36,11 @@ final class Email implements Entities\Entity
 	public function __construct(
 		string $id,
 		string $account,
-		private string $address,
-		private bool $default,
-		private bool $verified,
-		private bool $private,
-		private bool $public,
+		private readonly string $address,
+		private readonly bool $default,
+		private readonly bool $verified,
+		private readonly bool $private,
+		private readonly bool $public,
 	)
 	{
 		$this->id = Uuid\Uuid::fromString($id);

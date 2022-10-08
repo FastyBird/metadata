@@ -49,13 +49,13 @@ final class Device implements Entities\Entity, Entities\Owner
 	 */
 	public function __construct(
 		string $id,
-		private string $type,
-		private string $identifier,
+		private readonly string $type,
+		private readonly string $identifier,
 		string $connector,
 		array|Utils\ArrayHash $parents,
 		array|Utils\ArrayHash $children,
-		private string|null $name = null,
-		private string|null $comment = null,
+		private readonly string|null $name = null,
+		private readonly string|null $comment = null,
 		string|null $owner = null,
 	)
 	{

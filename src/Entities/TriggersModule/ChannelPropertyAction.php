@@ -43,7 +43,7 @@ final class ChannelPropertyAction extends Action
 		string $device,
 		string $channel,
 		string $property,
-		private string $value,
+		private readonly string $value,
 		bool|null $isTriggered = null,
 		string|null $owner = null,
 	)

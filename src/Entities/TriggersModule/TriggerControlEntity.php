@@ -38,7 +38,7 @@ final class TriggerControlEntity implements Entities\Entity, Entities\Owner
 	public function __construct(
 		string $id,
 		string $trigger,
-		private string $name,
+		private readonly string $name,
 		string|null $owner = null,
 	)
 	{

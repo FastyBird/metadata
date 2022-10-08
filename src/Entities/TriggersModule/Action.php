@@ -44,7 +44,7 @@ abstract class Action implements Entities\Entity, Entities\Owner
 		string $id,
 		string $trigger,
 		string $type,
-		private bool $enabled,
+		private readonly bool $enabled,
 		bool|null $isTriggered = null,
 		string|null $owner = null,
 	)

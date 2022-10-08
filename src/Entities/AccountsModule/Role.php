@@ -35,11 +35,11 @@ final class Role implements Entities\Entity
 
 	public function __construct(
 		string $id,
-		private string $name,
-		private string $comment,
-		private bool $anonymous,
-		private bool $authenticated,
-		private bool $administrator,
+		private readonly string $name,
+		private readonly string $comment,
+		private readonly bool $anonymous,
+		private readonly bool $authenticated,
+		private readonly bool $administrator,
 		string|null $parent = null,
 	)
 	{

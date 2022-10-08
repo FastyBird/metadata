@@ -64,7 +64,7 @@ abstract class MappedProperty extends Property
 		float|bool|int|string|null $previousValue = null,
 		float|bool|int|string|null $expectedValue = null,
 		bool|string|null $pending = null,
-		private bool|null $valid = null,
+		private readonly bool|null $valid = null,
 		float|bool|int|string|null $value = null,
 		float|bool|int|string|null $default = null,
 		string|null $owner = null,

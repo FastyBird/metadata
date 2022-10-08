@@ -46,7 +46,7 @@ final class ChannelPropertyCondition extends Condition
 		string $device,
 		string $channel,
 		string $property,
-		private string $operand,
+		private readonly string $operand,
 		string $operator,
 		bool|null $isFulfilled = null,
 		string|null $owner = null,

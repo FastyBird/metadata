@@ -40,7 +40,7 @@ final class DevicePropertyAction extends Action
 		bool $enabled,
 		string $device,
 		string $property,
-		private string $value,
+		private readonly string $value,
 		bool|null $isTriggered = null,
 		string|null $owner = null,
 	)
