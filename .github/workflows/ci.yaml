@@ -274,7 +274,7 @@ jobs :
         run: "${{ env.composer-install }} ${{ matrix.composer-args }}"
 
       - name: "Tests"
-        run: "make coverage"
+        run: "make php_coverage"
 
       - name: "Coveralls.io"
         env:
