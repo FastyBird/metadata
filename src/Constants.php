@@ -50,11 +50,11 @@ final class Constants
 
 	public const PLUGIN_STORAGE_COUCHDB_SOURCE = 'com.fastybird.couchdb-storage-plugin';
 
-	public const PLUGIN_RABBITMQ_SOURCE = 'com.fastybird.rabbitmq-exchange-plugin';
+	public const PLUGIN_RABBITMQ_SOURCE = 'com.fastybird.rabbitmq-plugin';
 
-	public const PLUGIN_REDISDB = 'com.fastybird.redisdb-plugin';
+	public const PLUGIN_REDISDB_SOURCE = 'com.fastybird.redisdb-plugin';
 
-	public const PLUGIN_WS_SERVER_SOURCE = 'com.fastybird.ws-server-plugin';
+	public const PLUGIN_WS_EXCHANGE_SOURCE = 'com.fastybird.ws-exchange-plugin';
 
 	public const PLUGIN_WEB_SERVER_SOURCE = 'com.fastybird.web-server-plugin';
 

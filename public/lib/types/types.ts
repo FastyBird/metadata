@@ -17,9 +17,10 @@ export enum ModuleSource {
 export enum PluginSource {
   NOT_SPECIFIED = '*',
   COUCHDB_STORAGE_PLUGIN = 'com.fastybird.couchdb-storage-plugin',
-  RABBITMQ_EXCHANGE_PLUGIN = 'com.fastybird.rabbitmq-exchange-plugin',
-  REDISDB_EXCHANGE_PLUGIN = 'com.fastybird.redisdb-exchange-plugin',
-  REDISDB_STORAGE_PLUGIN = 'com.fastybird.redisdb-storage-plugin',
+  RABBITMQ_PLUGIN = 'com.fastybird.rabbitmq-plugin',
+  REDISDB_PLUGIN = 'com.fastybird.redisdb-plugin',
+  WS_EXCHANGE_PLUGIN = 'com.fastybird.ws-exchange-plugin',
+  WEB_SERVER_PLUGIN = 'com.fastybird.web-server-plugin',
 }
 
 export enum ConnectorSource {

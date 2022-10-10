@@ -39,11 +39,11 @@ class PluginSource extends Consistence\Enum\Enum
 
 	public const SOURCE_PLUGIN_RABBITMQ = Metadata\Constants::PLUGIN_RABBITMQ_SOURCE;
 
-	public const SOURCE_PLUGIN_REDISDB = Metadata\Constants::PLUGIN_REDISDB;
+	public const SOURCE_PLUGIN_REDISDB = Metadata\Constants::PLUGIN_REDISDB_SOURCE;
 
-	public const SOURCE_PLUGIN_WS_SERVER_SOURCE = Metadata\Constants::PLUGIN_WS_SERVER_SOURCE;
+	public const SOURCE_PLUGIN_WS_EXCHANGE = Metadata\Constants::PLUGIN_WS_EXCHANGE_SOURCE;
 
-	public const SOURCE_PLUGIN_WEB_SERVER_SOURCE = Metadata\Constants::PLUGIN_WEB_SERVER_SOURCE;
+	public const SOURCE_PLUGIN_WEB_SERVER = Metadata\Constants::PLUGIN_WEB_SERVER_SOURCE;
 
 	public function __toString(): string
 	{
