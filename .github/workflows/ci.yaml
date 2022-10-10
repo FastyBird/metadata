@@ -354,7 +354,7 @@ jobs:
   build :
     name : "Build code for distribution"
     runs-on : "${{ matrix.operating-system }}"
-    needs : [ "jslint", "tslint" ]
+    needs : [ "lint" ]
 
     strategy :
       matrix :
