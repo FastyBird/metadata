@@ -1,3 +1,0 @@
-include *.md
-
-recursive-include fastybird_metadata *.json

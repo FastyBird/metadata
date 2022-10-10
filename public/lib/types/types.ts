@@ -36,6 +36,12 @@ export enum ConnectorSource {
   TERMINAL_CONNECTOR = 'com.fastybird.terminal-connector',
 }
 
+export enum TriggerSource {
+  NOT_SPECIFIED = '*',
+  TRIGGER_DEVICE_MODULE = 'com.fastybird.device-module-trigger',
+  TRIGGER_DATE_TIME = 'com.fastybird.date-time-trigger',
+}
+
 export enum DataType {
   CHAR = 'char',
   UCHAR = 'uchar',

@@ -12,6 +12,7 @@ export enum MessageRoutes {
   MODULE = 'fb.exchange.message.module',
   PLUGIN = 'fb.exchange.message.plugin',
   CONNECTOR = 'fb.exchange.message.connector',
+  TRIGGER = 'fb.exchange.message.trigger',
 }
 
 export enum AccountsModuleRoutes {

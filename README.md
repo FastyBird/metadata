@@ -14,11 +14,7 @@
 [![JS latest stable](https://badgen.net/npm/v/@fastybird/metadata?cache=300&style=flat-square)](https://www.npmjs.com/package/@fastybird/metadata)
 ![Types](https://badgen.net/npm/types/@fastybird/metadata?cache=300&style=flat-square)
 
-![Python](https://badgen.net/pypi/python/fastybird-metadata?cache=300&style=flat-square)
-[![Python downloads month](https://img.shields.io/pypi/dm/fastybird-metadata?cache=300&style=flat-square)](https://pypi.org/project/fastybird-metadata/)
-[![Python latest stable](https://badgen.net/pypi/v/fastybird-metadata?cache=300&style=flat-square)](https://pypi.org/project/fastybird-metadata/)
-[![Black](https://img.shields.io/badge/black-enabled-brightgreen.svg?style=flat-square)](https://github.com/psf/black)
-[![MyPy](https://img.shields.io/badge/mypy-enabled-brightgreen.svg?style=flat-square)](http://mypy-lang.org)
+***
 
 ## What is FastyBird metadata library?
 
@@ -42,14 +38,6 @@ The best way to install **@fastybird/metadata** is using [Yarn](https://yarnpkg.
 
 ```sh
 yarn add @fastybird/metadata
-```
-
-### Python based project:
-
-The best way to install **fastybird-metadata** is using [pip](https://pip.pypa.io/):
-
-```sh
-pip install fastybird-metadata
 ```
 
 ## Updating metadata

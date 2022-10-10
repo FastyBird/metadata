@@ -50,11 +50,13 @@ final class Constants
 
 	public const PLUGIN_STORAGE_COUCHDB_SOURCE = 'com.fastybird.couchdb-storage-plugin';
 
-	public const PLUGIN_EXCHANGE_RABBITMQ_SOURCE = 'com.fastybird.rabbitmq-exchange-plugin';
+	public const PLUGIN_RABBITMQ_SOURCE = 'com.fastybird.rabbitmq-exchange-plugin';
 
-	public const PLUGIN_EXCHANGE_REDISDB_SOURCE = 'com.fastybird.redisdb-exchange-plugin';
+	public const PLUGIN_REDISDB = 'com.fastybird.redisdb-plugin';
 
-	public const PLUGIN_STORAGE_REDISDB_SOURCE = 'com.fastybird.redisdb-storage-plugin';
+	public const PLUGIN_WS_SERVER_SOURCE = 'com.fastybird.ws-server-plugin';
+
+	public const PLUGIN_WEB_SERVER_SOURCE = 'com.fastybird.web-server-plugin';
 
 	public const CONNECTOR_FB_BUS_SOURCE = 'com.fastybird.fb-bus-connector';
 
@@ -120,6 +122,8 @@ final class Constants
 
 	public const MESSAGE_BUS_CONNECTOR_MESSAGE_ROUTING_KEY = 'fb.exchange.message.connector';
 
+	public const MESSAGE_BUS_TRIGGER_MESSAGE_ROUTING_KEY = 'fb.exchange.message.trigger';
+
 	public const MESSAGE_BUS_ENTITY_PREFIX_KEY = 'fb.exchange.module.entity';
 
 	public const MESSAGE_BUS_ENTITY_REPORTED_KEY = 'reported';
@@ -139,183 +143,183 @@ final class Constants
 	 */
 
 	// Accounts
-	public const MESSAGE_BUS_ACCOUNT_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.account';
+	public const MESSAGE_BUS_ACCOUNT_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.account';
 
-	public const MESSAGE_BUS_ACCOUNT_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.account';
+	public const MESSAGE_BUS_ACCOUNT_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.account';
 
-	public const MESSAGE_BUS_ACCOUNT_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.account';
+	public const MESSAGE_BUS_ACCOUNT_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.account';
 
-	public const MESSAGE_BUS_ACCOUNT_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.account';
+	public const MESSAGE_BUS_ACCOUNT_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.account';
 
 	// Emails
-	public const MESSAGE_BUS_EMAIL_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.email';
+	public const MESSAGE_BUS_EMAIL_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.email';
 
-	public const MESSAGE_BUS_EMAIL_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.email';
+	public const MESSAGE_BUS_EMAIL_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.email';
 
-	public const MESSAGE_BUS_EMAIL_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.email';
+	public const MESSAGE_BUS_EMAIL_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.email';
 
-	public const MESSAGE_BUS_EMAIL_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.email';
+	public const MESSAGE_BUS_EMAIL_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.email';
 
 	// Identities
-	public const MESSAGE_BUS_IDENTITY_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.identity';
+	public const MESSAGE_BUS_IDENTITY_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.identity';
 
-	public const MESSAGE_BUS_IDENTITY_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.identity';
+	public const MESSAGE_BUS_IDENTITY_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.identity';
 
-	public const MESSAGE_BUS_IDENTITY_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.identity';
+	public const MESSAGE_BUS_IDENTITY_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.identity';
 
-	public const MESSAGE_BUS_IDENTITY_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.identity';
+	public const MESSAGE_BUS_IDENTITY_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.identity';
 
 	// Roles
-	public const MESSAGE_BUS_ROLE_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.role';
+	public const MESSAGE_BUS_ROLE_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.role';
 
-	public const MESSAGE_BUS_ROLE_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.role';
+	public const MESSAGE_BUS_ROLE_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.role';
 
-	public const MESSAGE_BUS_ROLE_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.role';
+	public const MESSAGE_BUS_ROLE_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.role';
 
-	public const MESSAGE_BUS_ROLE_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.role';
+	public const MESSAGE_BUS_ROLE_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.role';
 
 	/**
 	 * Devices module
 	 */
 
 	// Devices
-	public const MESSAGE_BUS_DEVICE_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.device';
+	public const MESSAGE_BUS_DEVICE_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.device';
 
-	public const MESSAGE_BUS_DEVICE_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.device';
+	public const MESSAGE_BUS_DEVICE_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.device';
 
-	public const MESSAGE_BUS_DEVICE_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.device';
+	public const MESSAGE_BUS_DEVICE_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.device';
 
-	public const MESSAGE_BUS_DEVICE_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.device';
+	public const MESSAGE_BUS_DEVICE_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.device';
 
 	// Devices properties
-	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.device.property';
+	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.device.property';
 
-	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.device.property';
+	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.device.property';
 
-	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.device.property';
+	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.device.property';
 
-	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.device.property';
+	public const MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.device.property';
 
 	// Devices control
-	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.device.control';
+	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.device.control';
 
-	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.device.control';
+	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.device.control';
 
-	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.device.control';
+	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.device.control';
 
-	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.device.control';
+	public const MESSAGE_BUS_DEVICE_CONTROL_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.device.control';
 
 	// Devices attribute
-	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.device.attribute';
+	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.device.attribute';
 
-	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.device.attribute';
+	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.device.attribute';
 
-	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.device.attribute';
+	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.device.attribute';
 
-	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.device.attribute';
+	public const MESSAGE_BUS_DEVICE_ATTRIBUTE_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.device.attribute';
 
 	// Channels
-	public const MESSAGE_BUS_CHANNEL_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.channel';
+	public const MESSAGE_BUS_CHANNEL_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.channel';
 
-	public const MESSAGE_BUS_CHANNEL_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.channel';
+	public const MESSAGE_BUS_CHANNEL_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.channel';
 
-	public const MESSAGE_BUS_CHANNEL_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.channel';
+	public const MESSAGE_BUS_CHANNEL_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.channel';
 
-	public const MESSAGE_BUS_CHANNEL_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.channel';
+	public const MESSAGE_BUS_CHANNEL_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.channel';
 
 	// Channels properties
-	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.channel.property';
+	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.channel.property';
 
-	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.channel.property';
+	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.channel.property';
 
-	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.channel.property';
+	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.channel.property';
 
-	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.channel.property';
+	public const MESSAGE_BUS_CHANNEL_PROPERTY_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.channel.property';
 
 	// Channels control
-	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.channel.control';
+	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.channel.control';
 
-	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.channel.control';
+	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.channel.control';
 
-	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.channel.control';
+	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.channel.control';
 
-	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.channel.control';
+	public const MESSAGE_BUS_CHANNEL_CONTROL_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.channel.control';
 
 	// Connectors
-	public const MESSAGE_BUS_CONNECTOR_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.connector';
+	public const MESSAGE_BUS_CONNECTOR_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.connector';
 
-	public const MESSAGE_BUS_CONNECTOR_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.connector';
+	public const MESSAGE_BUS_CONNECTOR_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.connector';
 
-	public const MESSAGE_BUS_CONNECTOR_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.connector';
+	public const MESSAGE_BUS_CONNECTOR_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.connector';
 
-	public const MESSAGE_BUS_CONNECTOR_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.connector';
+	public const MESSAGE_BUS_CONNECTOR_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.connector';
 
 	// Connectors properties
-	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.connector.property';
+	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.connector.property';
 
-	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.connector.property';
+	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.connector.property';
 
-	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.connector.property';
+	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.connector.property';
 
-	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.connector.property';
+	public const MESSAGE_BUS_CONNECTOR_PROPERTY_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.connector.property';
 
 	// Connectors control
-	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.connector.control';
+	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.connector.control';
 
-	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.connector.control';
+	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.connector.control';
 
-	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.connector.control';
+	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.connector.control';
 
-	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.connector.control';
+	public const MESSAGE_BUS_CONNECTOR_CONTROL_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.connector.control';
 
 	/**
 	 * Triggers module
 	 */
 
 	// Triggers
-	public const MESSAGE_BUS_TRIGGER_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.trigger';
+	public const MESSAGE_BUS_TRIGGER_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.trigger';
 
-	public const MESSAGE_BUS_TRIGGER_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.trigger';
+	public const MESSAGE_BUS_TRIGGER_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.trigger';
 
-	public const MESSAGE_BUS_TRIGGER_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.trigger';
+	public const MESSAGE_BUS_TRIGGER_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.trigger';
 
-	public const MESSAGE_BUS_TRIGGER_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.trigger';
+	public const MESSAGE_BUS_TRIGGER_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.trigger';
 
 	// Triggers control
-	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.trigger.control';
+	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.trigger.control';
 
-	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.trigger.control';
+	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.trigger.control';
 
-	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.trigger.control';
+	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.trigger.control';
 
-	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.trigger.control';
+	public const MESSAGE_BUS_TRIGGER_CONTROL_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.trigger.control';
 
 	// Triggers actions
-	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.trigger.action';
+	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.trigger.action';
 
-	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.trigger.action';
+	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.trigger.action';
 
-	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.trigger.action';
+	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.trigger.action';
 
-	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.trigger.action';
+	public const MESSAGE_BUS_TRIGGER_ACTION_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.trigger.action';
 
 	// Triggers notifications
-	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.trigger.notification';
+	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.trigger.notification';
 
-	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.trigger.notification';
+	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.trigger.notification';
 
-	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.trigger.notification';
+	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.trigger.notification';
 
-	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.trigger.notification';
+	public const MESSAGE_BUS_TRIGGER_NOTIFICATION_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.trigger.notification';
 
 	// Triggers conditions
-	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_REPORTED_ROUTING_KEY = 'fb.exchange.module.entity.reported.trigger.condition';
+	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_REPORTED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_REPORTED_KEY . '.trigger.condition';
 
-	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_CREATED_ROUTING_KEY = 'fb.exchange.module.entity.created.trigger.condition';
+	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_CREATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_CREATED_KEY . '.trigger.condition';
 
-	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_UPDATED_ROUTING_KEY = 'fb.exchange.module.entity.updated.trigger.condition';
+	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_UPDATED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_UPDATED_KEY . '.trigger.condition';
 
-	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_DELETED_ROUTING_KEY = 'fb.exchange.module.entity.deleted.trigger.condition';
+	public const MESSAGE_BUS_TRIGGER_CONDITION_ENTITY_DELETED_ROUTING_KEY = self::MESSAGE_BUS_ENTITY_PREFIX_KEY . '.' . self::MESSAGE_BUS_ENTITY_DELETED_KEY . '.trigger.condition';
 
 	/*
 	 * JSON schemas mapping
@@ -355,32 +359,32 @@ final class Constants
 		self::MESSAGE_BUS_EMAIL_ENTITY_DELETED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
 			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.email.json',
 
-		self::MESSAGE_BUS_IDENTITY_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
-		self::MESSAGE_BUS_IDENTITY_ENTITY_CREATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
-		self::MESSAGE_BUS_IDENTITY_ENTITY_UPDATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
-		self::MESSAGE_BUS_IDENTITY_ENTITY_DELETED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
+		self::MESSAGE_BUS_IDENTITY_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
+		self::MESSAGE_BUS_IDENTITY_ENTITY_CREATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
+		self::MESSAGE_BUS_IDENTITY_ENTITY_UPDATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
+		self::MESSAGE_BUS_IDENTITY_ENTITY_DELETED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.identity.json',
 
-		self::MESSAGE_BUS_ROLE_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
-		self::MESSAGE_BUS_ROLE_ENTITY_CREATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
-		self::MESSAGE_BUS_ROLE_ENTITY_UPDATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
-		self::MESSAGE_BUS_ROLE_ENTITY_DELETED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
+		self::MESSAGE_BUS_ROLE_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
+		self::MESSAGE_BUS_ROLE_ENTITY_CREATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
+		self::MESSAGE_BUS_ROLE_ENTITY_UPDATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
+		self::MESSAGE_BUS_ROLE_ENTITY_DELETED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'accounts-module' . DS . 'entity.role.json',
 
-		self::MESSAGE_BUS_DEVICE_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
-		self::MESSAGE_BUS_DEVICE_ENTITY_CREATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
-		self::MESSAGE_BUS_DEVICE_ENTITY_UPDATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
-		self::MESSAGE_BUS_DEVICE_ENTITY_DELETED_ROUTING_KEY => self::RESOURCES_FOLDER . DS . 'schemas'
-			. DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
+		self::MESSAGE_BUS_DEVICE_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
+		self::MESSAGE_BUS_DEVICE_ENTITY_CREATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
+		self::MESSAGE_BUS_DEVICE_ENTITY_UPDATED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
+		self::MESSAGE_BUS_DEVICE_ENTITY_DELETED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
+			. 'schemas' . DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.json',
 
 		self::MESSAGE_BUS_DEVICE_PROPERTY_ENTITY_REPORTED_ROUTING_KEY => self::RESOURCES_FOLDER . DS
 			. 'schemas' . DS . 'modules' . DS . 'devices-module' . DS . 'entity.device.property.json',
