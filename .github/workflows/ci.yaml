@@ -352,6 +352,9 @@ jobs:
       - name : "Check ts linter"
         run : "yarn lint:ts"
 
+      - name: "Check php linter"
+        run: "make lint"
+
   build :
     name : "Build code for distribution"
     runs-on : "${{ matrix.operating-system }}"
