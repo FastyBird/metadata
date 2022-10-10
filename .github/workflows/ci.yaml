@@ -354,7 +354,7 @@ jobs:
   build :
     name : "Build code for distribution"
     runs-on : "${{ matrix.operating-system }}"
-    needs : [ "lint" ]
+    needs : "lint"
 
     strategy :
       matrix :
@@ -385,7 +385,7 @@ jobs:
   publish-npmjs :
     name : "Publish code distribution to NPM"
     runs-on : "${{ matrix.operating-system }}"
-    needs : "js-build"
+    needs : "build"
 
     strategy :
       matrix :
