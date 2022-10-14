@@ -57,7 +57,7 @@ final class StringEnumFormat
 	}
 
 	/**
-	 * @return array<string>
+	 * @return Array<string>
 	 */
 	public function getItems(): array
 	{
@@ -65,7 +65,7 @@ final class StringEnumFormat
 	}
 
 	/**
-	 * @return array<string>
+	 * @return Array<string>
 	 */
 	public function toArray(): array
 	{

@@ -55,6 +55,10 @@ use function ucfirst;
 abstract class EntityFactory
 {
 
+	/**
+	 * @throws Exceptions\InvalidArgument
+	 * @throws Exceptions\InvalidState
+	 */
 	protected function build(string $entityClass, Utils\ArrayHash $data): Entity
 	{
 		if (!class_exists($entityClass)) {
@@ -160,7 +164,9 @@ abstract class EntityFactory
 	/**
 	 * This method was inspired by same method in Nette framework
 	 *
-	 * @return array<mixed>
+	 * @return Array<mixed>
+	 *
+	 * @throws ReflectionException
 	 */
 	private function autowireArguments(
 		ReflectionMethod $method,
@@ -221,7 +227,7 @@ abstract class EntityFactory
 	}
 
 	/**
-	 * @return array<ReflectionProperty>
+	 * @return Array<ReflectionProperty>
 	 */
 	private function getProperties(Reflector $rc): array
 	{

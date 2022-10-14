@@ -48,6 +48,13 @@ final class NotificationEntityFactory extends Entities\EntityFactory
 	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @throws Exceptions\FileNotFound
+	 * @throws Exceptions\InvalidArgument
+	 * @throws Exceptions\InvalidData
+	 * @throws Exceptions\InvalidState
+	 * @throws Exceptions\Logic
+	 * @throws Exceptions\MalformedInput
+	 * @throws Phone\Exceptions\NoValidCountryException
+	 * @throws Phone\Exceptions\NoValidPhoneException
 	 */
 	public function create(string|array|Utils\ArrayHash $data): Notification
 	{

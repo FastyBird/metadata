@@ -39,6 +39,9 @@ final class MetadataLoader
 
 	/**
 	 * @throws Exceptions\FileNotFound
+	 * @throws Exceptions\InvalidData
+	 * @throws Exceptions\Logic
+	 * @throws Exceptions\MalformedInput
 	 */
 	public function load(): Utils\ArrayHash
 	{

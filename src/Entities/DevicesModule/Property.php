@@ -17,6 +17,7 @@ namespace FastyBird\Metadata\Entities\DevicesModule;
 
 use FastyBird\Metadata;
 use FastyBird\Metadata\Entities;
+use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Types;
 use FastyBird\Metadata\ValueObjects;
 use Ramsey\Uuid;
@@ -52,6 +53,8 @@ abstract class Property implements Entities\Entity, Entities\Owner
 
 	/**
 	 * @param Array<int, string>|Array<int, string|int|float|Array<int, string|int|float>|null>|Array<int, Array<int, string|Array<int, string|int|float|bool>|null>>|null $format
+	 *
+	 * @throws Exceptions\InvalidArgument
 	 */
 	public function __construct(
 		string $id,
@@ -132,6 +135,9 @@ abstract class Property implements Entities\Entity, Entities\Owner
 		return $this->numberOfDecimals;
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function toArray(): array
 	{
 		return [
@@ -152,6 +158,8 @@ abstract class Property implements Entities\Entity, Entities\Owner
 
 	/**
 	 * @param Array<int, string>|Array<int, string|int|float|Array<int, string|int|float>|null>|Array<int, Array<int, string|Array<int, string|int|float|bool>|null>>|null $format
+	 *
+	 * @throws Exceptions\InvalidArgument
 	 */
 	private function buildFormat(
 		array|null $format,
@@ -221,6 +229,8 @@ abstract class Property implements Entities\Entity, Entities\Owner
 
 	/**
 	 * @return Array<string, mixed>
+	 *
+	 * @throws Exceptions\InvalidState
 	 */
 	public function __serialize(): array
 	{

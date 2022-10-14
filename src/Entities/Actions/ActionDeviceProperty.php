@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\Actions;
 
+use FastyBird\Metadata\Exceptions;
 use Ramsey\Uuid;
 use function array_merge;
 
@@ -57,6 +58,8 @@ final class ActionDeviceProperty extends ActionProperty
 
 	/**
 	 * @return Array<string, mixed>
+	 *
+	 * @throws Exceptions\InvalidState
 	 */
 	public function __serialize(): array
 	{

@@ -49,6 +49,8 @@ final class CombinedEnumFormatItem
 
 	/**
 	 * @param string|Array<int, string|int|float|bool> $item
+	 *
+	 * @throws Exceptions\InvalidArgument
 	 */
 	public function __construct(string|array $item)
 	{
@@ -89,6 +91,9 @@ final class CombinedEnumFormatItem
 		$this->dataType = $dataType;
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function getValue(): float|bool|int|string|Types\ButtonPayload|Types\SwitchPayload
 	{
 		if ($this->dataType === null) {
@@ -134,6 +139,8 @@ final class CombinedEnumFormatItem
 
 	/**
 	 * @return Array<int, string|int|float|bool>
+	 *
+	 * @throws Exceptions\InvalidState
 	 */
 	public function toArray(): array
 	{
@@ -170,6 +177,9 @@ final class CombinedEnumFormatItem
 		], true);
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function __toString(): string
 	{
 		return implode('|', $this->toArray());

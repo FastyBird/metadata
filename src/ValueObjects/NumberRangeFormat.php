@@ -54,6 +54,8 @@ final class NumberRangeFormat
 
 	/**
 	 * @param string|Array<int, string|int|float|Array<int, string|int|float>|null> $format
+	 *
+	 * @throws Exceptions\InvalidArgument
 	 */
 	public function __construct(string|array $format)
 	{
@@ -136,6 +138,9 @@ final class NumberRangeFormat
 		}
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function getMin(): float|int|null
 	{
 		if ($this->getMinDataType() !== null) {
@@ -158,6 +163,9 @@ final class NumberRangeFormat
 		return $this->min;
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function getMax(): float|int|null
 	{
 		if ($this->getMaxDataType() !== null) {
@@ -192,6 +200,8 @@ final class NumberRangeFormat
 
 	/**
 	 * @return Array<int, int|float|Array<int, string|int|float|null>|null>
+	 *
+	 * @throws Exceptions\InvalidState
 	 */
 	public function toArray(): array
 	{
@@ -222,6 +232,9 @@ final class NumberRangeFormat
 			|| $item === null;
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function __toString(): string
 	{
 		return implode(':', array_map(static function (int|float|array|null $item): string|int|float|null {

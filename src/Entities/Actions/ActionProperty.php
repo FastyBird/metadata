@@ -62,6 +62,9 @@ abstract class ActionProperty implements Entities\Entity
 		return $this->property;
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function getExpectedValue(): float|bool|int|string|null
 	{
 		if (!$this->getAction()->equalsValue(Types\PropertyAction::ACTION_SET)) {
@@ -73,6 +76,9 @@ abstract class ActionProperty implements Entities\Entity
 		return $this->expectedValue;
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function toArray(): array
 	{
 		$data = [

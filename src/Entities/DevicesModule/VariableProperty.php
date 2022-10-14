@@ -15,6 +15,7 @@
 
 namespace FastyBird\Metadata\Entities\DevicesModule;
 
+use FastyBird\Metadata\Exceptions;
 use function array_merge;
 
 /**
@@ -91,6 +92,8 @@ abstract class VariableProperty extends Property
 
 	/**
 	 * @return Array<string, mixed>
+	 *
+	 * @throws Exceptions\InvalidState
 	 */
 	public function __serialize(): array
 	{

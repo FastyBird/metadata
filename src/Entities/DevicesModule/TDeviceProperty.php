@@ -32,7 +32,7 @@ trait TDeviceProperty
 
 	protected Uuid\UuidInterface|null $parent;
 
-	/** @var array<Uuid\UuidInterface> */
+	/** @var Array<Uuid\UuidInterface> */
 	protected array $children;
 
 	public function getDevice(): Uuid\UuidInterface
@@ -46,7 +46,7 @@ trait TDeviceProperty
 	}
 
 	/**
-	 * @return array<Uuid\UuidInterface>
+	 * @return Array<Uuid\UuidInterface>
 	 */
 	public function getChildren(): array
 	{

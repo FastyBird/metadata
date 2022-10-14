@@ -40,6 +40,11 @@ final class Validator
 	/** @var Array<string, JsonSchema\Schema>  */
 	private array $schemas = [];
 
+	/**
+	 * @throws Exceptions\InvalidData
+	 * @throws Exceptions\Logic
+	 * @throws Exceptions\MalformedInput
+	 */
 	public function validate(string $data, string $schema): Utils\ArrayHash
 	{
 		try {

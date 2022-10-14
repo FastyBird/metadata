@@ -1,141 +1,133 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit;
+namespace Tests\Cases\Unit\Common;
 
 use FastyBird\Metadata;
-use Tester\Assert;
+use Tests\Cases\Unit\BaseTestCase;
+use function preg_match;
 
-require_once __DIR__ . '/../../../bootstrap.php';
-require_once __DIR__ . '/../BaseTestCase.php';
-
-/**
- * @testCase
- */
 final class ConstantsTest extends BaseTestCase
 {
 
 	public function testValueFormatStringEnum(): void
 	{
 		// Valid
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_STRING_ENUM,
-			'one,two,three'
+			'one,two,three',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_STRING_ENUM,
-			'one,two_v1,three'
+			'one,two_v1,three',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_STRING_ENUM,
-			'one,two-v1,three'
+			'one,two-v1,three',
 		));
 
 		// Invalid
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_STRING_ENUM,
-			'1one,two,three'
+			'1one,two,three',
 		));
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_STRING_ENUM,
-			'one,1two,three'
+			'one,1two,three',
 		));
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_STRING_ENUM,
-			'one,two__,three'
+			'one,two__,three',
 		));
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_STRING_ENUM,
-			'1,two,three'
+			'1,two,three',
 		));
 	}
 
 	public function testValueFormatNumberRange(): void
 	{
 		// Valid
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'10:20'
+			'10:20',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'u8|10:20'
+			'u8|10:20',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'10:f|20'
+			'10:f|20',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'f|10:i16|20'
+			'f|10:i16|20',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			':i16|20'
+			':i16|20',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'f|10:'
+			'f|10:',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'10:'
+			'10:',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			':20'
+			':20',
 		));
 
 		// Invalid
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'one'
+			'one',
 		));
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'one,two'
+			'one,two',
 		));
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'one:10'
+			'one:10',
 		));
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_NUMBER_RANGE,
-			'i10|10:'
+			'i10|10:',
 		));
 	}
 
 	public function testValueFormatCombinedEnum(): void
 	{
 		// Valid
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'one::,sw|switch_on:1000:s|on,sw|switch_off:2000:s|off'
+			'one::,sw|switch_on:1000:s|on,sw|switch_off:2000:s|off',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'one:one:one,two:two:two,three:three:three'
+			'one:one:one,two:two:two,three:three:three',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw|switch_on:1000:s|on,sw|switch_off:2000:s|off'
+			'sw|switch_on:1000:s|on,sw|switch_off:2000:s|off',
 		));
-		Assert::same(1, preg_match(
+		self::assertSame(1, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw|switch_on:u8|10:s|on,sw|switch_off:u8|20:s|off'
+			'sw|switch_on:u8|10:s|on,sw|switch_off:u8|20:s|off',
 		));
 
 		// Invalid
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw|switch_on:u10|10:s|on,sw|switch_off:u8|20:s|off'
+			'sw|switch_on:u10|10:s|on,sw|switch_off:u8|20:s|off',
 		));
-		Assert::same(0, preg_match(
+		self::assertSame(0, preg_match(
 			Metadata\Constants::VALUE_FORMAT_COMBINED_ENUM,
-			'sw,sw|switch_off:u8|20:s|off'
+			'sw,sw|switch_off:u8|20:s|off',
 		));
 	}
 
 }
-
-$test_case = new ConstantsTest();
-$test_case->run();

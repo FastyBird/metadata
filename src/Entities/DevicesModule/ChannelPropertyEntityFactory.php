@@ -45,6 +45,11 @@ final class ChannelPropertyEntityFactory extends Entities\EntityFactory
 	 * @param string|Array<string, mixed>|Utils\ArrayHash<string> $data
 	 *
 	 * @throws Exceptions\FileNotFound
+	 * @throws Exceptions\InvalidArgument
+	 * @throws Exceptions\InvalidData
+	 * @throws Exceptions\InvalidState
+	 * @throws Exceptions\Logic
+	 * @throws Exceptions\MalformedInput
 	 */
 	public function create(string|array|Utils\ArrayHash $data): Property
 	{

@@ -33,6 +33,9 @@ final class DateCondition extends Condition
 
 	private DateTimeInterface $date;
 
+	/**
+	 * @throws Exceptions\InvalidArgument
+	 */
 	public function __construct(
 		string $id,
 		string $trigger,

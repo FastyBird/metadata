@@ -17,6 +17,7 @@ namespace FastyBird\Metadata\Entities\DevicesModule;
 
 use DateTimeInterface;
 use Exception;
+use FastyBird\Metadata\Exceptions;
 use Nette\Utils;
 use function array_merge;
 use function is_string;
@@ -145,6 +146,7 @@ abstract class MappedProperty extends Property
 
 	/**
 	 * @throws Exception
+	 * @throws Exceptions\InvalidState
 	 */
 	public function toArray(): array
 	{
@@ -163,6 +165,7 @@ abstract class MappedProperty extends Property
 	 * @return Array<string, mixed>
 	 *
 	 * @throws Exception
+	 * @throws Exceptions\InvalidState
 	 */
 	public function __serialize(): array
 	{

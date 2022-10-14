@@ -41,12 +41,12 @@ final class Account implements Entities\Entity
 
 	private DateTimeInterface|null $lastVisit = null;
 
-	/** @var array<string> */
+	/** @var Array<string> */
 	private array $roles;
 
 	protected Uuid\UuidInterface|null $parent;
 
-	/** @var array<Uuid\UuidInterface> */
+	/** @var Array<Uuid\UuidInterface> */
 	protected array $children;
 
 	/**
@@ -141,7 +141,7 @@ final class Account implements Entities\Entity
 	}
 
 	/**
-	 * @return array<string>
+	 * @return Array<string>
 	 */
 	public function getRoles(): array
 	{

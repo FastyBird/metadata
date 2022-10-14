@@ -23,7 +23,7 @@ class InvalidData extends RuntimeException implements Exception
 {
 
 	/**
-	 * @param array<string> $messages
+	 * @param Array<string> $messages
 	 */
 	public function __construct(private readonly array $messages, int $code = 0, Throwable|null $previous = null)
 	{
@@ -33,7 +33,7 @@ class InvalidData extends RuntimeException implements Exception
 	}
 
 	/**
-	 * @return array<string>
+	 * @return Array<string>
 	 */
 	public function getMessages(): array
 	{

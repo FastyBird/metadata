@@ -34,7 +34,9 @@ final class TimeCondition extends Condition
 	private DateTimeInterface $time;
 
 	/**
-	 * @param array<int> $days
+	 * @param Array<int> $days
+	 *
+	 * @throws Exceptions\InvalidArgument
 	 */
 	public function __construct(
 		string $id,
@@ -65,7 +67,7 @@ final class TimeCondition extends Condition
 	}
 
 	/**
-	 * @return array<int>
+	 * @return Array<int>
 	 */
 	public function getDays(): array
 	{

@@ -32,7 +32,7 @@ trait TChannelProperty
 
 	protected Uuid\UuidInterface|null $parent;
 
-	/** @var array<Uuid\UuidInterface> */
+	/** @var Array<Uuid\UuidInterface> */
 	protected array $children;
 
 	public function getChannel(): Uuid\UuidInterface
@@ -46,7 +46,7 @@ trait TChannelProperty
 	}
 
 	/**
-	 * @return array<Uuid\UuidInterface>
+	 * @return Array<Uuid\UuidInterface>
 	 */
 	public function getChildren(): array
 	{

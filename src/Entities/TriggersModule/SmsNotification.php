@@ -32,6 +32,9 @@ final class SmsNotification extends Notification
 
 	private PhoneEntities\Phone|null $phone = null;
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function getPhone(): PhoneEntities\Phone
 	{
 		if ($this->phone === null) {
@@ -46,6 +49,9 @@ final class SmsNotification extends Notification
 		$this->phone = $phone;
 	}
 
+	/**
+	 * @throws Exceptions\InvalidState
+	 */
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
@@ -55,6 +61,8 @@ final class SmsNotification extends Notification
 
 	/**
 	 * @return Array<string, mixed>
+	 *
+	 * @throws Exceptions\InvalidState
 	 */
 	public function __serialize(): array
 	{

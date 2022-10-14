@@ -45,7 +45,7 @@ class AccountState extends Consistence\Enum\Enum
 	/**
 	 * List of allowed states
 	 *
-	 * @var array<string>
+	 * @var Array<string>
 	 */
 	public static array $allowedStates = [
 		self::STATE_ACTIVE,

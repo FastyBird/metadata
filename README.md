@@ -3,6 +3,7 @@
 [![Build Status](https://badgen.net/github/checks/FastyBird/metadata/main?cache=300&style=flat-square)](https://github.com/FastyBird/metadata/actions)
 [![Licence](https://badgen.net/github/license/FastyBird/metadata?cache=300&style=flat-square)](https://github.com/FastyBird/metadata/blob/main/LICENSE.md)
 [![Code coverage](https://badgen.net/coveralls/c/github/FastyBird/metadata?cache=300&style=flat-square)](https://coveralls.io/r/FastyBird/metadata)
+[![Mutation testing](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FFastyBird%2Fmetadata%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/FastyBird/metadata/main)
 
 ![PHP](https://badgen.net/packagist/php/FastyBird/metadata?cache=300&style=flat-square)
 [![PHP downloads total](https://badgen.net/packagist/dt/FastyBird/metadata?cache=300&style=flat-square)](https://packagist.org/packages/FastyBird/metadata)
