@@ -1,9 +1,9 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit\Common;
+namespace FastyBird\Metadata\Tests\Cases\Unit\Common;
 
 use FastyBird\Metadata;
-use Tests\Cases\Unit\BaseTestCase;
+use FastyBird\Metadata\Tests\Cases\Unit\BaseTestCase;
 use function preg_match;
 
 final class ConstantsTest extends BaseTestCase

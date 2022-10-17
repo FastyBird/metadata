@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit\Entities\Modules;
+namespace FastyBird\Metadata\Tests\Cases\Unit\Entities\Modules;
 
 use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
+use FastyBird\Metadata\Tests\Cases\Unit\BaseTestCase;
 use Nette;
 use Ramsey\Uuid;
-use Tests\Cases\Unit\BaseTestCase;
 use Throwable;
 use function file_get_contents;
 use function method_exists;

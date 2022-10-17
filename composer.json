@@ -49,7 +49,7 @@
     "phpdocumentor/reflection" : "^4.0",
     "phpdocumentor/reflection-common" : "^2.2",
     "opis/json-schema" : "^2.3",
-    "ramsey/uuid" : "^4.2"
+    "ramsey/uuid" : "^4.5"
   },
 
   "require-dev" : {
@@ -78,8 +78,8 @@
 
   "autoload-dev" : {
     "psr-4" : {
-      "Tests\\Cases\\Unit\\" : "tests/cases/unit",
-      "Tests\\Fixtures\\" : "tests/fixtures"
+      "FastyBird\\Metadata\\Tests\\Cases\\Unit\\" : "tests/cases/unit",
+      "FastyBird\\Metadata\\Tests\\Fixtures\\" : "tests/fixtures"
     }
   },
 

@@ -1,13 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit\DI;
+namespace FastyBird\Metadata\Tests\Cases\Unit\DI;
 
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
+use FastyBird\Metadata\Tests\Cases\Unit\BaseTestCase;
 use Nette;
-use Tests\Cases\Unit\BaseTestCase;
 
-final class ExtensionTest extends BaseTestCase
+final class MetadataExtensionTest extends BaseTestCase
 {
 
 	/**

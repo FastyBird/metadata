@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit\ValueObjects;
+namespace FastyBird\Metadata\Tests\Cases\Unit\ValueObjects;
 
 use FastyBird\Metadata\Exceptions;
+use FastyBird\Metadata\Tests\Cases\Unit\BaseTestCase;
 use FastyBird\Metadata\Types;
 use FastyBird\Metadata\ValueObjects;
-use Tests\Cases\Unit\BaseTestCase;
 use function strval;
 
 final class CombinedEnumFormatTest extends BaseTestCase

@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit\Schemas;
+namespace FastyBird\Metadata\Tests\Cases\Unit\Schemas;
 
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Schemas;
+use FastyBird\Metadata\Tests\Cases\Unit\BaseTestCase;
 use Nette\Utils;
-use Tests\Cases\Unit\BaseTestCase;
 use function file_get_contents;
 
 final class ValidatorTest extends BaseTestCase

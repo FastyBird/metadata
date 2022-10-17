@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit\Entities\Actions;
+namespace FastyBird\Metadata\Tests\Cases\Unit\Entities\Actions;
 
 use FastyBird\Metadata\Entities;
 use FastyBird\Metadata\Exceptions;
+use FastyBird\Metadata\Tests\Cases\Unit\BaseTestCase;
 use Nette;
-use Tests\Cases\Unit\BaseTestCase;
 use function file_get_contents;
 
 final class ActionChannelPropertyEntityTest extends BaseTestCase

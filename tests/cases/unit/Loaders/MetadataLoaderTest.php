@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\Unit\Loaders;
+namespace FastyBird\Metadata\Tests\Cases\Unit\Loaders;
 
 use FastyBird\Metadata\Exceptions;
 use FastyBird\Metadata\Loaders;
 use FastyBird\Metadata\Schemas;
-use Tests\Cases\Unit\BaseTestCase;
+use FastyBird\Metadata\Tests\Cases\Unit\BaseTestCase;
 
 final class MetadataLoaderTest extends BaseTestCase
 {
