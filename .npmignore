@@ -1,7 +1,14 @@
-src
+.idea
+/node_modules
+/src
+/vendor
+/var
 .editorconfig
-.eslintrc
+.DS_Store
 .gitattributes
 .gitignore
-.npmignore export-ignore
+.npmignore
+composer.lock
+yarn.lock
+tsconfig.tsbuildinfo
 Makefile export-ignore

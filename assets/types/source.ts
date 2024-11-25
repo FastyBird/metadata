@@ -1,10 +1,3 @@
-export enum ModulePrefix {
-	ACCOUNTS = 'accounts-module',
-	DEVICES = 'devices-module',
-	TRIGGERS = 'triggers-module',
-	UI = 'ui-module',
-}
-
 export enum ModuleSource {
 	NOT_SPECIFIED = '*',
 	ACCOUNTS = 'com.fastybird.accounts-module',
@@ -55,92 +48,7 @@ export enum BridgeSource {
 	DEVICES_MODULE_UI_MODULE = 'com.fastybird.devices-module-ui-module-bridge',
 }
 
-export enum DataType {
-	CHAR = 'char',
-	UCHAR = 'uchar',
-	SHORT = 'short',
-	USHORT = 'ushort',
-	INT = 'int',
-	UINT = 'uint',
-	FLOAT = 'float',
-	BOOLEAN = 'bool',
-	STRING = 'string',
-	ENUM = 'enum',
-	DATE = 'date',
-	TIME = 'time',
-	DATETIME = 'datetime',
-	COLOR = 'color',
-	BUTTON = 'button',
-	SWITCH = 'switch',
-	COVER = 'cover',
-	UNKNOWN = 'unknown',
-}
-
-export enum ShortDataType {
-	CHAR = 'i8',
-	UCHAR = 'u8',
-	SHORT = 'i16',
-	USHORT = 'u16',
-	INT = 'i32',
-	UINT = 'u32',
-	FLOAT = 'f',
-	BOOLEAN = 'b',
-	STRING = 's',
-	ENUM = 'e',
-	DATE = 'd',
-	TIME = 't',
-	DATETIME = 'dt',
-}
-
-export enum SwitchPayload {
-	ON = 'switch_on',
-	OFF = 'switch_off',
-	TOGGLE = 'switch_toggle',
-}
-
-export enum CoverPayload {
-	OPEN = 'cover_open',
-	OPENING = 'cover_opening',
-	OPENED = 'cover_opened',
-	CLOSE = 'cover_close',
-	CLOSING = 'cover_closing',
-	CLOSED = 'cover_closed',
-	STOP = 'cover_stop',
-	STOPPED = 'cover_stopped',
-	CALIBRATE = 'cover_calibrate',
-	CALIBRATING = 'cover_calibrating',
-}
-
-export enum ButtonPayload {
-	PRESSED = 'btn_pressed',
-	RELEASED = 'btn_released',
-	CLICKED = 'btn_clicked',
-	DOUBLE_CLICKED = 'btn_double_clicked',
-	TRIPLE_CLICKED = 'btn_triple_clicked',
-	LONG_CLICKED = 'btn_long_clicked',
-	EXTRA_LONG_CLICKED = 'btn_extra_long_clicked',
-}
-
-export enum ControlName {
-	CONFIGURE = 'configure',
-	RESET = 'reset',
-	FACTORY_RESET = 'factory_reset',
-	REBOOT = 'reboot',
-	TRIGGER = 'trigger',
-}
-
-export enum PropertyAction {
-	SET = 'set',
-	GET = 'get',
-	REPORT = 'report',
-}
-
-export enum ControlAction {
-	SET = 'set',
-}
-
-export enum ExchangeCommand {
-	SET = 'set',
-	GET = 'get',
-	REPORT = 'report',
+export enum AddonSource {
+	NOT_SPECIFIED = '*',
+	VIRTUAL_THERMOSTAT = 'com.fastybird.virtual-thermostat-addon',
 }
